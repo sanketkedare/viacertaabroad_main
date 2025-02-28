@@ -1,13 +1,13 @@
 "use client";
 import React from "react";
-import { FaGreaterThan } from "react-icons/fa";
 import ApplicationForm from "./ApplicationForm";
+import { IoIosArrowForward } from "react-icons/io";
 
 const HeroSection = () => {
   let VIDEO_URL = ""
-    // "https://www.youtube.com/embed/B_UbDtoR16I?autoplay=1&mute=1&loop=1&controls=0&disablekb=1&modestbranding=1&showinfo=0&rel=0&playlist=B_UbDtoR16I";
+  // "https://www.youtube.com/embed/B_UbDtoR16I?autoplay=1&mute=1&loop=1&controls=0&disablekb=1&modestbranding=1&showinfo=0&rel=0&playlist=B_UbDtoR16I";
   return (
-    <section className="relative shadow-sm h-[70vh] overflow-hidden bg-black">
+    <section className="relative shadow-sm lg:h-[70vh] overflow-hidden bg-black">
       {/* Background Video */}
       <div className="absolute inset-0 w-full h-full">
         <iframe
@@ -25,7 +25,7 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-black opacity-50 z-0"></div>
 
       {/* Content Overlay */}
-      <div className="relative z-10 grid grid-cols-3 h-full w-9/12 m-auto">
+      <div className="relative z-10 grid lg:grid-cols-3 h-full lg:w-9/12 w-11/12 m-auto">
         {/* Hero Text */}
         <div className="flex flex-col gap-10 justify-center h-full col-span-2 text-white">
           <div>
@@ -47,8 +47,8 @@ const HeroSection = () => {
             </div>
           </div>
           <div>
-          <button className="cursor-pointer p-2 font-semibold text-2xl flex items-center gap-2 transition px-6 bg-[#152347] hover:bg-[#3b445c]   text-[#ffffff] rounded-sm">
-            Explore Courses <FaGreaterThan/>
+          <button className="cursor-pointer p-2 font-semibold text-xl flex items-center gap-2 transition px-6 bg-[#152347] hover:bg-[#3b445c]   text-[#ffffff] rounded-sm">
+            Explore Courses <IoIosArrowForward/>
           </button>
           </div>
          

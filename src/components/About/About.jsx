@@ -7,11 +7,11 @@ const AboutUs = () =>
 
   return (
     <section className="bg-white py-16">
-      <div className="container mx-auto px-10 w-9/12">
+      <div className="container mx-auto px-10 lg:w-9/12">
         {/* Company Info */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-[#2c31b6]">About ViaCerta Abroad</h2>
-          <p className="text-lg text-gray-600 mt-4 w-3/4 mx-auto">
+          <h2 className="lg:text-4xl text-xl font-bold text-[#2c31b6]">About ViaCerta Abroad</h2>
+          <p className="lg:text-lg text-justify text-gray-600 mt-4 w-3/4 mx-auto">
             ViaCerta Abroad is your trusted partner in international education, 
             connecting students with top universities worldwide. With expert guidance, 
             visa assistance, and personalized career counseling, we ensure a seamless 

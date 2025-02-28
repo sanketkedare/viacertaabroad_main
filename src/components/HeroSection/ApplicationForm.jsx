@@ -1,12 +1,12 @@
 "use client";
 import React from "react";
-import { FaGreaterThan } from "react-icons/fa";
 import { FaGlobe, FaGraduationCap } from "react-icons/fa6";
+import { IoIosArrowForward } from "react-icons/io";
 
 const ApplicationForm = () => 
 {
   return (
-    <div className="w-[400px] h-[90%] mt-5 bg-white rounded-xl border-t-8 border-[#f8b62d] shadow-lg p-5">
+    <div className="w-[400px] h-[90%] mt-5 bg-white rounded-xl border-t-8 border-[#f8b62d] shadow-lg p-5 z-30">
       {/* Header */}
       <div className="flex justify-between items-center mb-4">
         <div className="flex items-center gap-2 text-lg font-semibold">
@@ -63,7 +63,7 @@ const ApplicationForm = () =>
           type="submit"
           className="w-full bg-[#152347] hover:bg-[#31343b] text-white text-lg font-semibold py-3 rounded-md  transition flex justify-center items-center gap-2"
         >
-          Book Your Free Counseling <FaGreaterThan />
+          Book Your Free Counseling <IoIosArrowForward />
         </button>
 
         {/* Terms and Privacy */}
