@@ -16,7 +16,7 @@ const Footer = ({setFormOpen}) => {
 
       <button
         onClick={()=>setFormOpen(true)}
-        className="mt-8 bg-[#f8b62d] text-[#152347] lg:w-full m-auto w-1/2 py-3 lg:px-8 rounded-lg font-bold shadow-lg 
+        className="mt-8 bg-[#f8b62d] text-[#152347]  m-auto w-1/4 py-3 lg:px-8 rounded-lg font-bold shadow-lg 
         hover:bg-[#f6a61d] hover:scale-110 transition duration-300"
         aria-label="Apply now for ViaCerta Abroad"
       >

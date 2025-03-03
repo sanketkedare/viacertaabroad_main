@@ -70,7 +70,7 @@ const SuccessStories = () => {
 
       <section className="py-16 px-6 bg-gray-100 text-[#152347]">
         <div className="max-w-6xl mx-auto text-center">
-          <h1 className="text-4xl font-extrabold tracking-wide">🎓 Success Stories</h1>
+          <h1 className="lg:text-4xl text-3xl font-extrabold tracking-wide">🎓 Success Stories</h1>
           <p className="mt-4 text-lg text-gray-600">
             Meet our students who achieved their study abroad dreams! 🚀
           </p>

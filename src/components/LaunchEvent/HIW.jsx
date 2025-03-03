@@ -32,6 +32,7 @@ const HIW = ({setFormOpen}) => {
 
       {/* CTA Button */}
       <button
+      onClick={()=> setFormOpen(true)}
         className="mt-8 bg-[#f8b62d] text-[#152347] py-3 px-8 rounded-lg font-bold shadow-lg hover:bg-[#f6a61d] transition-all duration-300"
         aria-label="Apply for scholarship now"
       >

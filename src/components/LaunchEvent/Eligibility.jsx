@@ -1,12 +1,21 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Head from "next/head";
+import { FaTimes } from "react-icons/fa";
 
-const Eligibility = ({setFormOpen}) => {
+const Eligibility = ({ setFormOpen }) => {
+  const [showPrice, setShowPrice] = useState(false);
+
+  useEffect(() => {
+    setTimeout(()=>setShowPrice(true),4000);
+    return () => setShowPrice(false);
+  }, []);
+
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "EducationalOccupationalCredential",
     "name": "Eligibility Criteria",
-    "description": "Find out who can apply for international study programs through ViaCerta Abroad. Check eligibility requirements for Bachelor's, Master's, and Ph.D. programs.",
+    "description":
+      "Find out who can apply for international study programs through ViaCerta Abroad. Check eligibility requirements for Bachelor's, Master's, and Ph.D. programs.",
     "educationalLevel": ["Bachelor's Degree", "Master's Degree", "Ph.D."],
     "applicableCountry": ["India"],
     "eligibleRegion": ["UK", "Germany", "Australia", "Canada", "USA", "France"],
@@ -33,12 +42,12 @@ const Eligibility = ({setFormOpen}) => {
         <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
       </Head>
 
+      {/* Main Section */}
       <section
         className="py-12 px-6 sm:px-12 lg:px-20 xl:px-32 text-center bg-gradient-to-r from-[#152347] to-[#1d2951] text-white"
         aria-labelledby="eligibility-title"
       >
         <div className="max-w-5xl mx-auto">
-          {/* Title */}
           <h1 id="eligibility-title" className="text-3xl sm:text-4xl font-bold tracking-wide">
             🎓 Eligibility Criteria
           </h1>
@@ -62,15 +71,15 @@ const Eligibility = ({setFormOpen}) => {
             ))}
           </ul>
 
-          {/* Additional Info */}
+          {/* Countries */}
           <div className="mt-8 bg-[#1f3a60] p-4 sm:p-6 rounded-lg shadow-lg text-center">
             <h3 className="text-lg sm:text-xl font-bold text-yellow-400">🌍 Countries Eligible</h3>
             <p className="mt-2 text-gray-300">UK, Germany, Australia, Canada, USA, France, and more.</p>
           </div>
 
-          {/* CTA Button */}
+          {/* Apply Now Button */}
           <button
-           onClick={()=>setFormOpen(true)}
+            onClick={() => setFormOpen(true)}
             className="mt-8 bg-[#f8b62d] text-[#152347] py-3 px-6 sm:px-8 sm:py-4 text-sm sm:text-lg rounded-lg font-bold shadow-lg hover:bg-[#f6a61d] hover:scale-105 transition duration-300"
             aria-label="Check your eligibility now"
           >
@@ -78,6 +87,37 @@ const Eligibility = ({setFormOpen}) => {
           </button>
         </div>
       </section>
+
+      {/* Fixed Price Tag */}
+      {showPrice && (
+        <div className="fixed bottom-28 right-5 bg-[#f8b62d] text-[#152347] px-6 py-3 text-lg font-bold rounded-full shadow-xl flex items-center gap-3 animate-fade-in">
+          <span>💰 Price: ₹3999</span>
+          <button
+            onClick={() => setShowPrice(false)}
+            className="text-[#152347] hover:text-red-500 transition z-50"
+            aria-label="Close price tag"
+          >
+            <FaTimes />
+          </button>
+        </div>
+      )}
+
+      {/* Animation Styles */}
+      <style jsx>{`
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+            transform: translateY(10px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        .animate-fade-in {
+          animation: fadeIn 0.5s ease-out;
+        }
+      `}</style>
     </>
   );
 };
