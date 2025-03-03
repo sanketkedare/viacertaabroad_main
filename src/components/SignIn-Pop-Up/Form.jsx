@@ -5,7 +5,7 @@ const Form = ({ mode }) => {
   const [loginWithEmail, setLoginWithEmail] = useState(false);
 
   return (
-    <div className="w-[80%] mb-4 bg-white p-6 rounded-xl shadow-lg">
+    <div className="lg:w-[80%]  mb-4 bg-white p-6 rounded-xl shadow-lg">
       <div className="flex flex-col gap-4 py-2">
         {mode === "Sign Up" && (
           <>

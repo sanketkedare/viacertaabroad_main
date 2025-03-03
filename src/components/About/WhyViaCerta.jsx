@@ -12,19 +12,19 @@ const WhyViaCerta = () => {
   ];
 
   return (
-    <section className="bg-[#152347] py-16 h-screen">
-      <div className="container mx-auto px-10 w-9/12 m-auto">
+    <section className="bg-[#152347] py-16 min-h-screen">
+      <div className="container mx-auto lg:px-10 lg:w-9/12 m-auto">
         {/* Heading */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-[#f8b62d]">Why Choose ViaCerta Abroad?</h2>
-          <p className="text-lg text-gray-300 mt-4 w-3/4 mx-auto">
+          <h2 className="lg:text-4xl text-xl font-bold text-[#f8b62d]">Why Choose ViaCerta Abroad?</h2>
+          <p className="lg:text-lg text-gray-300 mt-4 w-3/4 mx-auto">
             We make your study abroad journey smooth and stress-free by providing complete 
             support from university selection to career opportunities.
           </p>
         </div>
 
         {/* Benefits Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 text-white">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 text-white px-4">
           {benefits.map((benefit, index) => (
             <div
               key={index}
@@ -32,8 +32,8 @@ const WhyViaCerta = () => {
             >
               <CheckCircle className="text-[#f8b62d] w-8 h-8" />
               <div>
-                <h3 className="text-2xl font-semibold">{benefit.title}</h3>
-                <p className="mt-2 text-gray-200">{benefit.desc}</p>
+                <h3 className="lg:text-2xl  font-semibold">{benefit.title}</h3>
+                <p className="mt-2 text-gray-200 text-sm">{benefit.desc}</p>
               </div>
             </div>
           ))}

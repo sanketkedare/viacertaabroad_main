@@ -7,7 +7,7 @@ const HeroSection = () => {
   let VIDEO_URL = ""
   // "https://www.youtube.com/embed/B_UbDtoR16I?autoplay=1&mute=1&loop=1&controls=0&disablekb=1&modestbranding=1&showinfo=0&rel=0&playlist=B_UbDtoR16I";
   return (
-    <section className="relative shadow-sm lg:h-[70vh] overflow-hidden bg-black">
+    <section className="relative w-full shadow-sm lg:h-[70vh] overflow-hidden bg-black px-4 p-2">
       {/* Background Video */}
       <div className="absolute inset-0 w-full h-full">
         <iframe
@@ -25,17 +25,17 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-black opacity-50 z-0"></div>
 
       {/* Content Overlay */}
-      <div className="relative z-10 grid lg:grid-cols-3 h-full lg:w-9/12 w-11/12 m-auto">
+      <div className="relative z-10 lg:grid lg:grid-cols-3 h-full lg:w-9/12 m-auto">
         {/* Hero Text */}
-        <div className="flex flex-col gap-10 justify-center h-full col-span-2 text-white">
-          <div>
-            <p className="text-4xl font-bold py-2">
+        <div className="flex flex-col lg:gap-10 gap-4 justify-center lg:items-start items-center h-full col-span-2 text-white">
+          <div className="lg:text-left text-center ">
+            <p className="lg:text-4xl text-lg font-bold py-2">
               Study Abroad with ViaCerta Abroad
             </p>
-            <p className="text-2xl font-bold py-2">Building Careers Globally</p>
+            <p className="lg:text-2xl font-bold lg:py-2">Building Careers Globally</p>
           </div>
 
-          <div className="flex gap-5 items-center">
+          <div className="hidden lg:flex gap-5 items-center">
             <div>
               <p className="text-3xl text-[#f8b62d]  font-semibold">80+</p>
               <p className="text-xl">University Partners</p>
@@ -46,8 +46,9 @@ const HeroSection = () => {
               <p className="text-xl">Careers Transformed</p>
             </div>
           </div>
+
           <div>
-          <button className="cursor-pointer p-2 font-semibold text-xl flex items-center gap-2 transition px-6 bg-[#152347] hover:bg-[#3b445c]   text-[#ffffff] rounded-sm">
+          <button className="cursor-pointer p-2 font-semibold text-xl  hidden lg:flex items-center gap-2 transition px-6 bg-[#152347] hover:bg-[#3b445c]   text-[#ffffff] rounded-sm">
             Explore Courses <IoIosArrowForward/>
           </button>
           </div>
@@ -56,6 +57,25 @@ const HeroSection = () => {
 
         {/* Placeholder for Counselling Form */}
         <ApplicationForm/>
+
+        {/* For Small Screen */}
+        <div className="lg:hidden flex flex-col items-center gap-3 mt-4 text-white my-10">
+          <div className="flex gap-5 items-center my-5">
+            <div className="text-center">
+              <p className="text-2xl text-[#f8b62d] font-semibold">80+</p>
+              <p className="text-sm">University Partners</p>
+            </div>
+            <p className="rotate-90">//////</p>
+            <div className="text-center">
+              <p className="text-2xl text-[#f8b62d] font-semibold">10K+</p>
+              <p className="text-sm">Careers Transformed</p>
+            </div>
+          </div>
+
+          <button className="cursor-pointer my-5 p-2 font-semibold text-lg flex items-center gap-2 transition px-6 bg-[#152347] hover:bg-[#3b445c] text-[#ffffff] rounded-sm">
+            Explore Courses <IoIosArrowForward />
+          </button>
+        </div>
        
       </div>
     </section>

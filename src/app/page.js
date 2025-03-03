@@ -7,7 +7,7 @@ import Navbar from "@/components/Navbar/Navbar";
 
 export default function Home() {
   return (
-    <div className="w-full overflow-hidden">
+    <div className="w-full lg:overflow-hidden relative">
       <Navbar/>
       <HeroSection/>
       <About/>

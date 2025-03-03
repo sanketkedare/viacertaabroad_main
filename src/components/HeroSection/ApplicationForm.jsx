@@ -6,21 +6,21 @@ import { IoIosArrowForward } from "react-icons/io";
 const ApplicationForm = () => 
 {
   return (
-    <div className="w-[400px] h-[90%] mt-5 bg-white rounded-xl border-t-8 border-[#f8b62d] shadow-lg p-5 z-30">
+    <div className="lg:w-[400px] lg:h-[90%] lg:mt-5 bg-white rounded-xl border-t-8 border-[#f8b62d] shadow-lg p-5 z-30">
       {/* Header */}
-      <div className="flex justify-between items-center mb-4">
-        <div className="flex items-center gap-2 text-lg font-semibold">
+      <div className="flex justify-between =items-center mb-4">
+        <div className="flex items-center gap-2 lg:text-lg font-semibold">
           <FaGraduationCap className="text-[#2c31b6]" />
           <span className="text-[#2c31b6]">250+ </span>courses
         </div>
-        <div className="flex items-center gap-2 text-lg font-semibold">
+        <div className="flex items-center gap-2 lg:text-lg font-semibold">
           <FaGlobe className="text-[#2c31b6]" />
           <span className="text-[#2c31b6]">9 </span>countries
         </div>
       </div>
 
       {/* Form Title */}
-      <h2 className="text-2xl font-bold mb-4">
+      <h2 className="lg:text-2xl font-bold mb-4">
         International Degree Now in Your Budget
       </h2>
 
@@ -61,13 +61,13 @@ const ApplicationForm = () =>
         {/* Submit Button */}
         <button
           type="submit"
-          className="w-full bg-[#152347] hover:bg-[#31343b] text-white text-lg font-semibold py-3 rounded-md  transition flex justify-center items-center gap-2"
+          className="w-full bg-[#152347] hover:bg-[#31343b] text-white lg:text-lg font-semibold py-3 rounded-md  transition flex justify-center items-center gap-2"
         >
           Book Your Free Counseling <IoIosArrowForward />
         </button>
 
         {/* Terms and Privacy */}
-        <p className="text-[10px] m-auto text-gray-500 text-center mt-2 flex">
+        <p className="text-[10px] m-auto text-gray-500 text-center mt-2 flex flex-wrap gap-2">
           By submitting this form, you agree to the{" "}
           <a href="#" className="text-blue-500 underline">
             Terms of Use

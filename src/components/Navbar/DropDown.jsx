@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import ExploreCourses from "./ExploreCourses";
 import SecondDropDown from "./SecondDropDown";
+import { FaTimes } from "react-icons/fa";
 
 const DropDown = ({ openDropdown, setOpenDropdown }) => {
   const dropdownRef = useRef(null);
@@ -9,26 +10,21 @@ const DropDown = ({ openDropdown, setOpenDropdown }) => {
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-        setOpenDropdown(null); // Close the dropdown
+        setOpenDropdown(null);
       }
     };
 
-    // Add event listener
     document.addEventListener("mousedown", handleClickOutside);
-
-    return () => {
-      // Cleanup event listener
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [setOpenDropdown]);
 
   return (
     <div
       ref={dropdownRef}
-      className="absolute top-20 z-50 p-4 left-48 mt-2 w-9/12 m-auto min-h-[60vh] max-h-[80vh] bg-white border rounded shadow-md"
-    >
+      className="absolute lg:top-20 top-0 z-50 p-4 lg:left-48 mt-2 lg:w-9/12 w-full lg:min-h-[50vh] min-h-screen bg-white lg:border rounded shadow-md"
+    >      
       {openDropdown === "Explore Courses" ? (
-        <ExploreCourses />
+        <ExploreCourses setOpenDropdown={setOpenDropdown} />
       ) : (
         <SecondDropDown openDropdown={openDropdown} />
       )}

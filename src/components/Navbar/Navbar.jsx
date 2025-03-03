@@ -7,19 +7,31 @@ import SignIn from "../SignIn-Pop-Up/SignIn";
 const Navbar = () => {
   const [signInOpen, setSignInOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const navlinks = ["Countries", "Exams", "Resources", "More"];
   const [openDropdown, setOpenDropdown] = useState(null);
+  const navlinks = ["Countries", "Exams", "Resources", "More"];
 
   const toggleDropdown = (menu) => {
-    setOpenDropdown(openDropdown === menu ? null : menu);
+    setOpenDropdown((prev) => (prev === menu ? null : menu));
   };
 
+  const mobileMenuToggler =() =>{
+    setMobileMenuOpen(!mobileMenuOpen)
+
+  }
+
   return (
-    <nav className="w-full bg-white shadow-md text-sm">
+    <nav className="relative w-full bg-white shadow-md text-sm lg:p-4 z-50">
       {signInOpen && <SignIn setSignInOpen={setSignInOpen} />}
-      <div className="lg:w-9/12 m-auto">
+      <div className="lg:w-9/12 m-auto px-4 sm:px-2">
         {/* Desktop Navbar */}
-        <div className=" mx-auto lg:w-full w-11/12 flex items-center justify-between py-3">
+        <div className="flex items-center lg:justify-between gap-5 h-[70px] lg:py-3 w-full">
+          {/* Button for small screens */}
+          <button
+            onClick={() => toggleDropdown("Explore Courses")}
+            className="cursor-pointer text-sm font-semibold flex w-[100px] md:hidden items-center gap-2 transition p-2 lg:px-4 bg-[#152347] hover:bg-[#ffffff] hover:text-[#152347] hover:border border-[#152347] text-[#ffffff] rounded-sm dropdown-button"
+          >
+            COURSES <FaChevronDown size={14} />
+          </button>
           {/* Logo */}
           <div className="w-[100px]">
             <img
@@ -29,29 +41,26 @@ const Navbar = () => {
             />
           </div>
           <button
-              onClick={() => toggleDropdown("Explore Courses")}
-              className="cursor-pointer font-semibold flex items-center gap-2 transition p-2 px-4 bg-[#152347] hover:bg-[#ffffff] hover:text-[#152347] hover:border border-[#152347] text-[#ffffff] rounded-sm"
-            >
-              Explore Courses <FaChevronDown size={14} />
-            </button>
+            onClick={() => toggleDropdown("Explore Courses")}
+            className="cursor-pointer font-semibold hidden md:flex items-center gap-2 transition p-2 px-4 bg-[#152347] hover:bg-[#ffffff] hover:text-[#152347] hover:border border-[#152347] text-[#ffffff] rounded-sm dropdown-button"
+          >
+            Explore Courses <FaChevronDown size={14} />
+          </button>
           {/* Desktop Links */}
           <div className="hidden md:flex items-center gap-12">
-           
-
             {navlinks.map((i) => (
               <div key={i}>
                 <button
                   onClick={() => toggleDropdown(i)}
-                  className="flex items-center gap-2 cursor-pointer font-semibold hover:text-blue-600 transition"
+                  className={`flex ${
+                    openDropdown === i ? "text-blue-600" : ""
+                  } items-center gap-2 cursor-pointer font-semibold hover:text-blue-600 transition dropdown-button`}
                 >
                   {i} <FaChevronDown size={14} />
                 </button>
               </div>
             ))}
-
-            {openDropdown && <DropDown openDropdown={openDropdown} />}
           </div>
-
           {/* Desktop Auth & Contact */}
           <div className="hidden md:flex items-center gap-8">
             <button
@@ -64,49 +73,50 @@ const Navbar = () => {
               <FaPhoneAlt size={12} /> 1800-123-1234
             </p>
           </div>
-
           {/* Mobile Hamburger Menu */}
           <button
-            className="md:hidden text-[#152347] text-xl z-50"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="md:hidden absolute right-5 text-[#152347] text-xl z-50"
+            onClick={mobileMenuToggler}
           >
-            {mobileMenuOpen ? <FaTimes /> : <FaBars />}
+            <FaBars />
           </button>
         </div>
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden flex flex-col bg-white shadow-lg p-4 absolute top-14 left-0 w-full z-50 mt-10">
+          <div className="md:hidden min-h-screen  flex flex-col bg-white shadow-lg  absolute lg:top-14 -top-10 left-0 w-full z-50 mt-10">
             <button
-              onClick={() => toggleDropdown("Explore Courses")}
-              className="p-2 font-semibold flex justify-between items-center border-b"
+              className="md:hidden absolute right-5 text-[#152347] text-xl z-50 my-2"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
-              Explore Courses <FaChevronDown size={14} />
+              <FaTimes />
             </button>
-
-            {navlinks.map((i) => (
+            <div className="w-1/4 text-sx flex flex-col ">
+              {navlinks.map((i) => (
+                <button
+                  key={i}
+                  onClick={() => toggleDropdown(i)}
+                  className="p-1 py-4 font-semibold flex justify-between flex-wrap items-center border w-full dropdown-button"
+                >
+                  {i}
+                </button>
+              ))}
               <button
-                key={i}
-                onClick={() => toggleDropdown(i)}
-                className="p-2 font-semibold flex justify-between items-center border-b"
+                onClick={() => setSignInOpen(true)}
+                className="p-1 py-4 font-semibold flex justify-between flex-wrap items-center border w-full dropdown-button"
               >
-                {i} <FaChevronDown size={14} />
+                Sign In
               </button>
-            ))}
-
-            <button
-              onClick={() => setSignInOpen(true)}
-              className="text-[#2c31b6] font-bold p-2"
-            >
-              Sign In
-            </button>
-            <p className="text-[#2c31b6] font-bold flex items-center p-2">
-              <FaPhoneAlt size={12} className="mr-1" />
-              1800-123-1234
-            </p>
+            </div>
           </div>
         )}
       </div>
+      {openDropdown && (
+        <DropDown
+          openDropdown={openDropdown}
+          setOpenDropdown={setOpenDropdown}
+        />
+      )}
     </nav>
   );
 };
