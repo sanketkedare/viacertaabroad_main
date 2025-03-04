@@ -1,8 +1,8 @@
 export const socialLinks = [
     { href: "#", icon: "Facebook" },
     { href: "#", icon: "Twitter" },
-    { href: "#", icon: "Instagram" },
-    { href: "#", icon: "Linkedin" }
+    { href: "https://www.instagram.com/viacerta.abroad/profilecard/?igsh=ajg1eDZiZjhuZDZi", icon: "Instagram" },
+    { href: "https://www.linkedin.com/company/viacerta/", icon: "Linkedin" }
   ];
   
   export const contactInfo = {
