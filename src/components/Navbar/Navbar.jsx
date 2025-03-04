@@ -3,8 +3,12 @@ import React, { useState } from "react";
 import { FaChevronDown, FaPhoneAlt, FaBars, FaTimes } from "react-icons/fa";
 import DropDown from "./DropDown";
 import SignIn from "../SignIn-Pop-Up/SignIn";
+import { useSelector } from "react-redux";
+import IconDropdown from "../Profile/IconDropdown";
 
 const Navbar = () => {
+  const user = useSelector((state) => state.user.user);
+
   const [signInOpen, setSignInOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
@@ -14,10 +18,9 @@ const Navbar = () => {
     setOpenDropdown((prev) => (prev === menu ? null : menu));
   };
 
-  const mobileMenuToggler =() =>{
-    setMobileMenuOpen(!mobileMenuOpen)
-
-  }
+  const mobileMenuToggler = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
 
   return (
     <nav className="relative w-full bg-white shadow-md text-sm lg:p-4 z-50">
@@ -63,15 +66,18 @@ const Navbar = () => {
           </div>
           {/* Desktop Auth & Contact */}
           <div className="hidden md:flex items-center gap-8">
-            <button
-              onClick={() => setSignInOpen(true)}
-              className="text-[#2c31b6] font-bold hover:text-blue-600 transition"
-            >
-              Sign In
-            </button>
+            {!user && (
+              <button
+                onClick={() => setSignInOpen(true)}
+                className="text-[#2c31b6] font-bold hover:text-blue-600 transition"
+              >
+                Sign In
+              </button>
+            )}
             <p className="flex items-center gap-1 text-[#2c31b6] font-bold">
               <FaPhoneAlt size={12} /> 1800-123-1234
             </p>
+            {user && <IconDropdown />}
           </div>
           {/* Mobile Hamburger Menu */}
           <button
