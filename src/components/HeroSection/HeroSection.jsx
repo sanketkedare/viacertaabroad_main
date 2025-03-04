@@ -3,7 +3,9 @@ import React from "react";
 import ApplicationForm from "./ApplicationForm";
 import { IoIosArrowForward } from "react-icons/io";
 
-const HeroSection = () => {
+const HeroSection = () => 
+{
+  
   let VIDEO_URL = ""
   // "https://www.youtube.com/embed/B_UbDtoR16I?autoplay=1&mute=1&loop=1&controls=0&disablekb=1&modestbranding=1&showinfo=0&rel=0&playlist=B_UbDtoR16I";
   return (
