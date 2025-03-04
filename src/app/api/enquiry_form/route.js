@@ -6,7 +6,9 @@ connectToDb();
 export async function POST(request) {
   try {
     const { name, email, mobile } = await request.json();
-    const existingUser = await Enquiry_User.find({ email: email });
+    
+    const existingUser = await Enquiry_User.findOne({ email: email });
+   
     if (existingUser) {
       return new Response(
         JSON.stringify({

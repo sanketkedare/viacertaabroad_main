@@ -3,72 +3,29 @@ import User from "@/models/users";
 
 connectToDb();
 
-export async function PUT(request) {
+export async function GET(request) {
   try {
-    const url = new URL(request.nextUrl);
-    const data = decodeURIComponent(url.pathname.split("/").pop());
+    // Extract and decode email or mobile from URL
+    const data = decodeURIComponent(new URL(request.nextUrl).pathname.split("/").pop());
 
-    console.log("data from url:", data);
-
-    if (!data) {
-      return new Response(
-        JSON.stringify({
-          success: false,
-          message: "Data parameter is required.",
-        }),
-        { status: 400 }
-      );
+    // Validate data (must be email or numeric mobile number)
+    if (!data || (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data) && !/^\d+$/.test(data))) {
+      return Response.json({ success: false, message: "Invalid email or mobile format." }, { status: 400 });
     }
 
-    const isEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data);
-    const isPhoneNumber = /^\d+$/.test(data);
+    // Search user by email or mobile
+    const user = await User.findOne(data.includes("@") ? { email: data } : { mobile: data });
 
-    const searchQuery = isEmail
-      ? { email: data }
-      : isPhoneNumber
-      ? { mobile: data }
-      : null;
-
-    if (!searchQuery) {
-      return new Response(
-        JSON.stringify({
-          success: false,
-          message: "Invalid email or mobile format.",
-        }),
-        { status: 400 }
-      );
-    }
-
-    const user = await User.findOne(searchQuery);
-
+    // Handle user not found
     if (!user) {
-      return new Response(
-        JSON.stringify({ success: false, message: "User not found." }),
-        { status: 404 }
-      );
+      return Response.json({ success: false, message: "User not found." }, { status: 404 });
     }
 
-    const { name, email, mobile } = await request.json();
+    // Return user data (excluding sensitive info)
+    return Response.json({ success: true, user }, { status: 200 });
 
-    if (name) user.name = name;
-    if (email) user.email = email;
-    if (mobile) user.mobile = mobile;
-
-    await user.save();
-
-    return new Response(
-      JSON.stringify({
-        success: true,
-        message: "User updated successfully.",
-        user,
-      }),
-      { status: 200 }
-    );
   } catch (error) {
-    console.error("Error updating user:", error);
-    return new Response(
-      JSON.stringify({ success: false, message: "Internal Server Error." }),
-      { status: 500 }
-    );
+    console.error("Error fetching user:", error);
+    return Response.json({ success: false, message: "Internal Server Error." }, { status: 500 });
   }
 }

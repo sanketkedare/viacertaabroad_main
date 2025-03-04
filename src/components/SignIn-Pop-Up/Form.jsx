@@ -2,14 +2,11 @@ import React, { useEffect, useState } from "react";
 import { Mail, Phone, User } from "lucide-react";
 import { SIGN_IN, SIGN_UP } from "./utils";
 import { useDispatch } from "react-redux";
+import { setUser } from "@/Redux/authSlice";  
 
 const Form = ({ mode, setSignInOpen }) => {
   const dispatch = useDispatch();
-  const [message, setMessage] = useState({
-    show: false,
-    success: false,
-    message: "",
-  });
+  const [message, setMessage] = useState({ show: false, success: false, message: "" });
   const [otpRequested, setOtpRequested] = useState(false);
   const [loginWithEmail, setLoginWithEmail] = useState(false);
   const [name, setName] = useState("");
@@ -18,55 +15,59 @@ const Form = ({ mode, setSignInOpen }) => {
   const [OTP, setOTP] = useState("");
   const [generatedOTP, setGeneratedOTP] = useState(null);
 
+  const authHandler = async () => {
+    const REGISTER_URL = "/api/user/signup"; // POST
+    const GET_USER_URL = `/api/user/getdata/${loginWithEmail ? email : mobile}`; // GET
 
-  const authHandler = async() =>
-  {
-    const REGISTER_URL = "/api/user/signup" // POST
-    const GET_USER_URL = "/api/user/getdata/[:data]"  // Get email or mobile
+    try {
+      if (mode === SIGN_IN) {
+        const response = await fetch(GET_USER_URL);
+        console.log(response)
+        const data = await response.json();
 
-    if(mode = SIGN_IN)
-    {
+        if (response.ok) {
+          dispatch(setUser(data)); 
+          setMessage({ show: true, success: true, message: "Login Successful!" });
+          setTimeout(() => setSignInOpen(false), 1500);
+        } else {
+          setMessage({ show: true, success: false, message: data.message || "User not found!" });
+        }
+      } else {
+        const response = await fetch(REGISTER_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ name, email, mobile }),
+        });
 
-      // Fetch data from DB
-      // Update Redux
+        const data = await response.json();
+
+        if (response.ok) {
+          dispatch(setUser(data)); // Update Redux state
+          setMessage({ show: true, success: true, message: "Registration Successful!" });
+          setTimeout(() => setSignInOpen(false), 1500);
+        } else {
+          setMessage({ show: true, success: false, message: data.message || "Sign-up failed!" });
+        }
+      }
+    } catch (error) {
+      setMessage({ show: true, success: false, message: "Network error. Please try again." });
     }
-    else
-    {
-      // Send Data to DB
-      // Update redux if Data added
-      // If error , Send massage
+  };
 
-    }
-
-  }
   const validateInputs = () => {
-    console.log(loginWithEmail, mobile, email);
-
     if (mode === SIGN_UP && name.length < 3) {
-      setMessage({
-        show: true,
-        success: false,
-        message: "Name must be at least 3 characters long.",
-      });
+      setMessage({ show: true, success: false, message: "Name must be at least 3 characters long." });
       return false;
     }
 
     if (loginWithEmail) {
       if (!email.includes("@") || !email.includes(".")) {
-        setMessage({
-          show: true,
-          success: false,
-          message: "Enter a valid email address.",
-        });
+        setMessage({ show: true, success: false, message: "Enter a valid email address." });
         return false;
       }
     } else {
       if (mobile.length !== 10 || isNaN(mobile)) {
-        setMessage({
-          show: true,
-          success: false,
-          message: "Enter a valid 10-digit mobile number.",
-        });
+        setMessage({ show: true, success: false, message: "Enter a valid 10-digit mobile number." });
         return false;
       }
     }
@@ -75,7 +76,7 @@ const Form = ({ mode, setSignInOpen }) => {
   };
 
   const generateOTP = () => {
-    const myOTP = Math.floor(1000 + Math.random() * 9000); // 4-digit OTP
+    const myOTP = Math.floor(1000 + Math.random() * 9000);
     setGeneratedOTP(myOTP);
     setOtpRequested(true);
     console.log("Generated OTP:", myOTP);
@@ -86,19 +87,10 @@ const Form = ({ mode, setSignInOpen }) => {
 
     if (otpRequested) {
       if (parseInt(OTP) === generatedOTP) {
-        setMessage({
-          show: true,
-          success: true,
-          message: "OTP Verified Successfully!",
-        });
+        setMessage({ show: true, success: true, message: "OTP Verified Successfully!" });
         await authHandler();
-        setTimeout(() => setSignInOpen(false), 2000);
       } else {
-        setMessage({
-          show: true,
-          success: false,
-          message: "Invalid OTP. Please try again.",
-        });
+        setMessage({ show: true, success: false, message: "Invalid OTP. Please try again." });
       }
       return;
     }
@@ -106,30 +98,19 @@ const Form = ({ mode, setSignInOpen }) => {
     if (!validateInputs()) return;
 
     generateOTP();
-    setMessage({
-      show: true,
-      success: true,
-      message: "OTP Sent Successfully!",
-    });
-
-  
-
-    console.log(name, email, mobile);
+    setMessage({ show: true, success: true, message: "OTP Sent Successfully!" });
   };
 
   useEffect(() => {
     setMessage({ show: false, success: false, message: "" });
+    setOtpRequested(false);
   }, [mode, loginWithEmail]);
 
   return (
     <form className="lg:w-[80%] mb-4 bg-white p-6 rounded-xl shadow-lg">
       <div className="flex flex-col gap-4 py-2">
         {message.show && (
-          <div
-            className={`p-2 text-white rounded-md ${
-              message.success ? "bg-green-500" : "bg-red-500"
-            }`}
-          >
+          <div className={`p-2 text-white rounded-md ${message.success ? "bg-green-500" : "bg-red-500"}`}>
             {message.message}
           </div>
         )}
@@ -172,33 +153,19 @@ const Form = ({ mode, setSignInOpen }) => {
             )}
 
             <div className="flex items-center border rounded-md p-2">
-              {loginWithEmail ? (
-                <Mail className="mr-2 text-gray-500" />
-              ) : (
-                <Phone className="mr-2 text-gray-500" />
-              )}
+              {loginWithEmail ? <Mail className="mr-2 text-gray-500" /> : <Phone className="mr-2 text-gray-500" />}
               <input
                 className="flex-1 p-2 outline-none"
-                placeholder={
-                  loginWithEmail ? "Enter Email here" : "Enter Your Number"
-                }
+                placeholder={loginWithEmail ? "Enter Email here" : "Enter Your Number"}
                 value={loginWithEmail ? email : mobile}
                 type={loginWithEmail ? "email" : "number"}
-                onChange={(e) =>
-                  loginWithEmail
-                    ? setEmail(e.target.value)
-                    : setMobile(e.target.value)
-                }
+                onChange={(e) => (loginWithEmail ? setEmail(e.target.value) : setMobile(e.target.value))}
               />
             </div>
           </>
         )}
 
-        <button
-          className="w-full bg-[#152347] text-white p-2 rounded-md"
-          onClick={submitData}
-          type="submit"
-        >
+        <button className="w-full bg-[#152347] text-white p-2 rounded-md" onClick={submitData} type="submit">
           {otpRequested ? "Submit OTP" : "Request OTP"}
         </button>
 
