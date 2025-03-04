@@ -22,7 +22,7 @@ export async function POST(request) {
     if (existingUser) {
       return new Response(
         JSON.stringify({ success: false, message: "User already exists." }),
-        { status: 409 }
+        { status: 409, headers: { "Content-Type": "application/json" }, }
       );
     }
 
@@ -35,13 +35,13 @@ export async function POST(request) {
         message: "User created successfully.",
         user: newUser,
       }),
-      { status: 201 }
+      { status: 201, headers: { "Content-Type": "application/json" }, }
     );
   } catch (error) {
     console.error("Error creating user:", error);
     return new Response(
       JSON.stringify({ success: false, message: "Internal Server Error." }),
-      { status: 500 }
+      { status: 500 , headers: { "Content-Type": "application/json" },}
     );
   }
 }
@@ -52,13 +52,13 @@ export async function GET() {
 
     return new Response(
       JSON.stringify({ success: true, totalUsers: users.length, users }),
-      { status: 200 }
+      { status: 200, headers: { "Content-Type": "application/json" } }
     );
   } catch (error) {
     console.error("Error fetching users:", error);
     return new Response(
       JSON.stringify({ success: false, message: "Internal Server Error." }),
-      { status: 500 }
+      { status: 500 , headers: { "Content-Type": "application/json" },}
     );
   }
 }

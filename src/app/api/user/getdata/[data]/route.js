@@ -35,7 +35,7 @@ export async function PUT(request) {
           success: false,
           message: "Invalid email or mobile format.",
         }),
-        { status: 400 }
+        { status: 400, headers: { "Content-Type": "application/json" }, }
       );
     }
 
@@ -44,7 +44,7 @@ export async function PUT(request) {
     if (!user) {
       return new Response(
         JSON.stringify({ success: false, message: "User not found." }),
-        { status: 404 }
+        { status: 404 , headers: { "Content-Type": "application/json" },}
       );
     }
 
@@ -62,13 +62,13 @@ export async function PUT(request) {
         message: "User updated successfully.",
         user,
       }),
-      { status: 200 }
+      { status: 200, headers: { "Content-Type": "application/json" }, }
     );
   } catch (error) {
     console.error("Error updating user:", error);
     return new Response(
       JSON.stringify({ success: false, message: "Internal Server Error." }),
-      { status: 500 }
+      { status: 500, headers: { "Content-Type": "application/json" }, }
     );
   }
 }
