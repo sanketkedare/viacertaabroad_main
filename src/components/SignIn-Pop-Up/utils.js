@@ -4,3 +4,7 @@ export const benefits = [
   "Upload documents for verification from experts",
   "Monitor application progress",
 ];
+
+
+export const SIGN_UP = "SIGN_UP";
+export const SIGN_IN = "SIGN_IN";
