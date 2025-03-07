@@ -40,6 +40,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-dummydata.js
+backupCode.js
 package-lock.json
-whatsapp
+ 
