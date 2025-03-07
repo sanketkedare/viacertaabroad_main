@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Mail, Phone, User } from "lucide-react";
 import { SIGN_IN, SIGN_UP } from "./utils";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setUser } from "@/Redux/authSlice";  
 
-const Form = ({ mode, setSignInOpen }) => {
+const Form = ({ mode, setSignInOpen }) => 
+{
   const dispatch = useDispatch();
   const [message, setMessage] = useState({ show: false, success: false, message: "" });
   const [otpRequested, setOtpRequested] = useState(false);
@@ -15,6 +16,12 @@ const Form = ({ mode, setSignInOpen }) => {
   const [OTP, setOTP] = useState("");
   const [generatedOTP, setGeneratedOTP] = useState(null);
 
+  const storeCredentials = (user) => {
+    if (user) {
+      localStorage.setItem("viacerta-user", JSON.stringify(user.user));
+    }
+  };
+
   const authHandler = async () => {
     const REGISTER_URL = "/api/user/signup"; // POST
     const GET_USER_URL = `/api/user/getdata/${loginWithEmail ? email : mobile}`; // GET
@@ -22,11 +29,11 @@ const Form = ({ mode, setSignInOpen }) => {
     try {
       if (mode === SIGN_IN) {
         const response = await fetch(GET_USER_URL);
-        console.log(response)
         const data = await response.json();
 
         if (response.ok) {
           dispatch(setUser(data)); 
+          storeCredentials(data)
           setMessage({ show: true, success: true, message: "Login Successful!" });
           setTimeout(() => setSignInOpen(false), 1500);
         } else {
@@ -43,6 +50,7 @@ const Form = ({ mode, setSignInOpen }) => {
 
         if (response.ok) {
           dispatch(setUser(data)); // Update Redux state
+          storeCredentials(data);
           setMessage({ show: true, success: true, message: "Registration Successful!" });
           setTimeout(() => setSignInOpen(false), 1500);
         } else {
@@ -104,7 +112,11 @@ const Form = ({ mode, setSignInOpen }) => {
   useEffect(() => {
     setMessage({ show: false, success: false, message: "" });
     setOtpRequested(false);
+    setOTP('')
+    setEmail('');
+    setMobile('');
   }, [mode, loginWithEmail]);
+
 
   return (
     <form className="lg:w-[80%] mb-4 bg-white p-6 rounded-xl shadow-lg">

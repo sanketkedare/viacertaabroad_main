@@ -1,14 +1,16 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaChevronDown, FaPhoneAlt, FaBars, FaTimes } from "react-icons/fa";
 import DropDown from "./DropDown";
 import SignIn from "../SignIn-Pop-Up/SignIn";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import IconDropdown from "../Profile/IconDropdown";
+import { setUser } from "@/Redux/authSlice";
+import Link from "next/link";
 
 const Navbar = () => {
+  const dispatch = useDispatch();
   const user = useSelector((state) => state.user.user);
-
   const [signInOpen, setSignInOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
@@ -21,6 +23,18 @@ const Navbar = () => {
   const mobileMenuToggler = () => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
+
+  const updateStore = () => {
+    const storedUser = localStorage.getItem("viacerta-user");
+    if (storedUser) {
+      const user = JSON.parse(storedUser);
+      dispatch(setUser(user));
+    }
+  };
+
+  useEffect(()=>{
+    updateStore()
+  },[])
 
   return (
     <nav className="relative w-full bg-white shadow-md text-sm lg:p-4 z-50">
@@ -36,13 +50,14 @@ const Navbar = () => {
             COURSES <FaChevronDown size={14} />
           </button>
           {/* Logo */}
+          <Link href='/'>
           <div className="w-[100px]">
             <img
               className="object-contain cursor-pointer"
               src="/viaCerta-logo.png"
               alt="Logo"
             />
-          </div>
+          </div></Link>
           <button
             onClick={() => toggleDropdown("Explore Courses")}
             className="cursor-pointer font-semibold hidden md:flex items-center gap-2 transition p-2 px-4 bg-[#152347] hover:bg-[#ffffff] hover:text-[#152347] hover:border border-[#152347] text-[#ffffff] rounded-sm dropdown-button"
