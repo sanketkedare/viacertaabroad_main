@@ -1,29 +1,20 @@
-"use client"
+import { AlertTriangle } from "lucide-react";
 
-import About from "@/components/About/About";
-import FAQs from "@/components/About/FAQs";
-import WhyViaCerta from "@/components/About/WhyViaCerta";
-// import AdSense from "@/components/Ads/AdSense";
-import Footer from "@/components/Footer/Footer";
-import Help from "@/components/Help/Help";
-import HeroSection from "@/components/HeroSection/HeroSection";
-import Navbar from "@/components/Navbar/Navbar";
-import store from "@/Redux/appStore";
-import { Provider } from "react-redux";
-
-export default function Home() {
+export default function MaintenancePage() {
   return (
-    <Provider store={store}>
-      <div className="w-full lg:overflow-hidden relative">
-        <Help/>
-        <Navbar />
-        <HeroSection />
-        {/* <AdSense/> */}
-        <About />
-        <WhyViaCerta />
-        <FAQs />
-        <Footer />
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 text-center p-6">
+      <div
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="bg-white shadow-lg rounded-2xl p-8 max-w-md"
+      >
+        <AlertTriangle className="w-16 h-16 text-yellow-500 mx-auto mb-4" />
+        <h1 className="text-2xl font-bold text-gray-800 mb-2">We'll be back soon!</h1>
+        <p className="text-gray-600">
+          Our website is currently undergoing maintenance. We appreciate your patience and will be back shortly.
+        </p>
       </div>
-    </Provider>
+    </div>
   );
 }

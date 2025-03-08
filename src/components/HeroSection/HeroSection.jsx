@@ -8,12 +8,12 @@ import { useRouter } from "next/navigation";
 
 const HeroSection = () => {
   const router = useRouter();
-  let VIDEO_URL = "";
+  // let VIDEO_URL = "";
 
   return (
     <section className="relative w-full shadow-sm lg:h-[70vh] overflow-hidden bg-black px-4 p-2">
       {/* Background Video */}
-      <div className="absolute inset-0 w-full h-full">
+      {/* <div className="absolute inset-0 w-full h-full">
         <iframe
           className="w-full h-full absolute inset-0"
           src={VIDEO_URL}
@@ -22,7 +22,7 @@ const HeroSection = () => {
           allow="autoplay"
           allowFullScreen
         ></iframe>
-      </div>
+      </div> */}
 
       {/* Overlay for Readability */}
       <div className="absolute inset-0 bg-black opacity-50 z-0"></div>

@@ -16,6 +16,8 @@ const IconDropdown = () => {
     dispatch(removeUser());
   };
 
+  console.log(user)
+
   return (
     <div className="relative">
       {/* Profile Icon */}
@@ -23,6 +25,7 @@ const IconDropdown = () => {
         className="cursor-pointer"
         onClick={() => setIsOpen((prev) => !prev)}
       >
+
         <div className="text-2xl p-1 rounded-full bg-[#152347] w-[40px] h-[40px] border text-white flex justify-center items-center">
           {user?.email[0].toUpperCase()}
         </div>

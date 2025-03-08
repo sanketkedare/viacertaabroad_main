@@ -74,7 +74,7 @@ const ApplicationForm = () => {
         </div>
         <div className="flex items-center gap-2 lg:text-lg font-semibold">
           <FaGlobe className="text-[#2c31b6]" />
-          <span className="text-[#2c31b6]">9 </span>countries
+          <span className="text-[#2c31b6]">30 </span>countries
         </div>
       </div>
 

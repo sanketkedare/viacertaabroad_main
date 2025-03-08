@@ -18,7 +18,7 @@ const Form = ({ mode, setSignInOpen }) =>
 
   const storeCredentials = (user) => {
     if (user) {
-      localStorage.setItem("viacerta-user", JSON.stringify(user.user));
+      localStorage.setItem("viacerta-user", JSON.stringify(user));
     }
   };
 
@@ -32,8 +32,8 @@ const Form = ({ mode, setSignInOpen }) =>
         const data = await response.json();
 
         if (response.ok) {
-          dispatch(setUser(data)); 
-          storeCredentials(data)
+          dispatch(setUser(data?.user)); 
+          storeCredentials(data?.user)
           setMessage({ show: true, success: true, message: "Login Successful!" });
           setTimeout(() => setSignInOpen(false), 1500);
         } else {
