@@ -16,8 +16,6 @@ const IconDropdown = () => {
     dispatch(removeUser());
   };
 
-  console.log(user)
-
   return (
     <div className="relative">
       {/* Profile Icon */}
