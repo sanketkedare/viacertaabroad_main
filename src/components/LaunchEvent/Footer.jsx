@@ -23,7 +23,7 @@ const Footer = ({setFormOpen}) => {
         📩 APPLY NOW
       </button>
       <div className="flex gap-10 justify-center items-center text-gray-400 ">
-        <Link href="/TermsAndCondition">
+        <Link href="/privacy-policy">
           <button className="text-sm  cursor-pointer my-5">
             Privacy Policy
           </button>
