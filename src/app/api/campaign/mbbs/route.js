@@ -35,8 +35,8 @@ export async function POST(request) {
     });
 
     await newUser.save();
-
-    sendEmail("ashvarygidian1996@gmail.com", newUser, "mbbs_Users");
+    const to = process.env.EMAIL_SEND_TO;
+    sendEmail(to, newUser, "mbbs_Users");
 
     return NextResponse.json(
       { success: true, message: "Entry created successfully", data: newUser },

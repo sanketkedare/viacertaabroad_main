@@ -17,7 +17,6 @@
     "exceljs": "^4.4.0",
     "firebase": "^11.4.0",
     "framer-motion": "^12.4.7",
-    "ioredis": "^5.6.0",
     "jose": "^6.0.8",
     "jsonwebtoken": "^9.0.2",
     "lucide-react": "^0.476.0",
