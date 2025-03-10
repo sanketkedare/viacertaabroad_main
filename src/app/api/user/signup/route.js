@@ -1,18 +1,17 @@
 import { connectToDb } from "@/config/dbConfig";
-import User from "@/models/users";
+import { sendEmail } from "@/app/utils/sendEmail";
+import crypto from "crypto";
+import redisClient from "@/config/redisConfig";  
 
 connectToDb();
 
 export async function POST(request) {
   try {
-    const { name, email, mobile } = await request.json();
+    const { email } = await request.json();
 
-    if (!name || !email || !mobile) {
+    if (!email) {
       return new Response(
-        JSON.stringify({
-          success: false,
-          message: "Name, Email, and Mobile are required.",
-        }),
+        JSON.stringify({ success: false, message: "Email is required." }),
         { status: 400 }
       );
     }
@@ -22,43 +21,32 @@ export async function POST(request) {
     if (existingUser) {
       return new Response(
         JSON.stringify({ success: false, message: "User already exists." }),
-        { status: 409, headers: { "Content-Type": "application/json" }, }
+        { status: 409 }
       );
     }
 
-    const newUser = new User({ name, email, mobile });
-    await newUser.save();
+ 
+    const otp = crypto.randomInt(1000, 9999).toString();
+
+    // Store OTP in Redis (valid for 5 minutes)
+    await redisClient.set(`otp:${email}`, otp, { EX: 300 }); // EX: expiry time in seconds
+
+    // Send OTP via email
+    
+    // await sendEmail(email, otp, "verifyUser");   //unccomment after push code
 
     return new Response(
       JSON.stringify({
         success: true,
-        message: "User created successfully.",
-        user: newUser,
+        message: "OTP sent. Please verify to complete signup.",
       }),
-      { status: 201, headers: { "Content-Type": "application/json" }, }
+      { status: 200 }
     );
   } catch (error) {
-    console.error("Error creating user:", error);
+    console.error("Error sending OTP:", error);
     return new Response(
       JSON.stringify({ success: false, message: "Internal Server Error." }),
-      { status: 500 , headers: { "Content-Type": "application/json" },}
-    );
-  }
-}
-
-export async function GET() {
-  try {
-    const users = await User.find();
-
-    return new Response(
-      JSON.stringify({ success: true, totalUsers: users.length, users }),
-      { status: 200, headers: { "Content-Type": "application/json" } }
-    );
-  } catch (error) {
-    console.error("Error fetching users:", error);
-    return new Response(
-      JSON.stringify({ success: false, message: "Internal Server Error." }),
-      { status: 500 , headers: { "Content-Type": "application/json" },}
+      { status: 500 }
     );
   }
 }

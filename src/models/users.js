@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose, { Schema } from "mongoose";
 import validator from "validator";
 
 const userSchema = new mongoose.Schema(
@@ -20,7 +20,10 @@ const userSchema = new mongoose.Schema(
       //   },
       index: true,
     },
-
+    password: {
+      type: String,
+      required: [true, "Password Required"],
+    },
     mobile: {
       type: String,
       required: [true, "Please enter your phone number"],
@@ -31,6 +34,32 @@ const userSchema = new mongoose.Schema(
       //     },
       //     message: "Phone number must be 10 digits",
       //   },
+    },
+    address: {
+      pinCode: { type: String },
+      city: { type: String },
+      state: { type: String },
+      country: { type: String },
+    },
+    role: {
+      type: String,
+      enum: ["user", "admin"],
+      default: "user",
+    },
+
+    favouriteCourse: {
+      type: [Schema.Types.ObjectId],
+      ref: "courses",
+    },
+    otp: {
+      type: String,
+    },
+    otpExpiry: {
+      type: Date,
+    },
+    isVerified: {
+      type: Boolean,
+      default: false,
     },
   },
   { timestamps: true }
