@@ -22,10 +22,10 @@ export async function GET() {
 
 export async function PUT(request) {
   try {
-    const { userIdtoUpdate, name, email, mobile, address, role } =
+    const { id, name, email, mobile, address, role } =
       await request.json();
 
-    if (!userIdtoUpdate) {
+    if (!id) {
       return new Response(
         JSON.stringify({
           success: false,
@@ -36,7 +36,7 @@ export async function PUT(request) {
     }
 
     const updatedUser = await User.findByIdAndUpdate(
-      userIdtoUpdate,
+      id,
       { name, email, mobile, address, role },
       { new: true }
     );

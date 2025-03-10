@@ -20,7 +20,10 @@ const userSchema = new mongoose.Schema(
       //   },
       index: true,
     },
-
+    password: {
+      type: String,
+      required: [true, "Password Required"],
+    },
     mobile: {
       type: String,
       required: [true, "Please enter your phone number"],
@@ -53,6 +56,10 @@ const userSchema = new mongoose.Schema(
     },
     otpExpiry: {
       type: Date,
+    },
+    isVerified: {
+      type: Boolean,
+      default: false,
     },
   },
   { timestamps: true }

@@ -58,7 +58,7 @@ export async function PUT(request) {
 
   try {
     const {
-      studentIdToUpdate,
+      id,
       name,
       university,
       country,
@@ -68,7 +68,7 @@ export async function PUT(request) {
       message,
     } = await request.json();
 
-    if (!studentIdToUpdate) {
+    if (!id) {
       return new Response(
         JSON.stringify({
           success: false,
@@ -79,7 +79,7 @@ export async function PUT(request) {
     }
 
     const updatedStudent = await OurStudents.findByIdAndUpdate(
-      studentIdToUpdate,
+      id,
       {
         name,
         university,
@@ -158,9 +158,9 @@ export async function DELETE(request) {
   try {
     await connectToDb();
 
-    const { studentId } = await request.json();
+    const { id } = await request.json();
 
-    if (!studentId) {
+    if (!id) {
       return new Response(
         JSON.stringify({
           success: false,
@@ -170,7 +170,7 @@ export async function DELETE(request) {
       );
     }
 
-    const deletedStudent = await OurStudents.findByIdAndDelete(studentId);
+    const deletedStudent = await OurStudents.findByIdAndDelete(id);
 
     if (!deletedStudent) {
       return new Response(

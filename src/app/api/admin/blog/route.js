@@ -57,10 +57,10 @@ export async function PUT(request) {
   try {
     await connectToDb();
 
-    const { blogIdtoUpdate, title, author, imageUrl, intro, description } =
+    const { id, title, author, imageUrl, intro, description } =
       await request.json();
 
-    if (!blogIdtoUpdate) {
+    if (!id) {
       return Response.json(
         {
           success: false,
@@ -71,7 +71,7 @@ export async function PUT(request) {
     }
 
     const updatedBlog = await Blog.findByIdAndUpdate(
-      blogIdtoUpdate,
+      id,
       { title, author, imageUrl, intro, description },
       { new: true }
     );
@@ -114,9 +114,9 @@ export async function DELETE(request) {
   try {
     await connectToDb();
 
-    const { blogIdtoDelete } = await request.json();
+    const { id } = await request.json();
 
-    if (!blogIdtoDelete) {
+    if (!id) {
       return Response.json(
         {
           success: false,
@@ -126,7 +126,7 @@ export async function DELETE(request) {
       );
     }
 
-    const blog = await Blog.findByIdAndDelete(blogIdtoDelete);
+    const blog = await Blog.findByIdAndDelete(id);
 
     if (!blog) {
       return Response.json(
