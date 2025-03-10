@@ -47,4 +47,5 @@ common - .../api/
 
 Main Page - For now Showing [under maintainance] - https://viacertaabroad.com/ 
 Home Page - Showing ongoing site [Developement mode] -  https://viacertaabroad.com/home
-Scolerships - Changed link - https://viacertaabroad.com/scholarship/home
+Scolerships - Changed link - https://viacertaabroad.com/scholarship
+Privacy Policy - https://viacertaabroad.com/privacy-policy
