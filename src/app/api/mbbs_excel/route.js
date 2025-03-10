@@ -4,7 +4,6 @@ import fs from "fs";
 import path from "path";
 import { connectToDb } from "@/config/dbConfig";
 import MBBS_InterestedUser from "@/models/campaign/mbbs";
- 
 
 await connectToDb();
 
@@ -49,6 +48,7 @@ export async function GET() {
       "mbbs_data.xlsx"
     );
 
+  
     await workbook.xlsx.writeFile(filePath);
 
     const fileStream = fs.createReadStream(filePath);
@@ -61,17 +61,16 @@ export async function GET() {
       },
     });
 
-    fileStream.on("close", () => {
-      fs.unlink(filePath, (err) => {
-        if (err) console.error("Error deleting file:", err);
-      });
-    });
-
     return response;
   } catch (error) {
     console.error("Error generating Excel sheet:", error);
     return NextResponse.json(
-      { success: false, message: "Internal server error" },
+      {
+        success: false,
+        message: "Internal server error",
+        error: error.message,
+        error,
+      },
       { status: 500 }
     );
   }
