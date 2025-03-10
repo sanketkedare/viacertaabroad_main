@@ -35,14 +35,14 @@ const WhyApply = () => {
   return (
     <div className="min-h-screen py-10 bg-gradient-to-t from-gray-400 via-white ">
       <div className="w-11/12 sm:w-9/12 m-auto mt-10">
-        <p className="text-3xl text-center font-semibold text-[#152347] flex items-center justify-center mb-8">
+        <p className="lg:text-3xl text-2xl text-center font-semibold text-[#152347] flex items-center justify-center mb-8">
           🔥 Why You Should Apply?
         </p>
-        <div className="flex flex-col items-center  bg-white gap-6 p-6 rounded-2xl shadow-lg justify-center ">
+        <div className="flex flex-col items-center  bg-white lg:gap-6 gap-2 p-6 rounded-2xl shadow-lg justify-center ">
           {answers.map((item, index) => (
             <div
               key={index}
-              className="flex items-center text-lg my-5 font-semibold text-gray-700"
+              className="flex lg:items-center  lg:text-lg text-sm my-5 font-semibold text-gray-700"
             >
               {item.icon}
               {item.text}
@@ -51,7 +51,7 @@ const WhyApply = () => {
         </div>
       </div>
 
-      <div className="flex flex-col items-center gap-4 py-10 font-bold text-xl">
+      <div className="flex flex-col items-center gap-4 py-10 font-bold lg:text-xl">
         <p>🚀 Your journey to a top medical career starts here!</p>
         <ApplyNow />
         <p>📍 Register Now – Limited Slots Available!</p>

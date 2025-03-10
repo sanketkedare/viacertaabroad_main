@@ -13,34 +13,34 @@ const HeroSection = () => {
         />
       </div>
       <div className="absolute inset-0 bg-gradient-to-b from-black via-white to-10% opacity-30"></div>
-      <div className="w-9/12  m-auto z-10 py-5">
-        <img src="/viaCerta-logo.png" className="w-[150px] m-auto bg-white " />
+      <div className="lg:w-9/12 w-11/12  m-auto z-10 py-5">
+        <img src="/viaCerta-logo.png" className="lg:w-[150px] w-[100px] m-auto bg-white " />
         <div className="flex flex-col items-center justify-center gap-10 py-10 pb-14  rounded-xl">
-          <h1 className="text-5xl font-extrabold text-[#2c21b6] text-center">
+          <h1 className="lg:text-5xl text-3xl font-extrabold text-[#2c21b6] text-center">
             ViaCerta National Talent Scholarship Program 2025
           </h1>
-          <h2 className="text-2xl font-bold text-[#010a1f]">
+          <h2 className="lg:text-2xl text-xl text-center font-bold text-[#010a1f]">
             Scholarships Worth ₹80 Lakhs | Laptops | Free FMGE Preparation |
             Mentorship
           </h2>
           <ApplyNow />
-          <b>
+          <b className="text-center text-sm">
             Don’t Just Dream It, Earn It with ViaCerta Introducing the ViaCerta
             National Talent Scholarship- Your Ticket to Studying Medicine Abroad
           </b>
         </div>
       </div>
 
-      <div className="grid grid-cols-3 items-center  gap-6 px-10">
-        <b className="block w-full border-t-2 border-[#2c21b6]"></b>
-        <button className="bg-white w-full p-2 font-bold flex justify-center items-center gap-3  text-sm border border-[#2c21b6] rounded-full shadow-lg">
+      <div className="lg:grid grid-cols-3 items-center  gap-6 px-10">
+        <b className="hidden lg:block w-full border-t-2 border-[#2c21b6]"></b>
+        <button className="bg-white w-full m-auto p-2 font-bold flex justify-center items-center gap-3  text-sm border border-[#2c21b6] rounded-full shadow-lg">
           🔷 <p>Fulfill your dream to study abroad </p>🔷
         </button>
-        <b className="block border-t-2 border-[#2c21b6] w-full"></b>
+        <b className="hidden lg:block border-t-2 border-[#2c21b6] w-full"></b>
       </div>
 
-      <div className="w-9/12 m-auto mt-10 flex flex-col items-center justify-center gap-5">
-        <p className="font-extrabold text-4xl text-center text-[#152347]">
+      <div className="lg:w-9/12 w-11/12 m-auto mt-10 flex flex-col items-center justify-center gap-5">
+        <p className="font-extrabold lg:text-4xl text-2xl text-center text-[#152347]">
           Your Medical Dream, Our Support!{" "}
         </p>
         <b className="text-center w-4/5">

@@ -46,14 +46,14 @@ const WhatUnique = () => {
   ];
 
   return (
-    <div className="min-h-screen w-10/12 py-10 m-auto">
+    <div className="min-h-screen lg:w-10/12 w-11/12 py-10 m-auto">
       <div className="flex flex-col justify-center items-center h-full gap-10">
-        <p className="text-4xl font-bold text-center mb-5">
+        <p className="lg:text-4xl text-2xl font-bold text-center mb-5">
           🌟 What Makes This Program Unique?
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-lg font-medium">
           {whyUniqueAns.map((item, index) => (
-            <div key={index} className="bg-white p-4 rounded-xl shadow-md">
+            <div key={index} className="bg-white lg:p-4 p-2 rounded-xl shadow-md">
               {item}
             </div>
           ))}
@@ -65,7 +65,7 @@ const WhatUnique = () => {
         <ApplyNow />
 
         <div className="w-full mt-10">
-          <p className="text-4xl font-bold text-center mb-5">
+          <p className="lg:text-4xl text-2xl font-bold text-center mb-5">
             🤔 Frequently Asked Questions (FAQs)
           </p>
           <div className="space-y-5">
@@ -78,10 +78,10 @@ const WhatUnique = () => {
           </div>
         </div>
 
-        <div className="w-full grid grid-cols-2 my-20">
+        <div className="w-full grid lg:grid-cols-2 my-20">
           <div>
             <p className="text-3xl font-bold mb-5">📜 Terms & Conditions</p>
-            <div className="space-y-3">
+            <div className="lg:space-y-3 space-y-5 py-5 ">
               {termsConditions.map((term, index) => (
                 <div key={index}>{term}</div>
               ))}
@@ -91,8 +91,8 @@ const WhatUnique = () => {
           <div>
           
 
-          <p className="text-3xl font-bold mb-5">📜 Terms & Conditions</p>
-          <div className="space-y-3">
+          <p className="text-3xl font-bold mb-5">📜 Privacy Policy</p>
+          <div  className="lg:space-y-3 space-y-5 py-5 ">
               {privacyPolicy.map((policy, index) => (
                 <div key={index}>{policy}</div>
               ))}
