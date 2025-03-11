@@ -70,6 +70,7 @@ const Navbar = () => {
           <div className="hidden lg:flex justify-between">
             {navlinks.map((i) => (
               <Link
+              key={i.name}
                 href={`/home/${
                   "home" === i.name.toLowerCase()
                     ? ""
@@ -82,7 +83,7 @@ const Navbar = () => {
                       ? "text-[#2c21b6]"
                       : path === "/home/" + i.name.toLowerCase() &&
                         "text-[#2c21b6]"
-                  }  hover:bg-[#152347] hover:text-white p-2 mx-1 font-bold rounded-xl w-[100px]`}
+                  }  hover:bg-[#152347] hover:text-white p-2 mx-1 font-semibold rounded-xl w-[100px]`}
                 >
                   {i.name}
                 </button>
