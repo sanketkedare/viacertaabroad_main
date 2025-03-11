@@ -60,7 +60,7 @@ export async function POST(request) {
 
     await existingUser.save(); // Save the new or updated user
     const data = { existingUser, otp };
-    sendEmail(existingUser.email, data, "verifyOtp");
+    await sendEmail(existingUser.email, data, "verifyOtp");
 
     return new Response(
       JSON.stringify({

@@ -37,7 +37,7 @@ export async function POST(request) {
     await newUser.save();
     const to = process.env.EMAIL_SEND_TO;
     
-    sendEmail(to, newUser, "mbbs_Users");
+    await sendEmail(to, newUser, "mbbs_Users");
 
     return NextResponse.json(
       { success: true, message: "Entry created successfully", data: newUser },
