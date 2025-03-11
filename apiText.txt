@@ -23,3 +23,20 @@
 
 /api/user/signup                          -> for generating otp
 /api/user/signup/verify                     -> for verifying otp
+
+
+---------------------------------------------
+
+forgot/reset : POST request both 
+
+1 . api/user/forgot-password  
+    this will take email in body and send email if email found.
+
+2.  /api/user/reset-password
+    this will take  email,otp and newPassword in the body .
+    otp is string 6 digit.
+    will return a success message if all goes right.
+    otp valid for 5 min  
+-------------------------------------------------
+
+

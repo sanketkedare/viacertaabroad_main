@@ -9,6 +9,7 @@ export async function sendEmail(to, data, emailType) {
     }
 
     // for testing mailtrap
+
     // const transporter = nodemailer.createTransport({
     //   host: "sandbox.smtp.mailtrap.io",
     //   port: 2525,
@@ -29,13 +30,12 @@ export async function sendEmail(to, data, emailType) {
 
     // ////////// for hostinger
     const transporter = nodemailer.createTransport({
-      // host: "mail.viacertaabroad.com", // Check from your email provider!
       host: "smtp.hostinger.com", // Check from your email provider!
       port: 465, // Usually 465 (SSL) or 587 (TLS)
       secure: true, // True for port 465, false for 587
       auth: {
-        user: process.env.MAIL_USER_ID, // Info@viacertaabroad.com
-        pass: process.env.MAIL_USER_PASS, // Your email password
+        user: process.env.MAIL_USER_ID,
+        pass: process.env.MAIL_USER_PASS,
       },
     });
 
@@ -77,6 +77,20 @@ export async function sendEmail(to, data, emailType) {
               <p style="margin-top: 20px; font-size: 12px; color: #666;">This is an automated email from ViaCertaAbroad. Please do not reply.</p>
           `;
         break;
+      case "password_Reset_Otp":
+        customSubject = `🔑 Reset Your Password - ViaCertaAbroad`;
+        htmlContent = `
+              <h2 style="color: #007BFF;">Password Reset Request</h2>
+              <p>Dear <strong>${data.name}</strong>,</p>
+              <p>We received a request to reset your password for your <strong>ViaCertaAbroad</strong> account.</p>
+              <p>Please use the OTP below to proceed with resetting your password:</p>
+              <h3 style="color: #28a745; font-size: 24px; letter-spacing: 2px;">${data.otp}</h3>
+              <p><strong>Note:</strong> This OTP is valid for <strong>5 minutes</strong>. If it expires, you will need to request a new one.</p>
+              <p>If you did not request a password reset, please ignore this email.</p>
+              <p>For security reasons, never share your OTP with anyone.</p>
+              <p style="margin-top: 20px; font-size: 12px; color: #666;">This is an automated email from ViaCertaAbroad. Please do not reply.</p>
+          `;
+        break;
 
       default:
         throw new Error(`Unknown emailType: ${emailType}`);
@@ -94,7 +108,7 @@ export async function sendEmail(to, data, emailType) {
     console.log(`✅ Email sent successfully to ${to}`);
     return true;
   } catch (error) {
-    console.error("❌ Error sending email:", error);
+    console.error("❌ Error sending email:", error.message, error);
     return false;
   }
 }
