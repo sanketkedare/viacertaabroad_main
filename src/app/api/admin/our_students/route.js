@@ -9,13 +9,13 @@ export async function POST(request) {
       name,
       university,
       country,
-      scholarshipType,
+      scholarship,
       scholarshipAmount,
       course,
-      message,
+      description,
     } = await request.json();
 
-    // if (!name || !university || !country || !scholarshipType || !course) {
+    // if (!name || !university || !country || !scholarship  || !course) {
     //   return new Response(
     //     JSON.stringify({
     //       success: false,
@@ -25,23 +25,26 @@ export async function POST(request) {
     //     { status: 400, headers: { "Content-Type": "application/json" } }
     //   );
     // }
-
+ 
     const ourStudent = new OurStudents({
       name,
       university,
       country,
-      scholarshipType,
+      scholarship,
       scholarshipAmount,
       course,
-      message,
+      description,
     });
 
     await ourStudent.save();
 
-    return new Response(JSON.stringify({ success: true, data: ourStudent }), {
-      status: 201,
-      headers: { "Content-Type": "application/json" },
-    });
+    return new Response(
+      JSON.stringify({ success: true, data: ourStudent }),
+      {
+        status: 201,
+        headers: { "Content-Type": "application/json" },
+      }
+    );
   } catch (error) {
     return new Response(
       JSON.stringify({ success: false, error: error.message }),
@@ -62,10 +65,10 @@ export async function PUT(request) {
       name,
       university,
       country,
-      scholarshipType,
+      scholarship,
       scholarshipAmount,
       course,
-      message,
+      description,
     } = await request.json();
 
     if (!id) {
@@ -84,10 +87,10 @@ export async function PUT(request) {
         name,
         university,
         country,
-        scholarshipType,
+        scholarship,
         scholarshipAmount,
         course,
-        message,
+        description,
       },
       { new: true }
     );
