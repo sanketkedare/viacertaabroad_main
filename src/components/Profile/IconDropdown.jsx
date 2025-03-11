@@ -25,7 +25,7 @@ const IconDropdown = () => {
       >
 
         <div className="text-2xl p-1 rounded-full bg-[#152347] w-[40px] h-[40px] border text-white flex justify-center items-center">
-          {user?.email[0].toUpperCase()}
+          {user?.name[0].toUpperCase()}
         </div>
       </div>
 

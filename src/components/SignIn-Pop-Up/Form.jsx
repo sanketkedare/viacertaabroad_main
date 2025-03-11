@@ -1,35 +1,32 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Mail, Phone, User } from "lucide-react";
 import { SIGN_IN, SIGN_UP } from "./utils";
-import { useDispatch } from "react-redux";
+import { useDispatch} from "react-redux";
 import { setUser } from "@/Redux/authSlice";  
+import parseAndVerifyJwt from "@/Utils/jwtParser";
+import { MdPassword } from "react-icons/md";
+import { storeCredentials } from "@/Utils/helpers";
 
 const Form = ({ mode, setSignInOpen }) => {
-
   const dispatch = useDispatch();
   const [message, setMessage] = useState({ show: false, success: false, message: "" });
   const [otpRequested, setOtpRequested] = useState(false);
-  const [loginWithEmail, setLoginWithEmail] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [mobile, setMobile] = useState("");
   const [password, setPassword] = useState('');
   const [OTP, setOTP] = useState("");
 
-  const storeCredentials = (user) => {
-    if (user) {
-      localStorage.setItem("viacerta-user", JSON.stringify(user));
-    }
-  };
+
 
   const authHandler = async () => {
     const VERIFY_OTP_URL = "/api/user/signup/verify";
-
     try {
+
       const response = await fetch(VERIFY_OTP_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, OTP }),
+        body: JSON.stringify({ email, otp:OTP }),
       });
 
       const data = await response.json();
@@ -48,8 +45,23 @@ const Form = ({ mode, setSignInOpen }) => {
     }
   };
 
+  const logInHandler = async(data)=>
+  {
+    setTimeout(() => setSignInOpen(false), 1500);
+    setMessage({ show: true, success: true, message: "Logged in Successfully!" });
+
+    const userDataURL = "/api/user/getdata/";
+    const decoded = await parseAndVerifyJwt(data?.token); 
+    const response = await fetch(`${userDataURL}${decoded?.email}`);
+    const userData = await response.json();
+    dispatch(setUser(userData?.user));
+    storeCredentials(userData?.user);
+   
+  }
+
   const generateOTP = async () => {
-    const REGISTER_URL = "/api/user/signup";
+    const REGISTER_URL = mode === SIGN_UP ?  "/api/user/signup" : "/api/user/login";
+
     try {
       const response = await fetch(REGISTER_URL, {
         method: "POST",
@@ -60,8 +72,13 @@ const Form = ({ mode, setSignInOpen }) => {
       console.log(data)
 
       if (response.ok) {
+        if(mode === SIGN_IN) 
+        {
+          logInHandler(data);
+          return
+        }
         setOtpRequested(true);
-        setMessage({ show: true, success: true, message: "OTP Sent Successfully!" });
+        setMessage({ show: true, success: true, message: "OTP Sent On Email Successfully!" });
       } else {
         setMessage({ show: true, success: false, message: data.message || "Failed to send OTP." });
       }
@@ -70,6 +87,7 @@ const Form = ({ mode, setSignInOpen }) => {
       setMessage({ show: true, success: false, message: "Network error. Please try again." });
     }
   };
+
 
   const submitData = async (e) => {
     e.preventDefault();
@@ -89,7 +107,7 @@ const Form = ({ mode, setSignInOpen }) => {
           </div>
         )}
 
-        {mode === SIGN_UP && (
+        {mode === SIGN_UP ? (
           <>
             <div className="flex items-center border rounded-md p-2">
               <User className="mr-2 text-gray-500" />
@@ -125,6 +143,7 @@ const Form = ({ mode, setSignInOpen }) => {
             </div>
 
             <div className="flex items-center border rounded-md p-2">
+              <MdPassword className="mr-2 text-gray-500"/>
               <input
                 type="password"
                 placeholder="Enter Your Password"
@@ -134,6 +153,29 @@ const Form = ({ mode, setSignInOpen }) => {
               />
             </div>
           </>
+
+        ) : (
+          <div className="flex flex-col gap-4">
+              <div className="flex items-center border rounded-md p-2">
+              <Mail className="mr-2 text-gray-500" />
+              <input
+                type="email"
+                placeholder="Enter Your Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="flex-1 p-2 outline-none"
+              />
+            </div>
+            <div className="flex items-center border rounded-md p-2">
+              <input
+                type="password"
+                placeholder="Enter Your Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                className="flex-1 p-2 outline-none"
+              />
+            </div>
+          </div>
         )}
 
         {otpRequested && (
@@ -148,8 +190,8 @@ const Form = ({ mode, setSignInOpen }) => {
           </div>
         )}
 
-        <button className="w-full bg-[#152347] text-white p-2 rounded-md" type="submit">
-          {otpRequested ? "Verify OTP" : "Generate OTP"}
+        <button className="w-full bg-[#152347] text-white p-2 rounded-md cursor-pointer" type="submit">
+          {mode === SIGN_IN ? "Sign in" : otpRequested ? "Verify OTP" : "Generate OTP"}
         </button>
       </div>
     </form>

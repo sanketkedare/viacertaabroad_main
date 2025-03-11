@@ -23,6 +23,7 @@ const Navbar = () => {
   const path = usePathname();
 
   const user = useSelector((state) => state.user.user);
+  console.log(user)
   const [signInOpen, setSignInOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const navlinks = [
