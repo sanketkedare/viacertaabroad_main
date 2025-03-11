@@ -8,7 +8,7 @@ export async function sendEmail(to, data, emailType) {
       );
     }
 
-    // for testing
+    // for testing mailtrap
     // const transporter = nodemailer.createTransport({
     //   host: "sandbox.smtp.mailtrap.io",
     //   port: 2525,
@@ -18,7 +18,7 @@ export async function sendEmail(to, data, emailType) {
     //   },
     // });
 
-    // use this below for live
+    // use this below for live gmail
     // const transporter = nodemailer.createTransport({
     //   service: process.env.SERVICE,
     //   auth: {
@@ -26,7 +26,8 @@ export async function sendEmail(to, data, emailType) {
     //     pass: process.env.MAIL_USER_PASS,
     //   },
     // });
-    // //////////
+
+    // ////////// for hostinger
     const transporter = nodemailer.createTransport({
       // host: "mail.viacertaabroad.com", // Check from your email provider!
       host: "smtp.hostinger.com", // Check from your email provider!
@@ -63,6 +64,19 @@ export async function sendEmail(to, data, emailType) {
             <p style="margin-top: 20px; font-size: 12px; color: #666;">This is an automated notification from ViaCertaAbroad.</p>
         `;
         break;
+      case "verifyOtp":
+        customSubject = `🔐 Verify Your OTP - ViaCertaAbroad`;
+        htmlContent = `
+              <h2 style="color: #007BFF;">OTP Verification</h2>
+              <p>Dear <strong>${data.existingUser.name}</strong>,</p>
+              <p>Thank you for registering with <strong>ViaCertaAbroad</strong>. To complete your sign-up, please use the OTP below:</p>
+              <h3 style="color: #28a745; font-size: 24px; letter-spacing: 2px;">${data.otp}</h3>
+              <p><strong>Note:</strong> This OTP is valid for <strong>5 minutes</strong>. If it expires, you will need to request a new one.</p>
+              <p>If you did not request this OTP, please ignore this email.</p>
+              <p>For assistance, contact our support team.</p>
+              <p style="margin-top: 20px; font-size: 12px; color: #666;">This is an automated email from ViaCertaAbroad. Please do not reply.</p>
+          `;
+        break;
 
       default:
         throw new Error(`Unknown emailType: ${emailType}`);
@@ -84,3 +98,8 @@ export async function sendEmail(to, data, emailType) {
     return false;
   }
 }
+
+// 2025-03-11 10:49:25
+// 1852 msg
+
+// .. 1290 total out bytes

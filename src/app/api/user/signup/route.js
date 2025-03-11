@@ -1,20 +1,22 @@
 import { connectToDb } from "@/config/dbConfig";
 import User from "@/models/users";
-// import jwt from "jsonwebtoken";
-import { SignJWT } from "jose";
-import cookie from "cookie";
+import crypto from "crypto";
+import bcrypt from "bcryptjs";
+import { sendEmail } from "@/app/utils/sendEmail";
 
 connectToDb();
 
 export async function POST(request) {
   try {
-    const { name, email, mobile, address, role } = await request.json();
+    const { name, email, mobile, address, role, password } =
+      await request.json();
 
     if (!name || !email || !mobile) {
       return new Response(
         JSON.stringify({
           success: false,
           message: "Name, Email, and Mobile are required.",
+          headers: { "Content-Type": "application/json" },
         }),
         { status: 400 }
       );
@@ -23,51 +25,53 @@ export async function POST(request) {
     let existingUser = await User.findOne({ email });
 
     if (existingUser) {
-      return new Response(
-        JSON.stringify({ success: false, message: "User already exists." }),
-        { status: 409, headers: { "Content-Type": "application/json" } }
-      );
+      if (existingUser.isVerified) {
+        return new Response(
+          JSON.stringify({
+            success: false,
+            message: "User already exists.",
+          }),
+          { status: 409, headers: { "Content-Type": "application/json" } }
+        );
+      }
+
+      // User exists but is not verified, update details
+      existingUser.name = name;
+      existingUser.mobile = mobile;
+      existingUser.address = address;
+      existingUser.role = role;
+      existingUser.password = await bcrypt.hash(password, 10);
+    } else {
+      existingUser = new User({
+        name,
+        email,
+        mobile,
+        password: await bcrypt.hash(password, 10),
+        address,
+        role,
+        isVerified: false,
+      });
     }
 
-    const newUser = new User({ name, email, mobile, address, role });
-    // ------------------
-    //
-    const secret = new TextEncoder().encode(process.env.JWT_SECRET);
-    // const token = jwt.sign(
-    const token = await new SignJWT({
-      id: newUser._id,
-      email: newUser.email,
-      mobile: newUser.mobile,
-      role: newUser.role,
-    })
-      .setProtectedHeader({ alg: "HS256" })
-      .setExpirationTime("7d") // Expiration time
-      .sign(secret); // Sign the token
+    const otp = crypto.randomInt(1000, 9999).toString();
+    const otpExpiry = Date.now() + 5 * 60 * 1000; // 5 minutes expiry
+    existingUser.otp = await bcrypt.hash(otp, 10);
+    existingUser.otpExpiry = otpExpiry;
 
-    const headers = new Headers({
-      "Set-Cookie": cookie.serialize("auth_token", token, {
-        httpOnly: true,
-        secure: false, // make sure to enable in live
-        // sameSite: "strict",
-        sameSite: "lax", // Fix for cross-origin issues
-        path: "/",
-      }),
-      "Content-Type": "application/json",
-    });
-
-    // -----------------
-    await newUser.save();
+    await existingUser.save(); // Save the new or updated user
+    const data = { existingUser, otp };
+    sendEmail(existingUser.email, data, "verifyOtp");
 
     return new Response(
       JSON.stringify({
         success: true,
-        message: "User created successfully.",
-        user: newUser,
+        message: "OTP sent to your email. Please verify to complete sign-up.",
+        user: existingUser,
       }),
-      { status: 201, headers: headers }
+      { status: 201, headers: { "Content-Type": "application/json" } }
     );
   } catch (error) {
-    console.error("Error creating user:", error);
+    console.error("Error creating/updating user:", error);
     return new Response(
       JSON.stringify({
         success: false,
@@ -78,20 +82,3 @@ export async function POST(request) {
     );
   }
 }
-
-// export async function GET() {
-//   try {
-//     const users = await User.find();
-
-//     return new Response(
-//       JSON.stringify({ success: true, totalUsers: users.length, users }),
-//       { status: 200, headers: { "Content-Type": "application/json" } }
-//     );
-//   } catch (error) {
-//     console.error("Error fetching users:", error);
-//     return new Response(
-//       JSON.stringify({ success: false, message: "Internal Server Error." }),
-//       { status: 500, headers: { "Content-Type": "application/json" } }
-//     );
-//   }
-// }

@@ -1,14 +1,15 @@
+ 
 import mongoose from "mongoose";
 
 const OurStudentsSchema = new mongoose.Schema(
   {
     name: { type: String, required: true },
     university: { type: String, required: true },
-    country: { type: String, required: true },
-    scholarshipType: { type: String }, // Fully Funded, Partial, etc.
+    country: { type: String },
+    scholarship: { type: String }, // Fully Funded, Partial, etc.
+    description: { type: String, required: true },
     scholarshipAmount: { type: String },
     course: { type: String },
-    message: { type: String, required: false },
   },
   { timestamps: true }
 );
