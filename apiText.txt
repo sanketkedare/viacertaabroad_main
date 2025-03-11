@@ -1,0 +1,25 @@
+// 
+
+// for sign up ye required field hai
+//  {
+//   "name": "admin2 ",
+//   "email": "admin2@gmail.com",
+//   "mobile": "7020240904",
+//   "password": "asdasdasd",  
+// }
+
+// when hit otp will be generate
+// save the otp and email in session/temporary from the response
+
+// another button when hitting verify otp 
+// send those data in body response otp and email 
+
+// when user verify cookies will be generated no need to log in 
+
+// in respose if invalid otp  one button to generate otp again you can use the same otp button first one 
+// dont clear the form data you can use it for generatiing otp 
+
+
+
+/api/user/signup                          -> for generating otp
+/api/user/signup/verify                     -> for verifying otp
