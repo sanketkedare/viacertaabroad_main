@@ -113,7 +113,3 @@ export async function sendEmail(to, data, emailType) {
   }
 }
 
-// 2025-03-11 10:49:25
-// 1852 msg
-
-// .. 1290 total out bytes

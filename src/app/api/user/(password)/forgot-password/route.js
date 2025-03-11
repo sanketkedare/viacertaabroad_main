@@ -36,7 +36,7 @@ export async function POST(request) {
     await user.save();
     const data = { email, otp, name: user.name };
 
-    sendEmail(email, data, "password_Reset_Otp");
+    await sendEmail(email, data, "password_Reset_Otp");
 
     return new Response(
       JSON.stringify({
