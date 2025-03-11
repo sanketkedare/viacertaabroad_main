@@ -28,7 +28,8 @@ export async function sendEmail(to, data, emailType) {
     // });
     // //////////
     const transporter = nodemailer.createTransport({
-      host: "mail.viacertaabroad.com", // Check from your email provider!
+      // host: "mail.viacertaabroad.com", // Check from your email provider!
+      host: "smtp.hostinger.com", // Check from your email provider!
       port: 465, // Usually 465 (SSL) or 587 (TLS)
       secure: true, // True for port 465, false for 587
       auth: {
@@ -55,7 +56,7 @@ export async function sendEmail(to, data, emailType) {
                 <li><strong>Selected Country:</strong> ${data.selectedCountry}</li>
             </ul>
             <p>Click the button below to download the latest MBBS data:</p>
-            <a href="https://viacertaabroad.com/api/campaign/mbbs_excel" 
+            <a href="https://viacertaabroad.com/api/campaign/mbbs/export" 
                style="display: inline-block; padding: 10px 15px; background: #28a745; color: white; text-decoration: none; border-radius: 5px;">
                📥 Download Excel Data
             </a>
