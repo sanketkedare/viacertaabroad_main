@@ -1,14 +1,16 @@
-import { sendEmailOtp, sendSmsOtp } from "@/app/utils/sendOtp";
 import { connectToDb } from "@/config/dbConfig";
 import User from "@/models/users";
 import crypto from "crypto";
 import bcrypt from "bcryptjs";
+import { sendSmsOtp } from "@/app/utils/sendOtp";
+import { SignJWT } from "jose";
+import cookie from "cookie";
 
 connectToDb();
 
 export async function POST(request) {
   try {
-    const { email, mobile } = await request.json();
+    const { email, mobile, password } = await request.json();
 
     if (!email && !mobile) {
       return new Response(
@@ -44,31 +46,74 @@ export async function POST(request) {
       );
     }
 
-    const otp = crypto.randomInt(1000, 9999).toString();
-    const otpExpiry = Date.now() + 5 * 60 * 1000; // 5 minutes expiry
-
-    const saltRounds = 10;
-    const hashedOtp = await bcrypt.hash(otp, saltRounds);
-    user.otp = hashedOtp;
-    // user.otp = otp;
-
-    user.otpExpiry = otpExpiry;
-
-    await user.save();
-
     if (isEmail) {
-      await sendEmailOtp(email, otp); //otp withour encrypt
-    } else {
+      if (!password) {
+        return new Response(
+          JSON.stringify({
+            success: false,
+            message: "Password is required for email login.",
+          }),
+          { status: 400, headers: { "Content-Type": "application/json" } }
+        );
+      }
+
+      const isMatch = await bcrypt.compare(password, user.password);
+      if (!isMatch) {
+        return new Response(
+          JSON.stringify({ success: false, message: "Invalid credentials." }),
+          { status: 401, headers: { "Content-Type": "application/json" } }
+        );
+      }
+    } else if (isPhoneNumber) {
+      const otp = crypto.randomInt(100000, 999999).toString(); // 6-digit OTP
+      const otpExpiry = Date.now() + 5 * 60 * 1000; // 5 min valid
+      const hashedOtp = await bcrypt.hash(otp, 10);
+
+      user.otp = hashedOtp;
+      user.otpExpiry = otpExpiry;
+      await user.save();
+
       await sendSmsOtp(mobile, otp);
+
+      return new Response(
+        JSON.stringify({
+          success: true,
+          message: "OTP sent to your mobile number.",
+          userId: user._id,
+        }),
+        { status: 200, headers: { "Content-Type": "application/json" } }
+      );
     }
+
+     
+    const secret = new TextEncoder().encode(process.env.JWT_SECRET);
+    const token = await new SignJWT({
+      id: user._id,
+      email: user.email,
+      mobile: user.mobile,
+      role: user.role,
+    })
+      .setProtectedHeader({ alg: "HS256" })
+      .setExpirationTime("7d")
+      .sign(secret);
+
+    const headers = new Headers({
+      "Set-Cookie": cookie.serialize("auth_token", token, {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === "production",
+        sameSite: "lax",
+        path: "/",
+      }),
+      "Content-Type": "application/json",
+    });
 
     return new Response(
       JSON.stringify({
         success: true,
-        message: `OTP sent to your ${isEmail ? "email" : "mobile number"}.`,
+        message: "Login successful.",
         userId: user._id,
       }),
-      { status: 200, headers: { "Content-Type": "application/json" } }
+      { status: 200, headers }
     );
   } catch (error) {
     console.error("Error:", error);
