@@ -19,13 +19,25 @@ export async function sendEmail(to, data, emailType) {
     // });
 
     // use this below for live
+    // const transporter = nodemailer.createTransport({
+    //   service: process.env.SERVICE,
+    //   auth: {
+    //     user: process.env.MAIL_USER_ID,
+    //     pass: process.env.MAIL_USER_PASS,
+    //   },
+    // });
+    // //////////
     const transporter = nodemailer.createTransport({
-      service: process.env.SERVICE,
+      // host: "mail.viacertaabroad.com", // Check from your email provider!
+      host: "smtp.hostinger.com", // Check from your email provider!
+      port: 465, // Usually 465 (SSL) or 587 (TLS)
+      secure: true, // True for port 465, false for 587
       auth: {
-        user: process.env.MAIL_USER_ID,
-        pass: process.env.MAIL_USER_PASS,
+        user: process.env.MAIL_USER_ID, // Info@viacertaabroad.com
+        pass: process.env.MAIL_USER_PASS, // Your email password
       },
     });
+
     // --------------------------------------------------------------------------------
     let customSubject = "";
     let htmlContent = "";
