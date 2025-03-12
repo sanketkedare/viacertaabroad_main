@@ -65,7 +65,7 @@ const ApplicationForm = () => {
   };
 
   return (
-    <div className="lg:w-[400px] lg:min-h-[90%] lg:mt-5 bg-white rounded-xl border-t-8 border-[#f8b62d] shadow-lg p-5 z-30">
+    <div className="lg:w-[400px] lg:min-h-[90%] lg:mt-5 bg-white rounded-xl border-t-8 border-[#f8b62d] shadow-lg p-5 z-30 m-auto">
       {/* Header */}
       <div className="flex justify-between items-center mb-4">
         <div className="flex items-center gap-2 lg:text-lg font-semibold">

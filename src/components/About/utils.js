@@ -50,4 +50,6 @@ export const faqs = [
         "Most universities require English proficiency tests like IELTS, TOEFL, or PTE. Some institutions accept alternative proofs, such as previous education in an English-speaking country.",
     },
   ];
+
+export const whyChoose = [`Students choose ViaCerta Abroad because we make their dreams of studying abroad a reality with seamless guidance and dedicated support. Our experienced counselors provide tailored advice and step-by-step assistance, ensuring a smooth and stress-free application process.`,` We help students unlock exclusive scholarships and funding opportunities, making international education more affordable. With our hassle-free visa and admission process, documentation and applications are handled with precision to minimize delays and maximize success.`,` By partnering with top universities worldwide, we offer access to diverse and high-quality educational opportunities. From accommodation arrangements to part-time and full-time job assistance, our comprehensive support ensures students have everything they need to thrive in their educational journey abroad.`]
   
