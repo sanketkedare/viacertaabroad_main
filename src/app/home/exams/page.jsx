@@ -1,17 +1,20 @@
-'use client'
+"use client";
 
-import Navbar from '@/components/Navbar/Navbar'
-import store from '@/Redux/appStore'
-import React from 'react'
-import { Provider } from 'react-redux'
+import Exams from "@/components/Exams/Exams";
+import Footer from "@/components/Footer/Footer";
+import Navbar from "@/components/Navbar/Navbar";
+import store from "@/Redux/appStore";
+import React from "react";
+import { Provider } from "react-redux";
 
 const Examspage = () => {
   return (
     <Provider store={store}>
-        <Navbar/>
-      Exam Page
+      <Navbar />
+      <Exams />
+      <Footer />
     </Provider>
-  )
-}
+  );
+};
 
-export default Examspage
+export default Examspage;

@@ -1,10 +1,19 @@
+'use client'
+
+import Blogs from '@/components/Blogs/Blogs'
+import Footer from '@/components/Footer/Footer'
+import Navbar from '@/components/Navbar/Navbar'
+import store from '@/Redux/appStore'
 import React from 'react'
+import { Provider } from 'react-redux'
 
 const page = () => {
   return (
-    <div>
-      Blogs PAge
-    </div>
+    <Provider store={store}>
+      <Navbar/>
+      <Blogs/>
+      <Footer/>
+    </Provider>
   )
 }
 

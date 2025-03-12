@@ -19,11 +19,9 @@ import { usePathname } from "next/navigation";
 import { FaBlog, FaBook, FaServicestack } from "react-icons/fa6";
 
 const Navbar = () => {
+  const user = useSelector((state) => state.user.user);
   const dispatch = useDispatch();
   const path = usePathname();
-
-  const user = useSelector((state) => state.user.user);
-  console.log(user)
   const [signInOpen, setSignInOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const navlinks = [
@@ -71,7 +69,7 @@ const Navbar = () => {
           <div className="hidden lg:flex justify-between">
             {navlinks.map((i) => (
               <Link
-              key={i.name}
+                key={i.name}
                 href={`/home/${
                   "home" === i.name.toLowerCase()
                     ? ""
