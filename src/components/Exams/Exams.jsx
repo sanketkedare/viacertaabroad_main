@@ -42,7 +42,7 @@ const Exams = () => {
 
   return (
     <div className="min-h-screen bg-gray-100">
-      <header className="flex justify-center items-center text-white bg-gradient-to-l from-[#2c21b6]  via-[#152347] to-[#2c21b6] h-[100px] text-2xl font-bold">
+      <header className="flex justify-center items-center text-white bg-gradient-to-l from-[#2c21b6]  via-[#152347] to-[#2c21b6] lg:h-[100px] h-[50px] lg:text-2xl font-bold">
         Admission Exams for International Universities
       </header>
 
@@ -50,11 +50,11 @@ const Exams = () => {
         {/* Exam Selection Section */}
         <section>
           <b>Select an Exam</b>
-          <div className="flex justify-between gap-2 items-center p-4 ">
+          <div className="flex justify-between flex-wrap lg:flex-nowrap lg:gap-2 items-center p-4 ">
             {examsArray.map((exam) => (
               <button
                 key={exam}
-                className={`p-2 px-4 text-sm border border-[#152347] rounded-2xl w-[150px] transition-colors duration-200 cursor-pointer ${
+                className={`p-2 px-4 text-sm lg:text-md  border border-[#152347] rounded-2xl my-2 lg:w-[150px] transition-colors duration-200 cursor-pointer ${
                   selectedExam === exam
                     ? "bg-[#2c21b6] text-white"
                     : " hover:bg-[#152347] hover:text-white"
@@ -68,12 +68,12 @@ const Exams = () => {
         </section>
 
         {/* Display Selected Exam Information */}
-        <section className="max-h-[600px]  p-2 mt-4 rounded-xl">
-          <div className="grid grid-cols-4 justify-between">
+        <section className="lg:max-h-[600px]  lg:p-2 mt-4 rounded-xl">
+          <div className="lg:grid grid-cols-4 justify-between">
             {currentExams.map((i, index) => (
               <div
                 key={index}
-                className="w-[250px] h-[150px] m-auto border mb-5 p-5 flex justify-center items-center text-center font-bold cursor-pointer rounded-2xl hover:bg-[#152347] hover:text-white"
+                className="lg:w-[250px] h-[150px] m-auto border mb-5 p-5 flex justify-center items-center text-center font-bold cursor-pointer text-sm lg:text-md rounded-2xl hover:bg-[#152347] hover:text-white"
               >
                 {i.name}
               </div>
@@ -100,7 +100,7 @@ const Exams = () => {
 
         {/* Informative Message for Students */}
         <section className="py-10 flex flex-col gap-5 text-justify">
-          <h2 className="text-3xl font-bold">
+          <h2 className="lg:text-3xl text-lg font-bold">
             <span className="text-[#2c21b6]">ViaCerta Abroad</span> Exams
           </h2>
           <p>
