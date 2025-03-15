@@ -100,7 +100,7 @@ export async function POST(request) {
     const headers = new Headers({
       "Set-Cookie": cookie?.serialize("auth_token", token, {
         httpOnly: true,
-        secure: process.env.NODE_ENV === "production",
+        // secure: process.env.NODE_ENV === "production",
         sameSite: "lax",
         path: "/",
       }),
