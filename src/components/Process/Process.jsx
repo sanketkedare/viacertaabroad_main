@@ -10,7 +10,7 @@ const steps = [
 
 const Process = () => {
   return (
-    <div className='min-h-screen py-16 bg-gray-100'>
+    <div className='min-h-screen py-16'>
       <div className='w-10/12 mx-auto text-center'>
         <h2 className='text-4xl font-bold text-gray-800 mb-6'>Our Process</h2>
         <p className='text-lg text-gray-600 mb-10'>A step-by-step guide to your study abroad journey.</p>

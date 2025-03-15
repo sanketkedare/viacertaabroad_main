@@ -12,7 +12,7 @@ const Destinations = () => {
   const [country, setCountry] = useState(all);
 
   return (
-    <div className="py-10 bg-gray-50 min-h-[200vh]"> {/* Increased height for testing */}
+    <div className="py-10  min-h-[200vh]"> {/* Increased height for testing */}
     <p className="text-center font-bold">Select Country</p>
       <div className="w-9/12 m-auto sticky top-4 z-20">
         <div className="flex items-center w-full justify-between my-4   z-20 py-2"> {/* Added sticky top-4, z-20 & padding */}

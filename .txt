@@ -21,7 +21,6 @@
 - Home
 - About Us
 - Study Destinations (Dropdown: USA, Canada, UK, Australia, etc.)
-- Top Universities
 - Exams (Dropdown: IELTS, TOEFL, GRE, GMAT, etc.)
 - Services (Dropdown: Visa Assistance, Scholarships, Accommodation, Jobs)
 - Application Process

@@ -41,7 +41,7 @@ const Exams = () => {
   );
 
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen">
       <header className="flex justify-center items-center text-white bg-gradient-to-l from-[#2c21b6]  via-[#152347] to-[#2c21b6] lg:h-[100px] h-[50px] lg:text-2xl font-bold">
         Admission Exams for International Universities
       </header>

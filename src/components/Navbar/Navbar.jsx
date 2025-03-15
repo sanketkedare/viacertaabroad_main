@@ -82,7 +82,7 @@ const Navbar = () => {
                       ? "text-[#2c21b6]"
                       : path === "/home/" + i.name.toLowerCase() &&
                         "text-[#2c21b6]"
-                  }  hover:bg-[#152347] hover:text-white p-2 mx-1 font-semibold rounded-xl w-[100px]`}
+                  }  hover:bg-[#152347] hover:text-white p-2 mx-1 font-semibold rounded-xl w-[100px] cursor-pointer`}
                 >
                   {i.name}
                 </button>
