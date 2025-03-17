@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { FaPhoneVolume, FaComments } from "react-icons/fa6";
 import { ImCancelCircle } from "react-icons/im";
 import { MdCall } from "react-icons/md";
-import CallBackPopup from "./CallBackPopup";
 import ChatBot from "./ChatBot";
 import { motion, AnimatePresence } from "framer-motion";
+import CallBackPopup from "./CallBackPopUp";
 
 const Help = () => {
   const [isOpen, setIsOpen] = useState(false);
