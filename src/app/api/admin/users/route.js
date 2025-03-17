@@ -6,9 +6,18 @@ connectToDb();
 export async function GET() {
   try {
     const users = await User.find();
+    const verifiedUsers = users.filter((user) => user.isVerified);
+    const unverifiedUsers = users.filter((user) => !user.isVerified);
 
     return new Response(
-      JSON.stringify({ success: true, totalUsers: users.length, users }),
+      JSON.stringify({
+        success: true,
+        totalUsers: users.length,
+        totalVerifiedUsers: verifiedUsers.length,
+        totalUnverifiedUsers: unverifiedUsers.length,
+        verifiedUsers,
+        unverifiedUsers,
+      }),
       { status: 200, headers: { "Content-Type": "application/json" } }
     );
   } catch (error) {
@@ -22,8 +31,7 @@ export async function GET() {
 
 export async function PUT(request) {
   try {
-    const { id, name, email, mobile, address, role } =
-      await request.json();
+    const { id, name, email, mobile, address, role } = await request.json();
 
     if (!id) {
       return new Response(

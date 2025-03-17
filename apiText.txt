@@ -37,6 +37,22 @@ forgot/reset : POST request both
     otp is string 6 digit.
     will return a success message if all goes right.
     otp valid for 5 min  
+
+
+3.  
+    /api/admin/users/    
+
+    contain GET,PUT,DELETE method targeteed by id in delete and put,
+
+    get fecth all users.
+    ____________________________________
+    /api/admin/users/delete_unverified     DELETE request it will directly fecth and delete all unverifed users.
 -------------------------------------------------
 
+ 
 
+
+
+
+
+        
