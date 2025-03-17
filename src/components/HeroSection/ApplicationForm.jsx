@@ -1,12 +1,13 @@
 "use client";
+
 import React, { useState } from "react";
 import { FaGlobe, FaGraduationCap } from "react-icons/fa6";
 import { IoIosArrowForward } from "react-icons/io";
+import { motion } from "framer-motion";
 
 const ApplicationForm = () => {
-  const URL = "/api/enquiry_form"; // API endpoint
+  const URL = "/api/enquiry_form";
 
-  // Form state
   const [message, setMessage] = useState({ show: false, success: false, message: "" });
   const [formData, setFormData] = useState({
     name: "",
@@ -15,12 +16,10 @@ const ApplicationForm = () => {
   });
   const [loading, setLoading] = useState(false);
 
-  // Handle input change
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // Validate form fields
   const validateForm = () => {
     const { name, email, mobile } = formData;
     if (!name.trim() || !email.trim() || !mobile.trim()) {
@@ -38,7 +37,6 @@ const ApplicationForm = () => {
     return true;
   };
 
-  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validateForm()) return;
@@ -54,7 +52,7 @@ const ApplicationForm = () => {
 
       if (response.ok) {
         setMessage({ show: true, success: true, message: "Form submitted successfully!" });
-        setFormData({ name: "", email: "", mobile: "" }); // Reset form
+        setFormData({ name: "", email: "", mobile: "" });
       } else {
         setMessage({ show: true, success: false, message: data.message || "Something went wrong." });
       }
@@ -65,8 +63,13 @@ const ApplicationForm = () => {
   };
 
   return (
-    <div className="lg:w-[400px] lg:min-h-[90%] lg:mt-5 bg-white rounded-xl border-t-8 border-[#f8b62d] shadow-lg p-5 z-30 m-auto">
-      {/* Header */}
+    <motion.div 
+      initial={{ opacity: 0, y: -50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      whileHover={{scale : 1.05}}
+      className="lg:w-[400px] bg-white  rounded-xl border-t-8 border-[#f8b62d] shadow-lg p-5 z-30 m-auto"
+    >
       <div className="flex justify-between items-center mb-4">
         <div className="flex items-center gap-2 lg:text-lg font-semibold">
           <FaGraduationCap className="text-[#2c31b6]" />
@@ -78,62 +81,51 @@ const ApplicationForm = () => {
         </div>
       </div>
 
-      {/* Form Title */}
       <h2 className="lg:text-2xl font-bold mb-4">International Degree Now in Your Budget</h2>
 
-      {/* Form Fields */}
       <form className="space-y-4" onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="name"
-          placeholder="Enter Full Name"
-          value={formData.name}
-          onChange={handleChange}
-          className="w-full border border-gray-300 rounded-md p-2 mt-1 focus:outline-none focus:ring-2 focus:ring-blue-500"
-        />
-        <input
-          type="email"
-          name="email"
-          placeholder="Enter Email Address"
-          value={formData.email}
-          onChange={handleChange}
-          className="w-full border border-gray-300 rounded-md p-2 mt-1 focus:outline-none focus:ring-2 focus:ring-blue-500"
-        />
-        <div className="flex border border-gray-300 rounded-md mt-1">
-          <span className="flex items-center w-20 px-3 text-sm bg-gray-100 border-r">🇮🇳 +91</span>
-          <input
-            type="tel"
-            name="mobile"
-            placeholder="Enter Phone Number"
-            value={formData.mobile}
+        {['name', 'email', 'mobile'].map((field, index) => (
+          <motion.input
+            key={field}
+            type={field === 'mobile' ? 'tel' : field}
+            name={field}
+            placeholder={`Enter ${field === 'mobile' ? 'Phone Number' : `Full ${field}`}`}
+            value={formData[field]}
             onChange={handleChange}
-            className="w-full p-2 focus:outline-none"
+            className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: index * 0.2 }}
           />
-        </div>
+        ))}
 
         {message.show && (
-          <p className={`text-center text-sm ${message.success ? "text-green-500" : "text-red-500"}`}>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className={`text-center text-sm ${message.success ? "text-green-500" : "text-red-500"}`}
+          >
             {message.message}
-          </p>
+          </motion.p>
         )}
 
-        {/* Submit Button */}
-        <button
+        <motion.button
           type="submit"
-          className="w-full bg-[#152347] hover:bg-[#31343b] text-white lg:text-lg font-semibold py-3 rounded-md transition flex justify-center items-center gap-2"
+          className="w-full flex justify-center items-center gap-3 bg-[#152347] hover:bg-[#31343b] text-white lg:text-lg font-semibold py-3 rounded-md transition"
           disabled={loading}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
         >
           {loading ? "Submitting..." : "Book Your Free Counseling"} <IoIosArrowForward />
-        </button>
+        </motion.button>
 
-        {/* Terms and Privacy */}
-        <p className="text-[10px] m-auto text-gray-500 text-center mt-2 flex flex-wrap gap-2">
-          By submitting this form, you agree to the{" "}
-          <a href="#" className="text-blue-500 underline">Terms of Use</a> and{" "}
-          <a href="#" className="text-blue-500 underline">Privacy Policy</a>
+        <p className="text-[10px] text-gray-500 text-center mt-2">
+          By submitting this form, you agree to the
+          <a href="#" className="text-blue-500 underline"> Terms of Use</a> and
+          <a href="#" className="text-blue-500 underline"> Privacy Policy</a>.
         </p>
       </form>
-    </div>
+    </motion.div>
   );
 };
 

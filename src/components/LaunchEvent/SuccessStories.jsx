@@ -1,7 +1,7 @@
 import React from "react";
 import Head from "next/head";
 
-const successStories = [
+export const successStories = [
   {
     name: "Nitin Chauhan",
     university: "University of Chester, UK",

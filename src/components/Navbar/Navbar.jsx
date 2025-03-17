@@ -17,6 +17,7 @@ import { setUser } from "@/Redux/authSlice";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FaBlog, FaBook, FaServicestack } from "react-icons/fa6";
+import { motion } from "framer-motion";
 
 const Navbar = () => {
   const user = useSelector((state) => state.user.user);
@@ -24,12 +25,13 @@ const Navbar = () => {
   const path = usePathname();
   const [signInOpen, setSignInOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
   const navlinks = [
     { name: "Home", icon: <FaHome /> },
-    { name: "Exams", icon: <FaBook /> },
+    { name: "Exams", icon: <FaBook /> }, // It should be appear as Test Prep but path remains constant
     { name: "Destinations", icon: <FaMapMarkerAlt /> },
     { name: "Services", icon: <FaServicestack /> },
-    { name: "Process", icon: <FaCog /> },
     { name: "Blogs", icon: <FaBlog /> },
     { name: "Contact", icon: <FaPhoneAlt /> },
     { name: "About", icon: <FaInfoCircle /> },
@@ -49,97 +51,135 @@ const Navbar = () => {
 
   useEffect(() => {
     updateStore();
-  }, []);
+  }, [dispatch]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollThreshold = 10;
+      if (window.scrollY > scrollThreshold && !scrolled) {
+        setScrolled(true);
+      } else if (window.scrollY <= scrollThreshold && scrolled) {
+        setScrolled(false);
+      }
+    };
+  
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [scrolled]);
+  
 
   return (
-    <nav className="relative w-full bg-white shadow-md text-sm lg:p-4 z-50">
-      {signInOpen && <SignIn setSignInOpen={setSignInOpen} />}
-      <div className="lg:w-9/12 m-auto px-4 sm:px-2">
-        <div className="flex items-center justify-between h-[70px] lg:py-3 w-full">
-          <Link href="/home">
-            <div className="w-[100px]">
-              <img
-                className="object-contain cursor-pointer"
-                src="/viaCerta-logo.png"
-                alt="Logo"
-              />
-            </div>
-          </Link>
-
-          <div className="hidden lg:flex justify-between">
-            {navlinks.map((i) => (
-              <Link
-                key={i.name}
-                href={`/home/${
-                  "home" === i.name.toLowerCase()
-                    ? ""
-                    : "" + i.name.toLowerCase()
-                } `}
-              >
-                <button
-                  className={`${
-                    path === "/home" && i.name === "Home"
-                      ? "text-[#2c21b6]"
-                      : path === "/home/" + i.name.toLowerCase() &&
-                        "text-[#2c21b6]"
-                  }  hover:bg-[#152347] hover:text-white p-2 mx-1 font-semibold rounded-xl w-[100px] cursor-pointer`}
-                >
-                  {i.name}
-                </button>
-              </Link>
-            ))}
-          </div>
-
-          <div className="hidden md:flex items-center gap-8">
-            {!user && (
-              <button
-                onClick={() => setSignInOpen(true)}
-                className="text-white bg-[#2c31b6] hover:bg-[#50528c] font-bold p-2 rounded-xl px-4 transition"
-              >
-                Sign In
-              </button>
-            )}
-            {user && <IconDropdown />}
-          </div>
-
-          <div className="lg:hidden block" onClick={mobileMenuToggler}>
-            {mobileMenuOpen ? (
-              <div className="fixed right-0 top-0 z-40 bg-white rounded-l-2xl w-[250px] p-5 shadow-lg flex flex-col items-start gap-2 font-bold">
-                <FaTimes
-                  className="text-2xl cursor-pointer mb-5 "
-                  onClick={mobileMenuToggler}
+<nav className={`fixed w-full z-30 transition-all duration-500 ${scrolled ? 'bg-white text-black shadow-md' : 'text-white top-2'}`}>
+<div className={`relative w-full  text-sm lg:p-4 z-50 ${scrolled ? 'bg-white shadow-md ' : ''}`}>
+        {signInOpen && <SignIn setSignInOpen={setSignInOpen} />}
+        <div className="lg:w-10/12 m-auto px-4 sm:px-2">
+          <div className="flex items-center justify-between h-[70px] lg:py-3 w-full">
+            <Link href="/home">
+              <div className="lg:w-[120px] w-[100px] p-4">
+                <img
+                  className="object-contain cursor-pointer bg-white rounded-full"
+                  src="/viaCerta-logo.png"
+                  alt="Logo"
                 />
-                {navlinks.map((i) => (
-                  <Link
-                    key={i.name}
-                    href={`/home/${
-                      "home" === i.name.toLowerCase()
-                        ? ""
-                        : "" + i.name.toLowerCase()
-                    } `}
-                    className="w-full"
-                  >
-                    <div
-                      className={`${
-                        path === "/home" && i.name === "Home"
-                          ? "text-[#2c21b6]"
-                          : path === "/home/" + i.name.toLowerCase() &&
-                            "text-[#2c21b6]"
-                      }  hover:bg-[#152347] hover:text-white p-4  font-bold rounded-xl  bg-gray-200  w-full flex justify-normal items-center gap-4`}
-                    >
-                      {i.icon}
-                      {i.name}
-                    </div>
-                  </Link>
-                ))}
-                <div className="bg-[#152347] hover:bg-[#657ab6] cursor-pointer text-white p-4  font-bold rounded-xl    w-full flex justify-normal items-center gap-4">
-                  <FaSignInAlt />
-                  Sign in
-                </div>
               </div>
-            ) : (
-              <FaBars className="fixed top-4 right-4 bg-white p-2 rounded-full text-5xl cursor-pointer" />
-            )}
+            </Link>
+
+            <div className="hidden lg:flex gap-4 justify-between">
+              {navlinks.map((i) => (
+                <Link
+                  key={i.name}
+                  href={`/home/${
+                    "home" === i.name.toLowerCase() ? "" : i.name.toLowerCase()
+                  }`}
+                >
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className={`${
+                      path === "/home" && i.name === "Home"
+                        ? scrolled ? "text-[#2c21b6]" : "text-[#f8b62d]"
+                        : path === "/home/" + i.name.toLowerCase() &&
+                          "text-[#2c21b6]"
+                    } ${scrolled ? 'hover:bg-[#152347] hover:text-white' : 'hover:bg-white hover:text-[#152347]'} p-2 mx-1 font-semibold rounded-xl w-[120px] cursor-pointer transition-colors`}
+                  >
+                    {i.name === "Exams" ? "Test Prep" : i.name}
+                  </motion.button>
+                </Link>
+              ))}
+            </div>
+
+            <div className="hidden md:flex items-center gap-8">
+              {!user && (
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => setSignInOpen(true)}
+                  className="text-white bg-[#2c31b6] hover:bg-[#50528c] font-bold p-2 rounded-xl px-4 transition"
+                >
+                  Sign In
+                </motion.button>
+              )}
+              {user && <IconDropdown />}
+            </div>
+
+            <div className="lg:hidden block" onClick={mobileMenuToggler}>
+              {mobileMenuOpen ? (
+                <motion.div
+                  initial={{ x: "100%" }}
+                  animate={{ x: 0 }}
+                  exit={{ x: "100%" }}
+                  transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                  className="fixed right-0 top-0 z-40 bg-white rounded-l-2xl w-[250px] p-5 shadow-lg flex flex-col items-start gap-2 font-bold h-full"
+                >
+                  <FaTimes
+                    className="text-2xl cursor-pointer mb-5"
+                    onClick={mobileMenuToggler}
+                  />
+                  {navlinks.map((i) => (
+                    <Link
+                      key={i.name}
+                      href={`/home/${
+                        "home" === i.name.toLowerCase()
+                          ? ""
+                          : i.name.toLowerCase()
+                      }`}
+                      className="w-full"
+                      onClick={mobileMenuToggler}
+                    >
+                      <div
+                        className={`${
+                          path === "/home" && i.name === "Home"
+                            ? "text-[#2c21b6]"
+                            : path === "/home/" + i.name.toLowerCase() &&
+                              "text-[#2c21b6]"
+                        }  hover:bg-[#152347] hover:text-white p-4 font-bold rounded-xl bg-gray-200 w-full flex justify-normal items-center gap-4 transition-colors`}
+                      >
+                        {i.icon}
+                        {i.name === "Exams" ? "Test Prep" : i.name}
+                      </div>
+                    </Link>
+                  ))}
+                  {!user ? (
+                    <div 
+                      className="bg-[#152347] hover:bg-[#657ab6] cursor-pointer text-white p-4 font-bold rounded-xl w-full flex justify-normal items-center gap-4 transition-colors"
+                      onClick={() => {
+                        setSignInOpen(true);
+                        setMobileMenuOpen(false);
+                      }}
+                    >
+                      <FaSignInAlt />
+                      Sign in
+                    </div>
+                  ) : (
+                    <div className="w-full pt-4">
+                      <IconDropdown />
+                    </div>
+                  )}
+                </motion.div>
+              ) : (
+                <FaBars className={`fixed top-4 right-4 ${scrolled ? 'bg-[#152347] text-white' : 'bg-white text-[#152347]'} p-2 rounded-full text-5xl cursor-pointer transition-colors`} />
+              )}
+            </div>
           </div>
         </div>
       </div>

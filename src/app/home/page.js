@@ -1,13 +1,13 @@
 "use client"
 
-import About from "@/components/About/About";
 import FAQs from "@/components/About/FAQs";
 import WhyViaCerta from "@/components/About/WhyViaCerta";
-// import AdSense from "@/components/Ads/AdSense";
+import Coundown from "@/components/Coundown/Coundown";
 import Footer from "@/components/Footer/Footer";
 import Help from "@/components/Help/Help";
 import HeroSection from "@/components/HeroSection/HeroSection";
 import Navbar from "@/components/Navbar/Navbar";
+import Testimonials from "@/components/Slider/Testimonials";
 import store from "@/Redux/appStore";
 import { Provider } from "react-redux";
 
@@ -18,8 +18,8 @@ export default function Home() {
         <Help/>
         <Navbar />
         <HeroSection />
-        {/* <AdSense/> */}
-        <About />
+        <Coundown/>
+        <Testimonials/>
         <WhyViaCerta />
         <FAQs />
         <Footer />

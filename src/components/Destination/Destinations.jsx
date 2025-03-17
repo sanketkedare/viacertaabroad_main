@@ -1,6 +1,8 @@
 import countries from "@/Utils/countries";
 import React, { useState } from "react";
 import DestiHeroSection from "./DestiHeroSection";
+import { motion } from "framer-motion";
+import { BiWorld } from "react-icons/bi";
 
 const Destinations = () => {
   const all = {
@@ -12,26 +14,28 @@ const Destinations = () => {
   const [country, setCountry] = useState(all);
 
   return (
-    <div className="py-10  min-h-[200vh]"> {/* Increased height for testing */}
-    <p className="text-center font-bold">Select Country</p>
-      <div className="w-9/12 m-auto sticky top-4 z-20">
-        <div className="flex items-center w-full justify-between my-4   z-20 py-2"> {/* Added sticky top-4, z-20 & padding */}
+    <div className="py-10 min-h-[200vh]">
+      <p className="text-center font-bold text-2xl mb-6">Select Country</p>
+
+      <div className="w-10/12 m-auto sticky top-4 z-20">
+        {/* Here scroll bar is apearing remove it visualy */}
+        <div className="flex items-center w-full m-auto my-4 py-2 overflow-x-auto scrollbar-hide">
           {allCounties.map((i) => (
-            <button
+            <motion.button
               key={i.name}
-              className={`p-2 px-4 border rounded-xl flex gap-2 bg-[#9d9eab] cursor-pointer hover:bg-[#635d96] text-[#fff] ${
-                country.name === i.name && "bg-[#152347] "
+              className={`p-2 m-auto border rounded-xl flex mx-2 w-auto bg-[#152347] cursor-pointer hover:bg-[#635d96] text-[#fff] transition-colors duration-300 ${
+                country.name === i.name && "bg-amber-300 text-black"
               }`}
               onClick={() => setCountry(i)}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
-              {i.flag && (
-                <img src={i.flag} className="h-5 border items-center" alt={`${i.name} flag`} />
-              )}
-              {i.name}
-            </button>
+             {i.name}
+            </motion.button>
           ))}
         </div>
       </div>
+
       <DestiHeroSection country={country} />
     </div>
   );
