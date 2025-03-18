@@ -97,7 +97,11 @@ export async function POST(request) {
       .sign(secret);
 
     const headers = new Headers({
+<<<<<<< HEAD
       "Set-Cookie": serialize("auth_token", token, {
+=======
+      "Set-Cookie": cookie?.serialize("auth_token", token, {
+>>>>>>> f83d191b82addc25c853aacfd0948f89c53fc8ab
         httpOnly: true,
         // secure: process.env.NODE_ENV === "production",
         sameSite: "lax",
@@ -111,7 +115,11 @@ export async function POST(request) {
         success: true,
         message: "Login successful.",
         userId: user._id,
+<<<<<<< HEAD
         token,
+=======
+        token
+>>>>>>> f83d191b82addc25c853aacfd0948f89c53fc8ab
       }),
       { status: 200, headers }
     );

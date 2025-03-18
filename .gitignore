@@ -40,6 +40,8 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+dummydata.js
+package-lock.json
 backupCode.js
 package-lock.json
 backupcodes

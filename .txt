@@ -1,0 +1,60 @@
+1) Required Pages -
+- Home – Overview of services, highlights, and success stories.✔️
+- About Us – Company mission, vision, achievements, and team introduction.✔️
+- Study Destinations – List of countries where students can study.✔️
+- Individual Destination Page – Detailed information about each country.
+- Top Universities – Overview of partner universities.❌
+- Individual University Page – Detailed information about each university and its courses.❌
+- Entrance Exams – Overview of exams conducted worldwide.✔️
+- Individual Exam Page – Detailed information about each exam, syllabus, dates, and preparation tips.✔️
+- Services – Visa assistance, scholarships, accommodation, part-time and full-time jobs.✔️
+- Application Process – Step-by-step guide to applying through your company.✔️
+- Student Testimonials – Success stories from past students.✔️
+- Blog & Updates – Latest news, guides, and insights on studying abroad.
+- Student Profile Page – Individual student information and progress tracking.✔️
+- Sign-in form✔️
+- Student Dashboard (if logged in) – Personalized dashboard for applications, notifications, and status updates.✔️
+- Contact Us – Inquiry form, email, phone number, office location, and social media links.✔️
+
+
+2) Navbar Menu Options
+- Home
+- About Us
+- Study Destinations (Dropdown: USA, Canada, UK, Australia, etc.)
+- Exams (Dropdown: IELTS, TOEFL, GRE, GMAT, etc.) / Test Prep
+- Services (Dropdown: Visa Assistance, Scholarships, Accommodation, Jobs)
+- Application Process
+- Student Dashboard (Dropdown: Profile, Applications, Notifications)
+- Blog
+- Contact Us
+
+home 
+- remove Process
+- update banner
+- increese navbar width
+- Timer for procedure
+- rename exam
+- remove about from home
+- increese country
+- mbbs separate page
+- universicy slider
+
+
+----- APIs ----------
+
+common - .../api/
+✔️ signup - /user/signup/ -> POST with body {email, mobile, name} 
+✔️ getData - /user/getdata/[data] -> GET with email/mobile in url 
+❌ Our Students - /our_students/ -> POST, GET 
+✔️ enquiry_form - /enquiry_form/ -> GET , POST with  { name, email, mobile } 
+
+
+-- ON HOLD
+🚫 Courses - /couses/ -> GET, POST, PUT, DELETE
+🚫 Send OTP - /sendOtp/ -> POST with body {email, mobile,otp}
+
+
+Main Page - For now Showing [under maintainance] - https://viacertaabroad.com/ 
+Home Page - Showing ongoing site [Developement mode] -  https://viacertaabroad.com/home
+Scolerships - Changed link - https://viacertaabroad.com/scholarship
+Privacy Policy - https://viacertaabroad.com/privacy-policy
