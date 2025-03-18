@@ -2,127 +2,157 @@ import React, { useEffect, useState } from "react";
 import { Mail, Phone, User } from "lucide-react";
 import { SIGN_IN, SIGN_UP } from "./utils";
 import { useDispatch } from "react-redux";
+import { setUser } from "@/Redux/authSlice";
+import parseAndVerifyJwt from "@/Utils/jwtParser";
+import { MdPassword } from "react-icons/md";
+import { storeCredentials } from "@/Utils/helpers";
 
 const Form = ({ mode, setSignInOpen }) => {
   const dispatch = useDispatch();
+  const [forgetPassword, setForgetPassword] = useState(false);
+  const [resetPassword, setResetPassword] = useState(false);
+
   const [message, setMessage] = useState({
     show: false,
     success: false,
     message: "",
   });
   const [otpRequested, setOtpRequested] = useState(false);
-  const [loginWithEmail, setLoginWithEmail] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [mobile, setMobile] = useState("");
+  const [password, setPassword] = useState("");
   const [OTP, setOTP] = useState("");
-  const [generatedOTP, setGeneratedOTP] = useState(null);
 
+  const forgetPasswordHandler = () => {
+    setMessage({ show: false, success: false, message: "" });
+    setForgetPassword(false);
+    setResetPassword(true);
+  };
 
-  const authHandler = async() =>
-  {
-    const REGISTER_URL = "/api/user/signup" // POST
-    const GET_USER_URL = "/api/user/getdata/[:data]"  // Get email or mobile
-
-    if(mode = SIGN_IN)
-    {
-
-      // Fetch data from DB
-      // Update Redux
-    }
-    else
-    {
-      // Send Data to DB
-      // Update redux if Data added
-      // If error , Send massage
-
-    }
-
-  }
-  const validateInputs = () => {
-    console.log(loginWithEmail, mobile, email);
-
-    if (mode === SIGN_UP && name.length < 3) {
-      setMessage({
-        show: true,
-        success: false,
-        message: "Name must be at least 3 characters long.",
+  const authHandler = async () => {
+    const VERIFY_OTP_URL = "/api/user/signup/verify";
+    try {
+      const response = await fetch(VERIFY_OTP_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, otp: OTP }),
       });
-      return false;
-    }
 
-    if (loginWithEmail) {
-      if (!email.includes("@") || !email.includes(".")) {
-        setMessage({
-          show: true,
-          success: false,
-          message: "Enter a valid email address.",
-        });
-        return false;
-      }
-    } else {
-      if (mobile.length !== 10 || isNaN(mobile)) {
-        setMessage({
-          show: true,
-          success: false,
-          message: "Enter a valid 10-digit mobile number.",
-        });
-        return false;
-      }
-    }
+      const data = await response.json();
 
-    return true;
-  };
-
-  const generateOTP = () => {
-    const myOTP = Math.floor(1000 + Math.random() * 9000); // 4-digit OTP
-    setGeneratedOTP(myOTP);
-    setOtpRequested(true);
-    console.log("Generated OTP:", myOTP);
-  };
-
-  const submitData = async (e) => {
-    e.preventDefault();
-
-    if (otpRequested) {
-      if (parseInt(OTP) === generatedOTP) {
+      if (response.ok) {
+        dispatch(setUser(data?.user));
+        storeCredentials(data?.user);
         setMessage({
           show: true,
           success: true,
           message: "OTP Verified Successfully!",
         });
-        await authHandler();
-        setTimeout(() => setSignInOpen(false), 2000);
+        setTimeout(() => setSignInOpen(false), 1500);
       } else {
         setMessage({
           show: true,
           success: false,
-          message: "Invalid OTP. Please try again.",
+          message: data.message || "Invalid OTP. Please try again.",
         });
       }
-      return;
+    } catch (error) {
+      setMessage({
+        show: true,
+        success: false,
+        message: "Network error. Please try again.",
+      });
     }
+  };
 
-    if (!validateInputs()) return;
-
-    generateOTP();
+  const logInHandler = async (data) => {
+    setTimeout(() => setSignInOpen(false), 1500);
     setMessage({
       show: true,
       success: true,
-      message: "OTP Sent Successfully!",
+      message: "Logged in Successfully!",
     });
 
-  
+    const userDataURL = "/api/user/getdata/";
+    const decoded = await parseAndVerifyJwt(data?.token);
+    const response = await fetch(`${userDataURL}${decoded?.email}`);
+    const userData = await response.json();
+    dispatch(setUser(userData?.user));
+    storeCredentials(userData?.user);
+  };
 
-    console.log(name, email, mobile);
+  const generateOTP = async () => {
+    const REGISTER_URL =
+      mode === SIGN_UP ? "/api/user/signup" : "/api/user/login";
+    try {
+      const response = await fetch(REGISTER_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, mobile, password }),
+      });
+      const data = await response.json();
+
+      if (response.ok) {
+        if (mode === SIGN_IN) {
+          logInHandler(data);
+          return;
+        }
+        setOtpRequested(true);
+        setMessage({
+          show: true,
+          success: true,
+          message: "OTP Sent On Email Successfully!",
+        });
+      } else if (response.status === 401) {
+        setForgetPassword(true);
+        setMessage({ show: true, success: false, message: "Wrong Password" });
+      } else {
+        setMessage({
+          show: true,
+          success: false,
+          message: data.message || "Failed to send OTP.",
+        });
+      }
+    } catch (error) {
+      setMessage({
+        show: true,
+        success: false,
+        message: "Network error. Please try again.",
+      });
+    }
+  };
+
+  const submitData = async (e) => {
+    e.preventDefault();
+    if (otpRequested) {
+      await authHandler();
+    } else {
+      await generateOTP();
+    }
+  };
+
+  const clearData = () => {
+    setName("");
+    setEmail("");
+    setMobile("");
+    setPassword("");
+    setMessage({ show: false, success: false, message: "" });
+    setOtpRequested(false);
+    setOTP("");
+    setForgetPassword(false);
+    setResetPassword(false);
   };
 
   useEffect(() => {
-    setMessage({ show: false, success: false, message: "" });
-  }, [mode, loginWithEmail]);
+    clearData();
+  }, [mode]);
 
   return (
-    <form className="lg:w-[80%] mb-4 bg-white p-6 rounded-xl shadow-lg">
+    <form
+      onSubmit={submitData}
+      className="lg:w-[80%] mb-4 bg-white p-6 rounded-xl shadow-lg"
+    >
       <div className="flex flex-col gap-4 py-2">
         {message.show && (
           <div
@@ -133,86 +163,90 @@ const Form = ({ mode, setSignInOpen }) => {
             {message.message}
           </div>
         )}
-
-        {otpRequested ? (
+        {mode === SIGN_UP && (
           <div className="flex items-center border rounded-md p-2">
+            <User className="mr-2 text-gray-500" />
             <input
+              required
+              type="text"
+              placeholder="Enter Your Name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
               className="flex-1 p-2 outline-none"
-              placeholder="Enter OTP"
-              type="number"
-              value={OTP}
-              onChange={(e) => setOTP(e.target.value)}
             />
           </div>
-        ) : (
-          <>
-            {mode === SIGN_UP && (
-              <>
-                <div className="flex items-center border rounded-md p-2">
-                  <User className="mr-2 text-gray-500" />
-                  <input
-                    className="flex-1 p-2 outline-none"
-                    placeholder="Enter Your Name"
-                    value={name}
-                    type="text"
-                    onChange={(e) => setName(e.target.value)}
-                  />
-                </div>
-                <div className="flex items-center border rounded-md p-2">
-                  <Mail className="mr-2 text-gray-500" />
-                  <input
-                    className="flex-1 p-2 outline-none"
-                    placeholder="Enter Your Email"
-                    value={email}
-                    type="email"
-                    onChange={(e) => setEmail(e.target.value)}
-                  />
-                </div>
-              </>
-            )}
+        )}
 
-            <div className="flex items-center border rounded-md p-2">
-              {loginWithEmail ? (
-                <Mail className="mr-2 text-gray-500" />
-              ) : (
-                <Phone className="mr-2 text-gray-500" />
-              )}
-              <input
-                className="flex-1 p-2 outline-none"
-                placeholder={
-                  loginWithEmail ? "Enter Email here" : "Enter Your Number"
-                }
-                value={loginWithEmail ? email : mobile}
-                type={loginWithEmail ? "email" : "number"}
-                onChange={(e) =>
-                  loginWithEmail
-                    ? setEmail(e.target.value)
-                    : setMobile(e.target.value)
-                }
-              />
-            </div>
-          </>
+        <div className="flex items-center border rounded-md p-2">
+          <Mail className="mr-2 text-gray-500" />
+          <input
+            required
+            type="email"
+            placeholder="Enter Your Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="flex-1 p-2 outline-none"
+          />
+        </div>
+
+        {mode === SIGN_UP && (
+          <div className="flex items-center border rounded-md p-2">
+            <Phone className="mr-2 text-gray-500" />
+            <input
+              required
+              type="text"
+              placeholder="Enter Your Mobile Number"
+              value={mobile}
+              onChange={(e) => setMobile(e.target.value)}
+              className="flex-1 p-2 outline-none"
+            />
+          </div>
+        )}
+
+        <div className="flex items-center border rounded-md p-2">
+          <MdPassword className="mr-2 text-gray-500" />
+          <input
+            required
+            type="password"
+            placeholder="Enter Your Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            className="flex-1 p-2 outline-none"
+          />
+        </div>
+
+        {otpRequested && (
+          <div className="flex items-center border rounded-md p-2">
+            <input
+              required
+              type="number"
+              placeholder="Enter OTP"
+              value={OTP}
+              onChange={(e) => setOTP(e.target.value)}
+              className="flex-1 p-2 outline-none"
+            />
+          </div>
+        )}
+
+        {forgetPassword && (
+          <b
+            className="italic text-[#2c21b6] cursor-pointer"
+            onClick={forgetPasswordHandler}
+          >
+            Click here if forgot password
+          </b>
         )}
 
         <button
-          className="w-full bg-[#152347] text-white p-2 rounded-md"
-          onClick={submitData}
+          className="w-full bg-[#152347] text-white p-2 rounded-md cursor-pointer"
           type="submit"
         >
-          {otpRequested ? "Submit OTP" : "Request OTP"}
+          {mode === SIGN_IN
+            ? "Sign in"
+            : otpRequested
+            ? "Verify OTP"
+            : "Generate OTP"}
         </button>
-
-        {mode === SIGN_IN && (
-          <button
-            className="w-full text-[#152347] border border-[#152347] p-2 rounded-md cursor-pointer"
-            onClick={(event) => {
-              event.preventDefault();
-              setLoginWithEmail((prev) => !prev);
-            }}
-          >
-            Log in using {loginWithEmail ? "Mobile" : "Email"}
-          </button>
-        )}
       </div>
     </form>
   );

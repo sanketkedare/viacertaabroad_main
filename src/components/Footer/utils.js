@@ -1,8 +1,8 @@
 export const socialLinks = [
     { href: "#", icon: "Facebook" },
     { href: "#", icon: "Twitter" },
-    { href: "#", icon: "Instagram" },
-    { href: "#", icon: "Linkedin" }
+    { href: "https://www.instagram.com/viacerta.abroad/profilecard/?igsh=ajg1eDZiZjhuZDZi", icon: "Instagram" },
+    { href: "https://www.linkedin.com/company/viacerta/", icon: "Linkedin" }
   ];
   
   export const contactInfo = {
@@ -21,19 +21,7 @@ export const socialLinks = [
     { href: "#", text: "Articles" },
     { href: "#", text: "Terms of Use" },
     { href: "#", text: "Privacy Policy" },
-    { href: "#", text: "Report a Vulnerability" },
-    { href: "#", text: "Exam" },
-    { href: "#", text: "University Partner" },
-    { href: "#", text: "E-Books" },
-    { href: "#", text: "Accommodation" },
-    { href: "#", text: "Alumni Connect" },
-    { href: "#", text: "IELTS Band Calculator" },
-    { href: "#", text: "Download Study Abroad App" },
-    { href: "#", text: "Education Loan Calculator" },
-    { href: "#", text: "Expense Calculator" },
-    { href: "#", text: "Knowledge Base" },
-    { href: "#", text: "Sitemap" },
-    { href: "#", text: "Business Partner" }
+  
   ];
   
   export const destinations = [
