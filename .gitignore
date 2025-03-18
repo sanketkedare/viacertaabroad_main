@@ -43,3 +43,7 @@ next-env.d.ts
 backupCode.js
 package-lock.json
 backupcodes
+
+
+
+# gpg-agent --daemon   terminal-cmd
