@@ -62,23 +62,30 @@ const Navbar = () => {
         setScrolled(false);
       }
     };
-  
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [scrolled]);
-  
 
   return (
-<nav className={`fixed w-full z-30 transition-all duration-500 ${scrolled ? 'bg-white text-black shadow-md' : 'text-white top-2'}`}>
-<div className={`relative w-full  text-sm lg:p-4 z-50 ${scrolled ? 'bg-white shadow-md ' : ''}`}>
+    <nav
+      className={`{} fixed w-full z-30 transition-all duration-500 ${
+        scrolled ? "bg-white text-black shadow-md" : "text-white top-2"
+      }`}
+    >
+      <div
+        className={`relative w-full  text-sm lg:p-4 z-50 ${
+          scrolled ? "bg-white shadow-md " : ""
+        }`}
+      >
         {signInOpen && <SignIn setSignInOpen={setSignInOpen} />}
         <div className="lg:w-10/12 m-auto px-4 sm:px-2">
           <div className="flex items-center justify-between h-[70px] lg:py-3 w-full">
             <Link href="/home">
-              <div className="lg:w-[120px] w-[100px] p-4">
+              <div className="lg:w-[120px] w-[100px] p-4 flex ">
                 <img
-                  className="object-contain cursor-pointer bg-white rounded-full"
-                  src="/viaCerta-logo.png"
+                  className="object-contain cursor-pointer  rounded-full"
+                  src={`${scrolled ? '/viaCerta-logo.png' : "/viacertaLogo-white.png"}`}
                   alt="Logo"
                 />
               </div>
@@ -97,10 +104,16 @@ const Navbar = () => {
                     whileTap={{ scale: 0.95 }}
                     className={`${
                       path === "/home" && i.name === "Home"
-                        ? scrolled ? "text-[#2c21b6]" : "text-[#f8b62d]"
+                        ? scrolled
+                          ? "text-[#2c21b6]"
+                          : "text-[#f8b62d]"
                         : path === "/home/" + i.name.toLowerCase() &&
                           "text-[#2c21b6]"
-                    } ${scrolled ? 'hover:bg-[#152347] hover:text-white' : 'hover:bg-white hover:text-[#152347]'} p-2 mx-1 font-semibold rounded-xl w-[120px] cursor-pointer transition-colors`}
+                    } ${
+                      scrolled
+                        ? "hover:bg-[#152347] hover:text-white"
+                        : "hover:bg-white hover:text-[#152347]"
+                    } p-2 mx-1 font-semibold rounded-xl w-[120px] cursor-pointer transition-colors`}
                   >
                     {i.name === "Exams" ? "Test Prep" : i.name}
                   </motion.button>
@@ -160,7 +173,7 @@ const Navbar = () => {
                     </Link>
                   ))}
                   {!user ? (
-                    <div 
+                    <div
                       className="bg-[#152347] hover:bg-[#657ab6] cursor-pointer text-white p-4 font-bold rounded-xl w-full flex justify-normal items-center gap-4 transition-colors"
                       onClick={() => {
                         setSignInOpen(true);
@@ -177,7 +190,13 @@ const Navbar = () => {
                   )}
                 </motion.div>
               ) : (
-                <FaBars className={`fixed top-4 right-4 ${scrolled ? 'bg-[#152347] text-white' : 'bg-white text-[#152347]'} p-2 rounded-full text-5xl cursor-pointer transition-colors`} />
+                <FaBars
+                  className={`fixed top-4 right-4 ${
+                    scrolled
+                      ? "bg-[#152347] text-white"
+                      : "bg-white text-[#152347]"
+                  } p-2 rounded-full text-5xl cursor-pointer transition-colors`}
+                />
               )}
             </div>
           </div>

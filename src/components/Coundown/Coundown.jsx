@@ -31,12 +31,12 @@ const Countdown = () => {
   const formatTime = (time) => (time < 10 ? `0${time}` : time);
 
   return (
-    <div ref={ref} className="h-[70vh] flex flex-col justify-center items-center p-10 rounded-2xl">
-      {isInView && ( // Trigger animation only when in view
+    <div ref={ref} className="h-[50vh] flex flex-col justify-center items-center px-10 rounded-2xl">
+      {isInView && ( 
         <motion.div
-          initial={{ y: -100, opacity: 0 }}
+          initial={{ y: 50, opacity: 1 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 1, ease: 'easeOut' }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
         >
           <h2 className="text-4xl font-bold mb-8 text-center tracking-wide text-[#1a237e]">
             🚀 Hurry Up! Seats Are Filling Fast!
