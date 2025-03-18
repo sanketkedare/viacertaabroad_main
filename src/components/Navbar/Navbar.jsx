@@ -69,23 +69,23 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`{} fixed w-full z-30 transition-all duration-500 ${
-        scrolled ? "bg-white text-black shadow-md" : "text-white top-2"
+      className={`${path === "/home" && 'fixed' }  w-full z-30 transition-all duration-500 ${
+       (scrolled && path === "/home") ? "bg-white text-black shadow-md" : path === "/home" ? "text-white top-2" : "text-black" 
       }`}
     >
       <div
-        className={`relative w-full  text-sm lg:p-4 z-50 ${
-          scrolled ? "bg-white shadow-md " : ""
+        className={`relative w-full  text-sm lg:p-4 z-50 h-[100px] ${
+          (scrolled && path === "/home") ? "bg-white text-black shadow-md " : ""
         }`}
       >
         {signInOpen && <SignIn setSignInOpen={setSignInOpen} />}
         <div className="lg:w-10/12 m-auto px-4 sm:px-2">
-          <div className="flex items-center justify-between h-[70px] lg:py-3 w-full">
+          <div className="flex items-center justify-between lg:h-[70px] lg:py-3 w-full">
             <Link href="/home">
               <div className="lg:w-[120px] w-[100px] p-4 flex ">
                 <img
-                  className="object-contain cursor-pointer  rounded-full"
-                  src={`${scrolled ? '/viaCerta-logo.png' : "/viacertaLogo-white.png"}`}
+                  className="object-contain cursor-pointer  rounded-full lg:mt-0 mt-0"
+                  src={` ${ path === "/home" ? (scrolled) ? '/viaCerta-logo.png' : "/viacertaLogo-white.png" : '/viaCerta-logo.png'}`}
                   alt="Logo"
                 />
               </div>
@@ -135,14 +135,14 @@ const Navbar = () => {
               {user && <IconDropdown />}
             </div>
 
-            <div className="lg:hidden block" onClick={mobileMenuToggler}>
+            <div className="lg:hidden block " onClick={mobileMenuToggler}>
               {mobileMenuOpen ? (
                 <motion.div
                   initial={{ x: "100%" }}
                   animate={{ x: 0 }}
                   exit={{ x: "100%" }}
                   transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                  className="fixed right-0 top-0 z-40 bg-white rounded-l-2xl w-[250px] p-5 shadow-lg flex flex-col items-start gap-2 font-bold h-full"
+                  className="fixed right-0 top-0 z-40 bg-white text-black rounded-l-2xl w-[250px] p-5 shadow-lg flex flex-col items-start gap-2 font-bold h-full"
                 >
                   <FaTimes
                     className="text-2xl cursor-pointer mb-5"
@@ -191,7 +191,7 @@ const Navbar = () => {
                 </motion.div>
               ) : (
                 <FaBars
-                  className={`fixed top-4 right-4 ${
+                  className={`fixed top-6 right-4 ${
                     scrolled
                       ? "bg-[#152347] text-white"
                       : "bg-white text-[#152347]"

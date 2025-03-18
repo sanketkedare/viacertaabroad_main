@@ -14,11 +14,11 @@ const HeroSection = () => {
     "https://plus.unsplash.com/premium_photo-1701590725747-ac131d4dcffd?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8d2Vic2l0ZSUyMGJhbm5lcnxlbnwwfHwwfHx8MA%3D%3D";
 
   return (
-    <section className="relative w-full shadow-sm h-[85vh] overflow-hidden ">
+    <section className="relative w-full shadow-sm lg:h-[85vh] overflow-hidden ">
       <motion.img
         alt="banner"
         src={image}
-        className="z-0 absolute opacity-80"
+        className="z-0 h-full w-full absolute opacity-80"
         initial={{ scale: 1.1 }}
         animate={{ scale: 1 }}
         transition={{
@@ -33,7 +33,7 @@ const HeroSection = () => {
       <div className="absolute inset-2.5 top-0 left-0 bg-black w-full h-full opacity-50 z-0"></div>
 
       {/* Content Overlay */}
-      <div className="relative z-10 lg:grid lg:grid-cols-3 h-full px-4 p-2 lg:w-9/12 m-auto pt-10">
+      <div className="relative z-10 lg:grid lg:grid-cols-3 h-full px-4 p-2 lg:w-9/12 m-auto lg:pt-10 pt-28">
         {/* Hero Text */}
         <div className="flex flex-col lg:gap-10 gap-4 justify-center lg:items-start items-center h-full col-span-2 text-white">
           <div className="lg:text-left text-center">
@@ -120,7 +120,7 @@ const HeroSection = () => {
           </motion.button>
         </div>
       </div>
-      <AnimatedCountries/>
+      {/* <AnimatedCountries/> */}
 
     </section>
   );

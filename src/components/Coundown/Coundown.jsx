@@ -38,7 +38,7 @@ const Countdown = () => {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
         >
-          <h2 className="text-4xl font-bold mb-8 text-center tracking-wide text-[#1a237e]">
+          <h2 className="lg:text-4xl font-bold mb-8 text-center tracking-wide text-[#1a237e]">
             🚀 Hurry Up! Seats Are Filling Fast!
           </h2>
 
@@ -51,9 +51,9 @@ const Countdown = () => {
                     initial={{ scale: 0.9 }}
                     animate={{ scale: 1 }}
                     transition={{ duration: 0.8, repeat: Infinity, repeatType: "reverse" }}
-                    className="flex flex-col items-center p-5 bg-[#2c21b6] text-[#f8b62d] rounded-2xl shadow-lg m-auto"
+                    className="flex flex-col items-center lg:p-5 p-3 bg-[#2c21b6] text-[#f8b62d] rounded-2xl shadow-lg m-auto"
                   >
-                    <span className="text-6xl font-bold">{formatTime(value)}</span>
+                    <span className="lg:text-6xl font-bold">{formatTime(value)}</span>
                     <span className="text-sm uppercase mt-2 tracking-widest">{unit}</span>
                   </motion.div>
                 ))}
