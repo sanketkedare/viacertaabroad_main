@@ -8,6 +8,7 @@ import Help from "@/components/Help/Help";
 import HeroSection from "@/components/HeroSection/HeroSection";
 import Navbar from "@/components/Navbar/Navbar";
 import Testimonials from "@/components/Slider/Testimonials";
+import UniversitySlider from "@/components/Slider/UniversitySlider";
 import store from "@/Redux/appStore";
 import { Provider } from "react-redux";
 
@@ -20,6 +21,7 @@ export default function Home() {
         <HeroSection />
         <Coundown/>
         <Testimonials/>
+        <UniversitySlider/>
         <WhyViaCerta />
         <FAQs />
         <Footer />

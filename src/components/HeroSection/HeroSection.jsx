@@ -120,7 +120,7 @@ const HeroSection = () => {
           </motion.button>
         </div>
       </div>
-      {/* <AnimatedCountries/> */}
+      <AnimatedCountries/>
 
     </section>
   );

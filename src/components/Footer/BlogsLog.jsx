@@ -21,7 +21,7 @@ const BlogsLog = () => {
                       <a href={href} className="hover:text-[#f8b62d]">
                         {" "}
                         {text} |
-                      </a>{" "}
+                      </a>
                     </span>
                   ))}
                 </p>
