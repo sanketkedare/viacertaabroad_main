@@ -21,21 +21,29 @@ const SignIn = ({ setSignInOpen }) => {
       >
         {/* Close Button */}
         <button
-          className="absolute top-3 right-3 text-gray-500 hover:text-black cursor-pointer p-1"
+          className="absolute top-6 right-6 text-gray-500 hover:text-black cursor-pointer p-1"
           onClick={() => setSignInOpen(false)}
         >
           <X size={24} />
         </button>
 
         {/* Left Section */}
-        <div className="lg:w-1/2 p-4">
-          <img src="/viaCerta-logo.png" className="w-[100px] lg:m-0 m-auto" alt="Logo" />
+        <div className="lg:w-1/2 p-4 text-black">
+          <img
+            src="/viaCerta-logo.png"
+            className="w-[100px] lg:m-0 m-auto"
+            alt="Logo"
+          />
           {mode === SIGN_UP && (
             <div className="my-4">
-              <p className="text-xl font-semibold text-center mb-2">Benefits of Signing Up</p>
+              <p className="text-xl font-semibold text-center mb-2">
+                Benefits of Signing Up
+              </p>
               <ul className="list-disc pl-5 text-gray-700">
                 {benefits.map((item, index) => (
-                  <li key={index} className="mb-1">{item}</li>
+                  <li key={index} className="mb-1">
+                    {item}
+                  </li>
                 ))}
               </ul>
             </div>
@@ -52,15 +60,17 @@ const SignIn = ({ setSignInOpen }) => {
         </div>
 
         {/* Right Section */}
-        <div className="lg:w-1/2 flex flex-col justify-center items-center lg:p-4">
+        <div className="lg:w-1/2 flex text-black   flex-col justify-center items-center lg:p-4">
           <p className="font-bold lg:text-2xl text-xl mb-4">
             {mode === SIGN_IN ? "SIGN IN" : "Create Your Account"}
           </p>
-          <Form mode={mode} setSignInOpen={setSignInOpen}/>
-          
+          <Form mode={mode} setSignInOpen={setSignInOpen} />
+
           {/* Switch between Sign In & Sign Up */}
           <p className="lg:mt-4 text-gray-700">
-            {mode === SIGN_UP ? "Already have an account?" : "Don’t have an account?"} {" "}
+            {mode === SIGN_UP
+              ? "Already have an account?"
+              : "Don’t have an account?"}{" "}
             <button
               onClick={() => setMode(mode === SIGN_IN ? SIGN_UP : SIGN_IN)}
               className="text-blue-600 font-semibold hover:underline ml-1"
@@ -72,10 +82,14 @@ const SignIn = ({ setSignInOpen }) => {
           {/* Terms & Conditions for Sign Up */}
           {mode === SIGN_UP && (
             <p className="text-sm text-gray-600 mt-2">
-              By signing up, you agree to our {" "}
-              <a href="/" className="text-blue-600 font-semibold hover:underline">
+              By signing up, you agree to our{" "}
+              <a
+                href="/"
+                className="text-blue-600 font-semibold hover:underline"
+              >
                 Terms & Conditions
-              </a>.
+              </a>
+              .
             </p>
           )}
         </div>
