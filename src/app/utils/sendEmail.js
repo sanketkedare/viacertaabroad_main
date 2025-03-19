@@ -1,3 +1,4 @@
+
 import nodemailer from "nodemailer";
 
 export async function sendEmail(to, data, emailType) {
@@ -10,14 +11,14 @@ export async function sendEmail(to, data, emailType) {
 
     // for testing mailtrap
 
-    // const transporter = nodemailer.createTransport({
-    //   host: "sandbox.smtp.mailtrap.io",
-    //   port: 2525,
-    //   auth: {
-    //     user: process.env.MAIL_USER_ID,
-    //     pass: process.env.MAIL_USER_PASS,
-    //   },
-    // });
+    const transporter = nodemailer.createTransport({
+      host: "sandbox.smtp.mailtrap.io",
+      port: 2525,
+      auth: {
+        user: process.env.MAIL_USER_ID,
+        pass: process.env.MAIL_USER_PASS,
+      },
+    });
 
     // use this below for live gmail
     // const transporter = nodemailer.createTransport({
@@ -29,15 +30,15 @@ export async function sendEmail(to, data, emailType) {
     // });
 
     // ////////// for hostinger
-    const transporter = nodemailer.createTransport({
-      host: "smtp.hostinger.com", // Check from your email provider!
-      port: 465, // Usually 465 (SSL) or 587 (TLS)
-      secure: true, // True for port 465, false for 587
-      auth: {
-        user: process.env.MAIL_USER_ID,
-        pass: process.env.MAIL_USER_PASS,
-      },
-    });
+    // const transporter = nodemailer.createTransport({
+    //   host: "smtp.hostinger.com", // Check from your email provider!
+    //   port: 465, // Usually 465 (SSL) or 587 (TLS)
+    //   secure: true, // True for port 465, false for 587
+    //   auth: {
+    //     user: process.env.MAIL_USER_ID,
+    //     pass: process.env.MAIL_USER_PASS,
+    //   },
+    // });
 
     // --------------------------------------------------------------------------------
     let customSubject = "";
@@ -91,6 +92,36 @@ export async function sendEmail(to, data, emailType) {
               <p style="margin-top: 20px; font-size: 12px; color: #666;">This is an automated email from ViaCertaAbroad. Please do not reply.</p>
           `;
         break;
+      case "counselingForm":
+        customSubject = `🚀 New Counseling Enquiry Received - ViaCertaAbroad`;
+        htmlContent = `
+            <h2 style="color: #007BFF;">New Counseling Enquiry!</h2>
+            <p>Hello Team,</p>
+            <p>A new counseling enquiry has been submitted via the ViaCertaAbroad website. Here are the details:</p>
+        
+            <div style="background-color: #f8f9fa; padding: 15px; border-radius: 5px; margin: 20px 0;">
+              <p><strong>Name:</strong> ${data.name}</p>
+              <p><strong>Email:</strong> ${data.email}</p>
+              <p><strong>Mobile:</strong> ${data.mobile}</p>
+              <p><strong>Submitted At:</strong> ${new Date().toLocaleString()}</p>
+            </div>
+        
+            <p><strong>Action Required:</strong></p>
+            <ul>
+              <li>Please follow up with <strong>${
+                data.name
+              }</strong> at the earliest.</li>
+              <li>Contact them via email (<a href="mailto:${data.email}">${
+          data.email
+        }</a>) or phone (<strong>${data.mobile}</strong>).</li>
+              <li>Ensure to schedule a counseling session and provide the necessary guidance.</li>
+            </ul>
+        
+            <p>Let's make sure we provide them with the best support for their study abroad journey!</p>
+        
+            <p style="margin-top: 20px; font-size: 12px; color: #666;">This is an automated notification from ViaCertaAbroad. Please do not reply to this email.</p>
+          `;
+        break;
 
       default:
         throw new Error(`Unknown emailType: ${emailType}`);
@@ -112,4 +143,6 @@ export async function sendEmail(to, data, emailType) {
     return false;
   }
 }
+
+
 

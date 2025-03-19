@@ -1,3 +1,4 @@
+import { sendEmail } from "@/app/utils/sendEmail";
 import { connectToDb } from "@/config/dbConfig";
 import Enquiry_User from "@/models/counselingForm";
 
@@ -6,7 +7,7 @@ connectToDb();
 export async function POST(request) {
   try {
     const { name, email, mobile } = await request.json();
-    const existingUser = await Enquiry_User.find({ email: email });
+    const existingUser = await Enquiry_User.findOne({ email: email });
     if (existingUser) {
       return new Response(
         JSON.stringify({
@@ -34,8 +35,9 @@ export async function POST(request) {
     }
 
     const user = new Enquiry_User({ name, email, mobile });
-    console.log(user);
+    // console.log(user);
     await user.save();
+    await sendEmail(process.env.EMAIL_SEND_TO, user, "counselingForm");
     return new Response(
       JSON.stringify({
         success: true,

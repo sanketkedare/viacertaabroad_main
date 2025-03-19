@@ -11,7 +11,7 @@ export async function POST(request) {
     const { name, email, mobile, address, role, password } =
       await request.json();
 
-    if (!name || !email || !mobile) {
+    if (!name || !email || !mobile || !password) {
       return new Response(
         JSON.stringify({
           success: false,
@@ -54,6 +54,7 @@ export async function POST(request) {
     }
 
     const otp = crypto.randomInt(1000, 9999).toString();
+    console.log(otp)
     const otpExpiry = Date.now() + 5 * 60 * 1000; // 5 minutes expiry
     existingUser.otp = await bcrypt.hash(otp, 10);
     existingUser.otpExpiry = otpExpiry;

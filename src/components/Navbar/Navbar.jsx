@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from "react";
 import {
   FaBars,
-  FaCog,
   FaHome,
   FaInfoCircle,
   FaMapMarkerAlt,
@@ -18,8 +17,11 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FaBlog, FaBook, FaServicestack } from "react-icons/fa6";
 import { motion } from "framer-motion";
+import useAuth from "@/Hooks/useAuth";
 
 const Navbar = () => {
+  const userFromBE = useAuth();
+  console.log(userFromBE)
   const user = useSelector((state) => state.user.user);
   const dispatch = useDispatch();
   const path = usePathname();

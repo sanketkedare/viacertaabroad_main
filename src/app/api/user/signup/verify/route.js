@@ -1,9 +1,8 @@
 import { connectToDb } from "@/config/dbConfig";
 import User from "@/models/users";
 import { SignJWT } from "jose";
-import cookie from "cookie";
 import bcrypt from "bcryptjs";
-import { sendEmail } from "@/app/utils/sendEmail";
+import { serialize } from "cookie";
 
 connectToDb();
 
@@ -57,7 +56,7 @@ export async function POST(request) {
     user.otp = undefined;
     user.otpExpiry = undefined;
     await user.save();
-    
+
     // const data = { email, userName: user.name };
 
     // sendEmail(user.email, data, "signUpSuccess");
@@ -73,8 +72,10 @@ export async function POST(request) {
       .setExpirationTime("7d")
       .sign(secret);
 
+    console.log("Generated Token:", token);
+
     const headers = new Headers({
-      "Set-Cookie": cookie.serialize("auth_token", token, {
+      "Set-Cookie": serialize("auth_token", token, {
         httpOnly: true,
         // secure: process.env.NODE_ENV === "production", // Secure in production
         sameSite: "lax",
@@ -95,7 +96,10 @@ export async function POST(request) {
           isVerified: user.isVerified,
         },
       },
-      { status: 200, headers: headers }
+      {
+        status: 200,
+        headers: headers,
+      }
     );
   } catch (error) {
     console.error("Error verifying OTP:", error);

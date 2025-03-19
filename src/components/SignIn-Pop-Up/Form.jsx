@@ -40,6 +40,7 @@ const Form = ({ mode, setSignInOpen }) => {
       });
 
       const data = await response.json();
+      console.log(data)
 
       if (response.ok) {
         dispatch(setUser(data?.user));
@@ -93,12 +94,15 @@ const Form = ({ mode, setSignInOpen }) => {
       });
       const data = await response.json();
 
+      console.log(data);
+
       if (response.ok) {
         if (mode === SIGN_IN) {
           logInHandler(data);
           return;
         }
         setOtpRequested(true);
+
         setMessage({
           show: true,
           success: true,

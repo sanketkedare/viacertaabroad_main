@@ -29,7 +29,7 @@ const IconDropdown = () => {
         whileHover={{ scale: 1.1 }}
       >
         <div className="text-2xl p-1 rounded-full bg-[#152347] w-[40px] h-[40px] border text-white flex justify-center items-center">
-          {user?.name[0].toUpperCase()}
+          {user?.email[0].toUpperCase()}
         </div>
       </motion.div>
 

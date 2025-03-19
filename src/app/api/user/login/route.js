@@ -4,7 +4,7 @@ import crypto from "crypto";
 import bcrypt from "bcryptjs";
 import { sendSmsOtp } from "@/app/utils/sendOtp";
 import { SignJWT } from "jose";
-import cookie from "cookie";
+import { serialize } from "cookie";
 
 connectToDb();
 
@@ -85,7 +85,6 @@ export async function POST(request) {
       );
     }
 
-     
     const secret = new TextEncoder().encode(process.env.JWT_SECRET);
     const token = await new SignJWT({
       id: user._id,
@@ -98,7 +97,7 @@ export async function POST(request) {
       .sign(secret);
 
     const headers = new Headers({
-      "Set-Cookie": cookie?.serialize("auth_token", token, {
+      "Set-Cookie": serialize("auth_token", token, {
         httpOnly: true,
         // secure: process.env.NODE_ENV === "production",
         sameSite: "lax",
@@ -112,7 +111,7 @@ export async function POST(request) {
         success: true,
         message: "Login successful.",
         userId: user._id,
-        token
+        token,
       }),
       { status: 200, headers }
     );

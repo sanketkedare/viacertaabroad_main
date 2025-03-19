@@ -4,6 +4,14 @@ const initialState = {
     user: null
 };
 
+`
+user :{
+isLoggedin : true
+user : {name, email}
+
+}
+`
+
 const authSlice = createSlice({
     name: "user",
     initialState,

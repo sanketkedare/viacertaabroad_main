@@ -3,6 +3,7 @@ import User from "@/models/users";
 
 export async function GET(request) {
   const auth = await authenticate(request);
+  // console.log(auth)
 
   if (!auth.success) {
     return new Response(
@@ -11,7 +12,8 @@ export async function GET(request) {
     );
   }
   try {
-    const myDetails = await User.findOne({ _id: auth.user.id });
+    const myDetails = await User.findOne({ _id: auth?.user?.id });
+    console.log(myDetails)
     if (!myDetails) {
       return new Response(
         JSON.stringify({

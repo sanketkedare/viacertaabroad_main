@@ -1,26 +1,41 @@
-// import jwt from "jsonwebtoken";
+
+
 import { jwtVerify } from "jose";
-import cookie from "cookie";
+import * as cookie from "cookie";
 
 export async function authenticate(request) {
   try {
-    const cookies = cookie.parse(request.headers.get("cookie") || "");
+    const cookieHeader = request.headers.get("cookie");
+    if (!cookieHeader) {
+      console.log("No cookie found");
+      return { success: false, message: "Unauthorized: No cookie found" };
+    }
+
+    const cookies = cookie.parse(cookieHeader);
     const token = cookies.auth_token;
 
     if (!token) {
-      return { success: false, message: "Unauthorized" };
+      console.log("No token provided");
+      return { success: false, message: "Unauthorized: No token provided" };
     }
-    // const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    // console.log("Received Token", token);
 
-    const secret = new TextEncoder().encode(process.env.JWT_SECRET);  
+    if (!process.env.JWT_SECRET) {
+      throw new Error("JWT secret is missing in environment variables.");
+    }
+
+    const secret = new TextEncoder().encode(process.env.JWT_SECRET);
     const { payload } = await jwtVerify(token, secret);
-
-
     return { success: true, user: payload };
   } catch (error) {
+    console.error("JWT Verification Error:", error.message);
+
     return {
       success: false,
-      message: "Invalid or expired token",
+      message:
+        error.code === "ERR_JWT_EXPIRED"
+          ? "Token expired. Please log in again."
+          : "Invalid or expired token.",
       error: error.message,
     };
   }
