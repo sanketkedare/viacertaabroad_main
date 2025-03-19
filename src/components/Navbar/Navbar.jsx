@@ -20,8 +20,8 @@ import { motion } from "framer-motion";
 import useAuth from "@/Hooks/useAuth";
 
 const Navbar = () => {
-  const userFromBE = useAuth();
-  console.log(userFromBE)
+  // const userFromBE = useAuth();
+  // console.log(userFromBE)
   const user = useSelector((state) => state.user.user);
   const dispatch = useDispatch();
   const path = usePathname();
@@ -31,7 +31,7 @@ const Navbar = () => {
 
   const navlinks = [
     { name: "Home", icon: <FaHome /> },
-    { name: "Exams", icon: <FaBook /> }, // It should be appear as Test Prep but path remains constant
+    { name: "Exams", icon: <FaBook /> },
     { name: "Destinations", icon: <FaMapMarkerAlt /> },
     { name: "Services", icon: <FaServicestack /> },
     { name: "Blogs", icon: <FaBlog /> },
@@ -97,9 +97,7 @@ const Navbar = () => {
               {navlinks.map((i) => (
                 <Link
                   key={i.name}
-                  href={`/home/${
-                    "home" === i.name.toLowerCase() ? "" : i.name.toLowerCase()
-                  }`}
+                  href={`/${i.name.toLowerCase()}`}
                 >
                   <motion.button
                     whileHover={{ scale: 1.05 }}
@@ -109,7 +107,7 @@ const Navbar = () => {
                         ? scrolled
                           ? "text-[#2c21b6]"
                           : "text-[#f8b62d]"
-                        : path === "/home/" + i.name.toLowerCase() &&
+                        : path === "/" + i.name.toLowerCase() &&
                           "text-[#2c21b6]"
                     } ${
                       scrolled
@@ -153,11 +151,7 @@ const Navbar = () => {
                   {navlinks.map((i) => (
                     <Link
                       key={i.name}
-                      href={`/home/${
-                        "home" === i.name.toLowerCase()
-                          ? ""
-                          : i.name.toLowerCase()
-                      }`}
+                      href={`/${i.name.toLowerCase()}`}
                       className="w-full"
                       onClick={mobileMenuToggler}
                     >
@@ -165,7 +159,7 @@ const Navbar = () => {
                         className={`${
                           path === "/home" && i.name === "Home"
                             ? "text-[#2c21b6]"
-                            : path === "/home/" + i.name.toLowerCase() &&
+                            : path === "/" + i.name.toLowerCase() &&
                               "text-[#2c21b6]"
                         }  hover:bg-[#152347] hover:text-white p-4 font-bold rounded-xl bg-gray-200 w-full flex justify-normal items-center gap-4 transition-colors`}
                       >

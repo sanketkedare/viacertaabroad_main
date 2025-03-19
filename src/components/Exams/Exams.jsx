@@ -74,7 +74,7 @@ const Exams = () => {
         <section className="lg:max-h-[600px]  lg:p-2 mt-4 rounded-xl">
           <div className="lg:grid grid-cols-4 justify-between">
             {currentExams.map((i, index) => (
-              <Link href={`/home/exams/${i.category}/${genrateUrl(i.name)}`}>
+              <Link href={`/exams/${i.category}/${genrateUrl(i.name)}`}>
                 <div
                   key={index}
                   className="lg:w-[250px] h-[150px] m-auto border mb-5 p-5 flex justify-center items-center text-center font-bold cursor-pointer text-sm lg:text-md rounded-2xl hover:bg-[#152347] hover:text-white"
