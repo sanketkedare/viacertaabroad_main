@@ -5,7 +5,7 @@ const CompanyLogo = () => {
   return (
     <Link href="/home" className="">
       <img
-        className="cursor-pointer h-[70px]"
+        className="cursor-pointer lg:h-[70px]"
         src="/viaCerta-logo.png"
         alt="Logo"
       />

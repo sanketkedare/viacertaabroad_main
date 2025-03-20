@@ -23,13 +23,13 @@ const FAQs = () => {
   return (
     <section className="min-h-screen py-16 relative">
       <div className="py-10">
-        <h1 className="text-[40px] font-bold mt-10 text-center flex gap-4 justify-center">
+        <h1 className="text-[40px] font-bold mt-10 text-center lg:flex gap-4 justify-center">
           Everything You
-          <span className="bg-gradient-to-r from-[#14247C] to-[#E00012] text-transparent bg-clip-text">
+          <span className="bg-gradient-to-r px-2 from-[#14247C] to-[#E00012] text-transparent bg-clip-text">
             Wanted To Ask!
           </span>
         </h1>
-        <h3 className="text-[24px] mt-2 text-center">
+        <h3 className="lg:text-[24px]  text-xl mt-2 text-center">
           Get answers to all your study abroad questions and make informed
           decisions with confidence!
         </h3>
@@ -41,7 +41,7 @@ const FAQs = () => {
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="relative border border-[#E0001269]  shadow-lg bg-white w-[45%]"
+              className="relative border border-[#E0001269]  shadow-lg bg-white lg:w-[45%]"
             >
               <button
                 onClick={() => toggleFAQ(index)}

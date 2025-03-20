@@ -1,19 +1,13 @@
 "use client";
 
 import React, { useState } from "react";
-import { FaGlobe, FaGraduationCap } from "react-icons/fa6";
-import { IoIosArrowForward } from "react-icons/io";
 import { motion } from "framer-motion";
 
 const ApplicationForm = () => {
   const URL = "/api/enquiry_form";
 
   const [message, setMessage] = useState({ show: false, success: false, message: "" });
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    mobile: "",
-  });
+  const [formData, setFormData] = useState({ name: "", email: "", mobile: "" });
   const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
@@ -63,59 +57,62 @@ const ApplicationForm = () => {
   };
 
   return (
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0, y: -50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      whileHover={{scale : 1.05}}
-      className="lg:w-[400px] absolute top-5 right-5 h-[90%] bg-white  rounded-xl  shadow-lg  z-30 m-auto"
+      whileHover={{ scale: 1.05 }}
+      className="lg:w-[400px] w-11/12 absolute lg:top-5 bottom-0 lg:right-5 right-4 lg:h-[90%] h-2/3 bg-white rounded-xl shadow-lg z-30 m-auto"
     >
-      <div className="rounded-xl  text-center bg-[#A6A6FF3D] font-bold">
+      <div className="rounded-xl absolute top-0 w-full text-center bg-[#A6A6FF3D] font-bold">
         <p className="p-5 text-[#1E1E8C]">Get FREE Counselling Today!</p>
       </div>
-  
 
-      <form className="space-y-4" onSubmit={handleSubmit}>
-        {['name', 'email', 'mobile'].map((field, index) => (
-          <div className="px-5">
-          <label htmlFor={field} className="font-bold"> {field.charAt(0).toUpperCase() + field.slice(1)}</label>
-          <motion.input
-          id={field}
-            key={field}
-            type={field === 'mobile' ? 'tel' : field}
-            name={field}
-            placeholder={`Enter ${field === 'mobile' ? 'Phone Number' : `Full ${field}`}`}
-            value={formData[field]}
-            onChange={handleChange}
-            className="w-full border border-gray-300  p-2 mt-1 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: index * 0.2 }}
-          />
+      <div className="flex items-center h-full w-full justify-center lg:items-end">
+        <form className="space-y-4 w-full" onSubmit={handleSubmit}>
+          {['name', 'email', 'mobile'].map((field, index) => (
+            <div className="px-5" key={field}>
+              <label htmlFor={field} className="font-bold block mb-1">
+                {field.charAt(0).toUpperCase() + field.slice(1)}
+              </label>
+              <motion.input
+                id={field}
+                type={field === 'mobile' ? 'tel' : field}
+                name={field}
+                placeholder={`Enter ${field === 'mobile' ? 'Phone Number' : `Full ${field}`}`}
+                value={formData[field]}
+                onChange={handleChange}
+                className="w-full border border-gray-300 p-2 mt-1 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: index * 0.2 }}
+              />
+            </div>
+          ))}
+
+          {message.show && (
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className={`text-center text-sm ${message.success ? "text-green-500" : "text-red-500"} mt-3`}
+            >
+              {message.message}
+            </motion.p>
+          )}
+
+          <div className="flex justify-center mt-5">
+            <motion.button
+              type="submit"
+              className="lg:w-full w-[200px] flex justify-center items-center gap-3 bg-[#E00012] text-white lg:text-lg font-semibold py-2 lg:rounded-md rounded-t-md transition"
+              disabled={loading}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              {loading ? "Submitting..." : "Book Now"}
+            </motion.button>
           </div>
-        ))}
-
-        {message.show && (
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className={`text-center text-sm ${message.success ? "text-green-500" : "text-red-500"}`}
-          >
-            {message.message}
-          </motion.p>
-        )}
-
-        <motion.button
-          type="submit"
-          className="w-[200px] m-auto flex justify-center items-center gap-3 bg-[#E00012]  text-white lg:text-lg font-semibold py-2 rounded-md transition"
-          disabled={loading}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          {loading ? "Submitting..." : "Book Now"} 
-        </motion.button>
-
-      </form>
+        </form>
+      </div>
     </motion.div>
   );
 };

@@ -25,16 +25,16 @@ export default function Home() {
         <Help/>
         <Navbar />
         <HeroSection />
-        <Process/>
-        <UniversitySlider/>
-        <Frame1/>
+         <Process/>
+       <UniversitySlider/>
+       <Frame1/>
         <Testimonials/>
         <Frame2/>
         <BlogSlider/>
-        <Frame3/>
-        <FAQs />
-        <Frame4/>
-        <Footer />
+       <Frame3/>
+         <FAQs />
+       <Frame4/>
+      <Footer />
       </div>
     </Provider>
   );

@@ -9,7 +9,6 @@ import {
   FaSignInAlt,
   FaTimes,
 } from "react-icons/fa";
-import Link from "next/link";
 import { FaBlog, FaBook, FaServicestack } from "react-icons/fa6";
 import { usePathname } from "next/navigation";
 import { useSelector } from "react-redux";
@@ -23,14 +22,14 @@ const MobileMenu = ({
 
   const path = usePathname();
 
+
   const navlinks = [
-    { name: "Home", icon: <FaHome /> },
-    { name: "Exams", icon: <FaBook /> },
-    { name: "Destinations", icon: <FaMapMarkerAlt /> },
-    { name: "Services", icon: <FaServicestack /> },
-    { name: "Blogs", icon: <FaBlog /> },
-    { name: "Contact", icon: <FaPhoneAlt /> },
-    { name: "About", icon: <FaInfoCircle /> },
+    { name: "Home", icon: <FaHome /> , link:''},
+    { name: "Test Prep", icon: <FaBook /> , link:'' },
+    { name: "Destinations", icon: <FaMapMarkerAlt />  , link:''},
+    { name: "Services", icon: <FaServicestack />  , link:''},
+    { name: "Work", icon: <FaBlog />  , link:''},
+    { name: "MBBS's Program", icon: <FaPhoneAlt /> , link:'' },
   ];
 
   return (
@@ -46,12 +45,6 @@ const MobileMenu = ({
         onClick={mobileMenuToggler}
       />
       {navlinks.map((i) => (
-        <Link
-          key={i.name}
-          href={`/${i.name.toLowerCase()}`}
-          className="w-full"
-          onClick={mobileMenuToggler}
-        >
           <div
             className={`${
               path === "/home" && i.name === "Home"
@@ -60,9 +53,8 @@ const MobileMenu = ({
             }  hover:bg-[#152347] hover:text-white p-4 font-bold rounded-xl bg-gray-200 w-full flex justify-normal items-center gap-4 transition-colors`}
           >
             {i.icon}
-            {i.name === "Exams" ? "Test Prep" : i.name}
+            {i.name}
           </div>
-        </Link>
       ))}
       {!user ? (
         <div

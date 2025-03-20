@@ -48,17 +48,17 @@ const Testimonials = () => {
   return (
     <div className="flex flex-col justify-center items-center w-full py-10 ">
       <div className="py-10">
-        <h1 className="text-[40px] font-bold mt-10 text-center  flex gap-4 justify-center">
+        <h1 className="text-[40px] font-bold mt-10 text-center  lg:flex gap-4 justify-center">
           Real Stories. Real Wins.
-          <span className="bg-gradient-to-r from-[#14247C] to-[#E00012] text-transparent bg-clip-text">
+          <span className="bg-gradient-to-r px-2 from-[#14247C] to-[#E00012] text-transparent bg-clip-text">
             Now it’s Your Turn.
           </span>
         </h1>
-        <h3 className="text-[24px] mt-2 text-center">
+        <h3 className="lg:text-[24px] text-xl mt-2 text-center">
           The next success story can be your
         </h3>
       </div>
-      <div className="relative w-11/12 overflow-hidden ">
+      <div className="relative lg:w-11/12 overflow-hidden ">
         {/* Carousel Container */}
         <div
           className="flex gap-10 transition-transform duration-200 ease-linear"
@@ -97,6 +97,7 @@ const Testimonials = () => {
           ))}
         </div>
       </div>
+      
     </div>
   );
 };

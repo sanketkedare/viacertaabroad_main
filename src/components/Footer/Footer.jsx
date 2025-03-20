@@ -5,15 +5,15 @@ import { FiInstagram, FiLinkedin, FiFacebook } from 'react-icons/fi'
 
 const Footer = () => {
   return (
-    <footer className='h-[450px] bg-[#B9C4FF3B] mt-20 relative'>
+    <footer className='lg:h-[450px] bg-[#B9C4FF3B] mt-20 relative'>
       {/* Background Outlined Text */}
       <div className='absolute text-[300px] w-full h-full bottom-0 flex opacity-5 justify-center items-center'>
         <span className=''>VIACERTA</span>
       </div>
       
-      <div className='flex justify-between w-9/12 m-auto pt-10'>
+      <div className='flex flex-col lg:flex-row justify-between gap-5 lg:w-9/12 w-11/12 m-auto pt-10'>
         {/* Support Section */}
-        <div>
+        <div className=''>
           <h1 className='font-bold text-xl mb-4'>Support</h1>
           {supportLinks.map((link, index) => (
             <p key={index} className='mb-1'>{link.text}</p>

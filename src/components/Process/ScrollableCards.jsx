@@ -8,9 +8,8 @@ const ScrollableCards = () => {
   return (
     <div className="p-5 py-10 h-screen overflow-y-auto no-scrollbar">
       {/* Scrollable container */}
-      <div className="h-[400vh] w-full relative flex flex-col justify-normal">
+      <div className="h-[400vh] w-full relative flex flex-col justify-normal mt-0">
         <Cart1 />
-
         <Cart2 /> 
         <Cart3/>
         <Cart4/>

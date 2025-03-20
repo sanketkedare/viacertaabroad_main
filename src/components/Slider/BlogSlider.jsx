@@ -54,14 +54,14 @@ const BlogSlider = () => {
     ];
 
     return (
-        <div className='my-10'>
+        <div className='lg:my-10 my-28'>
             <h1 className='text-center text-[40px] font-bold'>Blogs</h1>
-            <p className='w-[800px] text-center m-auto text-[20px] py-3'>Our Champions started with just a dream and look where they are now! Success stories you would want to be the part of</p>
+            <p className='lg:w-[800px] w-11/12 text-center m-auto text-[20px] py-3'>Our Champions started with just a dream and look where they are now! Success stories you would want to be the part of</p>
            
-           <div className='overflow-x-scroll w-10/12 m-auto scrollbar-hide'>
-           <div className='flex gap-6 justify-center py-6 w-max'>
+           <div className='overflow-x-scroll lg:w-10/12 w-full m-auto scrollbar-hide'>
+           <div className='flex flex-col lg:flex-row gap-6 justify-center items-center py-6 w-max  m-auto'>
                 {blogs.map((blog, index) => (
-                    <div key={index} className='w-[280px] h-[354px] rounded-md overflow-hidden bg-white shadow-[#E000122E] shadow-[0_0_30px_rgba(0,0,0,0.2)]'>
+                    <div key={index} className='lg:w-[280px] w-[400px] h-[354px] rounded-md overflow-hidden bg-white shadow-[#E000122E] shadow-[0_0_30px_rgba(0,0,0,0.2)]'>
                         <div className='relative'>
                             <img src={image} alt='Blog' className='w-full object-cover'/>
                             <div className='absolute top-2 right-2 bg-[#E00012] text-white text-xs px-3 py-1 rounded-md'>{blog.country}</div>

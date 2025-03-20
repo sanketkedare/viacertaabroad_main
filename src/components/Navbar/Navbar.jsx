@@ -9,6 +9,8 @@ import CompanyLogo from "./CompanyLogo";
 import OptionsMobile from "./OptionsMobile";
 import OptionsDesktop from "./OptionsDesktop";
 
+import SignInButton from "./SignInButton";
+
 const Navbar = () => {
   // const userFromBE = useAuth();
   // console.log(userFromBE)
@@ -29,16 +31,17 @@ const Navbar = () => {
   }, [dispatch]);
 
   return (
-    <nav className="w-full  h-[70px] transition-all duration-500 bg-white text-black shadow-md">
+    <nav className="w-full  lg:h-[70px] transition-all duration-500 bg-white text-black shadow-md">
       <div className="relative">
         <SignIn signInOpen={signInOpen} setSignInOpen={setSignInOpen} />
-        <div className="lg:w-11/12 m-auto  sm:px-2">
-          <div className="flex items-center justify-between  w-full h-full">
+        <div className="lg:w-11/12  m-auto  sm:px-2">
+          <div className="flex items-center  lg:justify-between justify-center  w-full h-full">
             <CompanyLogo />
-            <div className="flex justify-between items-center h-full w-3/4">
+            <div className="hidden lg:flex justify-between items-center h-full w-3/4">
               <OptionsDesktop />
-              <OptionsMobile setSignInOpen={setSignInOpen} />
+              <SignInButton/>
             </div>
+            <OptionsMobile setSignInOpen={setSignInOpen} />
           </div>
         </div>
       </div>

@@ -3,14 +3,14 @@ import ApplicationForm from '../HeroSection/ApplicationForm'
 
 const Frame4 = () => {
   return (
-    <div className='w-[90%] h-[427px] bg-[#14247C] rounded-[12px] m-auto relative overflow-hidden'>
+    <div className='lg:w-[90%] lg:h-[427px] h-[750px] bg-[#14247C] rounded-[12px] m-auto relative overflow-hidden'>
       {/* Background Outlined Text */}
-      <div className='absolute text-[250px] w-full h-full bottom-0 flex items-end  opacity-10'>
+      <div className='absolute text-[250px] w-full h-full bottom-0 flex lg:items-end items-center  opacity-10'>
         <span className='outlined-text'>VIACERTA</span>
       </div>
-      <div className='text-[#fff] flex flex-col justify-normal h-full w-3/5 p-10 px-16 gap-5'>
-        <h1 className='text-[48px]'>Hey You, Your Future Is Calling–Let’s Get You Abroad</h1>
-        <h3 className='text-[24px] w-2/'>Answer the Call, your future shouldn’t be on hold.</h3>
+      <div className='text-[#fff] flex flex-col justify-normal h-full lg:w-3/5 p-10 lg:px-16 gap-5'>
+        <h1 className='lg:text-[48px] text-3xl lg:text-left text-center'>Hey You, Your Future Is Calling–Let’s Get You Abroad</h1>
+        <h3 className='lg:text-[24px] lg:w-2/3 lg:text-left text-center'>Answer the Call, your future shouldn’t be on hold.</h3>
       </div>
 
       <ApplicationForm />
