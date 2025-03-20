@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { successStories } from "../LaunchEvent/SuccessStories";
-import { FaLinkedin } from "react-icons/fa6";
+import { FaQuoteLeft } from "react-icons/fa";
 
 const Testimonials = () => {
   const [isPaused, setIsPaused] = useState(false);
@@ -47,7 +47,17 @@ const Testimonials = () => {
 
   return (
     <div className="flex flex-col justify-center items-center w-full py-10 ">
-      <h2 className="text-3xl font-bold mb-8 text-center">Our Students</h2>
+      <div className="py-10">
+        <h1 className="text-[40px] font-bold mt-10 text-center  flex gap-4 justify-center">
+          Real Stories. Real Wins.
+          <span className="bg-gradient-to-r from-[#14247C] to-[#E00012] text-transparent bg-clip-text">
+            Now it’s Your Turn.
+          </span>
+        </h1>
+        <h3 className="text-[24px] mt-2 text-center">
+          The next success story can be your
+        </h3>
+      </div>
       <div className="relative w-11/12 overflow-hidden ">
         {/* Carousel Container */}
         <div
@@ -57,41 +67,31 @@ const Testimonials = () => {
           {duplicatedData.map((story, index) => (
             <article key={index} className="w-[350px] p-4 flex-shrink-0">
               <div
-                className="p-6 h-[450px] flex flex-col items-center bg-white rounded-xl  shadow-lg cursor-pointer transition duration-300 relative"
+                className="p-6  flex flex-col items-center bg-[#0168EF08] rounded-xl  shadow-lg cursor-pointer transition duration-300 relative"
                 onMouseEnter={() => setIsPaused(true)}
                 onMouseLeave={() => setIsPaused(false)}
               >
-                {/* Profile Image */}
-                <div className="relative w-24 h-24 mb-4">
+                <p className="mt-3 text-gray-700 text-sm flex flex-col gap-3">
+                  <FaQuoteLeft className="text-[#E00012] text-xl " />
+                  <p className="h-[150px]">{story.description} </p>
+                  <FaQuoteLeft className="text-[#E00012] text-xl rotate-180" />
+                </p>
+
+                <div className="flex justify-normal gap-4 w-full py-5">
                   <img
                     src={
                       story.image ||
                       "https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg"
                     }
                     alt={`${story.name}'s Profile`}
-                    className="w-full h-full  rounded-full object-cover"
+                    className="w-15 h-15 rounded-full object-cover"
                   />
-                  <a
-                    href={story.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="absolute bottom-0 right-0 p-1 bg-white rounded-full shadow-md"
-                  >
-                    <FaLinkedin size={20} className="text-blue-700" />
-                  </a>
+                  <div className="">
+                    <b>{story.name}</b>
+                    <img src="/universities/image2.png" className="w-28"/>
+                  </div>
+                 
                 </div>
-                <h2 className="text-xl font-semibold text-gray-800 text-center">
-                  {story.name}
-                </h2>
-                <p className="text-sm text-gray-500 mt-1 text-center">
-                  {story.university}
-                </p>
-                <p className="mt-3 font-bold text-[#f8b62d] text-center">
-                  {story.scholarship}
-                </p>
-                <p className="mt-3 text-gray-700 text-center text-sm">
-                  "{story.description}"
-                </p>
               </div>
             </article>
           ))}

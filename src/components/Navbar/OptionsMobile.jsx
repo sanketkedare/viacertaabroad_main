@@ -19,7 +19,7 @@ const OptionsMobile = ({ setSignInOpen, scrolled }) =>
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => setSignInOpen(true)}
-            className="text-white bg-[#2c31b6] hover:bg-[#50528c] font-bold p-2 rounded-xl px-4 transition"
+            className="text-white bg-[#E00012] font-bold p-2 rounded-md w-[120px]  transition"
           >
             Sign In
           </motion.button>

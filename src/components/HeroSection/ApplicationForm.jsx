@@ -68,35 +68,31 @@ const ApplicationForm = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
       whileHover={{scale : 1.05}}
-      className="lg:w-[400px] bg-white  rounded-xl border-t-8 border-[#f8b62d] shadow-lg p-5 z-30 m-auto"
+      className="lg:w-[400px] absolute top-5 right-5 h-[90%] bg-white  rounded-xl  shadow-lg  z-30 m-auto"
     >
-      <div className="flex justify-between items-center mb-4">
-        <div className="flex items-center gap-2 lg:text-lg font-semibold">
-          <FaGraduationCap className="text-[#2c31b6]" />
-          <span className="text-[#2c31b6]">250+ </span>courses
-        </div>
-        <div className="flex items-center gap-2 lg:text-lg font-semibold">
-          <FaGlobe className="text-[#2c31b6]" />
-          <span className="text-[#2c31b6]">30 </span>countries
-        </div>
+      <div className="rounded-xl  text-center bg-[#A6A6FF3D] font-bold">
+        <p className="p-5 text-[#1E1E8C]">Get FREE Counselling Today!</p>
       </div>
-
-      <h2 className="lg:text-2xl font-bold mb-4">International Degree Now in Your Budget</h2>
+  
 
       <form className="space-y-4" onSubmit={handleSubmit}>
         {['name', 'email', 'mobile'].map((field, index) => (
+          <div className="px-5">
+          <label htmlFor={field} className="font-bold"> {field.charAt(0).toUpperCase() + field.slice(1)}</label>
           <motion.input
+          id={field}
             key={field}
             type={field === 'mobile' ? 'tel' : field}
             name={field}
             placeholder={`Enter ${field === 'mobile' ? 'Phone Number' : `Full ${field}`}`}
             value={formData[field]}
             onChange={handleChange}
-            className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full border border-gray-300  p-2 mt-1 focus:outline-none focus:ring-2 focus:ring-blue-500"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: index * 0.2 }}
           />
+          </div>
         ))}
 
         {message.show && (
@@ -111,19 +107,14 @@ const ApplicationForm = () => {
 
         <motion.button
           type="submit"
-          className="w-full flex justify-center items-center gap-3 bg-[#152347] hover:bg-[#31343b] text-white lg:text-lg font-semibold py-3 rounded-md transition"
+          className="w-[200px] m-auto flex justify-center items-center gap-3 bg-[#E00012]  text-white lg:text-lg font-semibold py-2 rounded-md transition"
           disabled={loading}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
-          {loading ? "Submitting..." : "Book Your Free Counseling"} <IoIosArrowForward />
+          {loading ? "Submitting..." : "Book Now"} 
         </motion.button>
 
-        <p className="text-[10px] text-gray-500 text-center mt-2">
-          By submitting this form, you agree to the
-          <a href="#" className="text-blue-500 underline"> Terms of Use</a> and
-          <a href="#" className="text-blue-500 underline"> Privacy Policy</a>.
-        </p>
       </form>
     </motion.div>
   );

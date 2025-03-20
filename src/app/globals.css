@@ -3,6 +3,7 @@
 body {
   background-color: '#ffffff';
   font-family: 'Poppins', sans-serif;
+
 }
 
 .scrollbar-hide::-webkit-scrollbar {
@@ -24,4 +25,10 @@ body {
 
 .animate-scroll {
   animation: scroll 20s linear infinite;
+}
+
+.outlined-text {
+  color: transparent;
+  -webkit-text-stroke: 2px white;
+  text-stroke: 2px white; /* For better compatibility */
 }

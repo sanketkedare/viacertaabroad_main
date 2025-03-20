@@ -1,128 +1,66 @@
-"use client";
-
-import React from "react";
-import ApplicationForm from "./ApplicationForm";
-import { IoIosArrowForward } from "react-icons/io";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { motion } from "framer-motion";
-import AnimatedCountries from "../Slider/AnimatedCountries";
+import React, { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import AnimatedButton from "./AnmatedButton";
 
 const HeroSection = () => {
-  const router = useRouter();
-  const image =
-    "https://plus.unsplash.com/premium_photo-1701590725747-ac131d4dcffd?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8d2Vic2l0ZSUyMGJhbm5lcnxlbnwwfHwwfHx8MA%3D%3D";
+  const [index, setIndex] = useState(0);
+  const arr = ["Anywhere", "Destination", "Beyond"];
+
+  const imageUrl =
+    "https://s3-alpha-sig.figma.com/img/28b5/559c/6164abe56474b0307901dd05b00ba0e3?Expires=1743379200&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Uc-Po4YZ0z2pa2q1K1l9-fbAxW8yBnH3rmV3fJz-AN3v5ryuicuxujqN-LqyqwbxVusnnN0I49KSQbXLt6DHDy9O-St46AH7z0k5o17yje9inatbz2gnQUWUq8vxV~O0irRnX8GGwo5Rt8HX9aalefxxTw3Rdp2H7xqloegc7URar5PyCokq6R3tL~bpd3mppTlhLSFOdM2asoRPoURoV1x9rCrJBb~Vuw3HHZm-~r1UA1qxj7ItQ0X5XFN6VuEopO55nQdu5XKERVk5ExpWJnpXcRbXoTb-D9LbQB1CitQ~kKisVzWkOpUCOSYfnRWwfznCbHJp~~FG4WX3dfvKig__";
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prevIndex) => (prevIndex === arr.length - 1 ? 0 : prevIndex + 1));
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
-    <section className="relative w-full shadow-sm lg:h-[85vh] overflow-hidden ">
+    <div className="relative border h-[70vh] overflow-hidden">
       <motion.img
-        alt="banner"
-        src={image}
-        className="z-0 h-full w-full absolute opacity-80"
-        initial={{ scale: 1.1 }}
-        animate={{ scale: 1 }}
-        transition={{
-          duration: 3,
-          ease: "easeInOut",
-          repeat: Infinity,
-          repeatType: "reverse",
-        }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        className="w-full object-contain absolute -bottom-28 z-0"
+        src={imageUrl}
+        loading="lazy"
       />
-
-      {/* Overlay for Readability */}
-      <div className="absolute inset-2.5 top-0 left-0 bg-black w-full h-full opacity-50 z-0"></div>
-
-      {/* Content Overlay */}
-      <div className="relative z-10 lg:grid lg:grid-cols-3 h-full px-4 p-2 lg:w-9/12 m-auto lg:pt-10 pt-28">
-        {/* Hero Text */}
-        <div className="flex flex-col lg:gap-10 gap-4 justify-center lg:items-start items-center h-full col-span-2 text-white">
-          <div className="lg:text-left text-center">
-            <motion.p
-              className="lg:text-4xl text-lg font-bold py-2"
-              initial={{ opacity: 0, y: -50 }}
+      <div className="absolute w-full h-full insert-0 backdrop-opacity-75 bg-[#000000BF] z-10"></div>
+      <div className="absolute z-20 w-full h-full flex flex-col gap-4 justify-center items-center text-white">
+        <motion.h1
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="font-bold w-[1000px] text-[75px]"
+        >
+          From Here To{" "}
+          <AnimatePresence mode="wait">
+            <motion.b
+              key={index}
+              initial={{ opacity: 1, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
+              exit={{ opacity:1, y: -10 }}
+              transition={{ duration: 0.3 }}
+              className="text-[#E00012]"
             >
-              Study Abroad with ViaCerta Abroad
-            </motion.p>
-            <motion.p
-              className="lg:text-2xl font-bold lg:py-2"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-            >
-              Building Careers Globally
-            </motion.p>
-          </div>
+              {arr[index]}
+            </motion.b>
+          </AnimatePresence>
+        </motion.h1>
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+          className="w-[634px] text-[24px] text-xl text-center"
+        >
+          Explore top universities and unique cultural experiences worldwide.
+        </motion.p>
 
-          <motion.div
-            className="hidden lg:flex gap-5 items-center"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-          >
-            <div>
-              <p className="text-3xl text-[#f8b62d] font-semibold">80+</p>
-              <p className="text-xl">University Partners</p>
-            </div>
-            <p className="rotate-90">//////</p>
-            <div>
-              <p className="text-3xl text-[#f8b62d] font-semibold">10K+</p>
-              <p className="text-xl">Careers Transformed</p>
-            </div>
-          </motion.div>
-
-          {/* Desktop Explore Button */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-          >
-            <Link href="/explore">
-              <span className="cursor-pointer p-2 font-semibold text-xl hidden lg:flex items-center gap-2 transition px-6 bg-[#152347] hover:bg-[#3b445c] text-[#ffffff] rounded-sm">
-                Explore Courses <IoIosArrowForward />
-              </span>
-            </Link>
-          </motion.div>
-        </div>
-
-        {/* Placeholder for Counselling Form */}
-        <ApplicationForm />
-
-        {/* Mobile Explore Button */}
-        <div className="lg:hidden flex flex-col items-center gap-3 mt-4 text-white my-10">
-          <motion.div
-            className="flex gap-5 items-center my-5"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-          >
-            <div className="text-center">
-              <p className="text-2xl text-[#f8b62d] font-semibold">80+</p>
-              <p className="text-sm">University Partners</p>
-            </div>
-            <p className="rotate-90">//////</p>
-            <div className="text-center">
-              <p className="text-2xl text-[#f8b62d] font-semibold">10K+</p>
-              <p className="text-sm">Careers Transformed</p>
-            </div>
-          </motion.div>
-
-          {/* Mobile Explore Button with useRouter() Fallback */}
-          <motion.button
-            onClick={() => router.push("/explore")}
-            className="cursor-pointer my-5 p-2 font-semibold text-lg flex items-center gap-2 transition px-6 bg-[#152347] hover:bg-[#3b445c] text-[#ffffff] rounded-sm"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-          >
-            Explore Courses <IoIosArrowForward />
-          </motion.button>
-        </div>
+        <AnimatedButton/>
       </div>
-      {/* <AnimatedCountries/> */}
-
-    </section>
+    </div>
   );
 };
 

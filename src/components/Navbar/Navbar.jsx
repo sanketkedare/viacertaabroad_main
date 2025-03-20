@@ -15,7 +15,6 @@ const Navbar = () => {
   const dispatch = useDispatch();
   const path = usePathname();
   const [signInOpen, setSignInOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
 
   const updateStore = () => {
     const storedUser = localStorage.getItem("viacerta-user");
@@ -29,43 +28,17 @@ const Navbar = () => {
     updateStore();
   }, [dispatch]);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollThreshold = 10;
-      if (window.scrollY > scrollThreshold && !scrolled) {
-        setScrolled(true);
-      } else if (window.scrollY <= scrollThreshold && scrolled) {
-        setScrolled(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [scrolled]);
-
-  const navClasses = `${
-    path === "/home" && "fixed"
-  }  w-full z-30 transition-all duration-500 ${
-    scrolled && path === "/home"
-      ? "bg-white text-black shadow-md"
-      : path === "/home"
-      ? "text-white top-2"
-      : "text-black"
-  }`;
-
   return (
-    <nav className={navClasses}>
-      <div
-        className={`relative w-full  text-sm lg:p-4 z-50 h-[100px] ${
-          scrolled && path === "/home" ? "bg-white text-black shadow-md " : ""
-        }`}
-      >
+    <nav className="w-full  h-[70px] transition-all duration-500 bg-white text-black shadow-md">
+      <div className="relative">
         <SignIn signInOpen={signInOpen} setSignInOpen={setSignInOpen} />
-        <div className="lg:w-10/12 m-auto px-4 sm:px-2">
-          <div className="flex items-center justify-between lg:h-[70px] lg:py-3 w-full">
-            <CompanyLogo scrolled={scrolled} />
-            <OptionsDesktop scrolled={scrolled} />
-            <OptionsMobile setSignInOpen={setSignInOpen} scrolled={scrolled} />
+        <div className="lg:w-11/12 m-auto  sm:px-2">
+          <div className="flex items-center justify-between  w-full h-full">
+            <CompanyLogo />
+            <div className="flex justify-between items-center h-full w-3/4">
+              <OptionsDesktop />
+              <OptionsMobile setSignInOpen={setSignInOpen} />
+            </div>
           </div>
         </div>
       </div>

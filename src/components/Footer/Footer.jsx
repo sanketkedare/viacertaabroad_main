@@ -1,101 +1,64 @@
-import React from "react";
-import {
-  Facebook,
-  Twitter,
-  Instagram,
-  Linkedin,
-  Mail,
-  Phone,
-} from "lucide-react";
-import {
-  socialLinks,
-  contactInfo,
-  supportLinks,
-  destinations,
-  mastersPrograms,
-} from "./utils";
-import BlogsLog from "./BlogsLog";
+import React from 'react'
+import { destinations, mastersPrograms, supportLinks } from './utils'
+import { FaPhoneAlt, FaEnvelope } from 'react-icons/fa'
+import { FiInstagram, FiLinkedin, FiFacebook } from 'react-icons/fi'
 
 const Footer = () => {
   return (
-    <>
-      <BlogsLog />
-      <div className="h-[100px]"></div>
+    <footer className='h-[450px] bg-[#B9C4FF3B] mt-20 relative'>
+      {/* Background Outlined Text */}
+      <div className='absolute text-[300px] w-full h-full bottom-0 flex opacity-5 justify-center items-center'>
+        <span className=''>VIACERTA</span>
+      </div>
+      
+      <div className='flex justify-between w-9/12 m-auto pt-10'>
+        {/* Support Section */}
+        <div>
+          <h1 className='font-bold text-xl mb-4'>Support</h1>
+          {supportLinks.map((link, index) => (
+            <p key={index} className='mb-1'>{link.text}</p>
+          ))}
+        </div>
 
-      <footer className="bg-[#152347] text-white py-12 text-[10px] ">
-        <div className="container mx-auto px-6 lg:px-20 lg:w-9/12 lg:text-left text-center">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="flex flex-col items-center lg:items-start gap-2">
-              <img
-                src={contactInfo.logo}
-                alt="Company Logo"
-                className="w-36 mb-4 rounded-full bg-white"
-              />
-              <p className="text-gray-300 mb-4">
-                Your trusted study abroad partner.
-              </p>
-              <div className="flex space-x-4 lg:justify-normal justify-center">
-                {socialLinks.map(({ icon, href }, index) => {
-                  const IconComponent =
-                    icon === "Facebook"
-                      ? Facebook
-                      : icon === "Twitter"
-                      ? Twitter
-                      : icon === "Instagram"
-                      ? Instagram
-                      : icon === "Linkedin"
-                      ? Linkedin
-                      : null;
-                  return (
-                    IconComponent && (
-                      <a
-                        key={index}
-                        href={href}
-                        className="hover:text-[#f8b62d]"
-                      >
-                        <IconComponent size={24} />
-                      </a>
-                    )
-                  );
-                })}
-              </div>
-              <div className="mt-4">
-                <p className="flex items-center justify-start space-x-2">
-                  <Phone size={18} /> <span>{contactInfo.phone}</span>
-                </p>
-                <p className="flex items-center  justify-start space-x-2 mt-2">
-                  <Mail size={18} /> <span>{contactInfo.email}</span>
-                </p>
-              </div>
-            </div>
+        {/* Destinations Section */}
+        <div>
+          <h1 className='font-bold text-xl mb-4'>Destinations</h1>
+          {destinations.map((destination, index) => (
+            <p key={index} className='mb-1'>{destination.text}</p>
+          ))}
+        </div>
 
-            {[
-              { title: "Support", links: supportLinks },
-              { title: "Destinations", links: destinations },
-              { title: "Master's Programs", links: mastersPrograms },
-            ].map(({ title, links }, idx) => (
-              <div key={idx}>
-                <h3 className="text-xl font-semibold mb-4">{title}</h3>
-                <ul className="space-y-2">
-                  {links.map(({ text, href }, i) => (
-                    <li key={i}>
-                      <a href={href} className="hover:text-[#f8b62d]">
-                        {text}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+        {/* Master’s Program Section */}
+        <div>
+          <h1 className='font-bold text-xl mb-4'>Master’s Program</h1>
+          {mastersPrograms.map((program, index) => (
+            <p key={index} className='mb-1'>{program.text}</p>
+          ))}
+        </div>
+
+        {/* Connect With Us Section */}
+        <div>
+          <h1 className='font-bold text-xl mb-4'>Connect With Us</h1>
+          <div className='flex items-center mb-2'>
+            <FaPhoneAlt />
+            <span className='ml-2'>+1 (234) 567-890</span>
           </div>
+          <div className='flex items-center mb-4'>
+            <FaEnvelope />
+            <span className='ml-2'>info@viacerta.com</span>
+          </div>
+          <h1 className='font-bold text-xl mb-4'>Follow Us</h1>
 
-          <div className="text-center text-gray-400 mt-12 border-t border-gray-600 pt-4">
-            <p>© 2025 ViaCerta Abroad. All rights reserved.</p>
+          <div className='flex space-x-4'>
+            <img  className='w-10 rounded-full' src='https://static.vecteezy.com/system/resources/previews/021/495/985/non_2x/facebook-social-media-logo-icon-free-png.png'/>
+            <img className='w-10 rounded-xl' src='https://cdn-icons-png.freepik.com/256/2496/2496097.png?semt=ais_hybrid'/>
+            <img className='w-10 rounded-xl' src='https://cdn-icons-png.freepik.com/256/15707/15707869.png?semt=ais_hybrid'/>
+
           </div>
         </div>
-      </footer>
-    </>
-  );
-};
+      </div>
+    </footer>
+  )
+}
 
-export default Footer;
+export default Footer

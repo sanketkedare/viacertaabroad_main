@@ -4,9 +4,15 @@ import FAQs from "@/components/About/FAQs";
 import WhyViaCerta from "@/components/About/WhyViaCerta";
 import Coundown from "@/components/Coundown/Coundown";
 import Footer from "@/components/Footer/Footer";
+import Frame1 from "@/components/Frames/Frame1";
+import Frame2 from "@/components/Frames/Frame2";
+import Frame3 from "@/components/Frames/Frame3";
+import Frame4 from "@/components/Frames/Frame4";
 import Help from "@/components/Help/Help";
 import HeroSection from "@/components/HeroSection/HeroSection";
 import Navbar from "@/components/Navbar/Navbar";
+import Process from "@/components/Process/Process";
+import BlogSlider from "@/components/Slider/BlogSlider";
 import Testimonials from "@/components/Slider/Testimonials";
 import UniversitySlider from "@/components/Slider/UniversitySlider";
 import store from "@/Redux/appStore";
@@ -19,11 +25,15 @@ export default function Home() {
         <Help/>
         <Navbar />
         <HeroSection />
-        <Coundown/>
-        <Testimonials/>
+        <Process/>
         <UniversitySlider/>
-        <WhyViaCerta />
+        <Frame1/>
+        <Testimonials/>
+        <Frame2/>
+        <BlogSlider/>
+        <Frame3/>
         <FAQs />
+        <Frame4/>
         <Footer />
       </div>
     </Provider>
