@@ -46,6 +46,7 @@ const MobileMenu = ({
       />
       {navlinks.map((i) => (
           <div
+          key={i.name}
             className={`${
               path === "/home" && i.name === "Home"
                 ? "text-[#2c21b6]"

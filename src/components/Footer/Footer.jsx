@@ -5,7 +5,7 @@ import { FiInstagram, FiLinkedin, FiFacebook } from 'react-icons/fi'
 
 const Footer = () => {
   return (
-    <footer className='lg:h-[450px] bg-[#B9C4FF3B] mt-20 relative'>
+    <footer className='lg:h-[450px] bg-[#B9C4FF3B] mt-20 relative overflow-hidden py-10'>
       {/* Background Outlined Text */}
       <div className='absolute text-[300px] w-full h-full bottom-0 flex opacity-5 justify-center items-center'>
         <span className=''>VIACERTA</span>

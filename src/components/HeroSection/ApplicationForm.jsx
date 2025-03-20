@@ -62,7 +62,7 @@ const ApplicationForm = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
       whileHover={{ scale: 1.05 }}
-      className="lg:w-[400px] w-11/12 absolute lg:top-5 bottom-0 lg:right-5 right-4 lg:h-[90%] h-2/3 bg-white rounded-xl shadow-lg z-30 m-auto"
+      className="lg:w-[400px] w-11/12 absolute lg:top-5 bottom-2 lg:right-5 right-4 lg:h-[90%] h-2/3 bg-white rounded-xl shadow-lg z-30 m-auto"
     >
       <div className="rounded-xl absolute top-0 w-full text-center bg-[#A6A6FF3D] font-bold">
         <p className="p-5 text-[#1E1E8C]">Get FREE Counselling Today!</p>
@@ -103,7 +103,7 @@ const ApplicationForm = () => {
           <div className="flex justify-center mt-5">
             <motion.button
               type="submit"
-              className="lg:w-full w-[200px] flex justify-center items-center gap-3 bg-[#E00012] text-white lg:text-lg font-semibold py-2 lg:rounded-md rounded-t-md transition"
+              className="w-[200px] mb-3 flex justify-center items-center gap-3 bg-[#E00012] text-white lg:text-lg font-semibold py-2 lg:rounded-md rounded-t-md transition"
               disabled={loading}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}

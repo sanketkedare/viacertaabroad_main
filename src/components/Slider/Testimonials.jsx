@@ -46,7 +46,7 @@ const Testimonials = () => {
   }, [scrollPosition]);
 
   return (
-    <div className="flex flex-col justify-center items-center w-full py-10 ">
+    <div className="flex flex-col justify-center items-center lg:w-full py-10 overflow-hidden">
       <div className="py-10">
         <h1 className="text-[40px] font-bold mt-10 text-center  lg:flex gap-4 justify-center">
           Real Stories. Real Wins.
