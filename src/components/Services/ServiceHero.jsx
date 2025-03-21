@@ -3,7 +3,7 @@ import ServicesForm from "./ServicesForm";
 
 const ServiceHero = () => {
   return (
-    <div className="relative h-[75vh] bg-black overflow-hidden flex items-center justify-center">
+    <div className="relative min-h-[75vh] bg-black overflow-hidden flex items-center justify-center">
       <div className="absolute inset-0">
         <img
           src="/services/banner.jpg"
