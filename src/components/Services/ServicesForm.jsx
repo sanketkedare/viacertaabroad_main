@@ -4,7 +4,7 @@ import PopupComponent from "./PopUp";
 
 const ServicesForm = () => {
   const URL = "/api/enquiry_form";
-  const [success, setSuccess] = useState(true);
+  const [success, setSuccess] = useState(false);
 
   const [message, setMessage] = useState({
     show: false,
@@ -87,12 +87,12 @@ const ServicesForm = () => {
 
   return (
     <>
-      {/* {success && <PopupComponent onClose={setSuccess} />} */}
+      {success && <PopupComponent onClose={setSuccess} />}
       <motion.div
-        // initial={{ opacity: 0, y: -50 }}
-        // animate={{ opacity: 1, y: 0 }}
-        // transition={{ duration: 0.5 }}
-        // whileHover={{ scale: 1.05 }}
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        whileHover={{ scale: 1.05 }}
         className=" lg:col-span-1 bg-white rounded-xl shadow-lg z-30 m-auto w-full lg:min-h-[400px]"
       >
         <div className="rounded-xl  w-full text-center bg-[#A6A6FF3D] font-bold">

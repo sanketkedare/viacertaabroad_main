@@ -12,6 +12,7 @@ import {
 import { FaBlog, FaBook, FaServicestack } from "react-icons/fa6";
 import { usePathname } from "next/navigation";
 import { useSelector } from "react-redux";
+import Link from "next/link";
 
 const MobileMenu = ({
   mobileMenuToggler,
@@ -27,7 +28,7 @@ const MobileMenu = ({
     { name: "Home", icon: <FaHome /> , link:''},
     { name: "Test Prep", icon: <FaBook /> , link:'' },
     { name: "Destinations", icon: <FaMapMarkerAlt />  , link:''},
-    { name: "Services", icon: <FaServicestack />  , link:''},
+    { name: "Services", icon: <FaServicestack />  , link:'services'},
     { name: "Work", icon: <FaBlog />  , link:''},
     { name: "MBBS's Program", icon: <FaPhoneAlt /> , link:'' },
   ];
@@ -45,7 +46,7 @@ const MobileMenu = ({
         onClick={mobileMenuToggler}
       />
       {navlinks.map((i) => (
-          <div
+        <Link href={`/${i.link}`} 
           key={i.name}
             className={`${
               path === "/home" && i.name === "Home"
@@ -55,7 +56,7 @@ const MobileMenu = ({
           >
             {i.icon}
             {i.name}
-          </div>
+          </Link>
       ))}
       {!user ? (
         <div

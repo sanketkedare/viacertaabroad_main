@@ -62,13 +62,13 @@ const ApplicationForm = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
       whileHover={{ scale: 1.05 }}
-      className="lg:w-[400px] w-11/12 absolute lg:top-5 bottom-2 lg:right-5 right-4 lg:h-[90%] h-2/3 bg-white rounded-xl shadow-lg z-30 m-auto"
-    >
-      <div className="rounded-xl absolute top-0 w-full text-center bg-[#A6A6FF3D] font-bold">
+      className="lg:col-span-1 bg-white rounded-xl shadow-lg z-30 m-auto w-10/12 lg:mb-0 mb-3  lg:min-h-[400px]"
+      >
+        <div className="rounded-xl  w-full text-center bg-[#A6A6FF3D] font-bold">
         <p className="p-5 text-[#1E1E8C]">Get FREE Counselling Today!</p>
       </div>
 
-      <div className="flex items-center h-full w-full justify-center lg:items-end">
+      <div className="items-center h-full w-full justify-center m-auto">
         <form className="space-y-4 w-full" onSubmit={handleSubmit}>
           {['name', 'email', 'mobile'].map((field, index) => (
             <div className="px-5" key={field}>
