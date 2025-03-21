@@ -2,7 +2,7 @@ import React from "react";
 
 const OurServices = () => {
   return (
-    <div className="w-11/12 m-auto grid lg:grid-cols-2 gap-20 min-h-screen mt-20">
+    <div className="w-11/12 m-auto grid lg:grid-cols-2 lg:gap-20 gap-10 min-h-screen mt-20">
       <div className=" h-[300px]  bg-[#F7FAFE] shadow-md border-b-6 border-r-6 border-[#E00012] rounded-xl p-6 flex flex-col gap-10">
         <h1 className="lg:text-[30px] text-xl font-bold mt-10">
           Admission
