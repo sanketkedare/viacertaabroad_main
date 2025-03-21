@@ -1,9 +1,14 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const OurServices = () => {
   return (
-    <div className="w-11/12 m-auto grid lg:grid-cols-2 lg:gap-20 gap-10 min-h-screen mt-20">
-      <div className=" h-[300px]  bg-[#F7FAFE] shadow-md border-b-6 border-r-6 border-[#E00012] rounded-xl p-6 flex flex-col gap-10">
+    <motion.div className="w-11/12 m-auto grid lg:grid-cols-2 lg:gap-20 gap-10 min-h-screen mt-20">
+      <motion.div className=" h-[300px]  bg-[#F7FAFE] shadow-md border-b-6 border-r-6 border-[#E00012] rounded-xl p-6 flex flex-col gap-10" 
+      whileHover={{ scale: 1.05, y: -5 }}
+      transition={{ type: "spring", stiffness: 300 }}
+      
+      >
         <h1 className="lg:text-[30px] text-xl font-bold mt-10">
           Admission
           <span className="bg-gradient-to-r from-[#14247C] to-[#E00012] text-transparent bg-clip-text px-2">
@@ -15,12 +20,11 @@ const OurServices = () => {
           Personalized counseling to help you pick the right university. From
           forms to follow-ups — we make the process easy.
         </p>
-      </div>
-      <div className=" h-[300px] bg-[#F7FAFE] shadow-md  rounded-xl p-6 flex flex-col gap-10">
+      </motion.div>
+      <motion.div       whileHover={{ scale: 1.05, y: -5 }}
+      transition={{ type: "spring", stiffness: 300 }} className=" h-[300px] bg-[#F7FAFE] shadow-md  rounded-xl p-6 flex flex-col gap-10">
         <h1 className="lg:text-[30px] text-xl font-bold mt-10">
-          <span className="bg-gradient-to-r from-[#14247C] to-[#E00012] text-transparent bg-clip-text px-2">
-            University
-          </span>
+          <span className="bg-gradient-to-r from-[#14247C] to-[#E00012] text-transparent bg-clip-text px-2">University </span>
           Selection
         </h1>
 
@@ -28,8 +32,9 @@ const OurServices = () => {
           Personalized counseling to help you pick the right university. From
           forms to follow-ups — we make the process easy.
         </p>
-      </div>{" "}
-      <div className="h-[300px]  bg-[#F7FAFE] shadow-md  rounded-xl p-6 flex flex-col gap-10">
+      </motion.div>{" "}
+      <motion.div       whileHover={{ scale: 1.05, y: -5 }}
+      transition={{ type: "spring", stiffness: 300 }} className="h-[300px]  bg-[#F7FAFE] shadow-md  rounded-xl p-6 flex flex-col gap-10">
         <h1 className="lg:text-[30px] text-xl font-bold mt-10">
           <span className="bg-gradient-to-r from-[#14247C] to-[#E00012] text-transparent bg-clip-text px-2">
             Visa
@@ -41,8 +46,9 @@ const OurServices = () => {
           Get a curated list of top NMC, WHO-approved universities. We help you
           compare, choose, and apply hassle-free.
         </p>
-      </div>{" "}
-      <div className=" h-[300px]  bg-[#F7FAFE] shadow-md  rounded-xl p-6 flex flex-col gap-10">
+      </motion.div>{" "}
+      <motion.div       whileHover={{ scale: 1.05, y: -5 }}
+      transition={{ type: "spring", stiffness: 300 }} className=" h-[300px]  bg-[#F7FAFE] shadow-md  rounded-xl p-6 flex flex-col gap-10">
         <h1 className="lg:text-[30px] text-xl font-bold mt-10">
           <span className="bg-gradient-to-r from-[#14247C] to-[#E00012] text-transparent bg-clip-text px-2">
             Pre-Departure
@@ -54,8 +60,9 @@ const OurServices = () => {
           Pre-Departure Briefing All the essential info about travel, living,
           and safety. So you land confident and ready for the new journey.
         </p>
-      </div>{" "}
-      <div className=" h-[300px] bg-[#F7FAFE] shadow-md  rounded-xl p-6 flex flex-col gap-10">
+      </motion.div>{" "}
+      <motion.div       whileHover={{ scale: 1.05, y: -5 }}
+      transition={{ type: "spring", stiffness: 300 }} className=" h-[300px] bg-[#F7FAFE] shadow-md  rounded-xl p-6 flex flex-col gap-10">
         <h1 className="lg:text-[30px] text-xl font-bold mt-10">
           On-Arrival
           <span className=" text-[#14247C] bg-clip-text px-2">Assistance</span>
@@ -66,8 +73,8 @@ const OurServices = () => {
           Airport pickup, accommodation help, and city orientation.We’re with
           you — from the moment you land in Georgia!
         </p>
-      </div>{" "}
-    </div>
+      </motion.div>{" "}
+    </motion.div>
   );
 };
 

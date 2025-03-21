@@ -11,19 +11,24 @@ const ServiceHero = () => {
           alt="Service Banner"
         />
       </div>
-      
-      <div className="relative flex flex-col items-start w-11/12 h-full z-10 space-y-4 p-4 lg:p-8">
-      <div className="text-[#fff]  h-full flex flex-col lg:justify-center justify-start gap-14">
-      <h1 className=" text-3xl lg:text-5xl font-bold lg:w-2/3 lg:text-left text-center">Your Doctor Journey Starts Here – <b className="text-[#E00012]">Georgia</b> is Waiting</h1>
-        <h3 className="text-lg lg:text-2xl w-3/5">
-          Study MBBS in Georgia with top universities, low fees, and payment plans your parents will thank you for.
-        </h3>
-      </div>
-       
+
+      <div className="flex flex-col lg:grid lg:grid-cols-3  w-11/12  h-full z-10 space-y-4 p-4 lg:p-8">
+        <div className="col-span-2  text-[#fff] w-full  h-full flex flex-col lg:justify-center justify-start gap-10 lg:gap-14">
+          <h1 className=" text-3xl lg:text-5xl font-bold  lg:text-left text-center">
+            Your Doctor Journey Starts Here –
+            <b className="px-2 bg-[url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMn1T2oZhgq-DFLdq3frStPIEXl7gEOabU6g&s')] bg-cover bg-center text-transparent bg-clip-text">
+              Georgia
+            </b>
+             is Waiting
+          </h1>
+          <h3 className="text-sm lg:text-2xl lg:w-4/5 lg:text-left text-center">
+            Study MBBS in Georgia with top universities, low fees, and payment
+            plans your parents will thank you for.
+          </h3>
+        </div>
+
         <ServicesForm />
       </div>
-
-     
     </div>
   );
 };
