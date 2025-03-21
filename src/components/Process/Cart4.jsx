@@ -17,7 +17,8 @@ const Cart4 = () => {
             Let's chat now
           </button>
         </div>
-        <img className="absolute bottom-0 right-0 w-[500px] z-0" src="/image.png"/>
+        <img className="absolute bottom-0 right-0 w-[500px] z-0" src="/slider/image41.png"/>
+        <img src="/slider/lines.png" className="absolute bottom-0 left-0" />
       </div>
     </div>
   );

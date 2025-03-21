@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { useSelector } from "react-redux";
 import IconDropdown from "../Profile/IconDropdown";
 
-const SignInButton = () => {
+const SignInButton = ({setSignInOpen}) => {
   const user = useSelector((state) => state.user.user);
 
   return (

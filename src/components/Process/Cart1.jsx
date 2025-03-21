@@ -51,10 +51,13 @@ const Cart1 = () => {
   return (
     <div className="bg-white sticky top-10 lg:w-[1366px] lg:h-[634px] h-[950px] m-auto lg:mt-10 mt-0 mb-0 flex items-center">
       <div className="absolute bg-gradient-to-r from-[#E00012] to-[#14247C] w-full h-[420px] z-0"></div>
-      <div className="lg:h-[634px] h-[700px] w-10/12  bg-white  m-auto rounded-xl z-10 shadow-[0_0_30px_rgba(0,0,0,0.2)] lg:flex">
+      <div className="relative lg:h-[634px] h-[700px] w-10/12  bg-white  m-auto rounded-xl z-10 shadow-[0_0_30px_rgba(0,0,0,0.2)] lg:flex">
         <InfoSection />
         <ChatSection />
+        <img src="/slider/lines.png" className="absolute top-0 right-0 rotate-180" />
+
       </div>
+
     </div>
   );
 };

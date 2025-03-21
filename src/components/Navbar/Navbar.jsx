@@ -39,7 +39,7 @@ const Navbar = () => {
             <CompanyLogo />
             <div className="hidden lg:flex justify-between items-center h-full w-3/4">
               <OptionsDesktop />
-              <SignInButton/>
+              <SignInButton setSignInOpen={setSignInOpen}/>
             </div>
             <OptionsMobile setSignInOpen={setSignInOpen} />
           </div>
