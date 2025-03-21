@@ -9,7 +9,8 @@ const Cart2 = () => {
           Your Call,<span className="text-[#E00012]"> Your Country </span> (List it Down)
           </h1>
           <p className="lg:text-[28px] text-lg w-2/3">
-          First, we understand you — your goals, dreams, and confusions. Then, we give you clear direction and guidance that fits you best.
+          You choose where you want to go. We help you explore the best countries, courses, and universities that match your vibe and goals.
+
           </p>
           <button className="bg-[#E00012] lg:w-[191px] w-full h-[50px] m-auto lg:m-0 text-white text-[20px] rounded-[4px]">
             Let's chat now

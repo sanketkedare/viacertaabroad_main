@@ -10,8 +10,9 @@ const Cart3 = () => {
             A <span className="text-[#E00012]">Roadmap</span>, made just for you
           </h1>
           <p className="lg:text-[28px] text-xl">
-            First, we understand you — your goals, dreams, and confusions. Then,
-            we give you clear direction and guidance that fits you best.
+          Get a customized plan, flawless applications, SOP guidance, visa help, and accommodation setup– all under one roof.
+
+
           </p>
           <button className="bg-[#E00012] lg:w-[191px] w-full h-[50px] lg:m-0 m-auto text-white text-[20px] rounded-[4px]">
             Let's chat now

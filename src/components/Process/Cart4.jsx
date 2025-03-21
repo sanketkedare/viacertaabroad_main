@@ -12,7 +12,8 @@ const Cart4 = () => {
           </h1>
           <p className="lg:text-[28px] text-lg lg:w-3/4">
           From finding a part-time work, Internships, and guiding you toward a post-study work visa– we help you build your career form day one.
-          </p>
+
+</p>
           <button className="bg-[#E00012] lg:w-[191px] w-full h-[50px]  text-white text-[20px] rounded-[4px]">
             Let's chat now
           </button>
