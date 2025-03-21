@@ -1,7 +1,7 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "ViaCerta Abroad | Study Abroad & Land Jobs– The ViaCerta Way",
+  title: "Study Abroad & Land Jobs– The ViaCerta Way",
   description: "Build your future with ViaCerta! Ace IELTS, TOEFL, GRE. Explore top courses, secure scholarships, get visa guidance & global job opportunities.",
 };
 

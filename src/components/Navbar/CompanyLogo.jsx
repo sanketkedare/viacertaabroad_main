@@ -3,7 +3,7 @@ import React from "react";
 
 const CompanyLogo = () => {
   return (
-    <Link href="/home" className="">
+    <Link href="/" className="">
       <img
         className="cursor-pointer lg:h-[70px]"
         src="/viaCerta-logo.png"

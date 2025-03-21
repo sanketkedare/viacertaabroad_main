@@ -7,8 +7,8 @@ const Frame1 = () => {
       <div className='absolute text-[250px]  w-full h-full bottom-0 flex items-end  opacity-10'>
         <span className='outlined-text text-wrap' >VIACERTA</span>
       </div>
-      <div className='text-[#fff] flex flex-col lg:justify-center h-full lg:w-3/5 p-10 lg:px-16 gap-5'>
-        <h1 className='lg:text-[48px] text-6xl lg:text-left text-center'>Soft Launch Your Best Life With ViaCerta</h1>
+      <div className='text-[#fff] flex flex-col lg:justify-center h-full lg:w-3/5 p-10 lg:px-16 lg:gap-5 gap-10'>
+        <h1 className='lg:text-[48px] text-4xl lg:text-left text-center'>Soft Launch Your Best Life With ViaCerta</h1>
         <h3 className='text-[24px] lg:text-left text-center'>We help you go global.</h3>
         <button className="bg-[#E00012] lg:w-[191px] h-[50px] text-white text-[20px] rounded-[4px] z-10 cursor-pointer">
         Explore now

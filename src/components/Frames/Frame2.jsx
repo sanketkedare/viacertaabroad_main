@@ -8,7 +8,7 @@ const Frame2 = () => {
         <span className='outlined-text'>VIACERTA</span>
       </div>
       <div className='text-[#fff] flex flex-col lg:justify-center h-full lg:w-3/5 p-10 lg:px-16 gap-5'>
-        <h1 className='text-[48px] '>Abroad isn’t Just a Place, It’s a Mindset.</h1>
+        <h1 className='lg:text-[48px] text-5xl '>Abroad isn’t Just a Place, It’s a Mindset.</h1>
         <h3 className='text-[24px]'>Live Bigger! Live Your Dreams</h3>
         <button className="bg-[#E00012] lg:w-[250px] h-[50px] text-white text-[20px] rounded-[4px] z-10 cursor-pointer">
         Let's Get you Abroad.
