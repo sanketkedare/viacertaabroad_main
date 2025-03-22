@@ -20,6 +20,7 @@
     "express-rate-limit": "^7.5.0",
     "firebase": "^11.4.0",
     "framer-motion": "^12.4.7",
+    "googleapis": "^148.0.0",
     "jose": "^6.0.8",
     "js-cookie": "^3.0.5",
     "jsonwebtoken": "^9.0.2",
