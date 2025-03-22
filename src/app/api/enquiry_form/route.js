@@ -40,11 +40,13 @@ export async function POST(request) {
     // Create a new user entry
     const user = new Enquiry_User({ name, email, mobile });
     await user.save();
-
+    await sendEmail(process.env.EMAIL_SEND_TO, user, "counselingForm");
     // Get current timestamp in Indian time
     const currentDate = new Date().toLocaleString("en-IN", {
       timeZone: "Asia/Kolkata",
     });
+
+
 
     // Optional: Add to Google Sheet (Uncomment when implemented)
     await addToSheet(
