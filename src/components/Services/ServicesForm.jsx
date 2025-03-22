@@ -14,10 +14,26 @@ const ServicesForm = () => {
   const [formData, setFormData] = useState({ name: "", email: "", mobile: "" });
   const [loading, setLoading] = useState(false);
 
-  const handleChange = (e) => 
-  {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+  
+    if (name === "mobile") {
+      if (value.length > 10) {
+        setMessage({
+          show: true,
+          success: false,
+          message: "Only 10-digit mobile numbers are allowed.",
+        });
+        return;
+      }
+      if (!/^[0-9]*$/.test(value)) {
+        return; // Prevents non-numeric input
+      }
+    }
+  
+    setFormData({ ...formData, [name]: value });
   };
+  
 
   const validateForm = () => {
     const { name, email, mobile } = formData;
