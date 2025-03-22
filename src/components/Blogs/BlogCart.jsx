@@ -1,16 +1,18 @@
-import React from "react";
 import HeroSection from "./HeroSection";
-import { ChevronRight } from "lucide-react";
 import Table from "./Table";
+import { ChevronRight } from "lucide-react";
+import React from "react";
 
 const BlogCart = ({ artical }) => {
   return (
-    <div className="mb-10">
+    <div className="mb-10 ">
       <HeroSection artical={artical} />
-      <div className="lg:w-10/12 px-2 lg:px-0 min-h-screen m-auto lg:mt-20 mt-10 flex flex-col lg:gap-10  gap-5">
+      <div className="lg:w-10/12 px-2 lg:px-0 min-h-screen m-auto lg:mt-20 mt-10 flex flex-col lg:gap-10 gap-5">
         {/* Main Title */}
         <div className="flex items-center gap-2">
-          <h1 className="lg:text-[40px] text-[20px] font-bold">{artical.title}</h1>
+          <h1 className="lg:text-[40px] text-[20px] font-bold text-[#]">
+            {artical.title}
+          </h1>
         </div>
 
         {/* Introduction */}
@@ -30,7 +32,14 @@ const BlogCart = ({ artical }) => {
               {/* Subtopic Title */}
               {sub?.title && (
                 <div className="flex items-center gap-2">
-                  <h2 className={`lg:text-[36px]  font-bold ${sub.title === "Conclusion" && "bg-gradient-to-r from-[#14247C] to-[#E00012] text-transparent bg-clip-text"}`}>{sub.title}</h2>
+                  <h2
+                    className={`lg:text-[36px]  font-bold ${
+                      sub.title === "Conclusion" &&
+                      "bg-gradient-to-r from-[#14247C] to-[#E00012] text-transparent bg-clip-text"
+                    }`}
+                  >
+                    {sub.title}
+                  </h2>
                 </div>
               )}
 
@@ -47,7 +56,7 @@ const BlogCart = ({ artical }) => {
               )}
               {sub?.info && <h5 className="lg:text-[18px]">{sub.info}</h5>}
 
-              {sub?.table && <Table table={sub?.table}/> }
+              {sub?.table && <Table table={sub?.table} />}
 
               {/* Bullet Points */}
               {sub.bulletpoints && (

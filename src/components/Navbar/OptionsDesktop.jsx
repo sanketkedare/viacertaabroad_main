@@ -1,21 +1,21 @@
+import ForDestinations from "./ForDestinations";
+import ForExams from "./ForExams";
+import ForMBBS from "./ForMBBS";
+import ForServices from "./ForServices";
+import ForWork from "./ForWork";
+import { destinations, textPrep } from "./dropdowns";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { IoIosArrowDown } from "react-icons/io";
 import React, { useEffect, useState } from "react";
 import { FaHome, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
 import { FaBlog, FaBook, FaServicestack } from "react-icons/fa6";
-import { destinations, textPrep } from "./dropdowns";
-import ForExams from "./ForExams";
-import ForDestinations from "./ForDestinations";
-import ForServices from "./ForServices";
-import ForWork from "./ForWork";
-import ForMBBS from "./ForMBBS";
+import { IoIosArrowDown } from "react-icons/io";
 
 const OptionsDesktop = () => {
   const [dropDownOptions, setDropDownOptions] = useState([]);
   const [isOpenDropdown, setIsOpenDropdown] = useState(false);
   const path = usePathname();
   const navlinks = [
-    { name: "Home", icon: <FaHome />, link: "" },
     { name: "Test Prep", icon: <FaBook />, link: "" },
     { name: "Destinations", icon: <FaMapMarkerAlt />, link: "" },
     { name: "Services", icon: <FaServicestack />, link: "" },
@@ -48,6 +48,15 @@ const OptionsDesktop = () => {
 
   return (
     <>
+      <Link href={"/"}>
+        <div className="relative cursor-pointer hover:font-semibold  ">
+          <div
+            className={`hidden lg:flex  items-center justify-center gap-2 hover:text-[#E00012] `}
+          >
+            Home
+          </div>
+        </div>
+      </Link>
       {navlinks.map((option) => (
         <>
           <div
@@ -65,6 +74,7 @@ const OptionsDesktop = () => {
 
             {/* Dropdown */}
           </div>
+
           {isOpenDropdown &&
             (isOpenDropdown === "Test Prep" ? (
               <ForExams setIsOpenDropdown={setIsOpenDropdown} />
