@@ -1,27 +1,28 @@
 import React from "react";
-import dummyData from "../../Utils/blog.json";
 import Link from "next/link";
+import blogs from "../Blogs/_blogs.json"
 
 const Blogs = () => {
   const createUrl = (name) => name.split(" ").join('-');
+  const image = 'https://www.rugtek.com/wp-content/uploads/2022/03/blogbanner-1.jpg'
+
   return (
     <div className="w-9/12 mt-10 m-auto">
       <p className="text-lg font-semibold mb-4">Search Blogs and Articles</p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-10">
-        {Array.from({ length: 10 }).map((_, index) => (
-          <Link href={`/blogs/${createUrl(dummyData?.title)}`}>
-            <div key={index} className=" p-4 rounded-lg shadow-md">
-              <img
-                src={dummyData.imageUrl}
-                alt={dummyData.title}
-                className="w-full h-40 object-cover rounded-md"
-              />
-              <h2 className="text-xl font-bold mt-2">{dummyData.title}</h2>
-              <p className="text-gray-500 text-sm">By {dummyData.author}</p>
-              <p className="mt-2 text-sm">{dummyData.intro}</p>
-            </div>
-          </Link>
+        {blogs.map((blog, index) => (
+          <Link href={`/blogs/${createUrl(blog?.title)}`}>
+          <div key={index} className='relative w-full h-[300px] cursor-pointer hover:scale-105 transition-all rounded-md overflow-hidden bg-white shadow-[#E000122E] shadow-[0_0_30px_rgba(0,0,0,0.2)]'>
+              <div className='relative h-1/2 w-full'>
+                  <img src={blog.image ? blog.image : image} alt='Blog' className='h-full object-cover'/>
+                  <div className='absolute top-2 right-2 bg-[#E00012] text-white text-xs px-3 py-1 rounded-md'>{blog.country}</div>
+              </div>
+              <div className='p-4'>
+                  <p className='text-blue-900 text-lg font-medium mb-4'>{blog.title.slice(0,60)}...</p>
+                  <p className='text-[#E00012] text-sm absolute bottom-2  '>{blog.date}</p>
+              </div>
+          </div></Link>
         ))}
       </div>
     </div>

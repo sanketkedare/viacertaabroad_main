@@ -62,7 +62,7 @@ const ApplicationForm = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
       whileHover={{ scale: 1.05 }}
-      className="lg:col-span-1 bg-white rounded-xl shadow-lg z-30 m-auto w-10/12 lg:mb-0 mb-3  lg:min-h-[400px]"
+      className="lg:col-span-1 bg-white rounded-xl shadow-lg z-30 m-auto w-10/12 lg:mb-2 mb-3  lg:min-h-[400px]"
       >
         <div className="rounded-xl  w-full text-center bg-[#A6A6FF3D] font-bold">
         <p className="p-5 text-[#1E1E8C]">Get FREE Counselling Today!</p>
