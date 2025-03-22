@@ -14,7 +14,8 @@ const ServicesForm = () => {
   const [formData, setFormData] = useState({ name: "", email: "", mobile: "" });
   const [loading, setLoading] = useState(false);
 
-  const handleChange = (e) => {
+  const handleChange = (e) => 
+  {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
@@ -59,6 +60,8 @@ const ServicesForm = () => {
         body: JSON.stringify(formData),
       });
       const data = await response.json();
+
+      console.log(data)
 
       if (response.ok) {
         setSuccess(true);
@@ -110,12 +113,10 @@ const ServicesForm = () => {
                 </label>
                 <motion.input
                   id={field}
-                  type={field === "mobile" ? "tel" : field}
+                  type={field}
                   name={field}
-                  placeholder={`Enter ${
-                    field === "mobile" ? "Phone Number" : `Full ${field}`
-                  }`}
-                  value={formData[field]}
+                  placeholder={`Enter  Full ${field}`}
+                 value={formData[field]}
                   onChange={handleChange}
                   className="w-full border border-gray-300 p-2 mt-1 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                   initial={{ opacity: 0 }}

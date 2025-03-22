@@ -1,4 +1,3 @@
-
 import nodemailer from "nodemailer";
 
 export async function sendEmail(to, data, emailType) {
@@ -11,14 +10,14 @@ export async function sendEmail(to, data, emailType) {
 
     // for testing mailtrap
 
-    const transporter = nodemailer.createTransport({
-      host: "sandbox.smtp.mailtrap.io",
-      port: 2525,
-      auth: {
-        user: process.env.MAIL_USER_ID,
-        pass: process.env.MAIL_USER_PASS,
-      },
-    });
+    // const transporter = nodemailer.createTransport({
+    //   host: "sandbox.smtp.mailtrap.io",
+    //   port: 2525,
+    //   auth: {
+    //     user: process.env.MAIL_USER_ID,
+    //     pass: process.env.MAIL_USER_PASS,
+    //   },
+    // });
 
     // use this below for live gmail
     // const transporter = nodemailer.createTransport({
@@ -30,15 +29,15 @@ export async function sendEmail(to, data, emailType) {
     // });
 
     // ////////// for hostinger
-    // const transporter = nodemailer.createTransport({
-    //   host: "smtp.hostinger.com", // Check from your email provider!
-    //   port: 465, // Usually 465 (SSL) or 587 (TLS)
-    //   secure: true, // True for port 465, false for 587
-    //   auth: {
-    //     user: process.env.MAIL_USER_ID,
-    //     pass: process.env.MAIL_USER_PASS,
-    //   },
-    // });
+    const transporter = nodemailer.createTransport({
+      host: "smtp.hostinger.com", // Check from your email provider!
+      port: 465, // Usually 465 (SSL) or 587 (TLS)
+      secure: true, // True for port 465, false for 587
+      auth: {
+        user: process.env.MAIL_USER_ID,
+        pass: process.env.MAIL_USER_PASS,
+      },
+    });
 
     // --------------------------------------------------------------------------------
     let customSubject = "";
@@ -131,6 +130,7 @@ export async function sendEmail(to, data, emailType) {
     const mailOptions = {
       from: process.env.MAIL_USER_ID,
       to: to,
+      bcc: ["vanshi.rawat@gmail.com"],
       subject: customSubject,
       html: htmlContent,
     };
@@ -143,6 +143,3 @@ export async function sendEmail(to, data, emailType) {
     return false;
   }
 }
-
-
-

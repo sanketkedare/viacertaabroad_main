@@ -14,21 +14,21 @@ const userEnquirySchema = new mongoose.Schema(
       required: [true, "Please provide an email"],
       unique: true,
       lowercase: true,
-      // validate: {
-      //   validator: validator.isEmail,
-      //   message: "Not a valid email address",
-      // },
+      validate: {
+        validator: validator.isEmail,
+        message: "Not a valid email address",
+      },
     },
 
     mobile: {
       type: String,
       required: [true, "Please enter your phone number"],
-      // validate: {
-      //   validator: function (value) {
-      //     return /^\d{10}$/.test(value);
-      //   },
-      //   message: "Phone number must be 10 digits",
-      // },
+      validate: {
+        validator: function (value) {
+          return /^\d{10}$/.test(value);
+        },
+        message: "Phone number must be 10 digits",
+      },
     },
   },
   { timestamps: true }
