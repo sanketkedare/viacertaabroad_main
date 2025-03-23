@@ -17,9 +17,14 @@ const Cart2 = () => {
           </button>
         </div>
         <img src="/slider/image21.png" className="absolute bottom-0 right-0 w-[600px] shadow-sm rounded-t-xl"/>
-        <img src="/slider/image22.png" className="absolute lg:bottom-14 lg:right-1/2 right-1/4 bottom-2/5"/>
-        <img src="/slider/image23.png" className="absolute lg:top-1/4 top-2/3 right-0"/>
+        <img src="/slider/image22.png" className="absolute lg:bottom-14 lg:right-[45%] right-1/4 bottom-2/5"/>
+        <img className="absolute bottom-[30%] right-0 w-[500px] z-0" src="/slider/Ellipse1.png"/>
+
+        <img src="/slider/image23.png" className="absolute lg:top-[35%] top-2/3 right-0"/>
+
         <img src="/slider/lines.png" className="absolute bottom-0 left-0" />
+        <img src="/slider/lines.png" className="absolute top-0 right-0 rotate-180" />
+
 
       </div>
     </div>
