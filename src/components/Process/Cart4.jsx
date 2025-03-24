@@ -14,7 +14,7 @@ const Cart4 = () => {
           From finding a part-time work, Internships, and guiding you toward a post-study work visa– we help you build your career form day one.
 
            </p>
-          <button className="bg-[#E00012] lg:w-[191px] w-full h-[50px]  text-white text-[20px] rounded-[4px]">
+          <button className="bg-[#E00012] cursor-pointer z-20 lg:w-[191px] w-full h-[50px]  text-white text-[20px] rounded-[4px]">
           Explore Now
 
           </button>
