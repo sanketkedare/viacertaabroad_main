@@ -11,12 +11,32 @@ export const services = [
   ];
 
 export const destinations = [
-    { name: "USA", image: "https://flagpedia.net/data/flags/h80/us.png" },
-    { name: "New Zealand", image: "https://flagpedia.net/data/flags/h80/nz.png" },
-    { name: "Europe", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Flag_of_Europe.svg/255px-Flag_of_Europe.svg.png" },
-    { name: "Australia", image: "https://flagpedia.net/data/flags/h80/au.png" },
-    { name: "Ireland", image: "https://flagpedia.net/data/flags/h80/ie.png" },
-    { name: "Canada", image: "https://flagpedia.net/data/flags/h80/ca.png" },
+    { name: "USA", flag: "https://flagpedia.net/data/flags/h80/us.png" },
+    { name: "New Zealand", flag: "https://flagpedia.net/data/flags/h80/nz.png" },
+    { name: "Australia", flag: "https://flagpedia.net/data/flags/h80/au.png" },
+    { name: "Ireland", flag: "https://flagpedia.net/data/flags/h80/ie.png" },
+    { name: "Russia", flag: "https://flagpedia.net/data/flags/h80/ru.png", },
+    { name: "Kazakhstan", flag: "https://flagpedia.net/data/flags/h80/kz.png" },
+    { name: "Kyrgyzstan", flag: "https://flagpedia.net/data/flags/h80/kg.png",},
+    { name: "Philippines", flag: "https://flagpedia.net/data/flags/h80/ph.png",},
+    { name: "Uzbekistan", flag: "https://flagpedia.net/data/flags/h80/uz.png",},
+    { name: "Georgia", flag: "https://flagpedia.net/data/flags/h80/ge.png"},
+    { name: "UK", flag: "https://flagpedia.net/data/flags/h80/gb.png" },
+    { name: "Spain", flag: "https://flagpedia.net/data/flags/h80/es.png" },
+    { name: "France", flag: "https://flagpedia.net/data/flags/h80/fr.png" },
+    { name: "Germany", flag: "https://flagpedia.net/data/flags/h80/de.png" },
+    { name: "Poland", flag: "https://flagpedia.net/data/flags/h80/pl.png" },
+    { name: "Hungary", flag: "https://flagpedia.net/data/flags/h80/hu.png" },
+    { name: "Netherlands", flag: "https://flagpedia.net/data/flags/h80/nl.png" },
+    { name: "Belgium", flag: "https://flagpedia.net/data/flags/h80/be.png" },
+    { name: "Finland", flag: "https://flagpedia.net/data/flags/h80/fi.png" },
+    { name: "Sweden", flag: "https://flagpedia.net/data/flags/h80/se.png" },
+    { name: "Denmark", flag: "https://flagpedia.net/data/flags/h80/dk.png" },
+    { name: "Singapore", flag: "https://flagpedia.net/data/flags/h80/sg.png" },
+    { name: "Dubai", flag: "https://flagpedia.net/data/flags/h80/ae.png" },
+    { name: "Greece", flag: "https://flagpedia.net/data/flags/h80/gr.png" },
+    { name: "Czech Republic", flag: "https://flagpedia.net/data/flags/h80/cz.png" },
+    { name: "Canada", flag: "https://flagpedia.net/data/flags/h80/ca.png" }
 ];
 
 

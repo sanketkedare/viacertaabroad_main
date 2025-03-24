@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import Form from "./Form";
+import { benefits, SIGN_IN, SIGN_UP } from "./utils";
 import { motion } from "framer-motion";
 import { X } from "lucide-react";
-import { benefits, SIGN_IN, SIGN_UP } from "./utils";
-import Form from "./Form";
+import React, { useState } from "react";
 
 const SignIn = ({ signInOpen, setSignInOpen }) => {
   const [mode, setMode] = useState(SIGN_IN);
@@ -18,7 +18,7 @@ const SignIn = ({ signInOpen, setSignInOpen }) => {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.9 }}
-            className="bg-[#fff] p-6 rounded-2xl shadow-xl lg:w-2/3 w-full lg:min-h-2/3 min-h-screen relative flex flex-col lg:flex-row"
+            className="bg-[#fff]  shadow-xl lg:w-2/3 w-full lg:min-h-3/4 min-h-screen relative flex flex-col lg:flex-row"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close Button */}
@@ -30,13 +30,8 @@ const SignIn = ({ signInOpen, setSignInOpen }) => {
             </button>
 
             {/* Left Section */}
-            <div className="lg:w-1/2 p-4 text-black">
-              <img
-                src="/viaCerta-logo.png"
-                className="w-[100px] lg:m-0 m-auto"
-                alt="Logo"
-              />
-              {mode === SIGN_UP && (
+            <div className="lg:w-1/2 text-black relative overflow-hidden">
+              {/* {mode === SIGN_UP && (
                 <div className="my-4">
                   <p className="text-xl font-semibold text-center mb-2">
                     Benefits of Signing Up
@@ -49,22 +44,49 @@ const SignIn = ({ signInOpen, setSignInOpen }) => {
                     ))}
                   </ul>
                 </div>
-              )}
-              <img
-                className="m-auto my-4 hidden lg:flex"
-                src="https://ik.imagekit.io/upgrad1/abroad-images/home/images/loginframe.png?tr=w-450,q-70"
-                width="450"
-                height="301"
-                alt="Login Illustration"
-                title="Login"
-                loading="lazy"
-              />
+              )} */}
+              <div className="absolute w-full h-full bottom-0">
+                <img
+                  className="hidden object-center lg:flex h-full w-full"
+                  src="/signin.png"
+                  alt="Login Illustration"
+                  title="Login"
+                  loading="lazy"
+                />
+              </div>
+              <div className="absolute bottom-0">
+                <img
+                  className="hidden object-center lg:flex w-full"
+                  src="/frame/image1.png"
+                  alt="Login Illustration"
+                  title="Login"
+                  loading="lazy"
+                />
+              </div>
             </div>
 
             {/* Right Section */}
             <div className="lg:w-1/2 flex text-black   flex-col justify-center items-center lg:p-4">
-              <p className="font-bold lg:text-2xl text-xl mb-4">
-                {mode === SIGN_IN ? "SIGN IN" : "Create Your Account"}
+              <img
+                src="/viaCerta-logo.png"
+                className="w-[100px] m-auto"
+                alt="Logo"
+              />
+              <p className="font-bold lg:text-2xl text-xl ">
+                {mode === SIGN_IN ? (
+                  <p>
+                    Welcome Back To{" "}
+                    <span className="bg-gradient-to-r from-[#14247C] to-[#E00012] text-transparent bg-clip-text">
+                      ViaCerta
+                    </span>
+                  </p>
+                ) : (
+                  <p>
+                    Create Your{" "}<span className="bg-gradient-to-r from-[#14247C] to-[#E00012] text-transparent bg-clip-text">
+                       Account
+                    </span>
+                  </p>
+                )}
               </p>
               <Form mode={mode} setSignInOpen={setSignInOpen} />
 
@@ -75,7 +97,7 @@ const SignIn = ({ signInOpen, setSignInOpen }) => {
                   : "Don’t have an account?"}{" "}
                 <button
                   onClick={() => setMode(mode === SIGN_IN ? SIGN_UP : SIGN_IN)}
-                  className="text-blue-600 font-semibold hover:underline ml-1"
+                  className="text-blue-600 font-semibold hover:underline ml-1 my-4"
                 >
                   {mode === SIGN_UP ? "Sign In" : "Sign Up"}
                 </button>

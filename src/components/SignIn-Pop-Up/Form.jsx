@@ -1,13 +1,14 @@
-import React, { useEffect, useState } from "react";
-import { Mail, Phone, User } from "lucide-react";
 import { SIGN_IN, SIGN_UP } from "./utils";
-import { useDispatch } from "react-redux";
 import { setUser } from "@/Redux/authSlice";
-import parseAndVerifyJwt from "@/Utils/jwtParser";
-import { MdPassword } from "react-icons/md";
 import { storeCredentials } from "@/Utils/helpers";
+import parseAndVerifyJwt from "@/Utils/jwtParser";
+import { Mail, Phone, User } from "lucide-react";
+import React, { useEffect, useState } from "react";
+import { MdPassword } from "react-icons/md";
+import { useDispatch } from "react-redux";
 
 const Form = ({ mode, setSignInOpen }) => {
+  const [isLoading, setIsLoading] = useState(false);
   const dispatch = useDispatch();
   const [forgetPassword, setForgetPassword] = useState(false);
   const [resetPassword, setResetPassword] = useState(false);
@@ -40,7 +41,7 @@ const Form = ({ mode, setSignInOpen }) => {
       });
 
       const data = await response.json();
-      console.log(data)
+      console.log(data);
 
       if (response.ok) {
         dispatch(setUser(data?.user));
@@ -127,13 +128,17 @@ const Form = ({ mode, setSignInOpen }) => {
     }
   };
 
-  const submitData = async (e) => {
+  const submitData = async (e) => 
+  {
     e.preventDefault();
+    setIsLoading(true)
     if (otpRequested) {
       await authHandler();
     } else {
       await generateOTP();
     }
+    setIsLoading(false)
+
   };
 
   const clearData = () => {
@@ -155,7 +160,7 @@ const Form = ({ mode, setSignInOpen }) => {
   return (
     <form
       onSubmit={submitData}
-      className="lg:w-[80%] mb-4 bg-white p-6 rounded-xl shadow-lg"
+      className="lg:w-[80%] mb-4 bg-white p-6 rounded-xl"
     >
       <div className="flex flex-col gap-4 py-2">
         {message.show && (
@@ -241,16 +246,25 @@ const Form = ({ mode, setSignInOpen }) => {
           </b>
         )}
 
+        {isLoading ? (
         <button
-          className="w-full bg-[#152347] text-white p-2 rounded-md cursor-pointer"
-          type="submit"
-        >
-          {mode === SIGN_IN
-            ? "Sign in"
-            : otpRequested
-            ? "Verify OTP"
-            : "Generate OTP"}
-        </button>
+        className="w-full bg-[#E00012] hover:bg-[#694145]  text-white p-2 rounded-md cursor-not-allowed"
+        disabled
+      >
+        Please wait...
+      </button>
+        ) : (
+          <button
+            className="w-full bg-[#E00012] text-white p-2 rounded-md cursor-pointer"
+            type="submit"
+          >
+            {mode === SIGN_IN
+              ? "Sign in"
+              : otpRequested
+              ? "Verify OTP"
+              : "Send Verification Code"}
+          </button>
+        )}
       </div>
     </form>
   );

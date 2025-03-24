@@ -29,7 +29,7 @@ const Help = () => {
                 transition={{ duration: 0.3 }}
               >
                 {/* Chat with us */}
-                <motion.button
+                {/* <motion.button
                   className="flex items-center justify-between gap-2 text-white rounded-md transition"
                   onClick={() => setChatBotOpen(true)}
                   whileHover={{ scale: 1.05 }}
@@ -39,7 +39,7 @@ const Help = () => {
                     Chat with us
                   </p>
                   <FaComments className="shadow-lg text-5xl p-3 bg-[#152347] text-white rounded-full cursor-pointer" />
-                </motion.button>
+                </motion.button> */}
 
                 {/* Call Me Back */}
                 <motion.button

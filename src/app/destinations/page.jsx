@@ -13,6 +13,7 @@ const Destinationpage = () => {
       <Navbar />
       <Destinations />
       <Footer />
+      
     </Provider>
   );
 };

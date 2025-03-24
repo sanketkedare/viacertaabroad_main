@@ -15,7 +15,8 @@ const Cart4 = () => {
 
            </p>
           <button className="bg-[#E00012] lg:w-[191px] w-full h-[50px]  text-white text-[20px] rounded-[4px]">
-            Let's chat now
+          Explore Now
+
           </button>
         </div>
         <img className="absolute bottom-0 right-0 w-[500px] z-0 shadow" src="/slider/image41.png"/>

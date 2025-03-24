@@ -19,7 +19,8 @@ const Cart3 = () => {
             help, and accommodation setup– all under one roof.
           </p>
           <button className="bg-[#E00012] lg:w-[191px] w-full h-[50px] lg:m-0 m-auto text-white text-[20px] rounded-[4px]">
-            Let's chat now
+          Explore Now
+
           </button>
         </div>
         <div className="lg:1/2 pl-1 flex flex-col overflow-hidden justify-center gap-4">

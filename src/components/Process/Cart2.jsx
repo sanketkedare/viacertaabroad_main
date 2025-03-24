@@ -13,11 +13,11 @@ const Cart2 = () => {
 
           </p>
           <button className="bg-[#E00012] lg:w-[191px] w-full h-[50px] m-auto lg:m-0 text-white text-[20px] rounded-[4px] cursor-pointer">
-            Let's chat now
+            Explore Now
           </button>
         </div>
         <img src="/slider/image21.png" className="absolute bottom-0 right-0 w-[600px] shadow-sm rounded-t-xl"/>
-        <img src="/slider/image22.png" className="absolute lg:bottom-14 lg:right-[45%] right-1/4 bottom-[50%]"/>
+        <img src="/slider/image22.png" className="absolute lg:bottom-14 lg:right-[47%] right-1/4 bottom-[50%]"/>
         <img className="absolute bottom-[30%] right-0 w-[500px] z-0" src="/slider/Ellipse1.png"/>
 
         <img src="/slider/image23.png" className="absolute lg:top-[35%] top-[50%] right-0"/>
