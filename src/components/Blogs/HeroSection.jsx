@@ -61,7 +61,7 @@ const HeroSection = ({ artical }) => {
       <div className="absolute inset-0">
         <img
           src={imageUrl}
-          className="w-full h-full object-cover opacity-30"
+          className="w-full h-full object-cover lg:opacity-90 opacity-30"
           alt="Service Banner"
           loading="lazy"
         />
