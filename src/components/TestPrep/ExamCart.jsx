@@ -1,9 +1,14 @@
 import React from "react";
+import ExamHeroSection from "./ExamHeroSection";
+import ExamPattern from "./ExamPattern";
+import ExamPlanning from "./ExamPlanning";
 
-const ExamCart = () => {
+const ExamCart = ({ examData }) => {
   return (
-    <div className="min-h-screen">
-      <div>Individual Exam Here</div>
+    <div className="">
+      <ExamHeroSection examData={examData} />
+      <ExamPattern examData={examData} />
+      <ExamPlanning examData={examData} />
     </div>
   );
 };
