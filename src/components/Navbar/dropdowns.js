@@ -11,7 +11,7 @@ export const services = [
   ];
 
 export const destinations = [
-    { name: "USA", flag: "https://flagpedia.net/data/flags/h80/us.png" },
+    { name: "USA", flag: "https://flagpedia.net/data/flags/h80/us.png", banner:"/destinations/usa.png" },
     { name: "New Zealand", flag: "https://flagpedia.net/data/flags/h80/nz.png" },
     { name: "Australia", flag: "https://flagpedia.net/data/flags/h80/au.png" },
     { name: "Ireland", flag: "https://flagpedia.net/data/flags/h80/ie.png" },

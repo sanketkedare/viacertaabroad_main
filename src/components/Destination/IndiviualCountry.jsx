@@ -1,35 +1,13 @@
 import { Award } from "lucide-react";
 import React from "react";
 import { GiGraduateCap } from "react-icons/gi";
+import IndiviualHero from "./IndiviualHero";
 
 const IndiviualCountry = ({ country }) => {
   return (
     <div className="">
       {/* Hero Section */}
-      <div className=" h-[500px] bg-[#DCEBFF]">
-        <div className="lg:flex w-10/12 m-auto lg:h-full h-full">
-          <div className="lg:w-1/2 flex flex-col lg:justify-center justify-between lg:h-auto h-1/2 items-start gap-5 ">
-            <h1 className="lg:text-[45px] text-3xl font-bold mt-10">
-              Study in{" "}
-              <span className="bg-gradient-to-r from-[#14247C] to-[#E00012] text-transparent bg-clip-text">
-                {country.name}
-              </span>
-            </h1>
-            <p className="text-[20px]">
-              One dream – your cheat sheet to going global!
-            </p>
-            <button className="bg-[#E00012] lg:w-[191px] w-full h-[50px]  text-white text-[20px] my-2 rounded-[4px]">
-              Talk to Experts
-            </button>
-          </div>
-          <div className="lg:w-1/2 relative lg:h-full h-1/2">
-            <img
-              src="/destinations/usa.png"
-              className="lg:absolute bottom-0 h-full object-cover z-10"
-            />
-          </div>
-        </div>
-      </div>
+      <IndiviualHero country={country} />
 
       <div className="w-10/12 text-center m-auto my-10">
         <p className="lg:text-[45px] text-3xl font-bold mt-10">

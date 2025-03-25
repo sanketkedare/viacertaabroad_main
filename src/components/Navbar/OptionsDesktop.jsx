@@ -19,6 +19,7 @@ const OptionsDesktop = () => {
     { name: "Test Prep", icon: <FaBook />, link: "" },
     { name: "Destinations", icon: <FaMapMarkerAlt />, link: "" },
     { name: "Services", icon: <FaServicestack />, link: "" },
+    { name: "Study-Abroad", icon: <FaServicestack />, link: "" },
     { name: "Work", icon: <FaBlog />, link: "" },
     { name: "MBBS's Program", icon: <FaPhoneAlt />, link: "" },
   ];

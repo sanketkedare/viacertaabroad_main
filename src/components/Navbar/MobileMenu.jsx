@@ -2,14 +2,14 @@ import React from "react";
 import { motion } from "framer-motion";
 import IconDropdown from "../Profile/IconDropdown";
 import {
+  FaHandsHelping,
   FaHome,
-  FaInfoCircle,
-  FaMapMarkerAlt,
-  FaPhoneAlt,
   FaSignInAlt,
   FaTimes,
+  FaUniversity,
+  FaUserMd,
 } from "react-icons/fa";
-import { FaBlog, FaBook, FaServicestack } from "react-icons/fa6";
+import { FaBook, FaBriefcase, FaGlobe } from "react-icons/fa6";
 import { usePathname } from "next/navigation";
 import { useSelector } from "react-redux";
 import Link from "next/link";
@@ -23,14 +23,14 @@ const MobileMenu = ({
 
   const path = usePathname();
 
-
   const navlinks = [
-    { name: "Home", icon: <FaHome /> , link:''},
-    { name: "Test Prep", icon: <FaBook /> , link:'' },
-    { name: "Destinations", icon: <FaMapMarkerAlt />  , link:''},
-    { name: "Services", icon: <FaServicestack />  , link:'services'},
-    { name: "Work", icon: <FaBlog />  , link:''},
-    { name: "MBBS's Program", icon: <FaPhoneAlt /> , link:'' },
+    { name: "Home", icon: <FaHome />, link: "" },
+    { name: "Test Prep", icon: <FaBook />, link: "" },
+    { name: "Destinations", icon: <FaGlobe />, link: "" },
+    { name: "Services", icon: <FaHandsHelping />, link: "services" },
+    { name: "Study-Abroad", icon: <FaUniversity />, link: "services" },
+    { name: "Work", icon: <FaBriefcase />, link: "" },
+    { name: "MBBS Program", icon: <FaUserMd />, link: "" },
   ];
 
   return (
@@ -46,17 +46,18 @@ const MobileMenu = ({
         onClick={mobileMenuToggler}
       />
       {navlinks.map((i) => (
-        <Link href={`/${i.link}`} 
+        <Link
+          href={`/${i.link}`}
           key={i.name}
-            className={`${
-              path === "/home" && i.name === "Home"
-                ? "text-[#2c21b6]"
-                : path === "/" + i.name.toLowerCase() && "text-[#2c21b6]"
-            }  hover:bg-[#152347] hover:text-white p-4 font-bold rounded-xl bg-gray-200 w-full flex justify-normal items-center gap-4 transition-colors`}
-          >
-            {i.icon}
-            {i.name}
-          </Link>
+          className={`${
+            path === "/home" && i.name === "Home"
+              ? "text-[#2c21b6]"
+              : path === "/" + i.name.toLowerCase() && "text-[#2c21b6]"
+          }  hover:bg-[#152347] hover:text-white p-4 font-bold rounded-xl bg-gray-200 w-full flex justify-normal items-center gap-4 transition-colors`}
+        >
+          {i.icon}
+          {i.name}
+        </Link>
       ))}
       {!user ? (
         <div

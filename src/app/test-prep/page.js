@@ -1,20 +1,19 @@
-"use client";
+'use client'
 
-import Exams from "@/components/Exams/Exams";
 import Footer from "@/components/Footer/Footer";
 import Navbar from "@/components/Navbar/Navbar";
 import store from "@/Redux/appStore";
 import React from "react";
 import { Provider } from "react-redux";
 
-const Examspage = () => {
+const page = () => {
   return (
     <Provider store={store}>
       <Navbar />
-      <Exams />
+      <div className="min-h-screen">[Under Developement]</div>
       <Footer />
     </Provider>
   );
 };
 
-export default Examspage;
+export default page;
