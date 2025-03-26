@@ -11,14 +11,9 @@ const IndiviualCountry = ({ country }) => {
 
       <div className="w-10/12 text-center m-auto my-10">
         <p className="lg:text-[45px] text-3xl font-bold mt-10">
-          Top Universities to study in{" "}
-          <span className="bg-gradient-to-r from-[#14247C] to-[#E00012] text-transparent bg-clip-text">
-            {country.name}
-          </span>
+          Top-Ranked Universities to go for
         </p>
-        <p className="text-[20px] my-2">
-          One dream – your cheat sheet to going global!
-        </p>
+        <p className="text-[20px] my-2">{country.page.top_universities}</p>
 
         {/* List of Universities */}
         <div className="flex  justify-between flex-wrap w-full  my-10">
@@ -101,15 +96,13 @@ const IndiviualCountry = ({ country }) => {
       <div className="w-10/12  m-auto my-10 grid lg:grid-cols-4">
         <div className="col-span-2">
           <p className="lg:text-[35px] text-3xl font-bold mt-10">
-            Why Study in{" "}
+            What Makes{" "}
             <span className="bg-gradient-to-r from-[#14247C] to-[#E00012] text-transparent bg-clip-text">
               {country.name}
-            </span>
-            ?
+            </span>{" "}
+            Your Fit ?
           </p>
-          <p className="lg:text-[24px]">
-            One dream– your cheat sheet to going global!
-          </p>
+          <p className="lg:text-[24px]">{country.page.why_fit}</p>
         </div>
         <div className="col-span-2 flex gap-4 shadow-sm">
           <div className="col-span-2 flex  lg:my-0 my-4 gap-4 shadow-sm">

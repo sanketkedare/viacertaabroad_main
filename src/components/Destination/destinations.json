@@ -1,0 +1,288 @@
+[
+    {
+        "name": "USA",
+        "flag": "https://flagpedia.net/data/flags/h80/us.png",
+        "banner": "/destinations/usa.png",
+        "page": {
+            "banner_text": "USA calling! Where Dreams Meet Bigger Opportunities.",
+            "description": "A Destination that excites you with a plan that fits you– ViaCerta’s got your back.",
+            "top_universities": "Explore Universities, Ranks, Courses, and everything you need to make your right choice.",
+            "why_fit": "Here's why students worldwide choose the USA."
+        }
+    },
+    {
+        "name": "New Zealand",
+        "flag": "https://flagpedia.net/data/flags/h80/nz.png",
+        "banner": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Auckland%2C_New_Zealand_2025.jpg/500px-Auckland%2C_New_Zealand_2025.jpg",
+        "page": {
+            "banner_text": "Chase Degrees. Find Adventure in New Zealand",
+            "description": "A land of endless adventures and world-class education — ViaCerta’s got you covered.",
+            "top_universities": "Explore Universities, Ranks, Courses, and everything you need to pick your right choice.",
+            "why_fit": "Here's why students worldwide choose New Zealand."
+        }
+    },
+    {
+        "name": "Australia",
+        "flag": "https://flagpedia.net/data/flags/h80/au.png",
+        "banner": "https://static.toiimg.com/photo/86797680.cms",
+        "page": {
+            "banner_text": "Learn, Grow, and Live The Aussie Dream",
+            "description": "Bright campuses, brighter futures, get your degree under sunny skies.",
+            "top_universities": "Explore Universities, Ranks, Courses, and everything you need to pick your right choice.",
+            "why_fit": "Here's why students worldwide choose Australia."
+        }
+    },
+    {
+        "name": "Ireland",
+        "flag": "https://flagpedia.net/data/flags/h80/ie.png",
+        "banner": "https://assets.micontenthub.com/traveloffers/travel-tips/dublin_by1F326rd8.jpg",
+        "page": {
+            "banner_text": "Study abroad in a land full of stories.",
+            "description": "World-class education, rich culture, and career paths that take you places.",
+            "top_universities": "Explore Universities, Ranks, Courses, and everything you need to pick your right choice.",
+            "why_fit": "Here's why students worldwide choose Ireland."
+        }
+    },
+    {
+        "name": "Russia",
+        "flag": "https://flagpedia.net/data/flags/h80/ru.png",
+        "banner": "https://i.natgeofe.com/k/415419c5-3768-4c8f-8697-f90de7a6075b/russia-st-basils_16x9.jpg?w=1200",
+        "page": {
+            "banner_text": "Russia: Affordable education. Bold futures.",
+            "description": "Step into world-renowned universities without burning a hole in your pocket.",
+            "top_universities": "Explore Universities, Ranks, Courses, and everything you need to pick your right choice.",
+            "why_fit": "Here's why students worldwide choose Russia."
+        }
+    },
+    {
+        "name": "Kazakhstan",
+        "flag": "https://flagpedia.net/data/flags/h80/kz.png",
+        "banner": "https://www.gokitetours.com/wp-content/uploads/2024/05/The-8-Kazakhstan-Travel-Tips-You-Should-Know-Before-Your-Trip.webp",
+        "page": {
+            "banner_text": "Study In An Emerging Study Hub in Central Asia.",
+            "description": "A destination that excites you with a plan that fits you — ViaCerta’s got your back.",
+            "top_universities": "Explore Universities, Ranks, Courses, and everything you need to pick your right choice.",
+            "why_fit": "Here's why students worldwide choose Kazakhstan."
+        }
+    },
+    {
+        "name": "Kyrgyzstan",
+        "flag": "https://flagpedia.net/data/flags/h80/kg.png",
+        "banner": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Bishkek_City%27s_business_center.jpg/800px-Bishkek_City%27s_business_center.jpg",
+        "page": {
+            "banner_text": "Kyrgyzstan: Your Path to Medical Excellence.",
+            "description": "Affordable, trusted, and recognized worldwide — make it happen with us.",
+            "top_universities": "Explore Universities, Ranks, Courses, and everything you need to pick your right choice.",
+            "why_fit": "Here's why students worldwide choose Kyrgyzstan."
+        }
+    },
+    {
+        "name": "Philippines",
+        "flag": "https://flagpedia.net/data/flags/h80/ph.png",
+        "banner": "https://cdn.kimkim.com/files/a/images/7aaa4a085a1b10a36146cf8fc252419e1ba3dec9/original-69fd4c20c9d29d5ec05e44cfca05be03.jpg",
+        "page": {
+            "banner_text": "Study abroad with ease and affordability.",
+            "description": "Get English-taught programs, global exposure, and a vibrant student life.",
+            "top_universities": "Explore Universities, Ranks, Courses, and everything you need to pick your right choice.",
+            "why_fit": "Here's why students worldwide choose Philippines."
+        }
+    },
+    {
+        "name": "Uzbekistan",
+        "flag": "https://flagpedia.net/data/flags/h80/uz.png",
+        "banner": "https://trvlland.com/wp-content/uploads/2022/09/uzbekistan_tashkent-3-1024x663.jpg",
+        "page": {
+            "banner_text": "Your culture-rich destination is Here!",
+            "description": "This is where you get affordable education with growing international opportunities.",
+            "top_universities": "Explore Universities, Ranks, Courses, and everything you need to pick your right choice.",
+            "why_fit": "Here's why students worldwide choose Uzbekistan."
+        }
+    },
+    {
+        "name": "Georgia",
+        "flag": "https://flagpedia.net/data/flags/h80/ge.png",
+        "banner": "https://cdn.bunniktours.com.au/public/posts/images/Europe/Tbilisi%20-%201234016323-feature.jpg",
+        "page": {
+            "banner_text": "Study abroad made affordable and global.",
+            "description": "European education standards without the heavy price tag.",
+            "top_universities": "Explore Universities, Ranks, Courses, and everything you need to pick your right choice.",
+            "why_fit": "Here's why students worldwide choose Georgia."
+        }
+    },
+    {
+        "name": "UK",
+        "flag": "https://flagpedia.net/data/flags/h80/gb.png",
+        "banner": "https://oxfordinternational.b-cdn.net/wp-content/uploads/2024/07/study-in-the-uk-scaled.webp",
+        "page": {
+            "banner_text": "Study where prestige meets endless possibilities.",
+            "description": "World-renowned universities and career-building study abroad experiences.",
+            "top_universities": "Explore Universities, Ranks, Courses, and everything you need to pick your right choice.",
+            "why_fit": "Here's why students worldwide choose the UK."
+        }
+    },
+    {
+        "name": "Spain",
+        "flag": "https://flagpedia.net/data/flags/h80/es.png",
+        "banner": "https://static.toiimg.com/img/112523375/Master.jpg",
+        "page": {
+            "banner_text": "Spain calls for: Bright learning in vibrant streets.",
+            "description": "Academic excellence, a relaxed lifestyle, and sunny days that never end.",
+            "top_universities": "Explore Universities, Ranks, Courses, and everything you need to pick your right choice.",
+            "why_fit": ""
+        }
+    },
+    {
+        "name": "France",
+        "flag": "https://flagpedia.net/data/flags/h80/fr.png",
+        "banner": "https://internationalliving.com/_next/image/?url=https%3A%2F%2Fimages.ctfassets.net%2Fwv75stsetqy3%2F5H8g02dSEMDHT2lMSIm2nw%2F230df7b3796546593cc2997de811d046%2FFrance.jpg%3Fq%3D60%26fit%3Dfill%26fm%3Dwebp&w=3840&q=60",
+        "page": {
+            "banner_text": "Bonjour to world-class education!",
+            "description": "Globally respected degrees, iconic cities, and endless opportunities.",
+            "top_universities": "Explore Universities, Ranks, Courses, and everything you need to pick your right choice.",
+            "why_fit": ""
+        }
+    },
+    {
+        "name": "Germany",
+        "flag": "https://flagpedia.net/data/flags/h80/de.png",
+        "banner": "https://static.independent.co.uk/2024/06/26/16/iStock-1151497055.jpg?quality=75&width=1368&crop=3%3A2%2Csmart&auto=webp",
+        "page": {
+            "banner_text": "Say Hallo to tuition-free success!",
+            "description": "A study abroad destination where innovation leads the way.",
+            "top_universities": "Explore Universities, Ranks, Courses, and everything you need to pick your right choice.",
+            "why_fit": ""
+        }
+    },
+    {
+        "name": "Poland",
+        "flag": "https://flagpedia.net/data/flags/h80/pl.png",
+        "banner": "https://ik.imagekit.io/syustaging/SYU_PREPROD/Poland-Country-Image_3IB57zKJH.webp?tr=w-1080",
+        "page": {
+            "banner_text": "Study abroad in Poland–Cześć to smart education!",
+            "description": "Affordable European study abroad options with rich culture, and strong academics.",
+            "top_universities": "Explore Universities, Ranks, Courses, and everything you need to pick your right choice.",
+            "why_fit": ""
+        }
+    },
+    {
+        "name": "Hungary",
+        "flag": "https://flagpedia.net/data/flags/h80/hu.png",
+        "banner": "https://2017-2021.state.gov/wp-content/uploads/2018/11/Hungary-2109x1406.jpg",
+        "page": {
+            "banner_text": "Discover Europe’s hidden academic gem!",
+            "description": "Study abroad in Hungary with ViaCerta— affordable, historic, and globally recognized.",
+            "top_universities": "Explore Universities, Ranks, Courses, and everything you need to pick your right choice.",
+            "why_fit": ""
+        }
+    },
+    {
+        "name": "Netherlands",
+        "flag": "https://flagpedia.net/data/flags/h80/nl.png",
+        "banner": "https://www.holland.com/upload_mm/9/3/2/74935_fullimage_cityscape%20in%20begijnhof%20one%20of%20the%20oldest%20inner%20courts%20in%20amsterdam%20via%20%20zebra0209%20shutterstock_1150x663_928x125.jpg",
+        "page": {
+            "banner_text": "Study In Netherlands: where ideas come alive.",
+            "description": "Study abroad in the Netherlands — creative learning in a vibrant, open-minded culture.",
+            "top_universities": "Explore Universities, Ranks, Courses, and everything you need to pick your right choice.",
+            "why_fit": ""
+        }
+    },
+    {
+        "name": "Belgium",
+        "flag": "https://flagpedia.net/data/flags/h80/be.png",
+        "banner": "https://biovox.eu/wp-content/uploads/2020/09/belgian-flag-over-ghent.jpg",
+        "page": {
+            "banner_text": "Study in Europe’s decision-making hub: Belgium",
+            "description": "Home to top universities and global organizations — study abroad in Belgium.",
+            "top_universities": "Explore Universities, Ranks, Courses, and everything you need to pick your right choice.",
+            "why_fit": ""
+        }
+    },
+    {
+        "name": "Finland",
+        "flag": "https://flagpedia.net/data/flags/h80/fi.png",
+        "banner": "https://i.natgeofe.com/k/2847c949-6de3-4d11-998a-d3ce12d9edb0/finland-cityscape.jpg",
+        "page": {
+            "banner_text": "Study in Europe’s decision-making hub: Finland",
+            "description": "Study abroad in the Finland — creative learning in a vibrant, open-minded culture.",
+            "top_universities": "Explore Universities, Ranks, Courses, and everything you need to pick your right choice.",
+            "why_fit": ""
+        }
+    },
+    {
+        "name": "Sweden",
+        "flag": "https://flagpedia.net/data/flags/h80/se.png",
+        "banner": "https://cdn-adventures-live.azureedge.net/adventurescache/d/d/9/e/2/e/dd9e2e0433a018fee21f71acd72c0211d87e7a8a.jpg",
+        "page": {
+            "banner_text": "Study Where education meets happiness.",
+            "description": "Study abroad in Sweden — smart systems, progressive thinking, and peace of mind.",
+            "top_universities": "Explore Universities, Ranks, Courses, and everything you need to pick your right choice.",
+            "why_fit": ""
+        }
+    },
+    {
+        "name": "Denmark",
+        "flag": "https://flagpedia.net/data/flags/h80/dk.png",
+        "banner": "https://www.onthegotours.com/repository/Copenhagen-823611696915838_crop_710_0.jpg",
+        "page": {
+            "banner_text": "Study abroad where simplicity meets success.",
+            "description": "Study abroad in Denmark — design-led learning with practical outcomes.",
+            "top_universities": "Explore Universities, Ranks, Courses, and everything you need to pick your right choice.",
+            "why_fit": ""
+        }
+    },
+    {
+        "name": "Singapore",
+        "flag": "https://flagpedia.net/data/flags/h80/sg.png",
+        "banner": "https://static.toiimg.com/thumb/msid-107700466,width-748,height-499,resizemode=4,imgsize-119838/.jpg",
+        "page": {
+            "banner_text": "Study at the heart of Asia’s future.",
+            "description": "Get access to the World-class universities in a city built on innovation and opportunity.",
+            "top_universities": "Explore Universities, Ranks, Courses, and everything you need to pick your right choice.",
+            "why_fit": ""
+        }
+    },
+    {
+        "name": "Dubai",
+        "flag": "https://flagpedia.net/data/flags/h80/ae.png",
+        "banner": "https://res.cloudinary.com/dtljonz0f/image/upload/c_auto,ar_4:3,w_1080,g_auto/f_auto/q_auto/v1/shutterstock_2414539851_ss_non-editorial_dcx0bm?_a=BAVAZGDX0",
+        "page": {
+            "banner_text": "A Hub for Luxury, innovation, and global learning.",
+            "description": "Get the world-class education with ambitious living. ",
+            "top_universities": "Explore Universities, Ranks, Courses, and everything you need to pick your right choice.",
+            "why_fit": ""
+        }
+    },
+    {
+        "name": "Greece",
+        "flag": "https://flagpedia.net/data/flags/h80/gr.png",
+        "banner": "https://delivery.gfobcontent.com/api/public/content/c3ff89fa204f43869b899507299ba7dc?v=0533abfd",
+        "page": {
+            "banner_text": "This is where philosophy was born. You can be the Next!",
+            "description": "Affordable European education in a country rich with wisdom and beauty.",
+            "top_universities": "Explore Universities, Ranks, Courses, and everything you need to pick your right choice.",
+            "why_fit": ""
+        }
+    },
+    {
+        "name": "Czech Republic",
+        "flag": "https://flagpedia.net/data/flags/h80/cz.png",
+        "banner": "https://images.ctfassets.net/wv75stsetqy3/5bM6VkIpGI7SOjLNF2hQUG/771657f64d42a6d3635abab0070dcf8d/Czech_Republic.jpg?q=60&fit=fill&fm=webp",
+        "page": {
+            "banner_text": "Czech Republic: Europe’s rising star for study abroad.",
+            "description": "Your affordable, diverse, and globally respected option for studying abroad.",
+            "top_universities": "Explore Universities, Ranks, Courses, and everything you need to pick your right choice.",
+            "why_fit": ""
+        }
+    },
+    {
+        "name": "Canada",
+        "flag": "https://flagpedia.net/data/flags/h80/ca.png",
+        "banner": "https://hblimg.mmtcdn.com/content/hubble/img/dest_img/mmt/activities/m_Toronto_destination_main_1_l_572_1000.jpg",
+        "page": {
+            "banner_text": "Study in a country that feels like family.",
+            "description": "World-class universities in a safe, welcoming, and opportunity-rich environment.",
+            "top_universities": "Explore Universities, Ranks, Courses, and everything you need to pick your right choice.",
+            "why_fit": ""
+        }
+    }
+]

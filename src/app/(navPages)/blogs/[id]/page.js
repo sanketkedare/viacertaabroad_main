@@ -1,5 +1,5 @@
 import BlogsContainer from "@/components/Blogs/BlogsContainer";
-import blogs from "../../../components/Blogs/_blogs.json";
+import blogs from "@/components/Blogs/_blogs.json";
 
 
 const page = () => {

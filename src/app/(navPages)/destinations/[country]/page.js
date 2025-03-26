@@ -6,7 +6,7 @@ import IndiviualCountry from "@/components/Destination/IndiviualCountry";
 import Footer from "@/components/Footer/Footer";
 import Frame4 from "@/components/Frames/Frame4";
 import Navbar from "@/components/Navbar/Navbar";
-import { destinations } from "@/components/Navbar/dropdowns";
+import destinations from "@/components/Destination/destinations.json";
 import Testimonials from "@/components/Slider/Testimonials";
 import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
