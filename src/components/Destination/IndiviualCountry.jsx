@@ -4,6 +4,12 @@ import { GiGraduateCap } from "react-icons/gi";
 import IndiviualHero from "./IndiviualHero";
 
 const IndiviualCountry = ({ country }) => {
+  const university = {
+    name: "Stanford University",
+    location: "Stanford , United States",
+    courses: " 36 Courses offered",
+    rank: " Rank-2",
+  };
   return (
     <div className="">
       {/* Hero Section */}
@@ -13,77 +19,34 @@ const IndiviualCountry = ({ country }) => {
         <p className="lg:text-[45px] text-3xl font-bold mt-10">
           Top-Ranked Universities to go for
         </p>
-        <p className="text-[20px] my-2">{country.page.top_universities}</p>
+        <p className="lg:text-[20px]  my-2">{country.page.top_universities}</p>
 
         {/* List of Universities */}
         <div className="flex  justify-between flex-wrap w-full  my-10">
-          <div className="lg:w-[30%] my-2 h-[450px] shadow-sm hover:shadow-black">
-            <div className="h-[200px]">
-              <img src="/destinations/stanford.png" />
+          {Array.from({ length: 3 }).map((_) => (
+            <div className="lg:w-[30%] my-2 h-[450px] shadow-sm hover:shadow-black">
+              <div className="h-[200px]">
+                <img src="/destinations/stanford.png" />
+              </div>
+              <div className="flex flex-col items-start gap-2 p-3">
+                <p className="text-[#1E1E8C] text-[30px] font-bold">
+                  {university.name}
+                </p>
+                <p className="text-[20px]">{university.location}</p>
+                <p className="flex gap-2 items-center">
+                  <GiGraduateCap className="text-xl text-[#E00012]" />{" "}
+                  {university.courses}
+                </p>
+                <p className="flex gap-2 items-center">
+                  <Award className="text-lg text-[#E00012]" />
+                  {university.rank}
+                </p>
+              </div>
+              <button className=" bg-[#E00012] text-white p-3 px-7 rounded-xl cursor-pointer">
+                View Details
+              </button>
             </div>
-            <div className="flex flex-col items-start gap-2 p-3">
-              <p className="text-[#1E1E8C] text-[30px] font-bold">
-                Stanford University
-              </p>
-              <p className="text-[20px]">Stanford , United States</p>
-              <p className="flex gap-2 items-center">
-                <GiGraduateCap className="text-xl text-[#E00012]" /> 36 Courses
-                offered
-              </p>
-              <p className="flex gap-2 items-center">
-                <Award className="text-lg text-[#E00012]" />
-                Rank-2
-              </p>
-            </div>
-            <button className=" bg-[#E00012] text-white p-3 px-7 rounded-xl cursor-pointer">
-              View Details
-            </button>
-          </div>
-          <div className="lg:w-[30%]  my-2 h-[450px] shadow-sm hover:shadow-black">
-            <div className="h-[200px]">
-              <img src="/destinations/stanford.png" />
-            </div>
-            <div className="flex flex-col items-start gap-2 p-3">
-              <p className="text-[#1E1E8C]  text-[30px] font-bold">
-                Stanford University
-              </p>
-              <p className="text-[20px]">Stanford , United States</p>
-              <p className="flex gap-2 items-center">
-                <GiGraduateCap className="text-xl text-[#E00012]" /> 36 Courses
-                offered
-              </p>
-              <p className="flex gap-2 items-center">
-                <Award className="text-lg text-[#E00012]" />
-                Rank-2
-              </p>
-            </div>
-            <button className=" bg-[#E00012] text-white p-3 px-7 rounded-xl cursor-pointer">
-              View Details
-            </button>
-          </div>
-
-          <div className="lg:w-[30%]  my-2 h-[450px] shadow-sm hover:shadow-black">
-            <div className="h-[200px]">
-              <img src="/destinations/stanford.png" />
-            </div>
-            <div className="flex flex-col items-start gap-2 p-3">
-              <p className="text-[#1E1E8C]  text-[30px] font-bold">
-                Stanford University
-              </p>
-              <p className="text-[20px]">Stanford , United States</p>
-              <p className="flex gap-2 items-center">
-                <GiGraduateCap className="text-xl text-[#E00012]" /> 36 Courses
-                offered
-              </p>
-              <p className="flex gap-2 items-center">
-                <Award className="text-lg text-[#E00012]" />
-                Rank-2
-              </p>
-            </div>
-            <button className=" bg-[#E00012] text-white p-3 px-7 rounded-xl cursor-pointer">
-              View Details
-            </button>
-          </div>
+          ))}
         </div>
 
         <div className="w-full flex justify-center items-center py-10">
@@ -104,6 +67,7 @@ const IndiviualCountry = ({ country }) => {
           </p>
           <p className="lg:text-[24px]">{country.page.why_fit}</p>
         </div>
+
         <div className="col-span-2 flex gap-4 shadow-sm">
           <div className="col-span-2 flex  lg:my-0 my-4 gap-4 shadow-sm">
             <div className="border lg:w-[300px] w-[150px] lg:h-[450px] rounded-xl border-b-4 border-r-4 border-r-[#E00002] border-b-[#E00002]">
@@ -140,6 +104,7 @@ const IndiviualCountry = ({ country }) => {
             </div>
           </div>
         </div>
+        
       </div>
     </div>
   );
