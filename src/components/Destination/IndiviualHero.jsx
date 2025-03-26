@@ -12,6 +12,9 @@ const IndiviualHero = ({ country }) => {
           alt="USA Destination"
         />
       </div>
+      <div className="absolute z-30 top-4 right-4 w-20 h-10">
+        <img src={country.flag} className="object-cover"/>
+      </div>
 
       {/* Content Section */}
       <div className="relative flex mx-auto lg:w-auto w-9/12 h-full justify-center items-center z-10 px-4 sm:px-8">
