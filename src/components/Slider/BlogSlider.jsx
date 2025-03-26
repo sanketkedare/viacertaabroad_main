@@ -4,7 +4,8 @@ import React from "react";
 
 const BlogSlider = ({ name = "Blogs" }) => {
   const createUrl = (title) => title.split(" ").join("-");
-  const image =
+  const reverseArray = blogs.sort((a, b) => b.id - a.id);
+    const image =
     "https://www.rugtek.com/wp-content/uploads/2022/03/blogbanner-1.jpg";
   return (
     <div className="lg:my-10 my-28">
@@ -16,16 +17,16 @@ const BlogSlider = ({ name = "Blogs" }) => {
 
       <div className="overflow-x-scroll lg:w-10/12 w-full m-auto scrollbar-hide">
         <div className="flex flex-col lg:flex-row gap-6 justify-center items-center py-6 w-max  m-auto">
-          {blogs.reverse().map((blog, index) => (
+          {reverseArray.map((blog, index) => (
             <Link href={`/blogs/${createUrl(blog?.title)}`} key={index}>
               <div className="relative lg:w-[280px] w-[400px] h-[300px] cursor-pointer hover:scale-105 transition-all rounded-md overflow-hidden bg-white shadow-[#E000122E] shadow-[0_0_30px_rgba(0,0,0,0.2)]">
-                <div className="relative h-1/2 w-full">
-                  <img
+                <div className={`relative h-1/2 w-full ${!blog.image && 'bg-black'}`}>
+                  {blog.image  && <img
                     src={blog.image ? blog.image : image}
                     alt="Blog"
-                    className="h-full lg:w-auto w-full object-cover"
+                    className={`h-full lg:w-auto w-full object-cover  ${blog.image.length === 0  && 'opacity-15' }`}
                     loading="lazy"
-                  />
+                  />}
                   <p className="absolute top-5 w-[40%] left-2 text-white text-sm">
                     {blog.title}
                   </p>

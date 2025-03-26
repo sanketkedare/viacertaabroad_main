@@ -56,12 +56,13 @@ const HeroSection = ({ artical }) => {
     return <div>Loading...</div>;
   }
 
+  console.log(artical.image.length)
   return (
     <div className="relative lg:min-h-[85vh] bg-black overflow-hidden flex items-center justify-center">
       <div className="absolute inset-0 bg-gradient-to-r from-black">
         <img
           src={imageUrl}
-          className="w-full h-full object-cover lg:opacity-90 opacity-30"
+          className={`w-full h-full object-cover  ${artical.image.length === 0  ? 'opacity-5' : 'lg:opacity-90 opacity-30'  } `}
           alt="Service Banner"
           loading="lazy"
         />
