@@ -1,4 +1,4 @@
-import "../globals.css";
+import "../../globals.css";
 
 export const metadata = {
   title: "Best Countries to Study Abroad in 2025",

@@ -1,10 +1,10 @@
-import "../globals.css";
+import "../../globals.css";
 
 export const metadata = {
-  title: "Study Abroad Blogs | ViaCerta Abroad Complete Guidance",
+  title: "Study Abroad Services | ViaCerta Abroad Complete Guidance",
   description: "Get complete study abroad services with ViaCerta — career counseling, course selection, university applications, visa processing, and pre-departure guidance. Let’s make it happen!",
   alternates: {
-    canonical: "https://viacertaabroad.com/blogs",
+    canonical: "https://viacertaabroad.com/services",
   },
 };
 

@@ -6,7 +6,7 @@ const ExamHeroSection = ({ examData }) => {
       <div className="absolute inset-0">
         <img
           src="https://res.cloudinary.com/dyp3hukiu/image/upload/v1742895808/viacertaabroad/t1l7qiwafvlecxef4whu.png"
-          className="w-full h-full opacity-30"
+          className="lg:w-full h-full object-cover opacity-30"
           alt="Service Banner"
         />
       </div>
@@ -19,7 +19,7 @@ const ExamHeroSection = ({ examData }) => {
           <h3 className="text-sm lg:text-xl lg:w-4/5 lg:text-left text-center">
           {examData.banner[1]}
           </h3>
-          <button className="p-3 px-4 bg-[#E00] w-[250px] cursor-pointer rounded-sm font-bold">{examData.buttonText}</button>
+          <button className="p-3 px-4 bg-[#E00] w-[250px] cursor-pointer rounded-sm font-bold lg:m-0 m-auto">{examData.buttonText}</button>
         </div>
       </div>
     </div>
