@@ -16,7 +16,7 @@ const page = () => {
   const { exam } = useParams();
 
   const getData = () => {
-    const data = test_prep.find((i) => i.name === exam);
+    const data = test_prep.find((i) => i.name.toLowerCase() === exam.toLowerCase() );
     return data;
   };
 

@@ -48,7 +48,7 @@ const Testimonials = () => {
   return (
     <div className="flex flex-col justify-center items-center lg:w-full py-10 overflow-hidden">
       <div className="py-10">
-        <h1 className="text-[40px] font-bold mt-10 text-center  lg:flex gap-4 justify-center">
+        <h1 className="lg:text-[40px] text-2xl font-bold mt-10 text-center  lg:flex gap-4 justify-center">
           Real Stories. Real Wins.
           <span className="bg-gradient-to-r px-2 from-[#14247C] to-[#E00012] text-transparent bg-clip-text">
             Now it’s Your Turn.

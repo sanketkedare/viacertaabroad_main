@@ -21,15 +21,15 @@ const FAQs = () => {
   };
 
   return (
-    <section className="min-h-screen py-16 relative">
+    <section className="min-h-screen  relative">
       <div className="py-10">
-        <h1 className="text-[40px] font-bold mt-10 text-center lg:flex gap-4 justify-center">
+        <h1 className="lg:text-[40px] text-2xl font-bold mt-10 text-center lg:flex gap-4 justify-center">
           Everything You
           <span className="bg-gradient-to-r px-2 from-[#14247C] to-[#E00012] text-transparent bg-clip-text">
             Wanted To Ask!
           </span>
         </h1>
-        <h3 className="lg:text-[24px]  text-xl mt-2 text-center">
+        <h3 className="lg:text-[24px]  lg:w-auto w-9/12 m-auto text-md mt-2 text-center">
           Get answers to all your study abroad questions and make informed
           decisions with confidence!
         </h3>
@@ -41,11 +41,11 @@ const FAQs = () => {
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="relative border border-[#E0001269]  shadow-lg bg-white lg:w-[45%]"
+              className="relative border border-[#E0001269]  shadow-lg bg-white lg:w-[45%] w-full"
             >
               <button
                 onClick={() => toggleFAQ(index)}
-                className="w-full text-left flex justify-between items-center p-4 bg-[#fff] text-black font-semibold text-lg"
+                className="w-full text-left flex justify-between items-center p-4 bg-[#fff] text-black font-semibold lg:text-lg text-sm"
               >
                 <span>{faq.question}</span>
                 {openIndex === index ? (

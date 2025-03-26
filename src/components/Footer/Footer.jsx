@@ -5,10 +5,10 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="lg:h-[450px] bg-[#B9C4FF3B] mt-20 relative overflow-hidden py-10">
+    <footer className="lg:h-[450px] bg-[#B9C4FF3B] mt-5 relative overflow-hidden py-10">
       {/* Background Outlined Text */}
 
-      <div className="relative flex flex-col lg:flex-row justify-between gap-5 lg:w-9/12 w-11/12 m-auto pt-10 z-30">
+      <div className="relative flex flex-col lg:flex-row justify-between gap-5 lg:w-9/12 w-11/12 m-auto lg:pt-10 z-30">
         {/* Support Section */}
         <div className="">
           <h1 className="font-bold text-xl mb-4">Support</h1>
