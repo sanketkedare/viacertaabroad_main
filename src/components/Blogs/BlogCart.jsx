@@ -16,15 +16,15 @@ const BlogCart = ({ artical }) => {
         </div>
 
         {/* Introduction */}
-        <h3 className="lg:text-[18px] text-sm">
-          {artical.intro &&
+        {artical.intro && <h3 className="lg:text-[18px] text-sm">
+          {
             artical.intro.split("\n").map((line, index) => (
               <span key={index}>
                 {line}
                 <br />
               </span>
             ))}
-        </h3>
+        </h3>}
 
         {/* Subtopics */}
         <div className="flex flex-col gap-5">
@@ -35,12 +35,12 @@ const BlogCart = ({ artical }) => {
                 {sub?.title && (
                   <div className="flex items-center gap-2">
                     <h2
-                      className={`lg:text-[36px]  font-bold ${
+                      className={`lg:text-[30px]  font-bold ${
                         sub.title === "Conclusion" &&
                         "bg-gradient-to-r from-[#14247C] to-[#E00012] text-transparent bg-clip-text"
                       }`}
                     >
-                      {sub.title}
+                      🔷 {sub.title}
                     </h2>
                   </div>
                 )}
@@ -93,7 +93,12 @@ const BlogCart = ({ artical }) => {
                   </ol>
                 )}
 
-                {sub?.ending && <p>{sub?.ending}</p>}
+                {sub?.ending && <p> {sub.ending.split("\n").map((line, index) => (
+                      <span key={index}>
+                        {line}
+                        <br />
+                      </span>
+                    ))}</p>}
               </div>
             ))}
         </div>
