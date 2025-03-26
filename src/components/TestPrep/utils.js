@@ -15,17 +15,17 @@ export const test_prep = [
     examPattern: [
       {
         name: "Analytical Writing",
-        img: "",
+        img: "https://www.mim-essay.com/images/blogs/pexels-lilartsy-1925536.jpg",
         des: "Test your ability to think sharp and write smarter.",
       },
       {
         name: "Verbal Reasoning",
-        img: "",
+        img: "https://epe.brightspotcdn.com/dims4/default/de2095e/2147483647/strip/true/crop/7062x4792+34+0/resize/840x570!/quality/90/?url=https%3A%2F%2Fepe-brightspot.s3.us-east-1.amazonaws.com%2Fb9%2Fd3%2F8a6831fc4711b36f463f6dc720b1%2Freading-struggles-102025-1819843065.jpg",
         des: "Test your skill to decode complex texts and ace vocabulary.",
       },
       {
         name: "Quantitative Reasoning",
-        img: "",
+        img: "https://blogassets.leverageedu.com/blog/wp-content/uploads/2020/03/22210204/Quantitative-Aptitude.jpg",
         des: " Test your logic, number skills, and problem-solving speed.",
       },
     ],
@@ -62,21 +62,21 @@ export const test_prep = [
     examPattern: [
       {
         name: "Listening",
-        img: "",
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2nZZyD_M9eX3_wsX4C7_u0icVhWCT2Qy1Kg&s",
         des: "Train your ears to catch details, different tones, and accents",
       },
       {
         name: "Writing",
-        img: "",
+        img: "https://www.mim-essay.com/images/blogs/pexels-lilartsy-1925536.jpg",
         des: "Structure, Vocabulary, Coherence; learn well to score high.",
       },
       {
         name: "Reading",
-        img: "",
+        img: "https://epe.brightspotcdn.com/dims4/default/de2095e/2147483647/strip/true/crop/7062x4792+34+0/resize/840x570!/quality/90/?url=https%3A%2F%2Fepe-brightspot.s3.us-east-1.amazonaws.com%2Fb9%2Fd3%2F8a6831fc4711b36f463f6dc720b1%2Freading-struggles-102025-1819843065.jpg",
         des: " Read smarter not slower, spot keywords and answer confidently. ",
       },{
         name: "Speaking",
-        img: "",
+        img: "https://spunout.ie/wp-content/uploads/2023/09/public_speaking-2.jpg",
         des: "Learn how to sound fluent, smooth and all natural.",
       }
     ],
@@ -113,22 +113,22 @@ export const test_prep = [
     examPattern: [
       {
         name: "Step 1: Reading Practice",
-        img: "",
+        img: "https://epe.brightspotcdn.com/dims4/default/de2095e/2147483647/strip/true/crop/7062x4792+34+0/resize/840x570!/quality/90/?url=https%3A%2F%2Fepe-brightspot.s3.us-east-1.amazonaws.com%2Fb9%2Fd3%2F8a6831fc4711b36f463f6dc720b1%2Freading-struggles-102025-1819843065.jpg",
         des: "Learn how to break down complex texts, identify key ideas, and tackle every question confidently.",
       },
       {
         name: "Step 2: Listening Practice",
-        img: "",
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2nZZyD_M9eX3_wsX4C7_u0icVhWCT2Qy1Kg&s",
         des: "Master identifying tones, key points, and supporting information — across different accents.",
       },
       {
         name: "Step 3: Speaking Practice",
-        img: "",
+        img: "https://spunout.ie/wp-content/uploads/2023/09/public_speaking-2.jpg",
         des: "We’ll help you Structure your thoughts quickly and speak fluently to sound composed and natural.",
       },
       {
         name: "Step 4: Writing Practice",
-        img: "",
+        img: "https://www.mim-essay.com/images/blogs/pexels-lilartsy-1925536.jpg",
         des: "Learn how to build essays that are clear, well-organized, with the right vocabulary and examples.",
       },
     ],
@@ -165,17 +165,17 @@ export const test_prep = [
     examPattern: [
       {
         name: "Quantitative Reasoning",
-        img: "",
+        img: "https://blogassets.leverageedu.com/blog/wp-content/uploads/2020/03/22210204/Quantitative-Aptitude.jpg",
         des: "Strengthen your math foundations, and sharpen your Time Management.",
       },
       {
         name: "Verbal Reasoning",
-        img: "",
+        img: "https://epe.brightspotcdn.com/dims4/default/de2095e/2147483647/strip/true/crop/7062x4792+34+0/resize/840x570!/quality/90/?url=https%3A%2F%2Fepe-brightspot.s3.us-east-1.amazonaws.com%2Fb9%2Fd3%2F8a6831fc4711b36f463f6dc720b1%2Freading-struggles-102025-1819843065.jpg",
         des: "Master reading comprehension, critical reasoning, and grammar correction.",
       },
       {
         name: "Data Insights",
-        img: "",
+        img: "https://plat.ai/wp-content/uploads/datanalytics.jpg.webp",
         des: "Build accuracy and speed to handle real-world business problem scenarios.",
       },
     ],
@@ -212,27 +212,27 @@ export const test_prep = [
     examPattern: [
       {
         name: "English",
-        img: "",
+        img: "https://www.vec.ca/wp-content/uploads/2019/03/English-Language-Level-System.jpg",
         des: "Refine grammar, punctuation, and sentence structure skills with precision.",
       },
       {
         name: "Maths",
-        img: "",
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCMWqo5enWbFfkjkXZjxMTlFyls_1IPj3Td6V1hyH5l7kl_ecj08KgAPY&s=10",
         des: "Strengthen algebra, geometry, and trig with time-saving strategies and shortcuts.",
       },
       {
         name: "Reading ",
-        img: "",
+        img: "https://epe.brightspotcdn.com/dims4/default/de2095e/2147483647/strip/true/crop/7062x4792+34+0/resize/840x570!/quality/90/?url=https%3A%2F%2Fepe-brightspot.s3.us-east-1.amazonaws.com%2Fb9%2Fd3%2F8a6831fc4711b36f463f6dc720b1%2Freading-struggles-102025-1819843065.jpg",
         des: "Learn to skim effectively, identify key details, and answer confidently.",
       },
       {
         name: "Science ",
-        img: "",
+        img: "https://cdn1.byjus.com/wp-content/uploads/2020/09/Science.png",
         des: "Master data interpretation, research summaries, and scientific reasoning.",
       },
       {
         name: "Optional Writing",
-        img: "",
+        img: "https://www.mim-essay.com/images/blogs/pexels-lilartsy-1925536.jpg",
         des: "Build clear, compelling essays with structured arguments and strong language.",
       }
     ],
@@ -269,12 +269,12 @@ export const test_prep = [
     examPattern: [
       {
         name: "Reading & Writing",
-        img: "",
+        img: "https://www.mim-essay.com/images/blogs/pexels-lilartsy-1925536.jpg",
         des: "Sharpen comprehension and perfect grammar for consistent accuracy.",
       },
       {
         name: "Maths",
-        img: "",
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCMWqo5enWbFfkjkXZjxMTlFyls_1IPj3Td6V1hyH5l7kl_ecj08KgAPY&s=10",
         des: "Build a solid foundation in concepts and apply problem-solving strategies with confidence.",
       },
     ],

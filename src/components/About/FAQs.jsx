@@ -21,7 +21,7 @@ const FAQs = () => {
   };
 
   return (
-    <section className="min-h-screen  relative">
+    <section className="min-h-screen mb-10 lg:mb-0  relative">
       <div className="py-10">
         <h1 className="lg:text-[40px] text-2xl font-bold mt-10 text-center lg:flex gap-4 justify-center">
           Everything You

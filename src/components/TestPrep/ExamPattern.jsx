@@ -11,7 +11,7 @@ const ExamPattern = ({ examData }) => {
           <div className="min-h-[270px] shadow-xl rounded-xl lg:w-[350px] w-[150px]" key={i.name}>
             <div className="lg:h-[150px]  relative">
                 <p className="absolute top-3 right-3 bg-[#E00012] text-[#fff] p-1 px-5 text-[10px] rounded-[4px]">{examData.name}</p>
-                <img src={dummy} className="h-full w-full object-cover"/>
+                <img src={i.img ? i.img : dummy} className="h-full w-full object-cover"/>
             </div>
             <div className="p-3">
                <p className="lg:text-[22px] text-[#1E1E8C] font-bold">{i.name}</p> 
