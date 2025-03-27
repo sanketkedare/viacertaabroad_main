@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { successStories } from "../LaunchEvent/SuccessStories";
 import { FaQuoteLeft } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const Testimonials = () => {
   const [isPaused, setIsPaused] = useState(false);
@@ -66,14 +67,18 @@ const Testimonials = () => {
         >
           {duplicatedData.map((story, index) => (
             <article key={index} className="w-[350px] p-4 flex-shrink-0">
-              <div
-                className="p-6  flex flex-col items-center bg-[#0168EF08] rounded-xl  shadow-lg cursor-pointer transition duration-300 relative"
+              <motion.div
+                className="p-6 flex flex-col items-center bg-[#0168EF08] rounded-xl shadow-lg cursor-pointer transition duration-300 relative"
                 onMouseEnter={() => setIsPaused(true)}
                 onMouseLeave={() => setIsPaused(false)}
+                whileHover={{
+                  scale: 1.1,
+                  transition: { ease: "easeOut", duration: 0.3 },
+                }}
               >
                 <p className="mt-3 text-gray-700 text-sm flex flex-col gap-3">
-                  <FaQuoteLeft className="text-[#E00012] text-xl " />
-                  <p className="h-[150px]">{story.description} </p>
+                  <FaQuoteLeft className="text-[#E00012] text-xl" />
+                  <span className="h-[150px]">{story.description}</span>
                   <FaQuoteLeft className="text-[#E00012] text-xl rotate-180" />
                 </p>
 
@@ -86,18 +91,16 @@ const Testimonials = () => {
                     alt={`${story.name}'s Profile`}
                     className="w-15 h-15 rounded-full object-cover"
                   />
-                  <div className="">
+                  <div>
                     <b>{story.name}</b>
-                    <img src="/universities/image2.png" className="w-28"/>
+                    <img src="/universities/image2.png" className="w-28" />
                   </div>
-                 
                 </div>
-              </div>
+              </motion.div>
             </article>
           ))}
         </div>
       </div>
-      
     </div>
   );
 };

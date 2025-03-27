@@ -2,13 +2,17 @@ import React from "react";
 import { destinations, mastersPrograms, supportLinks } from "./utils";
 import { FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 import Link from "next/link";
+import { viacertaIcon} from "@/Utils/images";
 
 const Footer = () => {
   return (
     <footer className="lg:h-[450px] bg-[#B9C4FF3B] mt-5 relative overflow-hidden py-10">
       {/* Background Outlined Text */}
 
-      <div className="relative flex flex-col lg:flex-row justify-between gap-5 lg:w-9/12 w-11/12 m-auto lg:pt-10 z-30">
+      <div className="relative flex flex-col lg:flex-row justify-between lg:justify-evenly   gap-5 lg:w-9/12 w-11/12 m-auto lg:pt-10 z-30">
+      {/* <div className="hidden  w-2/12 lg:flex justify-center items-start">
+          <img src={viacertaIcon} className="w-1/2 bg-black rounded-full"/>
+      </div> */}
         {/* Support Section */}
         <div className="">
           <h1 className="font-bold text-xl mb-4">Support</h1>
@@ -30,14 +34,14 @@ const Footer = () => {
         </div>
 
         {/* Master’s Program Section */}
-        <div>
+        {/* <div>
           <h1 className="font-bold text-xl mb-4">Master’s Program</h1>
           {mastersPrograms.map((program, index) => (
             <p key={index} className="mb-1">
               {program.text}
             </p>
           ))}
-        </div>
+        </div> */}
 
         {/* Connect With Us Section */}
         <div>

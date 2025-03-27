@@ -27,7 +27,7 @@ const BlogSlider = ({ name = "Blogs" }) => {
                     className={`h-full lg:w-auto w-full object-cover  ${blog.image.length === 0  && 'opacity-15' }`}
                     loading="lazy"
                   />}
-                  <p className="absolute top-5 w-[40%] left-2 text-white text-sm">
+                  <p className="absolute top-5 w-[38%] text-[12px] left-2 text-white ">
                     {blog.title}
                   </p>
                 </div>
