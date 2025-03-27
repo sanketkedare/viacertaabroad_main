@@ -3,7 +3,7 @@
 import Footer from "@/components/Footer/Footer";
 import Navbar from "@/components/Navbar/Navbar";
 import store from "@/Redux/appStore";
-import { usePathname } from "next/navigation";
+import { useParams, usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { Provider } from "react-redux";
 import blogs from "./_blogs.json";
@@ -12,20 +12,36 @@ import BlogSlider from "@/components/Slider/BlogSlider";
 import Link from "next/link";
 
 const BlogsContainer = () => {
+  const { title } = useParams();
   const [artical, setArtical] = useState("");
-  const currentUrl = typeof window !== "undefined" ? window.location.href : "";
-  const pathname = usePathname();
+
+
+  const removeSpecialChar = () => {
+    if (!title) return "";
+    let decodedTitle = decodeURIComponent(title);
+    decodedTitle = decodedTitle.replace("%E2%82%B9", "₹");
+    return decodedTitle;
+  };
 
   const findData = () => {
-    const arr = pathname.split("/");
-    const title = arr[arr.length - 1].split("-").join(" ");
-    const artical = blogs.find((i) => i.title === title);
-    setArtical(artical);
+
+    if(title.includes('%E2%82%B9'))
+  {
+    const cleanTitle = removeSpecialChar()
+    console.log("Clean :",cleanTitle)
+    const data = blogs.find((i) => i.title === cleanTitle.split('-').join(' ') )
+    setArtical(data);
+  }
+  else{
+    const data = blogs.find((i) => i.title === title);
+    setArtical(data);
+  }
+   
   };
 
   useEffect(() => {
     findData();
-  }, [currentUrl]);
+  }, [title]);
 
   return (
     <Provider store={store}>

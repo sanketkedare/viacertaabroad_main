@@ -4,6 +4,7 @@ import { ChevronRight } from "lucide-react";
 import React from "react";
 
 const BlogCart = ({ artical }) => {
+  console.log(artical)
   return (
     <div className="mb-10 ">
       <HeroSection artical={artical} />

@@ -11,7 +11,6 @@ export default page;
 export async function generateMetadata({ params }) {
   const blogTitle = decodeURIComponent(params.id).replace(/-/g, " ").split('-').join(' ').toLowerCase();
   const blog = blogs.find((b) => b.title.toLowerCase() === blogTitle);
-  console.log(blogTitle)
 
   if (!blog) return {};
 
