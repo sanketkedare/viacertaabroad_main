@@ -16,20 +16,23 @@
                     {
                         "title": "",
                         "info": "Availability of Study Abroad Scholarships."
-                    }, {
+                    },
+                    {
                         "title": "",
                         "info": "Easy student visa processes."
-                    }, {
+                    },
+                    {
                         "title": "",
                         "info": "After graduation high-paying job abroad opportunities."
-                    }, {
+                    },
+                    {
                         "title": "",
                         "info": "Top-ranked universities with good ROI."
-                    },{
+                    },
+                    {
                         "title": "",
                         "info": "Alternates for study abroad without IELTS."
                     }
-                   
                 ],
                 "endline": ""
             },
@@ -45,17 +48,19 @@
                     {
                         "title": "2. Australia",
                         "info": "Attraction to Australia for higher studies is growing rapidly with its top-ranked universities and vibrant cities\nTuition fees: Approx. AUD 20,000–$45,000/Year\nUpto 4 years post-study visa available (but depends on the course)\nAvailable for study abroad without IELTS\nThe best destination for high-paying jobs.\nTop Universities: University of Melbourne, Australian National University, University of Sydney"
-                    }, {
+                    },
+                    {
                         "title": "3. Germany",
                         "info": "Known for its zero fees for public universities. Germany is growing to be the most affordable study abroad destination.\nTuition fees: No fees for public universities or charge a nominal fee.\nUpto 18 months post-study visa available.\nGreat option for students looking for an affordable study abroad destination.\nTop Universities: LMU Munich, Heidelberg University, Humboldt University"
-                    }, {
+                    },
+                    {
                         "title": "4. Russia",
                         "info": "According to recent searches, Russia offers affordable education and is gaining attention for medical and technical education.\nTuition fees: USD 3,000–9,000/Year\nInternational job placements & post-graduation jobs offered\nHigh demand for medical, engineering, and aviation courses\nTop Universities: Lomonosov Moscow State University, Saint Petersburg State University"
-                    }, {
+                    },
+                    {
                         "title": "5. New Zealand",
                         "info": "New Zealand is known for its quality of life and education. It offers a relaxed lifestyle for international students and the best quality education.\nTuition fees: NZD 22,000–32,000/Year\nUpto 3 years post-study work visa is available.\nVisa processing is simple making it among easy student visa countries.\nUpcoming study abroad application deadlines 2025.\nTop Universities: University of Auckland, University of Otago"
                     }
-                    
                 ]
             },
             {
@@ -223,13 +228,37 @@
                 "info": "",
                 "bulletpoints": [],
                 "table": {
-                    "headings" : ["Country", "In-demand Profession","Demand Volume"],
-                    "fields":[
-                        ["Germany", "Engineers, IT professionals, Healthcare, skilled traders","Increased from 20,000-90,000"],
-                        ["Australia", "IT professionals, Healthcare, and Construction Managers","190,000 skilled visa plan annually"],
-                        ["Finland","Tech professional, Healthcare, Teacher","Fast track permits for skilled workers introduced in 2025"],
-                        ["Saudi Arabia","Construction workers, Healthcare, IT professionals, Engineers","More than 2 million Indian workers over 10 years"],
-                        ["Japan","Caregivers, manufacturing specialists, IT professionals","India-Japan MoU allows easy migration for tech skills."]
+                    "headings": [
+                        "Country",
+                        "In-demand Profession",
+                        "Demand Volume"
+                    ],
+                    "fields": [
+                        [
+                            "Germany",
+                            "Engineers, IT professionals, Healthcare, skilled traders",
+                            "Increased from 20,000-90,000"
+                        ],
+                        [
+                            "Australia",
+                            "IT professionals, Healthcare, and Construction Managers",
+                            "190,000 skilled visa plan annually"
+                        ],
+                        [
+                            "Finland",
+                            "Tech professional, Healthcare, Teacher",
+                            "Fast track permits for skilled workers introduced in 2025"
+                        ],
+                        [
+                            "Saudi Arabia",
+                            "Construction workers, Healthcare, IT professionals, Engineers",
+                            "More than 2 million Indian workers over 10 years"
+                        ],
+                        [
+                            "Japan",
+                            "Caregivers, manufacturing specialists, IT professionals",
+                            "India-Japan MoU allows easy migration for tech skills."
+                        ]
                     ]
                 }
             },
@@ -251,13 +280,31 @@
                 "info": "",
                 "bulletpoints": [],
                 "table": {
-                    "headings" : ["Job Portal", "Recommended for"],
-                    "fields":[
-                        ["LinkedIn","Professional Networking, Job Listing"],
-                        ["Naukri Gulf","Jobs in Gulf Countries"],
-                        ["indeed","Global Job Search"], 
-                        ["Glassdoor","Company reviews, Salary insights"], 
-                        ["StepStone","Jobs in Germany & European Countries"]
+                    "headings": [
+                        "Job Portal",
+                        "Recommended for"
+                    ],
+                    "fields": [
+                        [
+                            "LinkedIn",
+                            "Professional Networking, Job Listing"
+                        ],
+                        [
+                            "Naukri Gulf",
+                            "Jobs in Gulf Countries"
+                        ],
+                        [
+                            "indeed",
+                            "Global Job Search"
+                        ],
+                        [
+                            "Glassdoor",
+                            "Company reviews, Salary insights"
+                        ],
+                        [
+                            "StepStone",
+                            "Jobs in Germany & European Countries"
+                        ]
                     ]
                 }
             },
@@ -323,7 +370,6 @@
         "date": "22 March 2025",
         "headline": "",
         "headlineintro": "",
-        
         "meta": "Want to work abroad in 2025? Here’s your complete guide for Indians with the best countries, trending job opportunities, visa changes, and expert tips to help you succeed."
     },
     {
@@ -337,82 +383,80 @@
                 "info": "",
                 "bulletpoints": [
                     {
-                        "title":"What’s going on with these scholarships",
-                        "info":""
+                        "title": "What’s going on with these scholarships",
+                        "info": ""
                     },
                     {
-                        "title":"Why it’s happening",
-                        "info":""
-                    },{
-                        "title":"Whether you need to worry",
-                        "info":""
-                    },{
-                        "title":"And what smart steps can you take right now to stay on track for your study abroad journey in 2025?",
-                        "info":""
+                        "title": "Why it’s happening",
+                        "info": ""
+                    },
+                    {
+                        "title": "Whether you need to worry",
+                        "info": ""
+                    },
+                    {
+                        "title": "And what smart steps can you take right now to stay on track for your study abroad journey in 2025?",
+                        "info": ""
                     }
                 ],
-                "ending":"Let’s get in,"
-            }, 
+                "ending": "Let’s get in,"
+            },
             {
                 "title": "Let’s Understand The Issue",
                 "intro": "The US Department of State has paused the funding for multiple scholarship programs for Indian students. The list includes some popular scholarships includes:",
                 "info": "",
                 "bulletpoints": [
                     {
-                        "title":"",
-                        "info":"Fulbright-Nehru Scholarship"
+                        "title": "",
+                        "info": "Fulbright-Nehru Scholarship"
                     },
                     {
-                        "title":"",
-                        "info":"Gilman International Scholarship."
+                        "title": "",
+                        "info": "Gilman International Scholarship."
                     }
                 ],
-                "ending":"These scholarships have traditionally been a lifeline for thousands of Indian students dreaming of pursuing higher education in the USA. Now, with this sudden freeze, many are scrambling for answers and alternatives. \n\nSo, why did this happen?\nThis decision came as part of a diplomatic move due to the current political discussions and trade concerns between India and the U.S. \nIt’s important to note that this pause has not affected all forms of scholarships, but the ones that are frozen are among the most competitive and well-funded. That’s why this news feels like such a blow."
+                "ending": "These scholarships have traditionally been a lifeline for thousands of Indian students dreaming of pursuing higher education in the USA. Now, with this sudden freeze, many are scrambling for answers and alternatives. \n\nSo, why did this happen?\nThis decision came as part of a diplomatic move due to the current political discussions and trade concerns between India and the U.S. \nIt’s important to note that this pause has not affected all forms of scholarships, but the ones that are frozen are among the most competitive and well-funded. That’s why this news feels like such a blow."
             },
             {
                 "title": "Should You Be Worried?",
                 "intro": "The answer is: It depends\nIf you were counting heavily on government-sponsored scholarships such as Fulbright-Nehru or Gilman for intakes of 2025, this freeze will affect your plans. But don't go into panic mode yet! \n\nBecause not everything is gone!\n\nA few private scholarships, university-sponsored aid, and merit-based ones have not been impacted. Most universities are going ahead with international student support as usual.\n\nAlso, remember that these are political decisions, and they can turn on a dime. The freeze could be short-lived. There’s a good chance that updates, revisions, or partial funding might be announced over the next few months.",
                 "info": "",
                 "bulletpoints": []
-            },  
+            },
             {
                 "title": "What Smart Steps Can You Take Now?",
                 "intro": "Rather than worry, the key is to act strategically. Here’s what you can do:",
                 "info": "",
                 "bulletpoints": [
                     {
-                        "title":"Beyond Government Scholarships:",
-                        "info":"Begin looking at private scholarships, university grants, and national funding sources. Start exploring platforms such as: \n➡️ EducationUSA\n➡️ ScholarshipPortal\n➡️ Specific University"
+                        "title": "Beyond Government Scholarships:",
+                        "info": "Begin looking at private scholarships, university grants, and national funding sources. Start exploring platforms such as: \n➡️ EducationUSA\n➡️ ScholarshipPortal\n➡️ Specific University"
                     },
                     {
-                        "title":"Apply Early: ",
-                        "info":"University funding is usually on a first-come, first-served basis. Don't wait until the eleventh hour. Start your applications now, and don’t limit yourself to just one or two. The more you apply, the higher your chances."
-                    },  {
-                        "title":"Have Backup Options Planned:",
-"info": "Think of alternative countries such as Canada, Australia, the UK, and Germany, where scholarship opportunities are still very much open.<br><br>Curious about emerging countries becoming the next big study abroad destinations? <a href='https://viacertaabroad.com/blogs/Best-Countries-For-Studying-Abroad-In-2025' target='_blank' rel='noopener noreferrer'><b>Read this blog (<i>Best Countries For Studying Abroad In 2025</i>)</b></a>."
-                    },  {
-                        "title":"Remain Current: ",
-                        "info":"Keep up with official statements from the US Department of State and your selected universities. Things can change rapidly — staying informed gives you an edge. If scholarships seem limited, consider on-campus jobs, research assistant positions, or teaching assistantships, which can significantly ease financial pressure."
+                        "title": "Apply Early: ",
+                        "info": "University funding is usually on a first-come, first-served basis. Don't wait until the eleventh hour. Start your applications now, and don’t limit yourself to just one or two. The more you apply, the higher your chances."
+                    },
+                    {
+                        "title": "Have Backup Options Planned:",
+                        "info": "Think of alternative countries such as Canada, Australia, the UK, and Germany, where scholarship opportunities are still very much open.<br><br>Curious about emerging countries becoming the next big study abroad destinations? <a href='https://viacertaabroad.com/blogs/Best-Countries-For-Studying-Abroad-In-2025' target='_blank' rel='noopener noreferrer'><b>Read this blog (<i>🔗 Best Countries For Studying Abroad In 2025</i>)</b></a>."
+                    },
+                    {
+                        "title": "Remain Current: ",
+                        "info": "Keep up with official statements from the US Department of State and your selected universities. Things can change rapidly — staying informed gives you an edge. If scholarships seem limited, consider on-campus jobs, research assistant positions, or teaching assistantships, which can significantly ease financial pressure."
                     }
                 ]
-           
             },
             {
                 "title": "Time To Breathe!",
                 "intro": "Yes, this freeze is troubling, but it does not spell the end of your study abroad plans. With proper planning and speedy action, you can still obtain funding and remain on course.\nAnd hey — if you require assistance locating substitute scholarships or would like us to plan your study abroad experience worry-free, contact us at ViaCerta Abroad. We've got your back!\nWe know how overwhelming and confusing abrupt changes such as these can be. But you don't have to navigate it on your own. At ViaCerta Abroad, we are experts at helping students navigate uncertain times, assisting you in locating the best scholarships, backup study locations, and intelligent funding options.",
                 "info": ""
             }
-          
-           
-         
-           
         ],
         "image": "",
         "country": "",
         "date": "26 March 2025",
         "headline": "",
         "headlineintro": "",
-        
         "meta": "US Scholarships Frozen for Indian Students!"
     }
 ]
