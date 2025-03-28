@@ -56,7 +56,6 @@ const HeroSection = ({ artical }) => {
     return <div>Loading...</div>;
   }
 
-  console.log(artical.image.length)
   return (
     <div className="relative lg:min-h-[85vh] bg-black overflow-hidden flex items-center justify-center">
       <div className="absolute inset-0 bg-gradient-to-r from-black">

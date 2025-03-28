@@ -3,7 +3,7 @@
 import Footer from "@/components/Footer/Footer";
 import Navbar from "@/components/Navbar/Navbar";
 import store from "@/Redux/appStore";
-import { useParams, usePathname } from "next/navigation";
+import { useParams} from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { Provider } from "react-redux";
 import blogs from "./_blogs.json";
@@ -14,7 +14,6 @@ import Link from "next/link";
 const BlogsContainer = () => {
   const { id, title } = useParams();
   const [artical, setArtical] = useState("");
-  console.log(id);
 
   const removeSpecialChar = () => {
     if (!title) return "";

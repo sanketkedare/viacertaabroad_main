@@ -11,13 +11,13 @@ export default page;
 
 
 export async function generateMetadata({ params }) {
-  const [id, ...titleParts] = params.id.split('/');
+  // Access params directly (params.id and params.title in your case)
+  const { id, title } = params;
   const blog = blogs.find((b) => b.id === id);
-  
+
   if (!blog) return {};
   
-  const blogTitle = decodeURIComponent(titleParts.join('-')).replace(/-/g, " ").toLowerCase();
-  const blogUrl = `https://viacertaabroad.com/blogs/${blog.id}/${blogTitle.split(' ').join('-').toLowerCase()}`;
+  const blogUrl = `https://viacertaabroad.com/blogs/${id}/${title}`;
 
   return {
     title: blog.title,
@@ -42,7 +42,7 @@ export async function generateMetadata({ params }) {
     twitter: {
       card: "summary_large_image",
       title: blog.title,
-      description: blog.meta,
+      description: blog.meta || blog.title,
       images: [blog.thumbnail],
     },
   };
