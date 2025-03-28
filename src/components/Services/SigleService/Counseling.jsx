@@ -28,7 +28,7 @@ const Counseling = () => {
         <h1 className="lg:text-[50px] text-3xl font-bold mt-10 text-center">
           Key{" "}
           <span className="bg-gradient-to-r from-[#14247C] to-[#E00012] text-transparent bg-clip-text">
-            Benifits
+          Benefits
           </span>
         </h1>
         <p className="text-center my-5 mb-10 text-2xl">
