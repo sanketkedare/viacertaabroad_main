@@ -4,15 +4,22 @@ import Navbar from "@/components/Navbar/Navbar";
 import store from "@/Redux/appStore";
 import React from "react";
 import { Provider } from "react-redux";
-import SingleHero from "./SingleHero";
+import { useParams } from "next/navigation";
+import Counseling from "./Counseling";
 
 const SingleService = () => {
-  
+  const { service } = useParams();
+
   return (
     <Provider store={store}>
       <Navbar />
-      <SingleHero />
-
+      {service === "counselling" ? (
+        <Counseling />
+      ) : (
+        <div className="flex h-screen w-full justify-center items-center">
+          Not Found
+        </div>
+      )}
       <Footer />
     </Provider>
   );

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import PopupComponent from "./PopUp";
 
-const ServicesForm = () => {
+const ServicesForm = ({title="Drop your details & let's connect!", buttonText= "Apply Now"}) => {
   const URL = "/api/enquiry_form";
   const [success, setSuccess] = useState(false);
 
@@ -116,7 +116,7 @@ const ServicesForm = () => {
       >
         <div className="rounded-xl  w-full text-center bg-[#A6A6FF3D] font-bold">
           <p className="p-5 text-[#1E1E8C]">
-            Drop your details & let's connect!
+            {title}
           </p>
         </div>
 
@@ -157,12 +157,12 @@ const ServicesForm = () => {
             <div className="flex justify-center mt-5">
               <motion.button
                 type="submit"
-                className="w-[200px] mb-3 flex justify-center items-center gap-3 bg-[#E00012] text-white lg:text-lg font-semibold py-2 rounded-md  transition"
+                className="w-[250px] mb-3 flex justify-center items-center gap-3 bg-[#E00012] text-white lg:text-lg font-semibold py-2 rounded-md  transition"
                 disabled={loading}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                {loading ? "Submitting..." : "Apply Now"}
+                {loading ? "Submitting..." : buttonText}
               </motion.button>
             </div>
           </form>

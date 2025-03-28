@@ -1,0 +1,25 @@
+[
+    {
+        "type":"counselling",
+        "bannerHeading": "Tell Us Your Dreams, And We’ll Show You The Best Path",
+        "bannerInfo":
+          "Find the right university, course, and destination with personalized counselling.",
+        "formTitle": "Get FREE Counselling Today!",
+        "buttonTest": "Book Your free Session",
+        "benifits":{
+            "heading":""
+
+        },
+        "content":"Choosing the right course, study destination, and university is a crucial decision, and we make sure you get it right! Our 2-Stage Counseling process ensures you not only explore your dream choices but also get expert advice based on your profile and future goals. No generic suggestions—just personalized guidance that aligns with your ambitions."
+      },
+      {
+        "type":"university-selection",
+        "bannerHeading": "Wondering Which University Is Right For You?",
+        "bannerInfo":
+          "We’ll match you with the best options, based on your goals, budget, and what feels right for you.",
+        "formTitle": "Get FREE Counselling Today!",
+        "buttonTest": "Book Your free Session",
+        "content":"With thousands of universities worldwide, choosing the right fit for you can be a little overwhelming. That’s where we come in! Our expert-driven university selection ensures you get the best options tailored to your academic background, career goals, and financial plan. Whether you have a dream university in mind or need recommendations, we help you make an informed choice—no guesswork, just smart decisions!"
+      }
+
+]
