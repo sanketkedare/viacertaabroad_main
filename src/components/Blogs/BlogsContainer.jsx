@@ -39,7 +39,7 @@ const BlogsContainer = () => {
       }
     }
     else{
-      const data = blogs.find((i)=> i.id === id);
+      const data = blogs.find((i)=> i.id == id);
       setArtical(data);
     }
   };
