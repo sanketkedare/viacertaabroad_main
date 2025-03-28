@@ -1,13 +1,15 @@
 import React from "react";
 import ServicesForm from "../ServicesForm";
 
-const SingleHero = ({serviceData}) => {
+const SingleHero = ({serviceData}) => 
+{
+  const BANNER = serviceData.banner || "https://res.cloudinary.com/dyp3hukiu/image/upload/v1742895808/viacertaabroad/t1l7qiwafvlecxef4whu.png"
 
   return (
     <div className="relative min-h-[75vh] bg-black overflow-hidden flex items-center justify-center">
       <div className="absolute inset-0">
         <img
-          src="https://res.cloudinary.com/dyp3hukiu/image/upload/v1742895808/viacertaabroad/t1l7qiwafvlecxef4whu.png"
+          src= {BANNER}
           className="lg:w-full h-full object-cover opacity-30"
           alt="Service Banner"
         />
@@ -24,7 +26,7 @@ const SingleHero = ({serviceData}) => {
 
         
         </div>
-        <ServicesForm title={serviceData.formTitle} buttonText={serviceData.buttonTest}/>
+       {serviceData.isForm &&  <ServicesForm title={serviceData.formTitle} buttonText={serviceData.buttonTest}/>}
       </div>
     </div>
   );

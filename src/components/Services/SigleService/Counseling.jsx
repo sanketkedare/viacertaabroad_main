@@ -1,6 +1,5 @@
 import React from "react";
 import SingleHero from "./SingleHero";
-import { University } from "lucide-react";
 import { FaUniversity } from "react-icons/fa";
 import { FaRegUser } from "react-icons/fa6";
 import { RiPresentationFill } from "react-icons/ri";
@@ -15,6 +14,7 @@ const Counseling = () => {
       "Find the right university, course, and destination with personalized counselling.",
     formTitle: "Get FREE Counselling Today!",
     buttonTest: "Book Your free Session",
+    isForm: true,
     content:
       "Choosing the right course, study destination, and university is a crucial decision, and we make sure you get it right! Our 2-Stage Counseling process ensures you not only explore your dream choices but also get expert advice based on your profile and future goals. No generic suggestions—just personalized guidance that aligns with your ambitions.",
   };
@@ -160,7 +160,6 @@ const Counseling = () => {
             </p>
 
             <div className="flex w-10/12 mx-auto mt-10">
-
               <div className="w-2/5 flex">
                 <div className="border p-4 rounded-full">
                   <div className="w-80 h-80 border rounded-full flex justify-center items-center overflow-hidden">
@@ -176,9 +175,7 @@ const Counseling = () => {
               {/* Right Section - Content */}
               <div className="w-3/5  p-4 flex flex-col items-center gap-4">
                 <div className="flex border w-full p-4 gap-3 rounded-xl">
-                  <FaUniversity
-                    className="bg-[#E00012] text-white rounded-full p-4 shadow-md w-15 h-15"
-                  />
+                  <FaUniversity className="bg-[#E00012] text-white rounded-full p-4 shadow-md w-15 h-15" />
                   <div>
                     <p className="text-[30px] font-bold">
                       Understanding Your Choices{" "}
@@ -190,9 +187,7 @@ const Counseling = () => {
                   </div>
                 </div>
                 <div className="flex border w-full p-4 gap-3 rounded-xl">
-                  <FaRegUser
-                    className="bg-[#E00012] text-white rounded-full p-4 shadow-md  w-20 h-15"
-                  />
+                  <FaRegUser className="bg-[#E00012] text-white rounded-full p-4 shadow-md  w-20 h-15" />
                   <div>
                     <p className="text-[30px] font-bold">
                       Profile Assessment & Expert Advice{" "}

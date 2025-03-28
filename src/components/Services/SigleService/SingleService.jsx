@@ -6,6 +6,7 @@ import React from "react";
 import { Provider } from "react-redux";
 import { useParams } from "next/navigation";
 import Counseling from "./Counseling";
+import UniversitySelection from "./UniversitySelection";
 
 const SingleService = () => {
   const { service } = useParams();
@@ -15,6 +16,8 @@ const SingleService = () => {
       <Navbar />
       {service === "counselling" ? (
         <Counseling />
+      ) : service === "university-selection" ? (
+        <UniversitySelection />
       ) : (
         <div className="flex h-screen w-full justify-center items-center">
           Not Found
