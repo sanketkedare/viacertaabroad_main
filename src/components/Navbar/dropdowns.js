@@ -35,8 +35,9 @@ export const destinations = [
     { name: "Singapore", flag: "https://flagpedia.net/data/flags/h80/sg.png" },
     { name: "Dubai", flag: "https://flagpedia.net/data/flags/h80/ae.png" },
     { name: "Greece", flag: "https://flagpedia.net/data/flags/h80/gr.png" },
-    { name: "Czech Republic", flag: "https://flagpedia.net/data/flags/h80/cz.png" },
-    { name: "Canada", flag: "https://flagpedia.net/data/flags/h80/ca.png" }
+    { name: "Canada", flag: "https://flagpedia.net/data/flags/h80/ca.png" },
+
+    { name: "Czech Republic", flag: "https://flagpedia.net/data/flags/h80/cz.png" }
 ];
 
 
