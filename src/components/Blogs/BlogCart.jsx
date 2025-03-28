@@ -4,7 +4,7 @@ import { ChevronRight } from "lucide-react";
 import React from "react";
 
 const BlogCart = ({ artical }) => {
-  console.log(artical)
+  console.log(artical);
   return (
     <div className="mb-10 ">
       <HeroSection artical={artical} />
@@ -17,15 +17,16 @@ const BlogCart = ({ artical }) => {
         </div>
 
         {/* Introduction */}
-        {artical.intro && <h3 className="lg:text-[18px] text-sm">
-          {
-            artical.intro.split("\n").map((line, index) => (
+        {artical.intro && (
+          <h3 className="lg:text-[18px] text-sm">
+            {artical.intro.split("\n").map((line, index) => (
               <span key={index}>
                 {line}
                 <br />
               </span>
             ))}
-        </h3>}
+          </h3>
+        )}
 
         {/* Subtopics */}
         <div className="flex flex-col gap-5">
@@ -49,14 +50,22 @@ const BlogCart = ({ artical }) => {
                 {/* Subtopic Intro & Info */}
                 {sub?.intro && (
                   <h5 className="lg:text-[18px]">
-                    {sub.intro.split("\n").map((line, index) => (
-                      <span key={index}>
-                        {line}
-                        <br />
-                      </span>
-                    ))}
+                    {sub.intro.split("\n").map((line, index) =>
+                      line.includes("<a") || line.includes("<i") ? (
+                        <span
+                          key={index}
+                          dangerouslySetInnerHTML={{ __html: line }}
+                        />
+                      ) : (
+                        <span key={index}>
+                          {line}
+                          <br />
+                        </span>
+                      )
+                    )}
                   </h5>
                 )}
+
                 {sub?.info && <h5 className="lg:text-[18px]">{sub.info}</h5>}
 
                 {sub?.table && <Table table={sub?.table} />}
@@ -94,12 +103,23 @@ const BlogCart = ({ artical }) => {
                   </ol>
                 )}
 
-                {sub?.ending && <p> {sub.ending.split("\n").map((line, index) => (
-                      <span key={index}>
-                        {line}
-                        <br />
-                      </span>
-                    ))}</p>}
+                {sub?.ending && (
+                  <p>
+                    {sub.ending.split("\n").map((line, index) =>
+                      line.includes("<a") || line.includes("<i") ? (
+                        <span
+                          key={index}
+                          dangerouslySetInnerHTML={{ __html: line }}
+                        />
+                      ) : (
+                        <span key={index}>
+                          {line}
+                          <br />
+                        </span>
+                      )
+                    )}
+                  </p>
+                )}
               </div>
             ))}
         </div>
