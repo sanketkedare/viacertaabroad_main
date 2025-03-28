@@ -7,6 +7,8 @@ import { RiPresentationFill } from "react-icons/ri";
 import { MdAutoMode } from "react-icons/md";
 
 const Counseling = () => {
+  const image =
+    "https://res.cloudinary.com/dyp3hukiu/image/upload/v1743146472/viacertaabroad/qwxttg68dbkosppvxd89.png";
   const counsalingData = {
     bannerHeading: "Tell Us Your Dreams, And We’ll Show You The Best Path",
     bannerInfo:
@@ -79,13 +81,12 @@ const Counseling = () => {
               />
 
               {/* Title */}
-              <p className="text-2xl font-bold w-3/5">
-              Profile-Based Guidance
-              </p>
+              <p className="text-2xl font-bold w-3/5">Profile-Based Guidance</p>
 
               {/* Description */}
               <p className="text-xl">
-              We analyze your academics, preferences, and career goals before giving suggestions.
+                We analyze your academics, preferences, and career goals before
+                giving suggestions.
               </p>
             </div>
           </div>
@@ -100,19 +101,17 @@ const Counseling = () => {
             {/* Content Wrapper */}
             <div className="relative flex flex-col gap-4 z-10">
               {/* Icon */}
-              <RiPresentationFill 
+              <RiPresentationFill
                 className="text-[#E00012] bg-white rounded-full p-4 shadow-md"
                 size={55}
               />
 
               {/* Title */}
-              <p className="text-2xl font-bold">
-              One-On-One Expert Session
-              </p>
+              <p className="text-2xl font-bold">One-On-One Expert Session</p>
 
               {/* Description */}
               <p className="text-xl">
-              Get personal counselling with our seasoned educational experts.
+                Get personal counselling with our seasoned educational experts.
               </p>
             </div>
           </div>
@@ -127,27 +126,87 @@ const Counseling = () => {
             {/* Content Wrapper */}
             <div className="relative flex flex-col gap-4 z-10">
               {/* Icon */}
-              <MdAutoMode 
+              <MdAutoMode
                 className="text-[#E00012] bg-white rounded-full p-4 shadow-md"
                 size={55}
               />
 
               {/* Title */}
-              <p className="text-2xl font-bold w-3/5">
-              Hassle-Free Process
-              </p>
+              <p className="text-2xl font-bold w-3/5">Hassle-Free Process</p>
 
               {/* Description */}
               <p className="text-xl">
-              Skip the confusion, leave the hard part for us, and focus on what’s best for you.
+                Skip the confusion, leave the hard part for us, and focus on
+                what’s best for you.
               </p>
             </div>
           </div>
         </div>
 
-        <div className="mt-20 w-ful h-screen bg-[#1E1E8C] relative">
-            <img className="object-cover absolute z-0 opacity-20 bottom-0 h-full" src="https://res.cloudinary.com/dyp3hukiu/image/upload/v1743146472/viacertaabroad/qwxttg68dbkosppvxd89.png"/>
+        <div className="mt-20 w-full h-screen bg-[#1E1E8C] relative text-white py-4">
+          <div
+            className="absolute inset-0 bg-cover bg-center opacity-20"
+            style={{ backgroundImage: `url(${image})` }}
+          ></div>
+          <div className="9/12 m-auto relative  z-10">
+            <p className="text-center lg:text-[50px] py-5 font-bold">
+              Our 2-Stage Counselling
+            </p>
 
+            <p className="text-center text-[20px] w-2/3 m-auto">
+              Seamlessly navigate the intricate admission process with clarity
+              and confidence. Our expert guidance ensures a smooth journey from
+              application to acceptance.
+            </p>
+
+            <div className="flex w-10/12 mx-auto mt-10">
+
+              <div className="w-2/5 flex">
+                <div className="border p-4 rounded-full">
+                  <div className="w-80 h-80 border rounded-full flex justify-center items-center overflow-hidden">
+                    <img
+                      src={image}
+                      className="object-cover w-full h-full"
+                      alt="Profile"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Section - Content */}
+              <div className="w-3/5  p-4 flex flex-col items-center gap-4">
+                <div className="flex border w-full p-4 gap-3 rounded-xl">
+                  <FaUniversity
+                    className="bg-[#E00012] text-white rounded-full p-4 shadow-md w-15 h-15"
+                  />
+                  <div>
+                    <p className="text-[30px] font-bold">
+                      Understanding Your Choices{" "}
+                    </p>
+                    <p className="w-4/5">
+                      We first listen to YOU. Tell us your dream university,
+                      preferred country, and study plans.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex border w-full p-4 gap-3 rounded-xl">
+                  <FaRegUser
+                    className="bg-[#E00012] text-white rounded-full p-4 shadow-md  w-20 h-15"
+                  />
+                  <div>
+                    <p className="text-[30px] font-bold">
+                      Profile Assessment & Expert Advice{" "}
+                    </p>
+                    <p className="w-4/5">
+                      Our experts analyze your academic profile, career goals,
+                      and eligibility to suggest the best possible course,
+                      university, and country for your future success.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
