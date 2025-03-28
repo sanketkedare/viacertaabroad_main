@@ -9,16 +9,21 @@ const page = () => {
 export default page;
 
 export async function generateMetadata({ params }) {
-  const blogTitle = decodeURIComponent(params.id).replace(/-/g, " ").split('-').join(' ').toLowerCase();
-  const blog = blogs.find((b) => b.title.toLowerCase() === blogTitle);
-
+  const [id, ...titleParts] = params.id.split('/');
+  const blog = blogs.find((b) => b.id === id);
+  
   if (!blog) return {};
-
+  
+  const blogTitle = decodeURIComponent(titleParts.join('-')).replace(/-/g, " ").toLowerCase();
+  
+  console.log(`https://viacertaabroad.com/blogs/${blog.id}/${blogTitle.split(' ').join('-').toLowerCase()}`);
+  
   return {
     title: blog.title,
-    description: blog.meta || "Read the latest blog on ViaCerta Abroad.",
+    description: blog.meta || blog.title || "Read the latest blog on ViaCerta Abroad.",
     alternates: {
-      canonical: `https://viacertaabroad.com/blogs/${blogTitle.split(' ').join('-').toLowerCase()}`,
+      canonical: `https://viacertaabroad.com/blogs/${blog.id}/${blogTitle.split(' ').join('-').toLowerCase()}`,
     },
   };
+  
 }
