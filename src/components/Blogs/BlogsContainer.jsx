@@ -12,9 +12,9 @@ import BlogSlider from "@/components/Slider/BlogSlider";
 import Link from "next/link";
 
 const BlogsContainer = () => {
-  const { title } = useParams();
+  const { id, title } = useParams();
   const [artical, setArtical] = useState("");
-
+  console.log(id);
 
   const removeSpecialChar = () => {
     if (!title) return "";
@@ -24,19 +24,24 @@ const BlogsContainer = () => {
   };
 
   const findData = () => {
-
-    if(title.includes('%E2%82%B9'))
-  {
-    const cleanTitle = removeSpecialChar()
-    console.log("Clean :",cleanTitle)
-    const data = blogs.find((i) => i.title === cleanTitle.split('-').join(' ') )
-    setArtical(data);
-  }
-  else{
-    const data = blogs.find((i) => i.title === title);
-    setArtical(data);
-  }
-   
+    if (!id) {
+      if (title.includes("%E2%82%B9")) {
+        const cleanTitle = removeSpecialChar();
+        const data = blogs.find(
+          (i) => i.title === cleanTitle.split("-").join(" ")
+        );
+        setArtical(data);
+      } else {
+        const cleanTitle = title.split("-").join(" ");
+        console.log(cleanTitle);
+        const data = blogs.find((i) => i.title === cleanTitle);
+        setArtical(data);
+      }
+    }
+    else{
+      const data = blogs.find((i)=> i.id === id);
+      setArtical(data);
+    }
   };
 
   useEffect(() => {
