@@ -24,6 +24,8 @@ const SingleHero = ({serviceData}) =>
             {serviceData.bannerInfo}
           </h3>
 
+          {serviceData?.buttonText && (<button className="bg-[#E00002] p-3 w-[250px] font-bold rounded-[4px] cursor-pointer">{serviceData.buttonText}</button>)}
+
         
         </div>
        {serviceData.isForm &&  <ServicesForm title={serviceData.formTitle} buttonText={serviceData.buttonTest}/>}

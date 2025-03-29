@@ -4,11 +4,15 @@ import { CgSandClock } from "react-icons/cg";
 const ExamPlanning = ({ examData }) => {
   return (
     <div className="lg:h-[500px] relative  w-full mt-10 flex items-end">
-      <div className="absolute h-[350px] w-full top-0 bg-[#1E1E8C] text-white text-center z-0">
+      <div className="absolute h-[350px] w-full top-0 bg-[#1E1E8C] text-white text-center z-0 overflow-hidden" >
+        <img className="absolute -top-80 z-0 opacity-20" src="https://www.mim-essay.com/images/blogs/pexels-lilartsy-1925536.jpg "/>
+        <div className="relative z-10">
         <h1 className="lg:text-[40px] text-2xl font-bold lg:mt-20 mt-10 lg:w-auto w-11/12 m-auto">
           {examData.headline.title}
         </h1>
         <h1 className="lg:text-[20px] text-sm font-bold ">{examData.headline.info}</h1>
+        </div>
+       
         <img
           src="/slider/lines-white.png"
           className="absolute top-0 right-0 z-30 "

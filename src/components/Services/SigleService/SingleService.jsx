@@ -7,9 +7,12 @@ import { Provider } from "react-redux";
 import { useParams } from "next/navigation";
 import Counseling from "./Counseling";
 import UniversitySelection from "./UniversitySelection";
+import Addmision from "./Addmision";
 
 const SingleService = () => {
   const { service } = useParams();
+
+  console.log(service);
 
   return (
     <Provider store={store}>
@@ -18,6 +21,8 @@ const SingleService = () => {
         <Counseling />
       ) : service === "university-selection" ? (
         <UniversitySelection />
+      ) : service.includes('application') ? (
+        <Addmision />
       ) : (
         <div className="flex h-screen w-full justify-center items-center">
           Not Found
