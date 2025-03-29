@@ -31,13 +31,13 @@ const ForDestinations = ({ setIsOpenDropdown }) => {
       onClick={() => setIsOpenDropdown(false)}
     >
       {destinations.map((i) => (
-        <Link href={`/destinations/${createUrl(i.name)}`} key={i.name}>
-          <div className="border border-gray-400 p-2 px-4 rounded-xl flex items-center gap-2 cursor-pointer shadow-sm">
+        // <Link href={`/destinations/${createUrl(i.name)}`} key={i.name}>
+          <div  key={i.name} className="border border-gray-400 p-2 px-4 rounded-xl flex items-center gap-2 cursor-pointer shadow-sm">
             <img src={i.flag} className="w-10" />
 
             {i.name}
           </div>
-        </Link>
+        // </Link>
       ))}
     </motion.div>
   );
