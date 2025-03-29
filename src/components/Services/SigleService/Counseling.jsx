@@ -21,7 +21,7 @@ const Counseling = () => {
   return (
     <div>
       <SingleHero serviceData={counsalingData} />
-      <div className="w-10/12 m-auto text-[24px] text-center my-16">
+      <div className="w-10/12 m-auto lg:text-[24px] text-xl text-center my-16">
         {counsalingData.content}
       </div>
       <div>
@@ -31,15 +31,15 @@ const Counseling = () => {
           Benefits
           </span>
         </h1>
-        <p className="text-center my-5 mb-10 text-2xl">
+        <p className="text-center my-5 mb-10 lg:text-2xl">
           Navigate the complex admission process with ease and confidence.
         </p>
-        <div className="flex h-[400px] lg:grid-cols-4 gap-0">
-          <div className=" relative w-1/4 flex flex-col gap-3 p-10 bg-black text-white  overflow-hidden">
+        <div className="lg:flex lg:h-[400px] gap-0">
+          <div className=" relative lg:w-1/4 flex flex-col gap-3 p-10 bg-black text-white  overflow-hidden">
             {/* Background Image */}
             <img
               src="https://res.cloudinary.com/dyp3hukiu/image/upload/v1743145519/viacertaabroad/kghh3e970j9hcbjzyndv.png"
-              className="absolute inset-0 w-full h-full object-cover opacity-40"
+              className="absolute inset-0 w-full h-full object-cover opacity-20"
               alt="Background"
             />
 
@@ -64,7 +64,7 @@ const Counseling = () => {
               </p>
             </div>
           </div>
-          <div className=" relative w-1/4 flex flex-col gap-3 p-10 bg-[#E00002] text-white  overflow-hidden">
+          <div className=" relative lg:w-1/4 flex flex-col gap-3 p-10 bg-[#E00002] text-white  overflow-hidden">
             {/* Background Image */}
             <img
               src="https://res.cloudinary.com/dyp3hukiu/image/upload/v1743145518/viacertaabroad/enx5jchsphiqiqinyvcx.png"
@@ -90,11 +90,11 @@ const Counseling = () => {
               </p>
             </div>
           </div>
-          <div className=" relative w-1/4 flex flex-col gap-3 p-10 bg-black text-white  overflow-hidden">
+          <div className=" relative lg:w-1/4 flex flex-col gap-3 p-10 bg-black text-white  overflow-hidden">
             {/* Background Image */}
             <img
               src="https://res.cloudinary.com/dyp3hukiu/image/upload/v1743145519/viacertaabroad/kghh3e970j9hcbjzyndv.png"
-              className="absolute inset-0 w-full h-full object-cover opacity-40"
+              className="absolute inset-0 w-full h-full object-cover opacity-20"
               alt="Background"
             />
 
@@ -115,7 +115,7 @@ const Counseling = () => {
               </p>
             </div>
           </div>
-          <div className=" relative w-1/4 flex flex-col gap-3 p-10 bg-[#E00002] text-white  overflow-hidden">
+          <div className=" relative lg:w-1/4 flex flex-col gap-3 p-10 bg-[#E00002] text-white  overflow-hidden">
             {/* Background Image */}
             <img
               src="https://res.cloudinary.com/dyp3hukiu/image/upload/v1743145518/viacertaabroad/enx5jchsphiqiqinyvcx.png"
@@ -149,17 +149,17 @@ const Counseling = () => {
             style={{ backgroundImage: `url(${image})` }}
           ></div>
           <div className="9/12 m-auto relative  z-10">
-            <p className="text-center lg:text-[50px] py-5 font-bold">
+            <p className="text-center lg:text-[50px] text-2xl py-5 font-bold">
               Our 2-Stage Counselling
             </p>
 
-            <p className="text-center text-[20px] w-2/3 m-auto">
+            <p className="text-center lg:text-[20px] lg:w-2/3 m-auto">
               Seamlessly navigate the intricate admission process with clarity
               and confidence. Our expert guidance ensures a smooth journey from
               application to acceptance.
             </p>
 
-            <div className="flex w-10/12 mx-auto mt-10">
+            <div className="flex flex-col lg:flex-row w-10/12 mx-auto mt-10">
               <div className="w-2/5 flex">
                 <div className="border p-4 rounded-full">
                   <div className="w-80 h-80 border rounded-full flex justify-center items-center overflow-hidden">
@@ -173,26 +173,26 @@ const Counseling = () => {
               </div>
 
               {/* Right Section - Content */}
-              <div className="w-3/5  p-4 flex flex-col items-center gap-4">
+              <div className="lg:w-3/5  lg:p-4 p-2 flex flex-col items-center gap-4">
                 <div className="flex border w-full p-4 gap-3 rounded-xl">
-                  <FaUniversity className="bg-[#E00012] text-white rounded-full p-4 shadow-md w-15 h-15" />
+                  <FaUniversity className="bg-[#E00012] text-white rounded-full lg:p-4 p-1 shadow-md w-15 lg:h-15 h-10" />
                   <div>
-                    <p className="text-[30px] font-bold">
+                    <p className="lg:text-[30px] font-bold">
                       Understanding Your Choices{" "}
                     </p>
-                    <p className="w-4/5">
+                    <p className="lg:w-4/5 text-sm">
                       We first listen to YOU. Tell us your dream university,
                       preferred country, and study plans.
                     </p>
                   </div>
                 </div>
                 <div className="flex border w-full p-4 gap-3 rounded-xl">
-                  <FaRegUser className="bg-[#E00012] text-white rounded-full p-4 shadow-md  w-20 h-15" />
+                  <FaRegUser className="bg-[#E00012] text-white rounded-full lg:p-4 p-2 shadow-md  lg:w-20 w-24 lg:h-15 h-10" />
                   <div>
-                    <p className="text-[30px] font-bold">
+                    <p className="lg:text-[30px] font-bold">
                       Profile Assessment & Expert Advice{" "}
                     </p>
-                    <p className="w-4/5">
+                    <p className="lg:w-4/5 text-sm">
                       Our experts analyze your academic profile, career goals,
                       and eligibility to suggest the best possible course,
                       university, and country for your future success.

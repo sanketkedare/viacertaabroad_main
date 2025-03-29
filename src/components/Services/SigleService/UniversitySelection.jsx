@@ -19,21 +19,21 @@ const UniversitySelection = () => {
   return (
     <div>
       <SingleHero serviceData={counsalingData} />
-      <div className="w-10/12 m-auto text-[24px] text-center my-16">
+      <div className="w-10/12 m-auto lg:text-[24px] text-xl text-center my-16">
         {counsalingData.content}
       </div>
       <div>
-        <h1 className="lg:text-[50px] text-3xl font-bold mt-10 text-center">
-          What Makes
+        <h1 className="lg:text-[50px] text-2xl font-bold mt-10 text-center">
+          What Makes{' '}
           <span className="bg-gradient-to-r from-[#14247C] to-[#E00012] text-transparent bg-clip-text">
             This Easier For You?
           </span>
         </h1>
-        <p className="text-center my-5 mb-10 text-2xl">
+        <p className="text-center my-5 mb-10 lg:text-2xl">
           Navigate the complex admission process with ease and confidence.
         </p>
-        <div className="flex h-[400px] lg:grid-cols-4 gap-0">
-          <div className=" relative w-1/4 flex flex-col gap-3 p-10 bg-black text-white  overflow-hidden">
+        <div className="lg:flex lg:h-[400px] gap-0">
+          <div className=" relative lg:w-1/4 flex flex-col gap-3 p-10 bg-black text-white  overflow-hidden">
             {/* Background Image */}
             <img
               src="https://res.cloudinary.com/dyp3hukiu/image/upload/v1743145519/viacertaabroad/kghh3e970j9hcbjzyndv.png"
@@ -61,7 +61,7 @@ const UniversitySelection = () => {
               </p>
             </div>
           </div>
-          <div className=" relative w-1/4 flex flex-col gap-3 p-10 bg-[#E00002] text-white  overflow-hidden">
+          <div className=" relative lg:w-1/4 flex flex-col gap-3 p-10 bg-[#E00002] text-white  overflow-hidden">
             {/* Background Image */}
             <img
               src="https://res.cloudinary.com/dyp3hukiu/image/upload/v1743145518/viacertaabroad/enx5jchsphiqiqinyvcx.png"
@@ -86,7 +86,7 @@ const UniversitySelection = () => {
               </p>
             </div>
           </div>
-          <div className=" relative w-1/4 flex flex-col gap-3 p-10 bg-black text-white  overflow-hidden">
+          <div className=" relative lg:w-1/4 flex flex-col gap-3 p-10 bg-black text-white  overflow-hidden">
             {/* Background Image */}
             <img
               src="https://res.cloudinary.com/dyp3hukiu/image/upload/v1743145519/viacertaabroad/kghh3e970j9hcbjzyndv.png"
@@ -113,7 +113,7 @@ const UniversitySelection = () => {
               </p>
             </div>
           </div>
-          <div className=" relative w-1/4 flex flex-col gap-3 p-10 bg-[#E00002] text-white  overflow-hidden">
+          <div className=" relative lg:w-1/4 flex flex-col gap-3 p-10 bg-[#E00002] text-white  overflow-hidden">
             {/* Background Image */}
             <img
               src="https://res.cloudinary.com/dyp3hukiu/image/upload/v1743145518/viacertaabroad/enx5jchsphiqiqinyvcx.png"
@@ -148,7 +148,7 @@ const UniversitySelection = () => {
               Will We Help?
             </span>
           </p>
-          <p className="text-center my-5 mb-10 text-2xl">
+          <p className="text-center my-5 mb-10 lg:text-2xl">
             Three easy and interactive steps to make your selection process
             easy.
           </p>
@@ -158,7 +158,7 @@ const UniversitySelection = () => {
               <div className="h-[200px] flex flex-col gap-2">
                 <img
                   src="https://res.cloudinary.com/dyp3hukiu/image/upload/v1743157697/viacertaabroad/wlnh4f9h9hfrnqantabr.png"
-                  className="object-cover h-full w-full"
+                  className="object-cover lg:h-full w-full"
                 />
                 <div className="p-2 px-4">
                   <p className="text-[28px] text-[#1E1E8C] font-bold">
