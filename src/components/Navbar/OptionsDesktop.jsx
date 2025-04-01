@@ -5,13 +5,14 @@ import ForServices from "./ForServices";
 import ForWork from "./ForWork";
 import { destinations, textPrep } from "./dropdowns";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { useParams, usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { FaHome, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
 import { FaBlog, FaBook, FaServicestack } from "react-icons/fa6";
 import { IoIosArrowDown } from "react-icons/io";
 
 const OptionsDesktop = () => {
+  const pathname = usePathname();
   const [dropDownOptions, setDropDownOptions] = useState([]);
   const [isOpenDropdown, setIsOpenDropdown] = useState(false);
   const path = usePathname();
@@ -52,12 +53,13 @@ const OptionsDesktop = () => {
       <Link href={"/"}>
         <div className="relative cursor-pointer hover:font-semibold  ">
           <div
-            className={`hidden lg:flex  items-center justify-center gap-2 hover:text-[#E00012] `}
+            className={`hidden lg:flex  items-center justify-center gap-2 hover:text-[#E00012] '}`}
           >
             Home
           </div>
         </div>
       </Link>
+     
       {navlinks.map((option) => (
         <>
           <div
@@ -90,6 +92,15 @@ const OptionsDesktop = () => {
             ))}
         </>
       ))}
+       <Link href={"/blogs"}>
+        <div className="relative cursor-pointer hover:font-semibold  ">
+          <div
+            className={`hidden lg:flex  items-center justify-center gap-2 hover:text-[#E00012]  `}
+          >
+            Blogs
+          </div>
+        </div>
+      </Link>
     </>
   );
 };

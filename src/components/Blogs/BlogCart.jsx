@@ -41,7 +41,7 @@ const BlogCart = ({ artical }) => {
                         "bg-gradient-to-r from-[#14247C] to-[#E00012] text-transparent bg-clip-text"
                       }`}
                     >
-                      🔷 {sub.title}
+                    {sub.title}
                     </h2>
                   </div>
                 )}

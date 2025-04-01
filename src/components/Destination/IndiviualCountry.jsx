@@ -57,8 +57,38 @@ const IndiviualCountry = ({ country }) => {
         </div>
       </div>
 
-      <div className="w-10/12 lg:h-[70vh] border  m-auto my-10 grid lg:grid-cols-2">
-        <div className=""></div>
+      <div className="w-10/12 lg:h-[70vh]  m-auto my-10 grid lg:grid-cols-2 items-center">
+        <div className="flex items-center justify-center m-auto relative">
+          {/* Top-left text bubble */}
+          <div className="absolute top-0 left-0 border text-wrap text-center flex justify-center items-center flex-wrap border-[#E00004] w-[100px] h-[100px] rounded-full bg-white p-2">
+            <p>
+              <span className="text-[#E00004] font-bold">
+                {country.reason.stats[0].split(" ")[0]}
+              </span>{" "}
+              {country.reason.stats[0].split(" ").slice(1).join(" ")}
+            </p>
+          </div>
+
+          {/* Bottom-right text bubble */}
+          <div className="absolute bottom-0 right-0 border text-wrap text-center flex justify-center items-center flex-wrap border-[#E00004] w-[100px] h-[100px] rounded-full bg-white p-2">
+            <p>
+              <span className="text-[#E00004] font-bold">
+                {country.reason.stats[1].split(" ")[0]}
+              </span>{" "}
+              {country.reason.stats[1].split(" ").slice(1).join(" ")}
+            </p>
+          </div>
+
+          {/* Center image */}
+          <div className="rounded-full p-4 overflow-hidden w-[350px] h-[350px] flex items-center border justify-center">
+            <img
+              src={country.banner}
+              className="rounded-full object-cover h-full w-full"
+              alt="Country Banner"
+            />
+          </div>
+        </div>
+
         <div className="">
           <p className="lg:text-[35px] text-2xl font-bold mt-10">
             What Makes{" "}
@@ -67,16 +97,18 @@ const IndiviualCountry = ({ country }) => {
             </span>{" "}
             Your Fit ?
           </p>
+          <p className="text-xl">Here's why students worldwide choose the {country.name}.</p>
           <p className="lg:text-[24px]">{country.page.why_fit}</p>
-          <div className="flex flex-col gap-2 py-3">
-
+          <div className="flex flex-col gap-4 py-4">
             {/* Resone here */}
-            <div className="flex gap-2 items-center">
-              <div className="rounded-full p-2 shadow-2xl shadow-black bg-white inline-flex text-xl">
-                <IoStar className="text-[#E00004] w-6 h-6" />
+            {country.reason.points.map((point) => (
+              <div className="flex gap-2 items-center">
+                <div className="rounded-full p-2 shadow-2xl shadow-black bg-white inline-flex text-xl">
+                  <IoStar className="text-[#E00004] w-6 h-6" />
+                </div>
+                {point}
               </div>
-              50+ top-ranked universities, including 5 of the world’s top 10.
-            </div>
+            ))}
           </div>
         </div>
       </div>

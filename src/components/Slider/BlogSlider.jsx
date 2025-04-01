@@ -1,10 +1,14 @@
 import blogs from "../Blogs/_blogs.json";
 import Link from "next/link";
+import { useParams } from "next/navigation";
 import React from "react";
 
-const BlogSlider = ({ name = "Blogs" }) => {
+const BlogSlider = ({ name = "Blogs" }) => 
+{
+  const {id} = useParams();
+
   const createUrl = (title) => title.split(" ").join("-");
-  const reverseArray = blogs.sort((a, b) => b.id - a.id);
+  const reverseArray = blogs.sort((a, b) => b.id - a.id).filter((i)=> i.id !== id);
     const image =
     "https://www.rugtek.com/wp-content/uploads/2022/03/blogbanner-1.jpg";
   return (
