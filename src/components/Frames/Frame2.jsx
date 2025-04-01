@@ -14,7 +14,7 @@ const Frame2 = () => {
         Let's Get you Abroad.
       </button>
       </div>
-      <img className='absolute bottom-0 right-0  w-[600px]' src='/frame/image2.png' />
+      <img className='absolute bottom-0 right-0 w-[600px]' loading='lazy' alt='study abroad' title='study abroad' src='/frame/image2.png' />
     </div>
   )
 }

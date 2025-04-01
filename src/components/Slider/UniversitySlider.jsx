@@ -97,6 +97,7 @@ const UniversitySlider = () => {
               loading="lazy"
               alt={`University ${index % 7}`}
               className="mx-2"
+              title={`University ${index % 7}`}
             />
           ))}
         </div>
@@ -112,6 +113,8 @@ const UniversitySlider = () => {
               loading="lazy"
               alt={`University ${7- index - 1}`}
               className="mx-2"
+              title={`University ${index % 7}`}
+
             />
           ))}
         </div>

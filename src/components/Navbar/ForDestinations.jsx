@@ -33,7 +33,7 @@ const ForDestinations = ({ setIsOpenDropdown }) => {
       {destinations.map((i) => (
         <Link href={`/destinations/${createUrl(i.name)}`} key={i.name}>
           <div  key={i.name} className="border border-gray-400 p-2 px-4 rounded-xl flex items-center gap-2 cursor-pointer shadow-sm">
-            <img src={i.flag} className="w-10" />
+            <img src={i.flag} className="w-10" alt={i.name} title={i.name}/>
 
             {i.name}
           </div>

@@ -12,23 +12,19 @@ const Cart4 = () => {
           </h1>
           <p className="lg:text-[28px] text-lg lg:w-3/4">
           From finding a part-time work, Internships, and guiding you toward a post-study work visa– we help you build your career form day one.
-
            </p>
           <button className="bg-[#E00012] cursor-pointer z-20 lg:w-[191px] w-full h-[50px]  text-white text-[20px] rounded-[4px]">
           Explore Now
-
           </button>
         </div>
-        <img className="absolute bottom-0 right-0 w-[500px] z-0 shadow" src="/slider/image41.png"/>
-        <img className="absolute lg:bottom-2 bottom-[30%] right-2/5 w-[200px] z-0 shadow-sm p-0" src="/slider/image42.png"/>
-        <img className="absolute bottom-[30%] right-0 w-[500px] z-0" src="/slider/Ellipse1.png"/>
-        <img className="absolute bottom-[10%] right-[20%] w-[500px] z-0" src="/slider/Ellipse-red.png"/>
 
-
-        <img className="absolute lg:bottom-[50%] bottom-[22%] lg:right-1/12 right-0 w-[200px] z-0 roundedd-xl p-0" src="/slider/image43.png"/>
-
-        <img src="/slider/lines.png" className="absolute bottom-0 left-0" />
-        <img src="/slider/lines.png" className="absolute top-0 right-0 rotate-180" />
+        <img loading="lazy" alt="earn & learn" title="earn and learn"  className="absolute bottom-0 right-0 w-[500px] z-0 shadow" src="/slider/image41.png"/>
+        <img loading="lazy" alt="earn & learn" title="earn and learn"  className="absolute lg:bottom-2 bottom-[30%] right-2/5 w-[200px] z-0 shadow-sm p-0" src="/slider/image42.png"/>
+        <img loading="lazy" alt="earn & learn" title="earn and learn"  className="absolute bottom-[30%] right-0 w-[500px] z-0" src="/slider/Ellipse1.png"/>
+        <img loading="lazy" alt="earn & learn" title="earn and learn"  className="absolute bottom-[10%] right-[20%] w-[500px] z-0" src="/slider/Ellipse-red.png"/>
+        <img loading="lazy" alt="earn & learn" title="earn and learn"  className="absolute lg:bottom-[50%] bottom-[22%] lg:right-1/12 right-0 w-[200px] z-0 roundedd-xl p-0" src="/slider/image43.png"/>
+        <img loading="lazy" alt="earn & learn" title="earn and learn"  src="/slider/lines.png" className="absolute bottom-0 left-0" />
+        <img loading="lazy" alt="earn & learn" title="earn and learn"  src="/slider/lines.png" className="absolute top-0 right-0 rotate-180" />
 
       </div>
     </div>

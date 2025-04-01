@@ -25,6 +25,9 @@ const HeroSection = () => {
         className="lg:w-full lg:h-auto h-full lg:object-contain absolute bottom-0 lg:-bottom-28 z-0"
         src={imageUrl}
         loading="lazy"
+        alt="viaCerta Abroad banner"
+        title="viaCerta Abroad banner"
+
       />
       <div className="absolute w-full h-full insert-0 backdrop-opacity-75 bg-[#000000BF] z-10"></div>
       <div className="absolute z-20 w-full h-full flex flex-col lg:gap-4 gap-10 justify-center items-center text-white">

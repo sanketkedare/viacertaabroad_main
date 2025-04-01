@@ -31,7 +31,7 @@ const ForExams = ({ setIsOpenDropdown }) => {
       {textPrep.map((i) => (
         <Link href={`/test-prep/${i.name}`} key={i.name}>
           <div className="w-11/12 m-auto mb-5 h-[70px] border border-gray-400 p-4 rounded-xl flex items-center justify-center cursor-pointer shadow-sm">
-            <img src={i.image} className="object-contain w-full" alt={i.name} />
+            <img src={i.image} className="object-contain w-full" alt={i.name} title={i.name}/>
           </div>
         </Link>
       ))}

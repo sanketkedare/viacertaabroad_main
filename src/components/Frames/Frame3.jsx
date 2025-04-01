@@ -14,9 +14,9 @@ const Frame3 = () => {
         Click Learn Earn Repeat
       </button>
       </div>
-      <img className='absolute lg:top-36 top-56 lg:right-1 right-24  lg:w-[400px]' src='/frame/image32.png' />
+      <img loading='lazy' alt='viacerta' title='viacerta abroad' className='absolute lg:top-36 top-56 lg:right-1 right-24  lg:w-[400px]' src='/frame/image32.png' />
 
-      <img className='absolute bottom-0 lg:right-2/12 w-[400px]' src='/frame/image31.png' />
+      <img loading='lazy' alt='viacerta' title='viacerta abroad' className='absolute bottom-0 lg:right-2/12 w-[400px]' src='/frame/image31.png' />
 
     </div>
   )

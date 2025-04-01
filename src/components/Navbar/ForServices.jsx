@@ -36,7 +36,7 @@ const ForServices = ({ setIsOpenDropdown }) => {
           key={i.name}
             className="border border-[#E00012] rounded-[14px] p-2 px-4 flex items-center gap-2 cursor-pointer shadow-sm"
           >
-            <img src={`/services/image${index + 1}.png`} className="w-10" />
+            <img src={`/services/image${index + 1}.png`} className="w-10" alt={i.name} title={i.name} />
 
             {i.name}
           </div>

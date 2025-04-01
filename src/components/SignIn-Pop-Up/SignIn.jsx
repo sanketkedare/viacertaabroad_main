@@ -71,6 +71,7 @@ const SignIn = ({ signInOpen, setSignInOpen }) => {
                 src="/viaCerta-logo.png"
                 className="w-[100px] m-auto"
                 alt="Logo"
+                title="viacerta logo"
               />
               <p className="font-bold lg:text-2xl text-xl ">
                 {mode === SIGN_IN ? (

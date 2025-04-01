@@ -15,7 +15,6 @@ const Navbar = () => {
   // const userFromBE = useAuth();
   // console.log(userFromBE)
   const dispatch = useDispatch();
-  const path = usePathname();
   const [signInOpen, setSignInOpen] = useState(false);
 
   const updateStore = () => {

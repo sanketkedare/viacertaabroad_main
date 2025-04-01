@@ -7,7 +7,9 @@ const CompanyLogo = () => {
       <img
         className="cursor-pointer lg:h-[70px]"
         src="/viaCerta-logo.png"
-        alt="Logo"
+        alt="Viacerta Logo"
+        title="Viacerta logo"
+        loading="lazy"
       />
     </Link>
   );

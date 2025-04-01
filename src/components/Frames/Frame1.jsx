@@ -14,7 +14,7 @@ const Frame1 = () => {
         Explore now
       </button>
       </div>
-      <img className='absolute bottom-0 right-0  w-[700px]' src='/frame/image1.png' />
+      <img loading='lazy' alt='viacerta students' title='students' className='absolute bottom-0 right-0  w-[700px]' src='/frame/image1.png' />
     </div>
   )
 }

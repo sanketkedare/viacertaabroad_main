@@ -90,10 +90,18 @@ const Testimonials = () => {
                     }
                     alt={`${story.name}'s Profile`}
                     className="w-15 h-15 rounded-full object-cover"
+                    title={story.name}
+                    loading="lazy"
                   />
                   <div>
                     <b>{story.name}</b>
-                    <img src="/universities/image2.png" className="w-28" />
+                    <img
+                      src="/universities/image2.png"
+                      className="w-28"
+                      title={story.name}
+                      loading="lazy"
+                      alt="university"
+                    />
                   </div>
                 </div>
               </motion.div>

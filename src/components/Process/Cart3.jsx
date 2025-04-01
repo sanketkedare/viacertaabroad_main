@@ -7,8 +7,8 @@ const Cart3 = () => {
       
       <div className="relative lg:h-[634px] w-10/12 bg-[#F6F7FA]  m-auto rounded-xl z-10 shadow-[0_0_30px_rgba(0,0,0,0.2)] lg:flex">
       <img
-          className="absolute bottom-0 right-0 w-[500px] z-0"
-          src="/slider/Ellipse1.png"
+          className="absolute bottom-0 right-0 w-[500px] z-0" alt="elips" title="elips"
+          src="/slider/Ellipse1.png" loading="lazy"
         />
         <div className="lg:w-2/3 p-10 text-left flex flex-col gap-10 justify-center">
           <h1 className="lg:text-[50px] w-full text-3xl lg:text-left text-center font-semibold">
@@ -63,11 +63,11 @@ const Cart3 = () => {
           </div>
         </div>
         <img
-          src="/slider/lines.png"
+          src="/slider/lines.png" alt="lines" loading="lazy" title="elips"
           className="absolute top-0 right-0 rotate-180"
         />
         <img
-          src="/slider/lines.png"
+          src="/slider/lines.png" alt="lines" loading="lazy" title="elips"
           className="absolute top-0 right-0 rotate-180"
         />
        

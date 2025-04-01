@@ -3,7 +3,7 @@ import React from "react";
 const Message = ({ isUser, text }) => {
   return (
     <div className={`flex gap-4 items-center ${isUser ? "justify-end" : ""}`}>
-      {!isUser && <img src="/profile_icon.png" className="w-14" />}
+      {!isUser && <img src="/profile_icon.png" alt="profile" title="profile"  loading="lazy" className="w-14" />}
       <div
         className={`lg:text-[14px] text-xs flex items-center flex-wrap text-left rounded-xl p-4 ${
           isUser ? "bg-[#1E1E8C3B]" : "bg-[#FF87911C]"
@@ -11,7 +11,7 @@ const Message = ({ isUser, text }) => {
       >
         {text}
       </div>
-      {isUser && <img src="/profile_icon.png" className="w-14" />}
+      {isUser && <img src="/profile_icon.png" alt="profile" title="profile" loading="lazy" className="w-14" />}
     </div>
   );
 };
@@ -54,7 +54,7 @@ const Cart1 = () => {
       <div className="relative lg:h-[634px] h-[700px] w-10/12  bg-white  m-auto rounded-xl z-10 shadow-[0_0_30px_rgba(0,0,0,0.2)] lg:flex">
         <InfoSection />
         <ChatSection />
-        <img src="/slider/lines.png" className="absolute top-0 right-0 rotate-180" />
+        <img src="/slider/lines.png" loading="lazy" className="absolute top-0 right-0 rotate-180" alt="lines" title="lineart"/>
 
       </div>
 

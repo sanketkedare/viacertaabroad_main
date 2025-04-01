@@ -97,14 +97,13 @@ const IndiviualCountry = ({ country }) => {
             </span>{" "}
             Your Fit ?
           </p>
-          <p className="text-xl">Here's why students worldwide choose the {country.name}.</p>
           <p className="lg:text-[24px]">{country.page.why_fit}</p>
           <div className="flex flex-col gap-4 py-4">
             {/* Resone here */}
             {country.reason.points.map((point) => (
               <div className="flex gap-2 items-center">
                 <div className="rounded-full p-2 shadow-2xl shadow-black bg-white inline-flex text-xl">
-                  <IoStar className="text-[#E00004] w-6 h-6" />
+                  <IoStar className="text-[#E00004] w-4 h-4" />
                 </div>
                 {point}
               </div>

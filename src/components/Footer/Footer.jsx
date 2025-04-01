@@ -62,17 +62,17 @@ const Footer = () => {
               target="_blank"
             >
               <img
-                className="w-10 rounded-full cursor-pointer"
+                className="w-10 rounded-full cursor-pointer" title="fb link" alt="facebook" loading="lazy"
                 src="https://static.vecteezy.com/system/resources/previews/021/495/985/non_2x/facebook-social-media-logo-icon-free-png.png"
               />
             </Link>
 
             <Link
               href="https://www.linkedin.com/company/105932660/admin/dashboard/"
-              target="_blank"
+              target="_blank" 
             >
               <img
-                className="w-10 rounded-xl cursor-pointer"
+                className="w-10 rounded-xl cursor-pointer"   title="linkedIn link" alt="LinkedIn" loading="lazy"
                 src="https://cdn-icons-png.freepik.com/256/2496/2496097.png?semt=ais_hybrid"
               />
             </Link>
@@ -82,7 +82,7 @@ const Footer = () => {
               target="_blank"
             >
               <img
-                className="w-10 rounded-xl cursor-pointer"
+                className="w-10 rounded-xl cursor-pointer"  title="Insta link" alt="Instagram" loading="lazy"
                 src="https://cdn-icons-png.freepik.com/256/15707/15707869.png?semt=ais_hybrid"
               />
             </a>
