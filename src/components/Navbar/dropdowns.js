@@ -5,7 +5,7 @@ export const services = [
     { name: "University Selection", image: "path/to/university-selection-image" },
     { name: "Application & Admission", image: "path/to/application-admission-image" },
     { name: "Internship", image: "path/to/internship-image" },
-    { name: "Test Preparation", image: "path/to/test-preparation-image" },
+    // { name: "Test Preparation", image: "path/to/test-preparation-image" },
     { name: "Scholarship", image: "path/to/scholarship-image" },
     { name: "Country Selection", image: "path/to/country-selection-image" }
   ];

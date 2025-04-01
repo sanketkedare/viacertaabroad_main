@@ -8,6 +8,18 @@
             "description": "A Destination that excites you with a plan that fits you– ViaCerta’s got your back.",
             "top_universities": "Explore Universities, Ranks, Courses, and everything you need to make your right choice.",
             "why_fit": "Here's why students worldwide choose the USA."
+        },
+        "reason": {
+            "points": [
+                "50+ top-ranked universities, including 5 of the world’s top 10.",
+                "STEM graduates get a 3-year OPT extension.",
+                "Earn with up to 20 hours of part-time work per week.",
+                "12 to 36 months of OPT for international graduates."
+            ],
+            "stats": [
+                "145+ billion scholarships",
+                "1 M+ students"
+            ]
         }
     },
     {
@@ -19,6 +31,18 @@
             "description": "A land of endless adventures and world-class education — ViaCerta’s got you covered.",
             "top_universities": "Explore Universities, Ranks, Courses, and everything you need to pick your right choice.",
             "why_fit": "Here's why students worldwide choose New Zealand."
+        },
+        "reason": {
+            "points": [
+                "Globally recognized universities with strong academic excellence.",
+                "Up to 20 hours of part-time work per week while studying",
+                "1 to 3 years of post-study work opportunities.",
+                "Ranked as one of the safest countries for international students."
+            ],
+            "stats": [
+                "50M+ scholarships",
+                "120K+ students"
+            ]
         }
     },
     {
@@ -30,6 +54,18 @@
             "description": "Bright campuses, brighter futures, get your degree under sunny skies.",
             "top_universities": "Explore Universities, Ranks, Courses, and everything you need to pick your right choice.",
             "why_fit": "Here's why students worldwide choose Australia."
+        },
+        "reason": {
+            "points": [
+                "7 of the world’s top 100 universities are in Australia.",
+                "Up to 24 hours of part-time work per week while studying.",
+                "2 to 6 years of post-study work opportunities.",
+                "Get a safe, multicultural, and student-friendly environment."
+            ],
+            "stats": [
+                "300M+ scholarships",
+                "700K+ students"
+            ]
         }
     },
     {
@@ -41,6 +77,18 @@
             "description": "World-class education, rich culture, and career paths that take you places.",
             "top_universities": "Explore Universities, Ranks, Courses, and everything you need to pick your right choice.",
             "why_fit": "Here's why students worldwide choose Ireland."
+        },
+        "reason": {
+            "points": [
+                "Home to top-ranked institutions with a strong academic reputation.",
+                "Get 2 years after graduation for job opportunities.",
+                "Headquarters of major global companies like Google & Facebook.",
+                "One of the friendliest and safest countries for international students."
+            ],
+            "stats": [
+                "30M+ scholarships",
+                "35K+ students"
+            ]
         }
     },
     {
@@ -52,6 +100,18 @@
             "description": "Step into world-renowned universities without burning a hole in your pocket.",
             "top_universities": "Explore Universities, Ranks, Courses, and everything you need to pick your right choice.",
             "why_fit": "Here's why students worldwide choose Russia."
+        },
+        "reason": {
+            "points": [
+                "Globally recognized degrees with affordable tuition.",
+                "Part-time work opportunities for students during studies.",
+                "Many universities accept applications without IELTS.",
+                "Renowned for medical and engineering studies."
+            ],
+            "stats": [
+                "1.5M+ scholarships",
+                "350K+ students"
+            ]
         }
     },
     {
@@ -63,6 +123,18 @@
             "description": "A destination that excites you with a plan that fits you — ViaCerta’s got your back.",
             "top_universities": "Explore Universities, Ranks, Courses, and everything you need to pick your right choice.",
             "why_fit": "Here's why students worldwide choose Kazakhstan."
+        },
+        "reason": {
+            "points": [
+                "Get a quality degree at a fraction of the cost compared to Western countries.",
+                "International students can take up part-time job opportunities.",
+                "Many universities accept students without English proficiency tests.",
+                "A top choice for MBBS, engineering, and business programs."
+            ],
+            "stats": [
+                "5,000+ scholarships",
+                "90K+ students"
+            ]
         }
     },
     {
@@ -74,6 +146,18 @@
             "description": "Affordable, trusted, and recognized worldwide — make it happen with us.",
             "top_universities": "Explore Universities, Ranks, Courses, and everything you need to pick your right choice.",
             "why_fit": "Here's why students worldwide choose Kyrgyzstan."
+        },
+        "reason": {
+            "points": [
+                "Study at low tuition fees with a cost-effective living.",
+                "A top destination for medical students with an internationally accredited degree.",
+                "Many universities accept students without English proficiency tests.",
+                "Opportunities for part-time jobs while pursuing your studies."
+            ],
+            "stats": [
+                "3,000+ scholarships",
+                "25K+ students"
+            ]
         }
     },
     {
@@ -85,6 +169,18 @@
             "description": "Get English-taught programs, global exposure, and a vibrant student life.",
             "top_universities": "Explore Universities, Ranks, Courses, and everything you need to pick your right choice.",
             "why_fit": "Here's why students worldwide choose Philippines."
+        },
+        "reason": {
+            "points": [
+                "Low tuition fees with a US-based medical and academic curriculum.",
+                "Over 90% of the population speaks English, making it easier to adapt.",
+                "One of the most preferred destinations for medicine due to its high FMGE passing rate.",
+                "Medical and other degrees are widely accepted worldwide."
+            ],
+            "stats": [
+                "2,000+ scholarships",
+                "50K+ students"
+            ]
         }
     },
     {
@@ -96,6 +192,18 @@
             "description": "This is where you get affordable education with growing international opportunities.",
             "top_universities": "Explore Universities, Ranks, Courses, and everything you need to pick your right choice.",
             "why_fit": "Here's why students worldwide choose Uzbekistan."
+        },
+        "reason": {
+            "points": [
+                "Increasingly popular for MBBS, engineering, and business studies.",
+                "Get low tuition fees with quality academic programs.",
+                "Part-time job opportunities are available for students.",
+                "Many universities accept students without an English proficiency test."
+            ],
+            "stats": [
+                "4,000+ scholarships",
+                "40K+ students"
+            ]
         }
     },
     {
@@ -107,6 +215,18 @@
             "description": "European education standards without the heavy price tag.",
             "top_universities": "Explore Universities, Ranks, Courses, and everything you need to pick your right choice.",
             "why_fit": "Here's why students worldwide choose Georgia."
+        },
+        "reason": {
+            "points": [
+                "A rising destination for medical studies with WHO and NMC-approved universities.",
+                "Low tuition fees with globally recognized programs.",
+                "Qualifications are recognized across Europe, the US, and beyond.",
+                "Many universities accept students without an English proficiency test."
+            ],
+            "stats": [
+                "5,000+ scholarships",
+                "20K+ students"
+            ]
         }
     },
     {
@@ -118,6 +238,18 @@
             "description": "World-renowned universities and career-building study abroad experiences.",
             "top_universities": "Explore Universities, Ranks, Courses, and everything you need to pick your right choice.",
             "why_fit": "Here's why students worldwide choose the UK."
+        },
+        "reason": {
+            "points": [
+                "UK qualifications are recognized and respected worldwide.",
+                "Home to 4 of the top 10 universities globally.",
+                "Up to 20 hours of part-time work per week during studies.",
+                "Stay and work for up to 2 years after graduation (3 years for PhD)."
+            ],
+            "stats": [
+                "100M+ scholarships",
+                "600K+ students"
+            ]
         }
     },
     {
@@ -129,6 +261,18 @@
             "description": "Academic excellence, a relaxed lifestyle, and sunny days that never end.",
             "top_universities": "Explore Universities, Ranks, Courses, and everything you need to pick your right choice.",
             "why_fit": ""
+        },
+        "reason": {
+            "points": [
+                "Home to top-ranking universities with EU-accredited degrees.",
+                "High-quality education at lower costs compared to other European countries.",
+                "Stay up to 12 months after graduation to find a job.",
+                "Experience a vibrant, student-friendly environment with great weather."
+            ],
+            "stats": [
+                "150M+ scholarships",
+                "200K+ students"
+            ]
         }
     },
     {
@@ -140,6 +284,18 @@
             "description": "Globally respected degrees, iconic cities, and endless opportunities.",
             "top_universities": "Explore Universities, Ranks, Courses, and everything you need to pick your right choice.",
             "why_fit": ""
+        },
+        "reason": {
+            "points": [
+                "Home to top-ranked universities and prestigious business schools.",
+                "Low-cost education with government subsidies for international students.",
+                "Stay up to 2 years after graduation for job opportunities.",
+                "Study in a vibrant cultural hub with easy access to other EU countries."
+            ],
+            "stats": [
+                "300M+ scholarships",
+                "400K+ international students"
+            ]
         }
     },
     {
@@ -151,6 +307,18 @@
             "description": "A study abroad destination where innovation leads the way.",
             "top_universities": "Explore Universities, Ranks, Courses, and everything you need to pick your right choice.",
             "why_fit": ""
+        },
+        "reason": {
+            "points": [
+                "Public universities offer free or low-cost education for international students.",
+                "Great career prospects in engineering, IT, and healthcare.",
+                "Stay up to 18 months after graduation to find a job.",
+                "Globally recognized degrees that are highly valued worldwide."
+            ],
+            "stats": [
+                "250M+ scholarships",
+                "500K+ students"
+            ]
         }
     },
     {
@@ -162,6 +330,18 @@
             "description": "Affordable European study abroad options with rich culture, and strong academics.",
             "top_universities": "Explore Universities, Ranks, Courses, and everything you need to pick your right choice.",
             "why_fit": ""
+        },
+        "reason": {
+            "points": [
+                "Get globally recognized degrees, affordable, & quality education.",
+                "Part-time work opportunities without a separate work permit.",
+                "Popular for engineering, business, and medical studies.",
+                "Many universities accept students without an English proficiency test."
+            ],
+            "stats": [
+                "50M+ scholarships",
+                "100K+ students"
+            ]
         }
     },
     {
@@ -173,6 +353,18 @@
             "description": "Study abroad in Hungary with ViaCerta— affordable, historic, and globally recognized.",
             "top_universities": "Explore Universities, Ranks, Courses, and everything you need to pick your right choice.",
             "why_fit": ""
+        },
+        "reason": {
+            "points": [
+                "Home to the World’s Oldest Medical University – Semmelweis University.",
+                "Many universities accept students without an English proficiency test.",
+                "Get low tuition fees with EU-accredited degrees.",
+                "Stay up to 9 months after graduation to find a job."
+            ],
+            "stats": [
+                "5,000+ scholarships",
+                "40K+ students"
+            ]
         }
     },
     {
@@ -184,6 +376,18 @@
             "description": "Study abroad in the Netherlands — creative learning in a vibrant, open-minded culture.",
             "top_universities": "Explore Universities, Ranks, Courses, and everything you need to pick your right choice.",
             "why_fit": ""
+        },
+        "reason": {
+            "points": [
+                "Over 2,100 courses in English, more than any other non-English-speaking country.",
+                "Home to some of the top 100 universities globally.",
+                "Stay up to 1 year after graduation to find a job.",
+                "Many universities accept alternative English proficiency proofs."
+            ],
+            "stats": [
+                "80M+ scholarships",
+                "115K+ students"
+            ]
         }
     },
     {
@@ -195,17 +399,18 @@
             "description": "Home to top universities and global organizations — study abroad in Belgium.",
             "top_universities": "Explore Universities, Ranks, Courses, and everything you need to pick your right choice.",
             "why_fit": ""
-        }
-    },
-    {
-        "name": "Finland",
-        "flag": "https://flagpedia.net/data/flags/h80/fi.png",
-        "banner": "https://i.natgeofe.com/k/2847c949-6de3-4d11-998a-d3ce12d9edb0/finland-cityscape.jpg",
-        "page": {
-            "banner_text": "Study in Europe’s decision-making hub: Finland",
-            "description": "Study abroad in the Finland — creative learning in a vibrant, open-minded culture.",
-            "top_universities": "Explore Universities, Ranks, Courses, and everything you need to pick your right choice.",
-            "why_fit": ""
+        },
+        "reason": {
+            "points": [
+                "Belgium is home to some of Europe's best universities.",
+                "Tuition fees are relatively low compared to other European countries.",
+                "Part-time work allowed up to 20 hours per week during term time.",
+                "Stay up to 12 months after graduation to search for a job in your field."
+            ],
+            "stats": [
+                "50M+ scholarships",
+                "45K+ students"
+            ]
         }
     },
     {
@@ -217,6 +422,18 @@
             "description": "Study abroad in Sweden — smart systems, progressive thinking, and peace of mind.",
             "top_universities": "Explore Universities, Ranks, Courses, and everything you need to pick your right choice.",
             "why_fit": ""
+        },
+        "reason": {
+            "points": [
+                "Home to globally recognized universities and research institutions.",
+                "Known for cutting-edge research and commitment to sustainability.",
+                "Over 1,000 Master's programs in English for international students.",
+                "Part-time work allowed with no specific limit during the study period."
+            ],
+            "stats": [
+                "200M+ scholarships",
+                "50K+ students"
+            ]
         }
     },
     {
@@ -228,6 +445,18 @@
             "description": "Study abroad in Denmark — design-led learning with practical outcomes.",
             "top_universities": "Explore Universities, Ranks, Courses, and everything you need to pick your right choice.",
             "why_fit": ""
+        },
+        "reason": {
+            "points": [
+                "Denmark is a leader in green technologies and sustainability practices.",
+                "Home to some of the best universities in Europe with a strong focus on research.",
+                "Over 700 programs available in English across various fields.",
+                "Stay up to 6 months after graduation to search for a job."
+            ],
+            "stats": [
+                "60M+ scholarships",
+                "15K+ students"
+            ]
         }
     },
     {
@@ -239,6 +468,18 @@
             "description": "Get access to the World-class universities in a city built on innovation and opportunity.",
             "top_universities": "Explore Universities, Ranks, Courses, and everything you need to pick your right choice.",
             "why_fit": ""
+        },
+        "reason": {
+            "points": [
+                "Singapore is a leading center for business, finance, and technology in Asia.",
+                "Home to top-ranked universities, including National University of Singapore (NUS).",
+                "Most universities offer programs in English across a variety of disciplines.",
+                "Part-time work allowed up to 16 hours per week during term time."
+            ],
+            "stats": [
+                "50M+ scholarships",
+                "50K+ students"
+            ]
         }
     },
     {
@@ -250,6 +491,18 @@
             "description": "Get the world-class education with ambitious living. ",
             "top_universities": "Explore Universities, Ranks, Courses, and everything you need to pick your right choice.",
             "why_fit": ""
+        },
+        "reason": {
+            "points": [
+                "Dubai is a global center for finance, trade, and technology innovation.",
+                "Wide range of programs offered in English, from business to engineering and more.",
+                "Home to renowned international universities with campuses in the city.",
+                "Stay up to 1 year after graduation to search for a job or start your business."
+            ],
+            "stats": [
+                "30M+ scholarships",
+                "60K+ students"
+            ]
         }
     },
     {
@@ -261,6 +514,18 @@
             "description": "Affordable European education in a country rich with wisdom and beauty.",
             "top_universities": "Explore Universities, Ranks, Courses, and everything you need to pick your right choice.",
             "why_fit": ""
+        },
+        "reason": {
+            "points": [
+                "Study in a country with a fascinating history and vibrant cultural life.",
+                "Stay up to 12 months after graduation to find a job in your field.",
+                "Greece offers a quality education at an affordable cost compared to other EU countries.",
+                "Part-time work allowed up to 20 hours per week during the semester."
+            ],
+            "stats": [
+                "20M+ scholarships",
+                "20K+ students"
+            ]
         }
     },
     {
@@ -272,6 +537,18 @@
             "description": "Your affordable, diverse, and globally respected option for studying abroad.",
             "top_universities": "Explore Universities, Ranks, Courses, and everything you need to pick your right choice.",
             "why_fit": ""
+        },
+        "reason": {
+            "points": [
+                "Home to universities with a strong focus on research and academic excellence.",
+                "Stay up to 9 months after graduation to search for a job.",
+                "400+ programs in English, particularly in science, engineering, and business.",
+                "Part-time work allowed up to 20 hours per week during term time."
+            ],
+            "stats": [
+                "15M+ scholarships",
+                "40K+ students"
+            ]
         }
     },
     {
@@ -283,6 +560,17 @@
             "description": "World-class universities in a safe, welcoming, and opportunity-rich environment.",
             "top_universities": "Explore Universities, Ranks, Courses, and everything you need to pick your right choice.",
             "why_fit": ""
+        },
+        "reason": {
+            "points": [
+                "Home to some of the best universities known for their research & academic excellence.",
+                "Stay up to 3 years after graduation to gain work experience in your field.",
+                "Known for its diverse, inclusive society and high quality of life."
+            ],
+            "stats": [
+                "200M+ scholarships",
+                "500K+ students"
+            ]
         }
     }
 ]
