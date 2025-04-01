@@ -4,9 +4,8 @@ import { Plus, Minus } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { faqs } from "./utils";
 
-const FAQs = ({faqArray}) => 
-{
-  console.log(faqArray)
+const FAQs = ({ faqArray }) => {
+  console.log(faqArray);
   const [questions, setQuestions] = useState();
   const [openIndex, setOpenIndex] = useState(null);
 
@@ -14,19 +13,13 @@ const FAQs = ({faqArray}) =>
     setOpenIndex(openIndex === index ? null : index);
   };
 
-  useEffect(()=>
-  {
-    if(faqArray)
-    {
+  useEffect(() => {
+    if (faqArray) {
       setQuestions(faqArray);
+    } else {
+      setQuestions(faqs);
     }
-    else{
-      setQuestions(faqs)
-    }
-
-  },[faqArray])
-
- 
+  }, [faqArray]);
 
   return (
     <section className=" mb-10 lg:mb-10  relative">
@@ -46,39 +39,42 @@ const FAQs = ({faqArray}) =>
       <div className="container mx-auto lg:px-10 px-4 lg:w-10/12  relative z-10">
         {/* FAQs List */}
         <div className="mx-auto space-y-4 flex flex-wrap justify-between">
-          {questions && questions.map((faq, index) => (
-            <div
-              key={index}
-              className="relative border border-[#E0001269]  shadow-lg bg-white lg:w-[45%] w-full"
-            >
-              <button
-                onClick={() => toggleFAQ(index)}
-                className="w-full text-left flex justify-between items-center p-4 bg-[#fff] text-black font-semibold lg:text-lg text-sm"
+          {questions &&
+            questions.map((faq, index) => (
+              <div
+                key={index}
+                className="relative border border-[#E0001269]  shadow-lg bg-white lg:w-[45%] w-full"
               >
-                <span>{faq.question || faq.q}</span>
-                {openIndex === index ? (
-                  <Minus className="w-6 h-6" />
-                ) : (
-                  <Plus className="w-6 h-6" />
-                )}
-              </button>
+                <button
+                  onClick={() => toggleFAQ(index)}
+                  className="w-full text-left flex justify-between items-center p-4 bg-[#fff] text-black font-semibold lg:text-lg text-sm"
+                >
+                  <span>{faq.question || faq.q}</span>
+                  {openIndex === index ? (
+                    <Minus className="w-6 h-6" />
+                  ) : (
+                    <Plus className="w-6 h-6" />
+                  )}
+                </button>
 
-              {/* Show the answer directly below the question */}
-              <AnimatePresence>
-                {openIndex === index && (
-                  <motion.div
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: "auto" }}
-                    exit={{ opacity: 0, height: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="absolute top-14 z-20 bg-white border border-[#E0001269] text-gray-800 p-4 text-sm"
-                  >
-                    {faq.answer || faq.a}
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-          ))}
+                {/* Show the answer directly below the question */}
+                <AnimatePresence>
+                  {openIndex === index && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="absolute top-14 z-20 w-full bg-white border border-[#E0001269] text-gray-800 p-4 text-sm"
+                    >
+                      {(faq.answer || faq.a).split("\n").map((line, i) => (
+                        <p key={i}>{line}</p>
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            ))}
         </div>
       </div>
     </section>
