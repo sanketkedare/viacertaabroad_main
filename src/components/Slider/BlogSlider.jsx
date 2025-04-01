@@ -27,7 +27,8 @@ const BlogSlider = ({ name = "Blogs" }) =>
                 <div className={`relative h-1/2 w-full ${!blog.image && 'bg-black'}`}>
                   {blog.image  && <img
                     src={blog.image ? blog.image : image}
-                    alt="Blog"
+                    alt={blog.title}
+                    title={blog.title}
                     className={`h-full lg:w-auto w-full object-cover  ${blog.image.length === 0  && 'opacity-15' } rounded-[12px]`}
                     loading="lazy"
                   />}
