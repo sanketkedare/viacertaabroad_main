@@ -1,27 +1,35 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Plus, Minus } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { faqs } from "./utils";
 
-const FAQs = () => {
+const FAQs = ({faqArray}) => 
+{
+  console.log(faqArray)
+  const [questions, setQuestions] = useState();
   const [openIndex, setOpenIndex] = useState(null);
-  const [visibleCount, setVisibleCount] = useState(5);
 
   const toggleFAQ = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
-  const showMore = () => {
-    setVisibleCount(faqs.length);
-  };
+  useEffect(()=>
+  {
+    if(faqArray)
+    {
+      setQuestions(faqArray);
+    }
+    else{
+      setQuestions(faqs)
+    }
 
-  const showLess = () => {
-    setVisibleCount(5);
-  };
+  },[faqArray])
+
+ 
 
   return (
-    <section className="min-h-screen mb-10 lg:mb-0  relative">
+    <section className=" mb-10 lg:mb-10  relative">
       <div className="py-10">
         <h1 className="lg:text-[40px] text-2xl font-bold mt-10 text-center lg:flex gap-4 justify-center">
           Everything You
@@ -35,10 +43,10 @@ const FAQs = () => {
         </h3>
       </div>
 
-      <div className="container mx-auto lg:px-10 px-4 lg:w-11/12  relative z-10">
+      <div className="container mx-auto lg:px-10 px-4 lg:w-10/12  relative z-10">
         {/* FAQs List */}
-        <div className="mx-auto space-y-4 flex flex-wrap justify-center gap-4">
-          {faqs.map((faq, index) => (
+        <div className="mx-auto space-y-4 flex flex-wrap justify-between">
+          {questions && questions.map((faq, index) => (
             <div
               key={index}
               className="relative border border-[#E0001269]  shadow-lg bg-white lg:w-[45%] w-full"
@@ -47,7 +55,7 @@ const FAQs = () => {
                 onClick={() => toggleFAQ(index)}
                 className="w-full text-left flex justify-between items-center p-4 bg-[#fff] text-black font-semibold lg:text-lg text-sm"
               >
-                <span>{faq.question}</span>
+                <span>{faq.question || faq.q}</span>
                 {openIndex === index ? (
                   <Minus className="w-6 h-6" />
                 ) : (
@@ -65,7 +73,7 @@ const FAQs = () => {
                     transition={{ duration: 0.3 }}
                     className="absolute top-14 z-20 bg-white border border-[#E0001269] text-gray-800 p-4 text-sm"
                   >
-                    {faq.answer}
+                    {faq.answer || faq.a}
                   </motion.div>
                 )}
               </AnimatePresence>

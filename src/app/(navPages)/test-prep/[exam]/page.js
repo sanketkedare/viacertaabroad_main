@@ -63,15 +63,17 @@ const page = () => {
           Exam Not Found : {exam}
         </div>
       ) : examData ? (
-        <ExamCart examData={examData} />
+        <>
+          <ExamCart examData={examData} />
+          <Testimonials />
+          <FAQs faqArray={examData.faq}/>
+        </>
       ) : (
         <div className="flex justify-center items-center w-full h-[50vh] text-xl font-bold">
           Please Wait...
         </div>
       )}
 
-      <Testimonials />
-      <FAQs />
       <Footer />
     </Provider>
   );
