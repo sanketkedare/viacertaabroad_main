@@ -3,7 +3,8 @@ import ServicesForm from "../ServicesForm";
 
 const SingleHero = ({serviceData}) => 
 {
-  const BANNER = serviceData.banner || "https://res.cloudinary.com/dyp3hukiu/image/upload/v1742895808/viacertaabroad/t1l7qiwafvlecxef4whu.png"
+  const My_Banner = "https://res.cloudinary.com/dyp3hukiu/image/upload/v1742895808/viacertaabroad/t1l7qiwafvlecxef4whu.png"
+  const BANNER = serviceData?.banner || My_Banner;
 
   return (
     <div className="relative min-h-[75vh] bg-black overflow-hidden flex items-center justify-center">
@@ -24,7 +25,7 @@ const SingleHero = ({serviceData}) =>
             {serviceData.bannerInfo}
           </h3>
 
-          {serviceData?.buttonText && (<button className="bg-[#E00002] p-3 w-[250px] font-bold rounded-[4px] cursor-pointer">{serviceData.buttonText}</button>)}
+          {serviceData?.buttonText && (<button className="bg-[#E00002] p-3 w-[250px] font-bold rounded-[4px] cursor-pointer lg:m-0 m-auto">{serviceData.buttonText}</button>)}
 
         
         </div>

@@ -83,7 +83,7 @@ const Scollership = () => {
                 <p className="text-left">{i.info}</p>
               </div>
 
-              <button className="absolute bottom-5 left-16 border hover:bg-[#E00002] hover:text-[#ffff] border-[#E00002] w-2/3 m-auto p-2 px-4 font-semibold text-[#E00002] cursor-pointer">
+              <button className="lg:absolute bottom-5 left-16 border hover:bg-[#E00002] hover:text-[#ffff] border-[#E00002] w-2/3 m-auto p-2 px-4 font-semibold text-[#E00002] cursor-pointer">
                 Enquiry Now
               </button>
             </div>
@@ -130,8 +130,8 @@ const Scollership = () => {
                       for postgraduate students in various fields.
                     </p>
                   </div>
-                  <div className="col-span-1 flex items-center justify-center">
-                    <button className=" border hover:bg-[#E00002] hover:text-[#ffff] border-[#E00002] w-2/3 m-auto p-2 px-4 font-semibold text-[#E00002] cursor-pointer">
+                  <div className="lg:col-span-1 flex items-center w-full  m-auto lg:ml-0 ml-2 justify-center">
+                    <button className=" border hover:bg-[#E00002] hover:text-[#ffff] border-[#E00002] lg:w-2/3  m-auto p-2 px-4 font-semibold text-[#E00002] cursor-pointer">
                       Enquiry Now
                     </button>
                   </div>
@@ -148,8 +148,8 @@ const Scollership = () => {
                       for postgraduate students in various fields.
                     </p>
                   </div>
-                  <div className="col-span-1 flex items-center justify-center">
-                    <button className=" border hover:bg-[#E00002] hover:text-[#ffff] border-[#E00002] w-2/3 m-auto p-2 px-4 font-semibold text-[#E00002] cursor-pointer">
+                  <div className="lg:col-span-1 flex items-center w-full  m-auto lg:ml-0 ml-2 justify-center">
+                    <button className=" border hover:bg-[#E00002] hover:text-[#ffff] border-[#E00002] lg:w-2/3  m-auto p-2 px-4 font-semibold text-[#E00002] cursor-pointer">
                       Enquiry Now
                     </button>
                   </div>
