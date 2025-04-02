@@ -841,5 +841,144 @@
         "headlineintro": "",
         "thumbnail": "https://res.cloudinary.com/dyp3hukiu/image/upload/v1743507948/viacertaabroad/gmfyzunnemf7gg2qgnd8.png",
         "meta": "Founder’s Note: The Story Behind ViaCerta"
+    },
+    {
+        "id": "10",
+        "title": "6 Budgeting Problems Of Living Abroad: Solved",
+        "intro": "",
+        "subtopics": [
+            {
+                "title":"The Real Struggle of Managing Money Abroad:",
+                "intro":"Moving abroad either for studies or a job is an incredible experience. It gives a sense of independence and self-reliance. But as wonderful as it sounds, it comes with a great challenge. From being on your own to managing all financial needs properly. Let’s talk about it further. Managing finance in a foreign country can be tricky. From rent to miscellaneous expenses, sometimes it feels overwhelming. With recent inflation spikes, rising costs, and stricter visa policies on finance, budgeting is a major challenge among students and professionals. \n\nBut don’t worry, if you are wondering about how you can survive and thrive this year financially! This blog is for you. \n\nLet’s break down some common budgeting problems:"
+            },
+            {
+                "title": "“I Have No Idea How To Budget Abroad!”",
+                "intro": "Solution: Try 50-30-20 Rule\n\nTo begin this journey, the very first step is to plan a budget. Get information about the recent cost of living according to the destination of your choice. Take notes from at least 3-4 sources. It will give you a rough idea to plan your budget. With increasing costs of everything, universities and experts now recommend a 50-30-20 rule for students:",
+                "bulletpoints": [
+                    {
+                        "title": "50% for essentials (rent, food, bills)",
+                        "info": ""
+                    },
+                    {
+                        "title": "30% for lifestyle (entertainment, travel)",
+                        "info": ""
+                    },{
+                        "title": "20% for savings & emergencies",
+                        "info": ""
+                    }
+                ],
+                "ending":"This will help you plan your budget accordingly and will save you the last-minute rush. Also, use budgeting apps like Mint, YNAB, and PocketGuard to track your expenses and avoid overexpending."
+            },
+            {
+                "title": "“Bank Fees Are Eating My Money?”",
+                "intro": "Solution: Choose student-friendly banking options\n\nAfter making a proper budget, it’s time to open your local bank account abroad. But don’t rush into it, research it properly, as many banks charge high international transfer fees. So, make sure you look for student-friendly options to save as much money as you can. Look for the banks that offer:",
+                "bulletpoints": [
+                    {
+                        "title": "No/minimal fees for international transactions",
+                        "info": ""
+                    },
+                    {
+                        "title": "Free online banking & mobile apps",
+                        "info": ""
+                    }, {
+                        "title": "Discounts for students on shopping, travel, and entertainment.",
+                        "info": ""
+                    }
+                ],
+                "ending":"Tip: Neobanks like Revolut, Wise, and N26 are offering low-cost international transfers.\nTake this banking trend as a tip for easy multi-currency management."
+            }, 
+            {
+                "title": "“Can I Work Part-Time To Cover Expenses?”",
+                "intro": "Solution: Know your student work rights.\nIf you are a student studying abroad, part-time work can be a great way to help you manage your expenses daily and gain a hands-on experience. But note that every country has different policies regarding work time limits for students, for instance:\n",
+                "bulletpoints": [
+                    {
+                        "title": "UK:",
+                        "info": " 20 hours/week (student visa)"
+                    },
+                    {
+                        "title": "Canada:",
+                        "info": "Recently changed—students can work up to 24 hours/week starting in 2025"
+                    },{
+                        "title": "Australia:",
+                        "info": "Now back to 24 hours/week after temporary unlimited work rights"
+                    },{
+                        "title": "Germany:",
+                        "info": "120 full days or 240 half days per year"
+                    },{
+                        "title": "USA:",
+                        "info": "On-campus work only for F1 visa holders"
+                    }
+                ],
+                "ending":"How ViaCerta Helps: We keep our students updated on visa rules and part-time job opportunities, so you never miss a chance to earn\n\n<a href='https://viacertaabroad.com/blogs/2/Work-Visa-Checklist-2025:-What-You-Need-For-Your-Dream-Job-Abroad' target='_blank'><b>🔗Read more on work visa requirements here:<i>Work Visa Checklist 2025</i></b></a>"
+            }, 
+            {
+                "title": "“I Keep Running Out of Money Before the Month Ends”",
+                "intro": "Solution: Cut costs and spend smart.\nIf you want to save big, you need to have a smart monthly spending plan. It might include cutting down on some expenses, but it’ll be your lifesaver in a foreign country.\n\nHere’s how students abroad are keeping costs low:",
+                "bulletpoints": [
+                    {
+                        "title": "",
+                        "info": "Ask for student discounts for public transport, restaurants, the gym, and even clothing stores. They offer student-friendly discounts in a lot of places."
+                    },
+                    {
+                        "title": "",
+                        "info": "Try saving your expenses on food, you might want to avoid eating outside as it’ll drain your pocket quickly. "
+                    }, {
+                        "title": "",
+                        "info": "Use public transport instead of private transport. Monthly passes are cheaper. Many cities even offer free or discounted student travel cards."
+                    }, {
+                        "title": "",
+                        "info": "Get second-hand deals on textbooks and gadgets, as they can be expensive, or try renting them to reduce the cost for a while."
+                    }
+                ],
+                "ending":"Hot News: But there’s some good news. Many universities are launching student food banks & affordable housing schemes to support students struggling with high costs."
+            }, 
+            {
+                "title": "“Are There Any Scholarships That Can Help?”",
+                "intro": "Solution: Don’t ever miss out on free money.\nDid you know that billions of dollars in scholarships and grants go unclaimed every year? You don’t want to miss out on free money that the university pays to support funds for international students. ",
+                "bulletpoints": [
+                    {
+                        "title": "",
+                        "info": "Check your university’s website for internal scholarships"
+                    },
+                    {
+                        "title": "",
+                        "info": "Apply for government grants and country-specific student aid programs"
+                    }, {
+                        "title": "",
+                        "info": "Look for private and NGO scholarships—many focus on international students!"
+                    }
+                ],
+                "ending":"ViaCerta Abroad guides students to hidden scholarships and funding options that many miss out on."
+            }, 
+            {
+                "title": "“What If I Have An Emergency!”",
+                "intro": "Solution: Build a financial safety net.\n\nEmergencies happen, unexpected medical expenses, visa issues, or even sudden policy changes (like the recent scholarship freezes for Indian students in the US). That’s why you need an emergency fund.",
+                "bulletpoints": [
+                    {
+                        "title": "Aim to save at least 3-6 months’ worth of expenses.",
+                        "info": ""
+                    },
+                    {
+                        "title": "Consider student-friendly insurance plans for unexpected medical costs.",
+                        "info": ""
+                    }, {
+                        "title": "Stay updated on policy changes that may affect your finances.",
+                        "info": ""
+                    }
+
+                ]
+            },
+            {
+                "title": "Take Control Over Your Finance",
+                "intro": "Managing your finances and budget while studying or working abroad may sound stressful, but it doesn’t have to be. With smart budgeting, you can easily maintain your expenses and lifestyle without constantly stressing about money. At ViaCerta we don’t just help students study abroad—we make sure they thrive. Whether it’s scholarships, part-time job guidance, or financial planning tips, we’re here to support you every step of the way. \n\nGot questions about study & work abroad? Let’s talk!"
+            }
+        ],
+        "image": "https://res.cloudinary.com/dyp3hukiu/image/upload/v1743585261/viacertaabroad/pzu6ftb5rpzxfjedkbek.png",
+        "country": "",
+        "date": "2 april 2025",
+        "headline": "",
+        "headlineintro": "",
+        "thumbnail": "https://res.cloudinary.com/dyp3hukiu/image/upload/v1743585261/viacertaabroad/eiphqshy8fxqzm7gdfb4.png",
+        "meta": ""
     }
 ]
