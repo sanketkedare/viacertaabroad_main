@@ -10,7 +10,7 @@ const BlogCart = ({ artical }) => {
       <div className="lg:w-10/12 px-2 lg:px-0 min-h-screen m-auto lg:mt-20 mt-10 flex flex-col lg:gap-10 gap-5">
         {/* Main Title */}
         <div className="flex items-center gap-2">
-          <h1 className="lg:text-[40px] text-[20px] font-bold">
+          <h1 className="lg:text-[45px] text-[20px] font-bold">
             {artical.title}
           </h1>
         </div>
@@ -28,7 +28,7 @@ const BlogCart = ({ artical }) => {
         )}
 
         {/* Subtopics */}
-        <div className="flex flex-col gap-5">
+        <div className="flex flex-col gap-5 mb-10">
           {artical.subtopics &&
             artical.subtopics.map((sub, index) => (
               <div key={index} className="flex flex-col gap-2">
@@ -41,7 +41,7 @@ const BlogCart = ({ artical }) => {
                         "bg-gradient-to-r from-[#14247C] to-[#E00012] text-transparent bg-clip-text"
                       }`}
                     >
-                    {sub.title}
+                   ⚡{sub.title}
                     </h2>
                   </div>
                 )}

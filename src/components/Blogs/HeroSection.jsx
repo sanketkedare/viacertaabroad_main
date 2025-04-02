@@ -64,6 +64,7 @@ const HeroSection = ({ artical }) => {
           className={`w-full h-full object-cover  ${artical.image.length === 0  ? 'opacity-5' : 'lg:opacity-90 opacity-90'  } `}
           alt="Service Banner"
           loading="lazy"
+          title={artical.title}
         />
       </div>
 
