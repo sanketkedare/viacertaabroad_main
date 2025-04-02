@@ -31,7 +31,7 @@ const ForServices = ({ setIsOpenDropdown }) => {
       onClick={() => setIsOpenDropdown(false)}
     >
       {services.map((i, index) => (
-        // <Link href={`/services/${createUrl(i.name)}`}   key={i.name}>
+        <Link href={`/services/${createUrl(i.name)}`}   key={i.name}>
           <div
           key={i.name}
             className="border border-[#E00012] rounded-[14px] p-2 px-4 flex items-center gap-2 cursor-pointer shadow-sm"
@@ -40,7 +40,7 @@ const ForServices = ({ setIsOpenDropdown }) => {
 
             {i.name}
           </div>
-        // </Link>
+        </Link>
       ))}
       <Link href={"/services"} className="w-full h-full">
         <button className=" bg-[#E00012]  text-[#fff] rounded-[14px] p-2 px-4 flex items-center gap-2 cursor-pointer shadow-sm w-full h-full">

@@ -24,12 +24,12 @@ const Addmision = () => {
         {addmisionData.content}
       </div>
       <div>
-        <h1 className="lg:text-[50px] text-2xl font-bold mt-10 text-center">
+        <p className="lg:text-[50px] text-2xl font-bold mt-10 text-center">
           Why This Process{" "}
           <span className="bg-gradient-to-r from-[#14247C] to-[#E00012] text-transparent bg-clip-text">
             Is Simple With Us?
           </span>
-        </h1>
+        </p>
         <p className="text-center my-5 mb-10 lg:text-2xl">
           Navigate the complex admission process with ease and confidence.
         </p>

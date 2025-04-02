@@ -8,6 +8,7 @@ import { useParams } from "next/navigation";
 import Counseling from "./Counseling";
 import UniversitySelection from "./UniversitySelection";
 import Addmision from "./Addmision";
+import Scollership from "./Scollership";
 
 const SingleService = () => {
   const { service } = useParams();
@@ -21,8 +22,10 @@ const SingleService = () => {
         <Counseling />
       ) : service === "university-selection" ? (
         <UniversitySelection />
-      ) : service.includes('application') ? (
+      ) : service.includes("application") ? (
         <Addmision />
+      ) : service === "scholarship" ? (
+        <Scollership />
       ) : (
         <div className="flex h-screen w-full justify-center items-center">
           Not Found
