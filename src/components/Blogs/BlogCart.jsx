@@ -7,17 +7,18 @@ const BlogCart = ({ artical }) => {
   return (
     <div className="mb-10 ">
       <HeroSection artical={artical} />
-      <div className="lg:w-10/12 px-2 lg:px-0 min-h-screen m-auto lg:mt-20 mt-10 flex flex-col lg:gap-10 gap-5">
+      <div className="lg:w-10/12 w-11/12 px-2 lg:px-0 min-h-screen m-auto lg:mt-20 mt-10 flex flex-col lg:gap-10 gap-5">
+        
         {/* Main Title */}
         <div className="flex items-center gap-2">
-          <h1 className="lg:text-[45px] text-[20px] font-bold">
+          <h1 className="lg:text-[45px] text-[25px] font-bold">
             {artical.title}
           </h1>
         </div>
 
         {/* Introduction */}
         {artical.intro && (
-          <h3 className="lg:text-[18px] text-sm text-justify">
+          <h3 className="lg:text-[18px] text-sm text-justify py-3">
             {artical.intro.split("\n").map((line, index) => (
               <span key={index}>
                 {line}
@@ -36,7 +37,7 @@ const BlogCart = ({ artical }) => {
                 {sub?.title && (
                   <div className="flex items-center gap-2">
                     <h2
-                      className={`lg:text-[30px]  font-bold ${
+                      className={`lg:text-[30px] text-[20px] py-2  font-bold ${
                         sub.title === "Conclusion" &&
                         "bg-gradient-to-r from-[#14247C] to-[#E00012] text-transparent bg-clip-text"
                       }`}

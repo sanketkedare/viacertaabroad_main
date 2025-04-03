@@ -71,7 +71,7 @@ const HeroSection = ({ artical }) => {
       <div className="flex flex-col lg:grid lg:grid-cols-3 lg:items-center items-end w-11/12 h-full z-10 space-y-4 p-1 lg:p-8">
         <div className="col-span-2 text-[#fff] w-full h-full flex flex-col lg:justify-center justify-center gap-10 lg:gap-14">
           <h1
-            className={`lg:w-[70%] text-sm w-[50%] lg:mt-0 mt-10 lg:text-5xl font-bold lg:text-left
+            className={`lg:w-[70%] text-sm w-[50%] lg:mt-0 mt-0 lg:text-5xl font-bold lg:text-left
              `}
           >
             {artical.title}
