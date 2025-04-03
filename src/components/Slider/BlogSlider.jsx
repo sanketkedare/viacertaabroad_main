@@ -14,8 +14,8 @@ const BlogSlider = ({ name = "Blogs" }) => {
     "https://www.rugtek.com/wp-content/uploads/2022/03/blogbanner-1.jpg";
   return (
     <div className="lg:my-10 my-28">
-      <h1 className="text-center text-[40px] font-bold">{name}</h1>
-      <p className="lg:w-[800px] w-11/12 text-center m-auto text-[20px] py-3">
+      <h1 className="text-center lg:text-[40px] text-2xl font-bold">{name}</h1>
+      <p className="lg:w-[800px] w-11/12 text-center m-auto lg:text-[20px] text-xl py-3">
         Our Champions started with just a dream and look where they are now!
         Success stories you would want to be the part of
       </p>
@@ -23,10 +23,7 @@ const BlogSlider = ({ name = "Blogs" }) => {
       <div className="overflow-x-scroll lg:w-10/12 w-full m-auto scrollbar-hide">
         <div className="flex flex-col lg:flex-row gap-6 justify-center items-center py-6 w-max  m-auto">
           {reverseArray.map((blog, index) => (
-            <Link
-              href={`/blogs/${createUrl(blog?.title)}`}
-              key={index}
-            >
+            <Link href={`/blogs/${createUrl(blog?.title)}`} key={index}>
               <div className="relative lg:w-[280px] w-[400px] h-[300px] pt-4 px-4 cursor-pointer hover:scale-105 transition-all rounded-md overflow-hidden bg-white shadow-[#E000122E] shadow-[0_0_30px_rgba(0,0,0,0.2)]">
                 <div
                   className={`relative h-1/2 w-full ${

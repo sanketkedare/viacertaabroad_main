@@ -7,10 +7,10 @@ const BlogCart = ({ artical }) => {
   return (
     <div className="mb-10 ">
       <HeroSection artical={artical} />
-      <div className="lg:w-10/12 w-11/12 px-2 lg:px-0 min-h-screen m-auto lg:mt-20 mt-10 flex flex-col lg:gap-10 gap-5">
+      <div className="lg:w-10/12 w-11/12 px-2 lg:px-0 min-h-screen m-auto lg:mt-20 mt-10 flex flex-col lg:gap-5 gap-2">
         
         {/* Main Title */}
-        <div className="flex items-center gap-2">
+        <div className="">
           <h1 className="lg:text-[45px] text-[25px] font-bold">
             {artical.title}
           </h1>
@@ -18,7 +18,7 @@ const BlogCart = ({ artical }) => {
 
         {/* Introduction */}
         {artical.intro && (
-          <h3 className="lg:text-[18px] text-sm text-justify py-3">
+          <h3 className="lg:text-[18px] mb-5">
             {artical.intro.split("\n").map((line, index) => (
               <span key={index}>
                 {line}
@@ -27,6 +27,7 @@ const BlogCart = ({ artical }) => {
             ))}
           </h3>
         )}
+
 
         {/* Subtopics */}
         <div className="flex flex-col gap-5 mb-10">
@@ -37,7 +38,7 @@ const BlogCart = ({ artical }) => {
                 {sub?.title && (
                   <div className="flex items-center gap-2">
                     <h2
-                      className={`lg:text-[30px] text-[20px] py-2  font-bold ${
+                      className={`lg:text-[30px] text-[20px] font-bold ${
                         sub.title === "Conclusion" &&
                         "bg-gradient-to-r from-[#14247C] to-[#E00012] text-transparent bg-clip-text"
                       }`}
@@ -49,7 +50,7 @@ const BlogCart = ({ artical }) => {
 
                 {/* Subtopic Intro & Info */}
                 {sub?.intro && (
-                  <h5 className="lg:text-[18px] text-justify">
+                  <h5 className="lg:text-[18px] ">
                     {sub.intro.split("\n").map((line, index) =>
                       line.includes("<a") || line.includes("<i") ? (
                         <span
@@ -66,7 +67,7 @@ const BlogCart = ({ artical }) => {
                   </h5>
                 )}
 
-                {sub?.info && <h5 className="lg:text-[18px] text-justify">{sub.info}</h5>}
+                {sub?.info && <h5 className="lg:text-[18px]">{sub.info}</h5>}
 
                 {sub?.table && <Table table={sub?.table} />}
 
@@ -81,7 +82,7 @@ const BlogCart = ({ artical }) => {
                             <h4 className="font-semibold">{bullet.title}</h4>
                           )}
                           {bullet.info && (
-                            <h4 className={`${!bullet.title && "font-bold text-justify"}`}>
+                            <h4 className={`${!bullet.title && "font-bold"}`}>
                               {bullet.info.split("\n").map((line, index) =>
                                 line.includes("<a") || line.includes("<i") ? (
                                   <span
