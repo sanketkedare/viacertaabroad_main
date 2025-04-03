@@ -3,6 +3,7 @@
 import FAQs from '@/components/About/FAQs'
 import Footer from '@/components/Footer/Footer'
 import Navbar from '@/components/Navbar/Navbar'
+import BlogSlider from '@/components/Slider/BlogSlider'
 import Testimonials from '@/components/Slider/Testimonials'
 import StudyAbroad from '@/components/Study-Abroad/StudyAbroad'
 import store from '@/Redux/appStore'
@@ -15,6 +16,7 @@ const page = () => {
     <Navbar />
     <StudyAbroad/>
     <Testimonials />
+    <BlogSlider/>
     <FAQs />
     <Footer />
   </Provider>

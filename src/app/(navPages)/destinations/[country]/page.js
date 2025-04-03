@@ -27,7 +27,7 @@ const page = () => {
 
   useEffect(() => {
     if (countryName) {
-      const data = destinations.find((i) => i.name === countryName);
+      const data = destinations.find((i) => i.name.toLowerCase() === countryName.toLowerCase());
       setContryData(data);
     }
   }, [countryName]);

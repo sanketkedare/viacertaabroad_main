@@ -6,6 +6,8 @@ import { LuNotebookText } from "react-icons/lu";
 import { FaUniversity } from "react-icons/fa";
 import { MdDownloading } from "react-icons/md";
 import Benefits from "./Benefits";
+import PickDestination from "./PickDestination";
+import WhyViaCerta from "./WhyViaCerta";
 
 const studyAbroadContent = {
   heroParagraphs: [
@@ -18,17 +20,20 @@ const studyAbroadContent = {
     {
       icon: <LuNotebookText size={40} className="" />,
       title: "Global Education, Limitless Opportunities",
-      description: "Get access to world-class universities and globally recognized degrees for career prospects worldwide.",
+      description:
+        "Get access to world-class universities and globally recognized degrees for career prospects worldwide.",
     },
     {
-      icon: <FaUniversity  size={40} className="" />,
+      icon: <FaUniversity size={40} className="" />,
       title: "Work & Study for a Brighter Future",
-      description: "Our experts analyze eligibility criteria, job opportunities, and scholarships to find your best fit.",
+      description:
+        "Our experts analyze eligibility criteria, job opportunities, and scholarships to find your best fit.",
     },
     {
-      icon: <MdDownloading  size={40} className="" />,
+      icon: <MdDownloading size={40} className="" />,
       title: "Decision Support",
-      description: "Performance analysis to help you identify gaps and make steady progress toward your target score.",
+      description:
+        "Performance analysis to help you identify gaps and make steady progress toward your target score.",
     },
   ],
 };
@@ -41,17 +46,23 @@ const StudyAbroad = () => {
       {/* Hero Paragraphs */}
       <section className="w-10/12 m-auto my-16 text-justify">
         {studyAbroadContent.heroParagraphs.map((para, index) => (
-          <p key={index} className="text-xl lg:text-[24px] leading-relaxed mt-4">
+          <p
+            key={index}
+            className="text-xl lg:text-[24px] leading-relaxed mt-4"
+          >
             {para}
           </p>
         ))}
       </section>
 
       {/* Why Study Abroad Section */}
-     <Benefits studyAbroadContent={studyAbroadContent}/>
-     <div className="">
+      <Benefits studyAbroadContent={studyAbroadContent} />
 
-     </div>
+      {/* Pick Destinations */}
+      <PickDestination />
+
+      {/* Why ViaCerta */}
+      <WhyViaCerta/>
     </div>
   );
 };
