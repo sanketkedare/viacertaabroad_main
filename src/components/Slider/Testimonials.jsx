@@ -78,7 +78,7 @@ const Testimonials = () => {
               >
                 <p className="mt-3 text-gray-700 text-sm flex flex-col gap-3">
                   <FaQuoteLeft className="text-[#E00012] text-xl" />
-                  <span className="h-[150px]">{story.description}</span>
+                  <span className="h-[150px] text-justify">{story.description}</span>
                   <FaQuoteLeft className="text-[#E00012] text-xl rotate-180" />
                 </p>
 

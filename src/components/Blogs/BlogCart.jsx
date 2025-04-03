@@ -17,7 +17,7 @@ const BlogCart = ({ artical }) => {
 
         {/* Introduction */}
         {artical.intro && (
-          <h3 className="lg:text-[18px] text-sm">
+          <h3 className="lg:text-[18px] text-sm text-justify">
             {artical.intro.split("\n").map((line, index) => (
               <span key={index}>
                 {line}
@@ -48,7 +48,7 @@ const BlogCart = ({ artical }) => {
 
                 {/* Subtopic Intro & Info */}
                 {sub?.intro && (
-                  <h5 className="lg:text-[18px]">
+                  <h5 className="lg:text-[18px] text-justify">
                     {sub.intro.split("\n").map((line, index) =>
                       line.includes("<a") || line.includes("<i") ? (
                         <span
@@ -65,7 +65,7 @@ const BlogCart = ({ artical }) => {
                   </h5>
                 )}
 
-                {sub?.info && <h5 className="lg:text-[18px]">{sub.info}</h5>}
+                {sub?.info && <h5 className="lg:text-[18px] text-justify">{sub.info}</h5>}
 
                 {sub?.table && <Table table={sub?.table} />}
 
@@ -80,7 +80,7 @@ const BlogCart = ({ artical }) => {
                             <h4 className="font-semibold">{bullet.title}</h4>
                           )}
                           {bullet.info && (
-                            <h4 className={`${!bullet.title && "font-bold"}`}>
+                            <h4 className={`${!bullet.title && "font-bold text-justify"}`}>
                               {bullet.info.split("\n").map((line, index) =>
                                 line.includes("<a") || line.includes("<i") ? (
                                   <span
@@ -103,7 +103,7 @@ const BlogCart = ({ artical }) => {
                 )}
 
                 {sub?.ending && (
-                  <p>
+                  <p className="text-justify">
                     {sub.ending.split("\n").map((line, index) =>
                       line.includes("<a") || line.includes("<i") ? (
                         <span

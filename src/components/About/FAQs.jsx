@@ -67,7 +67,7 @@ const FAQs = ({ faqArray }) => {
                       className="absolute top-14 z-20 w-full bg-white border border-[#E0001269] text-gray-800 p-4 text-sm"
                     >
                       {(faq.answer || faq.a).split("\n").map((line, i) => (
-                        <p key={i}>{line}</p>
+                        <p key={i} className="text-justify">{line}</p>
                       ))}
                     </motion.div>
                   )}

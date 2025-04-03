@@ -1,9 +1,9 @@
 import React from "react";
 import Link from "next/link";
 import blogs from "../Blogs/_blogs.json"
+import createUrl from "@/Utils/createUrl";
 
 const Blogs = () => {
-  const createUrl = (name) => name.split(" ").join('-');
   const image = 'https://www.rugtek.com/wp-content/uploads/2022/03/blogbanner-1.jpg'
 
   return (
