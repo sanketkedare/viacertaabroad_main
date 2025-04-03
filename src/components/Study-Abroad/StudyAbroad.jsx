@@ -5,6 +5,7 @@ import StudyAbroadHero from "./StudyAbroadHero";
 import { LuNotebookText } from "react-icons/lu";
 import { FaUniversity } from "react-icons/fa";
 import { MdDownloading } from "react-icons/md";
+import Benefits from "./Benefits";
 
 const studyAbroadContent = {
   heroParagraphs: [
@@ -38,7 +39,7 @@ const StudyAbroad = () => {
       <StudyAbroadHero />
 
       {/* Hero Paragraphs */}
-      <section className="w-10/12 m-auto my-16 text-center">
+      <section className="w-10/12 m-auto my-16 text-justify">
         {studyAbroadContent.heroParagraphs.map((para, index) => (
           <p key={index} className="text-xl lg:text-[24px] leading-relaxed mt-4">
             {para}
@@ -47,23 +48,10 @@ const StudyAbroad = () => {
       </section>
 
       {/* Why Study Abroad Section */}
-      <section className="w-10/12 m-auto my-16">
-        <h2 className="lg:text-[50px] text-2xl font-bold text-center">
-          {studyAbroadContent.title}
-        </h2>
-        <p className="text-center lg:text-2xl p-3">{studyAbroadContent.subtitle}</p>
+     <Benefits studyAbroadContent={studyAbroadContent}/>
+     <div className="">
 
-        {/* Benefits Section */}
-        <div className="grid lg:grid-cols-3 gap-10 py-10">
-          {studyAbroadContent.benefits.map((benefit, index) => (
-            <div key={index} className={`p-6   ${index % 2 === 0 ? 'bg-[#FDF3E7]' : 'bg-[#F7FAFE]'} shadow-2xl flex flex-col gap-4`}>
-              <span className="bg-[#E00002] text-white p-4 w-15 h-15 flex justify-center items-center rounded-full">{benefit.icon}</span>
-              <h3 className="text-xl font-semibold">{benefit.title}</h3>
-              <p className="mt-2 text-gray-600">{benefit.description}</p>
-            </div>
-          ))}
-        </div>
-      </section>
+     </div>
     </div>
   );
 };

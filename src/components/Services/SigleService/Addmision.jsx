@@ -20,7 +20,7 @@ const Addmision = () => {
   return (
     <div>
       <SingleHero serviceData={addmisionData} />
-      <div className="w-10/12 m-auto lg:text-[24px] text-xl text-center my-16">
+      <div className="w-10/12 m-auto lg:text-[24px] text-xl text-justify my-16">
         {addmisionData.content}
       </div>
       <div>

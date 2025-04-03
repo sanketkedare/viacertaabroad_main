@@ -21,7 +21,7 @@ const Counseling = () => {
   return (
     <div>
       <SingleHero serviceData={counsalingData} />
-      <div className="w-10/12 m-auto lg:text-[24px] text-xl text-center my-16">
+      <div className="w-10/12 m-auto lg:text-[24px] text-xl text-justify my-16">
         {counsalingData.content}
       </div>
       <div>

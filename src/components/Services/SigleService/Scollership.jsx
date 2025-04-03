@@ -43,7 +43,7 @@ const Scollership = () => {
   return (
     <div className="min-h-screen">
       <SingleHero serviceData={scollershipData} />
-      <div className="w-10/12 m-auto lg:text-[24px] text-xl text-center my-16">
+      <div className="w-10/12 m-auto lg:text-[24px] text-xl text-justify my-16">
         {scollershipData.content}
       </div>
 
