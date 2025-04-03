@@ -28,7 +28,7 @@ const PickDestination = () => {
             <Link href={`/destinations/${createUrl(i.name)}`}>
             <div
               key={index}
-              className="w-[250px] h-[150px] shadow-2xl shrink-0 rounded-2xl overflow-hidden relative bg-black"
+              className="w-[250px] h-[150px] shadow-md shrink-0 rounded-2xl overflow-hidden relative bg-black"
               onMouseEnter={() => setHoverIndex(index)}
               onMouseLeave={() => setHoverIndex(null)}
             >
