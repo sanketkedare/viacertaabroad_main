@@ -24,7 +24,7 @@ const BlogSlider = ({ name = "Blogs" }) => {
         <div className="flex flex-col lg:flex-row gap-6 justify-center items-center py-6 w-max  m-auto">
           {reverseArray.map((blog, index) => (
             <Link
-              href={`/blogs/${blog.id}/${createUrl(blog?.title)}`}
+              href={`/blogs/${createUrl(blog?.title)}`}
               key={index}
             >
               <div className="relative lg:w-[280px] w-[400px] h-[300px] pt-4 px-4 cursor-pointer hover:scale-105 transition-all rounded-md overflow-hidden bg-white shadow-[#E000122E] shadow-[0_0_30px_rgba(0,0,0,0.2)]">

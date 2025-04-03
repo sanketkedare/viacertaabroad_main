@@ -10,42 +10,21 @@ import blogs from "./_blogs.json";
 import BlogCart from "@/components/Blogs/BlogCart";
 import BlogSlider from "@/components/Slider/BlogSlider";
 import Link from "next/link";
+import createUrl from "@/Utils/createUrl";
 
 const BlogsContainer = () => {
-  const { id, title } = useParams();
+  const { id } = useParams();
   const [artical, setArtical] = useState("");
 
-  const removeSpecialChar = () => {
-    if (!title) return "";
-    let decodedTitle = decodeURIComponent(title);
-    decodedTitle = decodedTitle.replace("%E2%82%B9", "₹");
-    return decodedTitle;
-  };
-
-  const findData = () => {
-    if (!id) {
-      if (title.includes("%E2%82%B9")) {
-        const cleanTitle = removeSpecialChar();
-        const data = blogs.find(
-          (i) => i.title === cleanTitle.split("-").join(" ")
-        );
-        setArtical(data);
-      } else {
-        const cleanTitle = title.split("-").join(" ");
-        console.log(cleanTitle);
-        const data = blogs.find((i) => i.title === cleanTitle);
-        setArtical(data);
-      }
-    }
-    else{
-      const data = blogs.find((i)=> i.id == id);
-      setArtical(data);
-    }
+  const findData = () => 
+  {
+    const data = blogs.find((blog)=> createUrl(blog.title) === id);
+    setArtical(data);
   };
 
   useEffect(() => {
     findData();
-  }, [title]);
+  }, [id]);
 
   return (
     <Provider store={store}>
