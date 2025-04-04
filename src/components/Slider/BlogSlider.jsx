@@ -24,7 +24,7 @@ const BlogSlider = ({ name = "Blogs" }) => {
         <div className="flex flex-col lg:flex-row gap-6 justify-center items-center py-6 w-max  m-auto">
           {reverseArray.map((blog, index) => (
             <Link href={`/blogs/${createUrl(blog?.title)}`} key={index}>
-              <div className="relative lg:w-[350px] w-[400px] h-[300px] pt-4 px-4 cursor-pointer hover:scale-105 transition-all rounded-md overflow-hidden bg-white shadow-[#E000122E] shadow-[0_0_30px_rgba(0,0,0,0.2)]">
+              <div className="relative lg:w-[350px] w-[400px] h-[250px] pt-4 px-4 cursor-pointer hover:scale-105 transition-all rounded-md overflow-hidden bg-white shadow-[#E000122E] shadow-[0_0_30px_rgba(0,0,0,0.2)]">
                 <div
                   className={`relative h-1/2 w-full ${
                     !blog.thumbnail && "bg-black"
@@ -44,7 +44,7 @@ const BlogSlider = ({ name = "Blogs" }) => {
                  
                 </div>
                 <div className="p-4">
-                  <p className="text-blue-900 text-lg font-medium mb-4">
+                  <p className="text-blue-900 text-lg font-medium py-3">
                     {blog.title.slice(0, 60)}...
                   </p>
                   <p className="text-[#E00012] text-sm absolute bottom-2  ">
