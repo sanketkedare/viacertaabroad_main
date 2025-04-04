@@ -6,7 +6,7 @@ import React from "react";
 const BlogCart = ({ artical }) => {
   return (
     <div className="mb-10 ">
-      <div className="flex items-center gap-4 mb-5 w-11/12 m-auto">
+      <div className="flex items-center gap-4 mb-5 lg:w-full w-11/12 m-auto">
         <div className="w-[60px] h-[60px] rounded-full bg-[#D9D9D9] overflow-hidden">
           {/* Optionally insert an image here */}
           {/* <img src="/sachin.jpg" alt="Sachin Chauhan" className="w-full h-full object-cover" /> */}
@@ -17,7 +17,7 @@ const BlogCart = ({ artical }) => {
         </div>
       </div>
       <HeroSection artical={artical} />
-      <div className="lg:w-full w-11/12 lg:px-2  min-h-screen m-auto lg:mt-20 mt-10 flex flex-col lg:gap-5 gap-2">
+      <div className="lg:w-full w-11/12 lg:px-2  min-h-screen m-auto lg:mt-10 mt-5 flex flex-col lg:gap-5 gap-2">
         {/* Introduction */}
         {artical.intro && (
           <h3 className="lg:text-[18px] mb-5 text-justify">
