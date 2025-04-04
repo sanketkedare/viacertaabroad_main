@@ -7,6 +7,7 @@ import ForWork from "./ForWork";
 import Link from "next/link";
 import React, { useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
+import createUrl from "@/Utils/createUrl";
 
 const OptionsDesktop = () => {
   const path = usePathname();
@@ -42,7 +43,7 @@ const OptionsDesktop = () => {
           >
             <div
               className={`hidden lg:flex  items-center justify-center gap-2 hover:text-[#E00012] ${
-                option.name === isOpenDropdown && "text-[#E00012] font-semibold"
+                path.includes(createUrl(option.name)) && "text-[#E00012] font-semibold"
               }`}
               onClick={() => dropdownHandler(option.name)}
             >
@@ -102,7 +103,7 @@ const OptionsDesktop = () => {
       <Link href={"/blogs"}>
         <div className="relative cursor-pointer hover:font-semibold  ">
           <div
-            className={`hidden lg:flex  items-center justify-center gap-2 hover:text-[#E00012]  `}
+            className={`hidden lg:flex  items-center justify-center gap-2 hover:text-[#E00012]   ${path.includes("/blog") && "text-[#E00002] font-bold"}`}
           >
             Blogs
           </div>

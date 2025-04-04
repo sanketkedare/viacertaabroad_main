@@ -61,7 +61,7 @@ const MobileMenu = ({
       ))}
       {!user ? (
         <div
-          className="bg-[#152347] hover:bg-[#657ab6] cursor-pointer text-white p-4 font-bold rounded-xl w-full flex justify-normal items-center gap-4 transition-colors"
+          className="bg-[#E00002] hover:bg-[#657ab6] cursor-pointer text-white p-4 font-bold rounded-xl w-full flex justify-normal items-center gap-4 transition-colors"
           onClick={() => {
             setSignInOpen(true);
             setMobileMenuOpen(false);

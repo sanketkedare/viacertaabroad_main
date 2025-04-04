@@ -12,8 +12,8 @@ const BlogCart = ({ artical }) => {
           {/* <img src="/sachin.jpg" alt="Sachin Chauhan" className="w-full h-full object-cover" /> */}
         </div>
         <div className="">
-          <p className="font-semibold">Sachin Chauhan</p>
-          <p className="text-sm text-gray-600">Founder & CEO of viaCerta Abroad</p>
+          <p className="font-semibold">{Number(artical.id)% 2 ===0 ? "Saleen, Sr. Content Writer": "ViaCerta Abroad Editorial Team" }</p>
+          <p className="text-sm text-gray-600">viaCerta Abroad</p>
         </div>
       </div>
       <HeroSection artical={artical} />
