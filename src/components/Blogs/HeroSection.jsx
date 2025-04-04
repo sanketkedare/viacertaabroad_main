@@ -5,7 +5,7 @@ const HeroSection = ({ artical }) => {
   const dummyImage =
     "https://www.rugtek.com/wp-content/uploads/2022/03/blogbanner-1.jpg";
 
-  const imageUrl = artical.image ? artical.image : dummyImage;
+  const imageUrl = artical.thumbnail ? artical.thumbnail : dummyImage;
 
   const getImageBrightness = (imageSrc) => {
     return new Promise((resolve) => {
@@ -57,30 +57,31 @@ const HeroSection = ({ artical }) => {
   }
 
   return (
-    <div className="relative lg:min-h-[85vh] h-[200px]  bg-black overflow-hidden flex items-center justify-center">
-      <div className="absolute inset-0 bg-gradient-to-r from-black">
+    <div className="relative lg:min-h-[58vh] h-[200px]    overflow-hidden flex items-center justify-center">
+      <div className="absolute inset-0 ">
         <img
           src={imageUrl}
-          className={`w-full h-full object-cover  ${artical.image.length === 0  ? 'opacity-5' : 'lg:opacity-90 opacity-90'  } `}
+          className={`lg:w-full h-full object-contain  ${artical.image.length === 0  ? 'opacity-5' : 'lg:opacity-90 opacity-90'  } `}
           alt="Service Banner"
           loading="lazy"
           title={artical.title}
         />
-      </div>
-
-      <div className="flex flex-col lg:grid lg:grid-cols-3 lg:items-center items-end w-11/12 h-full z-10 space-y-4 p-1 lg:p-8">
-        <div className="col-span-2 text-[#fff] w-full h-full flex flex-col lg:justify-center justify-center gap-10 lg:gap-14">
-          <h1
-            className={`lg:w-[70%] text-sm w-[45%] lg:mt-0 mt-0 lg:text-5xl font-bold lg:text-left
-             `}
-          >
-            {artical.title}
-          </h1>
-         
-        </div>
       </div>
     </div>
   );
 };
 
 export default HeroSection;
+
+
+// <div className="flex flex-col lg:grid lg:grid-cols-3 lg:items-center items-end w-11/12 h-full z-10 space-y-4 p-1 lg:p-8">
+// <div className="col-span-2 text-[#fff] w-full h-full flex flex-col lg:justify-center justify-center gap-10 lg:gap-14">
+// <h1
+//     className={`lg:w-[70%] text-sm w-[45%] lg:mt-0 mt-0 lg:text-5xl font-bold lg:text-left
+//      `}
+//   >
+//     {artical.title}
+//   </h1> 
+ 
+// </div>
+// </div>

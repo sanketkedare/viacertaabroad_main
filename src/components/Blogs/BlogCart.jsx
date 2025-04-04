@@ -6,16 +6,18 @@ import React from "react";
 const BlogCart = ({ artical }) => {
   return (
     <div className="mb-10 ">
-      <HeroSection artical={artical} />
-      <div className="lg:w-10/12 w-11/12 px-2 lg:px-0 min-h-screen m-auto lg:mt-20 mt-10 flex flex-col lg:gap-5 gap-2">
-        
-        {/* Main Title */}
-        <div className="">
-          <h1 className="lg:text-[45px] text-[25px] font-bold">
-            {artical.title}
-          </h1>
+      <div className="flex items-center gap-4 mb-5 w-11/12 m-auto">
+        <div className="w-[60px] h-[60px] rounded-full bg-[#D9D9D9] overflow-hidden">
+          {/* Optionally insert an image here */}
+          {/* <img src="/sachin.jpg" alt="Sachin Chauhan" className="w-full h-full object-cover" /> */}
         </div>
-
+        <div className="">
+          <p className="font-semibold">Sachin Chauhan</p>
+          <p className="text-sm text-gray-600">Founder & CEO</p>
+        </div>
+      </div>
+      <HeroSection artical={artical} />
+      <div className="lg:w-full w-11/12 lg:px-2  min-h-screen m-auto lg:mt-20 mt-10 flex flex-col lg:gap-5 gap-2">
         {/* Introduction */}
         {artical.intro && (
           <h3 className="lg:text-[18px] mb-5">
@@ -27,7 +29,6 @@ const BlogCart = ({ artical }) => {
             ))}
           </h3>
         )}
-
 
         {/* Subtopics */}
         <div className="flex flex-col gap-5 mb-10">
@@ -43,7 +44,7 @@ const BlogCart = ({ artical }) => {
                         "bg-gradient-to-r from-[#14247C] to-[#E00012] text-transparent bg-clip-text"
                       }`}
                     >
-                   ⚡{sub.title}
+                      ⚡{sub.title}
                     </h2>
                   </div>
                 )}

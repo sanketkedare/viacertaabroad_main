@@ -24,30 +24,24 @@ const BlogSlider = ({ name = "Blogs" }) => {
         <div className="flex flex-col lg:flex-row gap-6 justify-center items-center py-6 w-max  m-auto">
           {reverseArray.map((blog, index) => (
             <Link href={`/blogs/${createUrl(blog?.title)}`} key={index}>
-              <div className="relative lg:w-[280px] w-[400px] h-[300px] pt-4 px-4 cursor-pointer hover:scale-105 transition-all rounded-md overflow-hidden bg-white shadow-[#E000122E] shadow-[0_0_30px_rgba(0,0,0,0.2)]">
+              <div className="relative lg:w-[350px] w-[400px] h-[300px] pt-4 px-4 cursor-pointer hover:scale-105 transition-all rounded-md overflow-hidden bg-white shadow-[#E000122E] shadow-[0_0_30px_rgba(0,0,0,0.2)]">
                 <div
                   className={`relative h-1/2 w-full ${
-                    !blog.image && "bg-black"
+                    !blog.thumbnail && "bg-black"
                   }`}
                 >
-                  {blog.image && (
+                  {blog.thumbnail && (
                     <img
-                      src={blog.image ? blog.image : image}
+                      src={blog.thumbnail ? blog.thumbnail : image}
                       alt={blog.title}
                       title={blog.title}
-                      className={`h-full lg:w-auto w-full object-cover  ${
-                        blog.image.length === 0 && "opacity-15"
+                      className={` lg:w-auto w-full object-cover  ${
+                        blog.thumbnail.length === 0 && "opacity-15"
                       } rounded-[12px]`}
                       loading="lazy"
                     />
                   )}
-                  <p
-                    className={`absolute top-5 ${
-                      blog.id >= 5 ? "w-[35%]" : " w-[45%]"
-                    } text-[12px] left-2 text-white `}
-                  >
-                    {blog.title}
-                  </p>
+                 
                 </div>
                 <div className="p-4">
                   <p className="text-blue-900 text-lg font-medium mb-4">
