@@ -1,52 +1,26 @@
+import { usePathname } from "next/navigation";
 import ForDestinations from "./ForDestinations";
 import ForExams from "./ForExams";
 import ForMBBS from "./ForMBBS";
 import ForServices from "./ForServices";
 import ForWork from "./ForWork";
-import { destinations, textPrep } from "./dropdowns";
 import Link from "next/link";
-import { useParams, usePathname } from "next/navigation";
-import React, { useEffect, useState } from "react";
-import { FaHome, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
-import { FaBlog, FaBook, FaServicestack } from "react-icons/fa6";
+import React, { useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 
 const OptionsDesktop = () => {
-  const pathname = usePathname();
-  const [dropDownOptions, setDropDownOptions] = useState([]);
-  const [isOpenDropdown, setIsOpenDropdown] = useState(false);
   const path = usePathname();
+  const [isOpenDropdown, setIsOpenDropdown] = useState(false);
   const navlinks = [
-    { name: "Test Prep", icon: <FaBook />, link: "" },
-    { name: "Destinations", icon: <FaMapMarkerAlt />, link: "" },
-    { name: "Services", icon: <FaServicestack />, link: "" },
-    { name: "Study-Abroad", icon: <FaServicestack />, link: "" },
-    { name: "Work", icon: <FaBlog />, link: "" },
-    { name: "MBBS's Program", icon: <FaPhoneAlt />, link: "" },
+    { name: "Test Prep", link: "" },
+    { name: "Destinations", link: "" },
+    { name: "Services", link: "" },
   ];
 
   const dropdownHandler = (name) => {
     if (name === "Home") return;
     setIsOpenDropdown(name);
   };
-
-  const updatedDropdownOptions = () => {
-    switch (isOpenDropdown) {
-      case "Test Prep":
-        setDropDownOptions(textPrep);
-        break;
-      case "Destinations":
-        setDropDownOptions(destinations);
-        break;
-      default:
-        setDropDownOptions(isOpenDropdown);
-    }
-  };
-
-  useEffect(() => {
-    if (!isOpenDropdown) return;
-    updatedDropdownOptions();
-  }, [isOpenDropdown]);
 
   return (
     <>
@@ -59,7 +33,7 @@ const OptionsDesktop = () => {
           </div>
         </div>
       </Link>
-     
+
       {navlinks.map((option) => (
         <>
           <div
@@ -92,7 +66,40 @@ const OptionsDesktop = () => {
             ))}
         </>
       ))}
-       <Link href={"/blogs"}>
+      <Link href={"/study-abroad"}>
+        <div className="relative cursor-pointer hover:font-semibold  ">
+          <div
+            className={`hidden lg:flex  items-center justify-center gap-2 hover:text-[#E00012]  ${
+              path === "/study-abroad" && "text-[#E00002] font-bold"
+            }`}
+          >
+            Study-Abroad
+          </div>
+        </div>
+      </Link>
+      <Link href={"/work"}>
+        <div className="relative cursor-pointer hover:font-semibold  ">
+          <div
+            className={`hidden lg:flex  items-center justify-center gap-2 hover:text-[#E00012]  ${
+              path === "/work" && "text-[#E00002] font-bold"
+            }`}
+          >
+            Work
+          </div>
+        </div>
+      </Link>
+      {/* <Link href={"/blogs"}> */}
+      <div className="relative cursor-pointer hover:font-semibold  ">
+        <div
+          className={`hidden lg:flex  items-center justify-center gap-2 hover:text-[#E00012] ${
+            path === "/mbbs" && "text-[#E00002] font-bold"
+          } `}
+        >
+          MBBS's Program
+        </div>
+      </div>
+      {/* </Link> */}
+      <Link href={"/blogs"}>
         <div className="relative cursor-pointer hover:font-semibold  ">
           <div
             className={`hidden lg:flex  items-center justify-center gap-2 hover:text-[#E00012]  `}
