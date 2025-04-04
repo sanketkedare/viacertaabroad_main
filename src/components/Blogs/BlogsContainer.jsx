@@ -52,7 +52,7 @@ const BlogsContainer = () => {
             <BlogCart artical={artical} />
           )}
         </div>
-        {/* <BlogFilters /> */}
+        <BlogFilters />
       </div>
       <hr className="w-1/2 shadow shadow-[#E00] m-auto my-10" />
       <BlogSlider name={"Related Blogs"} />
