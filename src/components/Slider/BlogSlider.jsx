@@ -45,7 +45,7 @@ const BlogSlider = ({ name = "Blogs" }) => {
                 </div>
                 <div className="p-4">
                   <p className="text-blue-900 text-lg font-medium py-3">
-                    {blog.title.slice(0, 60)}...
+                    {blog.title.slice(0, 50)}...
                   </p>
                   <p className="text-[#E00012] text-sm absolute bottom-2  ">
                     {blog.date}

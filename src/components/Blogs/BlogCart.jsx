@@ -106,7 +106,7 @@ const BlogCart = ({ artical }) => {
                 )}
 
                 {sub?.ending && (
-                  <p className="text-justify">
+                  <p className="text-justify lg:text-[18px] ">
                     {sub.ending.split("\n").map((line, index) =>
                       line.includes("<a") || line.includes("<i") ? (
                         <span
