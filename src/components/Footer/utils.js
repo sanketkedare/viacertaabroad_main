@@ -12,7 +12,7 @@ export const socialLinks = [
   };
   
   export const supportLinks = [
-    { href: "/about", text: "About" },
+    // { href: "/about", text: "About" },
     { href: "/contact", text: "Contact" },
     // { href: "#", text: "Careers" },
     // { href: "#", text: "Locate Us" },
