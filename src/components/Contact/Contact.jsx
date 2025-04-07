@@ -33,7 +33,7 @@ const Contact = () => {
         </p>
       </div>
 
-      <div className="flex flex-col lg:flex-row gap-10 items-center w-full lg:w-7/12 justify-around">
+      <div className="flex flex-col lg:flex-row gap-10 items-center lg:w-7/12 w-9/12 justify-around">
         {/* Email */}
         <motion.div
           whileHover={{ scale: 1.05 }}
