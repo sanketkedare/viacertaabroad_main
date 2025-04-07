@@ -23,12 +23,12 @@ const FAQs = ({ faqArray }) => {
   return (
     <section className=" mb-10 lg:mb-10  relative">
       <div className="py-10">
-        <h1 className="lg:text-[40px] text-2xl font-bold mt-10 text-center lg:flex gap-4 justify-center">
+        <p className="lg:text-[40px] text-2xl font-bold mt-10 text-center lg:flex gap-4 justify-center">
           Everything You
           <span className="bg-gradient-to-r px-2 from-[#14247C] to-[#E00012] text-transparent bg-clip-text">
             Wanted To Ask!
           </span>
-        </h1>
+        </p>
         <h3 className="lg:text-[24px]  lg:w-auto w-9/12 m-auto text-md mt-2 text-center">
           Get answers to all your study abroad questions and make informed
           decisions with confidence!

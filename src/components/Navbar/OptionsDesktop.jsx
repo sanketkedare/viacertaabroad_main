@@ -89,7 +89,7 @@ const OptionsDesktop = () => {
           </div>
         </div>
       </Link>
-      {/* <Link href={"/blogs"}> */}
+      <Link href={"/mbbs"}>
       <div className="relative cursor-pointer hover:font-semibold  ">
         <div
           className={`hidden lg:flex  items-center justify-center gap-2 hover:text-[#E00012] ${
@@ -99,7 +99,7 @@ const OptionsDesktop = () => {
           MBBS's Program
         </div>
       </div>
-      {/* </Link> */}
+      </Link>
       <Link href={"/blogs"}>
         <div className="relative cursor-pointer hover:font-semibold  ">
           <div

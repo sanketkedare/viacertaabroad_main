@@ -11,6 +11,8 @@ import FAQs from "../About/FAQs";
 import faq from "./mbbsFaq.json";
 import BlogSlider from "../Slider/BlogSlider";
 import EligibilityCriteria from "./EligibilityCriteria";
+import ApplicationProcess from "./ApplicationProcess";
+import Massage from "./Massage";
 
 const MBBS = () => {
   const commonData = {
@@ -53,6 +55,8 @@ const MBBS = () => {
 
       {/* Eligibility Criteria */}
       <EligibilityCriteria/>
+      <ApplicationProcess/>
+      <Massage/>
       
       <FAQs faqArray={faq} />
       <BlogSlider />
