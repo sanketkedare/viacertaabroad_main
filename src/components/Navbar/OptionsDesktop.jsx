@@ -28,7 +28,7 @@ const OptionsDesktop = () => {
       <Link href={"/"}>
         <div className="relative cursor-pointer hover:font-semibold  ">
           <div
-            className={`hidden lg:flex  items-center justify-center gap-2 hover:text-[#E00012] '}`}
+            className={`hidden lg:flex  items-center justify-center gap-2 hover:text-[#E00012] ${path === "/" && 'text-[#E00012] font-semibold border-b-2 border-b-[#E00012]'}'}`}
           >
             Home
           </div>
@@ -42,12 +42,12 @@ const OptionsDesktop = () => {
             className="relative cursor-pointer hover:font-semibold  "
           >
             <div
-              className={`hidden lg:flex  items-center justify-center gap-2 hover:text-[#E00012] ${
-                path.includes(createUrl(option.name)) && "text-[#E00012] font-semibold"
-              }`}
+              className={`hidden lg:flex  items-center justify-center gap-2 hover:text-[#E00012] `}
               onClick={() => dropdownHandler(option.name)}
             >
-              {option.name} {option.name !== "Home" && <IoIosArrowDown />}
+              <p className={`${
+                path.includes(createUrl(option.name)) && "text-[#E00012] font-semibold border-b-2 border-b-[#E00012]"
+              }`}>{option.name}</p> {option.name !== "Home" && <IoIosArrowDown />}
             </div>
 
             {/* Dropdown */}
@@ -71,7 +71,7 @@ const OptionsDesktop = () => {
         <div className="relative cursor-pointer hover:font-semibold  ">
           <div
             className={`hidden lg:flex  items-center justify-center gap-2 hover:text-[#E00012]  ${
-              path === "/study-abroad" && "text-[#E00002] font-bold"
+              path === "/study-abroad" && "text-[#E00002] font-bold border-b-2 border-b-[#E00012]"
             }`}
           >
             Study-Abroad
@@ -82,7 +82,7 @@ const OptionsDesktop = () => {
         <div className="relative cursor-pointer hover:font-semibold  ">
           <div
             className={`hidden lg:flex  items-center justify-center gap-2 hover:text-[#E00012]  ${
-              path === "/work" && "text-[#E00002] font-bold"
+              path === "/work" && "text-[#E00002] font-bold border-b-2 border-b-[#E00012]"
             }`}
           >
             Work
@@ -93,7 +93,7 @@ const OptionsDesktop = () => {
       <div className="relative cursor-pointer hover:font-semibold  ">
         <div
           className={`hidden lg:flex  items-center justify-center gap-2 hover:text-[#E00012] ${
-            path === "/mbbs" && "text-[#E00002] font-bold"
+            path === "/mbbs" && "text-[#E00002] font-bold border-b-2 border-b-[#E00012]"
           } `}
         >
           MBBS's Program
@@ -103,7 +103,7 @@ const OptionsDesktop = () => {
       <Link href={"/blogs"}>
         <div className="relative cursor-pointer hover:font-semibold  ">
           <div
-            className={`hidden lg:flex  items-center justify-center gap-2 hover:text-[#E00012]   ${path.includes("/blog") && "text-[#E00002] font-bold"}`}
+            className={`hidden lg:flex  items-center justify-center gap-2 hover:text-[#E00012]   ${path.includes("/blog") && "text-[#E00002] font-bold border-b-2 border-b-[#E00012]"}`}
           >
             Blogs
           </div>
