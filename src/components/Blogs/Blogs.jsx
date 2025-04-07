@@ -13,9 +13,9 @@ const Blogs = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-10">
         {blogs.map((blog, index) => (
           <Link href={`/blogs/${createUrl(blog?.title)}`}>
-          <div key={index} className='relative w-full h-[300px] cursor-pointer hover:scale-105 transition-all rounded-md overflow-hidden bg-white shadow-[#E000122E] shadow-[0_0_30px_rgba(0,0,0,0.2)]'>
-              <div className='relative h-1/2 w-full'>
-                  <img src={blog.thumbnail ? blog.thumbnail : image} alt='Blog' className='h-full object-cover'/>
+          <div key={index} className='relative w-full h-[260px] cursor-pointer hover:scale-105 transition-all rounded-md overflow-hidden bg-white shadow-[#E000122E] shadow-[0_0_30px_rgba(0,0,0,0.2)]'>
+              <div className='relative h-[150px] w-full'>
+                  <img src={blog.thumbnail ? blog.thumbnail : image} alt='Blog' className='h-full w-full object-cover'/>
               </div>
               <div className='p-4'>
                   <p className='text-blue-900 text-lg font-medium mb-4'>{blog.title.slice(0,60)}...</p>

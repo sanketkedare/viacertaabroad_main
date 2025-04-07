@@ -5,8 +5,8 @@ const KeyBenifits = ({ obj }) => {
   return (
     <div className="py-10 grid lg:grid-cols-4 items-center w-10/12 m-auto">
       <div className="col-span-3 ">
-        <p className="lg:text-3xl p-3 font-bold">{obj.heading}</p>
-        <div className="p-5 bg-[#F4A26121] w-4/5 ">
+        <p className="lg:text-3xl text-xl p-3 font-bold">{obj.heading}</p>
+        <div className="p-5 bg-[#F4A26121] lg:w-4/5 ">
           <div className="flex flex-col gap-3">
             {obj.items.map((i) => (
               <div className="flex gap-3 items-center">
@@ -20,7 +20,7 @@ const KeyBenifits = ({ obj }) => {
           </div>
         </div>
       </div>
-      <div className="ml-0 w-4/5 h-full overflow-hidden">
+      <div className="lg:flex hidden ml-0 w-4/5 h-full overflow-hidden">
         <img
           src="https://img.freepik.com/premium-photo/female-doctor-with-stethoscope-around-her-neck_947814-97221.jpg?w=360"
           alt="mbbs"

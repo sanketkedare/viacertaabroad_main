@@ -1,8 +1,7 @@
 import React from "react";
-import { destinations, mastersPrograms, supportLinks } from "./utils";
+import { destinations, supportLinks } from "./utils";
 import { FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 import Link from "next/link";
-import { viacertaIcon} from "@/Utils/images";
 
 const Footer = () => {
   return (
@@ -10,16 +9,15 @@ const Footer = () => {
       {/* Background Outlined Text */}
 
       <div className="relative flex flex-col lg:flex-row justify-between lg:justify-evenly   gap-5 lg:w-9/12 w-11/12 m-auto lg:pt-10 z-30">
-      {/* <div className="hidden  w-2/12 lg:flex justify-center items-start">
-          <img src={viacertaIcon} className="w-1/2 bg-black rounded-full"/>
-      </div> */}
         {/* Support Section */}
         <div className="">
           <h1 className="font-bold text-xl mb-4">Support</h1>
           {supportLinks.map((link, index) => (
-            <p key={index} className="mb-1">
-              {link.text}
-            </p>
+            <Link href={link.href} key={index}>
+              <p  className="mb-1">
+                {link.text}
+              </p>
+            </Link>
           ))}
         </div>
 
@@ -27,21 +25,13 @@ const Footer = () => {
         <div>
           <h1 className="font-bold text-xl mb-4">Destinations</h1>
           {destinations.map((destination, index) => (
-            <p key={index} className="mb-1">
-              {destination.text}
-            </p>
+            <Link href={destination.href} key={index} >
+              <p className="mb-1">
+                {destination.text}
+              </p>
+            </Link>
           ))}
         </div>
-
-        {/* Master’s Program Section */}
-        {/* <div>
-          <h1 className="font-bold text-xl mb-4">Master’s Program</h1>
-          {mastersPrograms.map((program, index) => (
-            <p key={index} className="mb-1">
-              {program.text}
-            </p>
-          ))}
-        </div> */}
 
         {/* Connect With Us Section */}
         <div>
@@ -62,17 +52,23 @@ const Footer = () => {
               target="_blank"
             >
               <img
-                className="w-10 rounded-full cursor-pointer" title="fb link" alt="facebook" loading="lazy"
+                className="w-10 rounded-full cursor-pointer"
+                title="fb link"
+                alt="facebook"
+                loading="lazy"
                 src="https://static.vecteezy.com/system/resources/previews/021/495/985/non_2x/facebook-social-media-logo-icon-free-png.png"
               />
             </Link>
 
             <Link
               href="https://www.linkedin.com/company/105932660/admin/dashboard/"
-              target="_blank" 
+              target="_blank"
             >
               <img
-                className="w-10 rounded-xl cursor-pointer"   title="linkedIn link" alt="LinkedIn" loading="lazy"
+                className="w-10 rounded-xl cursor-pointer"
+                title="linkedIn link"
+                alt="LinkedIn"
+                loading="lazy"
                 src="https://cdn-icons-png.freepik.com/256/2496/2496097.png?semt=ais_hybrid"
               />
             </Link>
@@ -82,7 +78,10 @@ const Footer = () => {
               target="_blank"
             >
               <img
-                className="w-10 rounded-xl cursor-pointer"  title="Insta link" alt="Instagram" loading="lazy"
+                className="w-10 rounded-xl cursor-pointer"
+                title="Insta link"
+                alt="Instagram"
+                loading="lazy"
                 src="https://cdn-icons-png.freepik.com/256/15707/15707869.png?semt=ais_hybrid"
               />
             </a>

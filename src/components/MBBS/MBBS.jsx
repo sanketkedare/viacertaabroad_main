@@ -13,6 +13,7 @@ import BlogSlider from "../Slider/BlogSlider";
 import EligibilityCriteria from "./EligibilityCriteria";
 import ApplicationProcess from "./ApplicationProcess";
 import Massage from "./Massage";
+import TopDestinations from "./TopDestinations";
 
 const MBBS = () => {
   const commonData = {
@@ -52,12 +53,13 @@ const MBBS = () => {
       <KeyBenifits obj={commonData.benifits} />
 
       {/* -------- Destinations Here -------------- */}
+      <TopDestinations />
 
       {/* Eligibility Criteria */}
-      <EligibilityCriteria/>
-      <ApplicationProcess/>
-      <Massage/>
-      
+      <EligibilityCriteria />
+      <ApplicationProcess />
+      <Massage />
+
       <FAQs faqArray={faq} />
       <BlogSlider />
       <Footer />

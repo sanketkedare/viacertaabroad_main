@@ -12,24 +12,23 @@ export const socialLinks = [
   };
   
   export const supportLinks = [
-    { href: "#", text: "About" },
-    { href: "#", text: "Contact" },
-    { href: "#", text: "Grievance Redressal" },
-    { href: "#", text: "Careers" },
-    { href: "#", text: "Locate Us" },
-    { href: "#", text: "Scholarship" },
-    { href: "#", text: "Articles" },
-    { href: "#", text: "Terms of Use" },
-    { href: "#", text: "Privacy Policy" },
+    { href: "/about", text: "About" },
+    { href: "/contact", text: "Contact" },
+    // { href: "#", text: "Careers" },
+    // { href: "#", text: "Locate Us" },
+    // { href: "#", text: "Scholarship" },
+    { href: "/blogs", text: "Blogs" },
+    { href: "/TermsAndCondition", text: "Terms of Use" },
+    { href: "/privacy-policy", text: "Privacy Policy" },
   
   ];
   
   export const destinations = [
-    { href: "#", text: "Study in USA" },
-    { href: "#", text: "Study in Germany" },
-    { href: "#", text: "Study in Canada" },
-    { href: "#", text: "Study in UK" },
-    { href: "#", text: "Study in Australia" }
+    { href: "/destinations/USA", text: "Study in USA" },
+    { href: "/destinations/Germany", text: "Study in Germany" },
+    { href: "/destinations/Canada", text: "Study in Canada" },
+    { href: "/destinations/UK", text: "Study in UK" },
+    { href: "/destinations/Australia", text: "Study in Australia" }
   ];
   
   export const mastersPrograms = [
